@@ -1,6 +1,6 @@
 ﻿namespace Physics_Simulation
 {
-    partial class Form1
+    partial class Refraction
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Refraction
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "Refraction";
+            this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Refraction_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
     }
 }
-
