@@ -1,0 +1,11 @@
+C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\bin\Release\Physics Simulation.exe.config
+C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\bin\Release\Physics Simulation.exe
+C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\bin\Release\Physics Simulation.pdb
+C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\obj\Release\Physics Simulation.csproj.AssemblyReference.cache
+C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\obj\Release\Physics_Simulation.Refraction.resources
+C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\obj\Release\Physics_Simulation.Form1.resources
+C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\obj\Release\Physics_Simulation.Properties.Resources.resources
+C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\obj\Release\Physics Simulation.csproj.GenerateResource.cache
+C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\obj\Release\Physics Simulation.csproj.CoreCompileInputs.cache
+C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\obj\Release\Physics Simulation.exe
+C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\obj\Release\Physics Simulation.pdb
