@@ -12,9 +12,6 @@ namespace Physics_Simulation
 {
     public partial class Refraction : Form
     {
-        private Label modes;
-        private Button interact;
-        private Button questions;
         public Refraction()
         {
             InitializeComponent();
