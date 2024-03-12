@@ -32,8 +32,8 @@
             this.refractionMenu = new System.Windows.Forms.TableLayoutPanel();
             this.interact = new System.Windows.Forms.Button();
             this.questions = new System.Windows.Forms.Button();
-            this.menuText = new System.Windows.Forms.Label();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuText = new System.Windows.Forms.Label();
             this.refractionMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,21 +87,20 @@
             this.questions.Text = "Questions";
             this.questions.UseVisualStyleBackColor = true;
             // 
-            // menuText
-            // 
-            this.menuText.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.menuText.AutoSize = true;
-            this.menuText.Location = new System.Drawing.Point(400, 0);
-            this.menuText.Name = "menuText";
-            this.menuText.Size = new System.Drawing.Size(0, 16);
-            this.menuText.TabIndex = 1;
-            this.menuText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.menuText.Click += new System.EventHandler(this.menuText_Click);
-            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            // 
+            // menuText
+            // 
+            this.menuText.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.menuText.AutoSize = true;
+            this.menuText.Location = new System.Drawing.Point(347, 0);
+            this.menuText.Name = "menuText";
+            this.menuText.Size = new System.Drawing.Size(106, 16);
+            this.menuText.TabIndex = 3;
+            this.menuText.Text = "Choose a mode:";
             // 
             // Refraction
             // 
@@ -131,8 +130,8 @@
 
         private System.Windows.Forms.TableLayoutPanel refractionMenu;
         private System.Windows.Forms.Button interact;
-        private System.Windows.Forms.Label menuText;
         private System.Windows.Forms.Button questions;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.Label menuText;
     }
 }
