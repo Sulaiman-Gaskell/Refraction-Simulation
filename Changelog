@@ -2,6 +2,12 @@ Changelog:
 
 Prototype No.1:
 
+V1.1.1, 12/03/24:
+  Switched to dark mode, using black bg and white fg.
+  Added button scaling on the main Refraxction menu
+  Prepared code for interact mode
+
+
 V1.1, 10/03/24:
   Added varying label size on the refracton menu
   Added non varying (for now) button on the refaction menu
