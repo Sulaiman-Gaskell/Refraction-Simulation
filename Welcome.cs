@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Physics_Simulation
 {
-    public partial class Form1 : Form
+    public partial class welcomeScreen : Form
     {
-        public Form1()
+        public welcomeScreen()
         {
             InitializeComponent();
         }
@@ -30,6 +30,10 @@ namespace Physics_Simulation
             // When the refaction instance is closed by the user
             // the Welcome menu will open again
             this.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
         }
     }
 }

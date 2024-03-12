@@ -22,11 +22,20 @@ namespace Physics_Simulation
             // Sets font size for text based on clients resolution
             menuText.Font = new Font(menuText.Font.FontFamily,
                 ClientSize.Width / 10);
+            
+
+
+            interact.Font = new Font(interact.Font.FontFamily, 
+                ClientSize.Width / 15);
+            questions.Font = new Font(questions.Font.FontFamily,
+                ClientSize.Width / 15);
+                
 
         }
 
         private void Refraction_Load(object sender, EventArgs e)
         {
+            // Makes the form full screen
             this.WindowState = FormWindowState.Maximized;
         }
 
@@ -43,11 +52,20 @@ namespace Physics_Simulation
 
         private void refractionMenu_Paint(object sender, PaintEventArgs e)
         {
-
+          
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // when the 'Interactive' button is pressed then
+            // all the current controls are cleared from the screen
+            foreach (Control control in this.Controls)
+            {
+                this.Controls.Remove(control);
+                control.Dispose();
+
+            }
+
 
         }
 

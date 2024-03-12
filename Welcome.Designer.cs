@@ -1,6 +1,6 @@
 ﻿namespace Physics_Simulation
 {
-    partial class Form1
+    partial class welcomeScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -28,24 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(welcomeScreen));
+            this.wTxt = new System.Windows.Forms.Label();
             this.refraction = new System.Windows.Forms.Button();
             this.waves = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // wTxt
             // 
-            this.label1.AutoSize = true;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Location = new System.Drawing.Point(340, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 16);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Welcome!";
+            this.wTxt.AutoSize = true;
+            this.wTxt.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.wTxt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.wTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wTxt.Location = new System.Drawing.Point(340, 40);
+            this.wTxt.Name = "wTxt";
+            this.wTxt.Size = new System.Drawing.Size(89, 22);
+            this.wTxt.TabIndex = 2;
+            this.wTxt.Text = "Welcome!";
+            this.wTxt.Click += new System.EventHandler(this.label1_Click);
             // 
             // refraction
             // 
-            this.refraction.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.refraction.Cursor = System.Windows.Forms.Cursors.Hand;
             this.refraction.Location = new System.Drawing.Point(200, 200);
             this.refraction.Name = "refraction";
             this.refraction.Size = new System.Drawing.Size(150, 60);
@@ -56,7 +60,8 @@
             // 
             // waves
             // 
-            this.waves.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.waves.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.waves.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.waves.Location = new System.Drawing.Point(400, 200);
             this.waves.Name = "waves";
             this.waves.Size = new System.Drawing.Size(150, 60);
@@ -64,19 +69,20 @@
             this.waves.Text = "Waves";
             this.waves.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // welcomeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(782, 453);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.wTxt);
             this.Controls.Add(this.waves);
             this.Controls.Add(this.refraction);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "welcomeScreen";
+            this.Text = "V1.1";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -84,7 +90,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label wTxt;
         private System.Windows.Forms.Button refraction;
         private System.Windows.Forms.Button waves;
     }
