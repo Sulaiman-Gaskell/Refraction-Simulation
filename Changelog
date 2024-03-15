@@ -1,6 +1,11 @@
 Changelog:
 
 Prototype No.1:
+V1.2.1, 15/03/24:
+  Added back arrow for certain menu
+  Removed the top bar from some menus
+  Reworked 'Welcome!' text to be more in theme
+  Increased font size for the welcome menu
 
 V1.1.1, 12/03/24:
   Switched to dark mode, using black bg and white fg.
