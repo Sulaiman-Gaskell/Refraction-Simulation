@@ -17,9 +17,11 @@ namespace Physics_Simulation
             InitializeComponent();
             //Maximises the form and stops the user
             //from resizing it
+            //and removes the topbar
             this.WindowState = FormWindowState.Maximized;
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.TopMost = true;
+
         }
 
         private void rInteract_Load(object sender, EventArgs e)

@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\sulai\\source\\repos\\Physics Simulations\\Physics-Simulations\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|C:\\Users\\sulai\\source\\repos\\Physics Simulations\\Physics-Simulations\\welcome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|c:\\users\\sulai\\source\\repos\\physics simulations\\physics-simulations\\welcome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|solutionrelative:welcome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|C:\\Users\\sulai\\source\\repos\\Physics Simulations\\Physics-Simulations\\refraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|solutionrelative:refraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|C:\\Users\\sulai\\source\\repos\\Physics Simulations\\Physics-Simulations\\rinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|solutionrelative:rinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|C:\\Users\\sulai\\source\\repos\\Physics Simulations\\Physics-Simulations\\rinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|solutionrelative:rinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|c:\\users\\sulai\\source\\repos\\physics simulations\\physics-simulations\\refraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|C:\\Users\\sulai\\source\\repos\\Physics Simulations\\Physics-Simulations\\refraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|solutionrelative:refraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|C:\\Users\\sulai\\source\\repos\\Physics Simulations\\Physics-Simulations\\refraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|solutionrelative:refraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|C:\\Users\\sulai\\source\\repos\\Physics Simulations\\Physics-Simulations\\rinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|solutionrelative:rinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,24 +30,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "rInteract.cs",
               "DocumentMoniker": "C:\\Users\\sulai\\source\\repos\\Physics Simulations\\Physics-Simulations\\rInteract.cs",
               "RelativeDocumentMoniker": "rInteract.cs",
               "ToolTip": "C:\\Users\\sulai\\source\\repos\\Physics Simulations\\Physics-Simulations\\rInteract.cs",
               "RelativeToolTip": "rInteract.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAIwCUAAAAAAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAswBQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-15T16:34:31.126Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "rInteract.cs [Design]",
               "DocumentMoniker": "C:\\Users\\sulai\\source\\repos\\Physics Simulations\\Physics-Simulations\\rInteract.cs",
               "RelativeDocumentMoniker": "rInteract.cs",
@@ -56,6 +56,19 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-12T16:57:59.164Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Refraction.cs",
+              "DocumentMoniker": "C:\\Users\\sulai\\source\\repos\\Physics Simulations\\Physics-Simulations\\Refraction.cs",
+              "RelativeDocumentMoniker": "Refraction.cs",
+              "ToolTip": "C:\\Users\\sulai\\source\\repos\\Physics Simulations\\Physics-Simulations\\Refraction.cs",
+              "RelativeToolTip": "Refraction.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAA3wBMAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-10T17:33:42.394Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -80,19 +93,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-10T17:33:28.055Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Refraction.cs",
-              "DocumentMoniker": "C:\\Users\\sulai\\source\\repos\\Physics Simulations\\Physics-Simulations\\Refraction.cs",
-              "RelativeDocumentMoniker": "Refraction.cs",
-              "ToolTip": "C:\\Users\\sulai\\source\\repos\\Physics Simulations\\Physics-Simulations\\Refraction.cs",
-              "RelativeToolTip": "Refraction.cs",
-              "ViewState": "AQIAAEQAAAAAAAAAAADwv04AAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-10T17:33:42.394Z",
-              "EditorCaption": ""
             }
           ]
         }

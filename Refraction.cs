@@ -16,8 +16,10 @@ namespace Physics_Simulation
         {
             InitializeComponent();
 
-            // Prevents the user from resizing the window
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            // Maximises the window and removes the top bar
+            this.WindowState = FormWindowState.Maximized;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.TopMost = true;
 
             // Triggers Refracion_Resize when a resize event happens
             this.Resize += Refraction_Resize;

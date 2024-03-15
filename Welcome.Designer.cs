@@ -39,11 +39,11 @@
             this.wTxt.AutoSize = true;
             this.wTxt.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.wTxt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.wTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wTxt.ForeColor = System.Drawing.SystemColors.Control;
-            this.wTxt.Location = new System.Drawing.Point(340, 40);
+            this.wTxt.Location = new System.Drawing.Point(313, 38);
             this.wTxt.Name = "wTxt";
-            this.wTxt.Size = new System.Drawing.Size(89, 22);
+            this.wTxt.Size = new System.Drawing.Size(140, 32);
             this.wTxt.TabIndex = 2;
             this.wTxt.Text = "Welcome!";
             this.wTxt.Click += new System.EventHandler(this.label1_Click);
@@ -51,6 +51,7 @@
             // refraction
             // 
             this.refraction.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refraction.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refraction.Location = new System.Drawing.Point(200, 200);
             this.refraction.Name = "refraction";
             this.refraction.Size = new System.Drawing.Size(150, 60);
@@ -62,6 +63,7 @@
             // waves
             // 
             this.waves.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.waves.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.waves.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.waves.Location = new System.Drawing.Point(400, 200);
             this.waves.Name = "waves";
