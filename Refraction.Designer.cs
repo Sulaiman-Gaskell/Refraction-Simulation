@@ -32,9 +32,11 @@
             this.refractionMenu = new System.Windows.Forms.TableLayoutPanel();
             this.interact = new System.Windows.Forms.Button();
             this.questions = new System.Windows.Forms.Button();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuText = new System.Windows.Forms.Label();
+            this.bArrow = new System.Windows.Forms.PictureBox();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.refractionMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bArrow)).BeginInit();
             this.SuspendLayout();
             // 
             // refractionMenu
@@ -46,6 +48,7 @@
             this.refractionMenu.Controls.Add(this.interact, 1, 1);
             this.refractionMenu.Controls.Add(this.questions, 1, 2);
             this.refractionMenu.Controls.Add(this.menuText, 1, 0);
+            this.refractionMenu.Controls.Add(this.bArrow, 0, 0);
             this.refractionMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.refractionMenu.Location = new System.Drawing.Point(0, 0);
             this.refractionMenu.Name = "refractionMenu";
@@ -87,11 +90,6 @@
             this.questions.Text = "Questions";
             this.questions.UseVisualStyleBackColor = true;
             // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
-            // 
             // menuText
             // 
             this.menuText.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -101,6 +99,23 @@
             this.menuText.Size = new System.Drawing.Size(106, 16);
             this.menuText.TabIndex = 3;
             this.menuText.Text = "Choose a mode:";
+            // 
+            // bArrow
+            // 
+            this.bArrow.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bArrow.BackgroundImage")));
+            this.bArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bArrow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bArrow.Location = new System.Drawing.Point(3, 3);
+            this.bArrow.Name = "bArrow";
+            this.bArrow.Size = new System.Drawing.Size(117, 84);
+            this.bArrow.TabIndex = 4;
+            this.bArrow.TabStop = false;
+            this.bArrow.Click += new System.EventHandler(this.bArrow_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
             // 
             // Refraction
             // 
@@ -122,6 +137,7 @@
             this.Load += new System.EventHandler(this.Refraction_Load);
             this.refractionMenu.ResumeLayout(false);
             this.refractionMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bArrow)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -133,5 +149,6 @@
         private System.Windows.Forms.Button questions;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Label menuText;
+        private System.Windows.Forms.PictureBox bArrow;
     }
 }

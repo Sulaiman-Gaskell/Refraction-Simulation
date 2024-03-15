@@ -37,9 +37,10 @@
             // wTxt
             // 
             this.wTxt.AutoSize = true;
-            this.wTxt.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.wTxt.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.wTxt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.wTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wTxt.ForeColor = System.Drawing.SystemColors.Control;
             this.wTxt.Location = new System.Drawing.Point(340, 40);
             this.wTxt.Name = "wTxt";
             this.wTxt.Size = new System.Drawing.Size(89, 22);
@@ -82,7 +83,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "welcomeScreen";
-            this.Text = "V1.1";
+            this.Text = "V1.1.2";
+            this.Load += new System.EventHandler(this.welcomeScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

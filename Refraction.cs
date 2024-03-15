@@ -16,6 +16,9 @@ namespace Physics_Simulation
         {
             InitializeComponent();
 
+            // Prevents the user from resizing the window
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+
             // Triggers Refracion_Resize when a resize event happens
             this.Resize += Refraction_Resize;
 
@@ -57,20 +60,24 @@ namespace Physics_Simulation
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Hide();
             // when the 'Interactive' button is pressed then
-            // all the current controls are cleared from the screen
-            foreach (Control control in this.Controls)
-            {
-                this.Controls.Remove(control);
-                control.Dispose();
-
-            }
+            // the rInteract screen opens up
+            rInteract rInteract = new rInteract();
+            rInteract.ShowDialog();
+            this.Show();
 
 
         }
 
         private void menuText_Click(object sender, EventArgs e)
         {
+        }
+
+        private void bArrow_Click(object sender, EventArgs e)
+        {
+            //closes the current form
+            this.Close();
         }
     }
 

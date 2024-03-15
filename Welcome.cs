@@ -35,5 +35,10 @@ namespace Physics_Simulation
         private void label1_Click(object sender, EventArgs e)
         {
         }
+
+        private void welcomeScreen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
