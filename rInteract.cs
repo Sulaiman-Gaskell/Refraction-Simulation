@@ -22,20 +22,30 @@ namespace Physics_Simulation
             this.FormBorderStyle = FormBorderStyle.None;
             this.TopMost = true;
 
+
+
         }
 
         private void rInteract_Load(object sender, EventArgs e)
         {
+            // for fade in effect
+            // Set the form's initial opacity to 0 (completely transparent)
+            this.Opacity = 0;
+
+            // Start the fade to animate the form
+            fadeIn.Enabled = true;
 
         }
+
+  
 
 
 
         private void bArrow_Click_1(object sender, EventArgs e)
         {
-            
-            // Closes the current form
-            this.Close();
+            // triggers the fade out timer
+            fadeOut.Enabled = true;
+
         }
 
 
@@ -43,5 +53,35 @@ namespace Physics_Simulation
         {
 
         }
+
+        // For the fade in animation
+        private void fade_Tick(object sender, EventArgs e)
+        {
+            // Gradually increase the form's opacity
+            if (this.Opacity < 1)
+            {
+                this.Opacity += 0.1;
+            }
+                
+            // When fully solid stop the timer
+            else
+            {
+                fadeIn.Enabled = false;
+            }
+        }
+
+
+        // For the fade out animation
+        private void fadeOut_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity > 0)
+            {
+                this.Opacity -= 0.1;
+            }
+            else
+            {
+                this.Close();
+            }
+        }       
     }
 }

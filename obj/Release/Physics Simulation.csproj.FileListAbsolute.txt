@@ -9,3 +9,4 @@ C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\obj\Release\
 C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\obj\Release\Physics Simulation.exe
 C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\obj\Release\Physics Simulation.pdb
 C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\obj\Release\Physics_Simulation.welcomeScreen.resources
+C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\obj\Release\Physics_Simulation.rInteract.resources

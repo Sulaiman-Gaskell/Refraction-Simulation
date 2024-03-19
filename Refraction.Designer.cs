@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Refraction));
             this.refractionMenu = new System.Windows.Forms.TableLayoutPanel();
             this.interact = new System.Windows.Forms.Button();
@@ -35,6 +36,8 @@
             this.menuText = new System.Windows.Forms.Label();
             this.bArrow = new System.Windows.Forms.PictureBox();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.fadeIn = new System.Windows.Forms.Timer(this.components);
+            this.fadeOut = new System.Windows.Forms.Timer(this.components);
             this.refractionMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bArrow)).BeginInit();
             this.SuspendLayout();
@@ -117,6 +120,17 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
             // 
+            // fadeIn
+            // 
+            this.fadeIn.Enabled = true;
+            this.fadeIn.Interval = 1;
+            this.fadeIn.Tick += new System.EventHandler(this.fadeIn_Tick);
+            // 
+            // fadeOut
+            // 
+            this.fadeOut.Interval = 1;
+            this.fadeOut.Tick += new System.EventHandler(this.fadeOut_Tick_1);
+            // 
             // Refraction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -150,5 +164,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Label menuText;
         private System.Windows.Forms.PictureBox bArrow;
+        private System.Windows.Forms.Timer fadeIn;
+        private System.Windows.Forms.Timer fadeOut;
     }
 }

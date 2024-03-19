@@ -42,6 +42,13 @@ namespace Physics_Simulation
         {
             // Makes the form full screen
             this.WindowState = FormWindowState.Maximized;
+
+            // for fade in effect
+            // Set the form's initial opacity to 0 (completely transparent)
+            this.Opacity = 0;
+
+            // Start the fade to animate the form
+            fadeIn.Enabled = true;
         }
 
 
@@ -62,13 +69,11 @@ namespace Physics_Simulation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            // when the 'Interactive' button is pressed then
-            // the rInteract screen opens up
+            // Opens the refraction widnow and keeps this open
+            // Without being seen in the taskbar
+            
             rInteract rInteract = new rInteract();
-            rInteract.ShowDialog();
-            this.Show();
-
+            rInteract.Show();
 
         }
 
@@ -78,8 +83,42 @@ namespace Physics_Simulation
 
         private void bArrow_Click(object sender, EventArgs e)
         {
-            //closes the current form
-            this.Close();
+            // Calls the fadeOut timer
+            fadeOut.Enabled = true; 
+        }
+
+
+        // For fade in animation
+        private void fadeIn_Tick(object sender, EventArgs e)
+        {
+            // Gradually increase the form's opacity
+            if (this.Opacity < 1)
+            {
+                this.Opacity += 0.1;
+            }
+
+            // When fully solid stop the timer
+            else
+            {
+                fadeIn.Enabled = false;
+            }
+        }
+
+        private void fadeOut_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fadeOut_Tick_1(object sender, EventArgs e)
+        {
+            if (this.Opacity > 0)
+            {
+                this.Opacity -= 0.1;
+            }
+            else
+            {
+                this.Close();
+            }
         }
     }
 

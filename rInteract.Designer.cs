@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rInteract));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.bArrow = new System.Windows.Forms.PictureBox();
+            this.fadeIn = new System.Windows.Forms.Timer(this.components);
+            this.fadeOut = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bArrow)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +66,17 @@
             this.bArrow.TabStop = false;
             this.bArrow.Click += new System.EventHandler(this.bArrow_Click_1);
             // 
+            // fadeIn
+            // 
+            this.fadeIn.Enabled = true;
+            this.fadeIn.Interval = 1;
+            this.fadeIn.Tick += new System.EventHandler(this.fade_Tick);
+            // 
+            // fadeOut
+            // 
+            this.fadeOut.Interval = 1;
+            this.fadeOut.Tick += new System.EventHandler(this.fadeOut_Tick);
+            // 
             // rInteract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -85,5 +99,7 @@
         #endregion
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.PictureBox bArrow;
+        private System.Windows.Forms.Timer fadeIn;
+        private System.Windows.Forms.Timer fadeOut;
     }
 }

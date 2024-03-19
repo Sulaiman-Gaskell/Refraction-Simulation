@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(welcomeScreen));
             this.wTxt = new System.Windows.Forms.Label();
             this.refraction = new System.Windows.Forms.Button();
             this.waves = new System.Windows.Forms.Button();
+            this.fadeIn = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // wTxt
@@ -72,6 +74,12 @@
             this.waves.Text = "Waves";
             this.waves.UseVisualStyleBackColor = true;
             // 
+            // fadeIn
+            // 
+            this.fadeIn.Enabled = true;
+            this.fadeIn.Interval = 1;
+            this.fadeIn.Tick += new System.EventHandler(this.fadeIn_Tick);
+            // 
             // welcomeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -85,7 +93,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "welcomeScreen";
-            this.Text = "V1.1.2";
+            this.Text = "V1.2.0";
             this.Load += new System.EventHandler(this.welcomeScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -97,6 +105,7 @@
         private System.Windows.Forms.Label wTxt;
         private System.Windows.Forms.Button refraction;
         private System.Windows.Forms.Button waves;
+        private System.Windows.Forms.Timer fadeIn;
     }
 }
 
