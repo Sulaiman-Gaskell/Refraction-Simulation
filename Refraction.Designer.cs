@@ -54,13 +54,14 @@
             this.refractionMenu.Controls.Add(this.bArrow, 0, 0);
             this.refractionMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.refractionMenu.Location = new System.Drawing.Point(0, 0);
+            this.refractionMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.refractionMenu.Name = "refractionMenu";
             this.refractionMenu.RowCount = 4;
             this.refractionMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.refractionMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.refractionMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.refractionMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.refractionMenu.Size = new System.Drawing.Size(800, 450);
+            this.refractionMenu.Size = new System.Drawing.Size(960, 540);
             this.refractionMenu.TabIndex = 0;
             this.refractionMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.refractionMenu_Paint);
             // 
@@ -71,9 +72,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.interact.Cursor = System.Windows.Forms.Cursors.Hand;
             this.interact.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.interact.Location = new System.Drawing.Point(203, 93);
+            this.interact.Location = new System.Drawing.Point(244, 112);
+            this.interact.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.interact.Name = "interact";
-            this.interact.Size = new System.Drawing.Size(394, 129);
+            this.interact.Size = new System.Drawing.Size(472, 154);
             this.interact.TabIndex = 0;
             this.interact.Text = "Interactive";
             this.interact.UseVisualStyleBackColor = true;
@@ -86,9 +88,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.questions.Cursor = System.Windows.Forms.Cursors.Hand;
             this.questions.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.questions.Location = new System.Drawing.Point(203, 228);
+            this.questions.Location = new System.Drawing.Point(244, 274);
+            this.questions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.questions.Name = "questions";
-            this.questions.Size = new System.Drawing.Size(394, 129);
+            this.questions.Size = new System.Drawing.Size(472, 154);
             this.questions.TabIndex = 2;
             this.questions.Text = "Questions";
             this.questions.UseVisualStyleBackColor = true;
@@ -97,9 +100,10 @@
             // 
             this.menuText.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.menuText.AutoSize = true;
-            this.menuText.Location = new System.Drawing.Point(347, 0);
+            this.menuText.Location = new System.Drawing.Point(417, 0);
+            this.menuText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.menuText.Name = "menuText";
-            this.menuText.Size = new System.Drawing.Size(106, 16);
+            this.menuText.Size = new System.Drawing.Size(125, 20);
             this.menuText.TabIndex = 3;
             this.menuText.Text = "Choose a mode:";
             this.menuText.Click += new System.EventHandler(this.menuText_Click_1);
@@ -109,9 +113,10 @@
             this.bArrow.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bArrow.BackgroundImage")));
             this.bArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bArrow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bArrow.Location = new System.Drawing.Point(3, 3);
+            this.bArrow.Location = new System.Drawing.Point(4, 4);
+            this.bArrow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bArrow.Name = "bArrow";
-            this.bArrow.Size = new System.Drawing.Size(117, 84);
+            this.bArrow.Size = new System.Drawing.Size(140, 100);
             this.bArrow.TabIndex = 4;
             this.bArrow.TabStop = false;
             this.bArrow.Click += new System.EventHandler(this.bArrow_Click);
@@ -134,15 +139,16 @@
             // 
             // Refraction
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlText;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(960, 540);
             this.Controls.Add(this.refractionMenu);
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Refraction";

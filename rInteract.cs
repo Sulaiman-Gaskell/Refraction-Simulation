@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using TextBox = System.Windows.Forms.TextBox;
 
 namespace Physics_Simulation
 {
@@ -35,7 +37,7 @@ namespace Physics_Simulation
             // Start the fade to animate the form
             fadeIn.Enabled = true;
 
-            //
+            // Breaks the flow when after angleOfIncidence
             flowLayoutPanel1.SetFlowBreak(angleOfIncidence, true);
 
 
@@ -71,6 +73,7 @@ namespace Physics_Simulation
             
             refractiveIndex1.Size = rI1Text.Size;
 
+            angleOfIncidence.TextChanged += angleOfIncidence_TextChanged;
 
         }
 
@@ -90,9 +93,13 @@ namespace Physics_Simulation
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
             // Creates a white pen
-            Pen pen = new Pen(Color.White,5); 
-            e.Graphics.DrawLine(pen, 20, 10, this.Width / 100 * 61,
-                this.Height / 100 * 64);
+            Pen pen = new Pen(Color.White,5);
+
+            // Creates a white line at the right loaction
+
+           
+           
+
 
         }
 
@@ -133,7 +140,30 @@ namespace Physics_Simulation
 
         private void angleOfIncidence_TextChanged(object sender, EventArgs e)
         {
+            // Calls the drawline method whenever text is changed in the textbox
+            DrawLineOfIncidence();
+        }
 
+        private void DrawLineOfIncidence()
+        {
+            // Creates a pen object to draw the incident ray
+            // A white pen with a thickness of 3 
+            Pen aOIPen = new Pen(Color.White,3);
+
+            // Creates a graphic 'canvas' to draw on the tableLayoutPanel
+            Graphics aOILine = tableLayoutPanel1.CreateGraphics();
+
+            // Clears any graphic objects on the AoLine 'canvas'
+            aOILine.Clear(Color.Black);
+
+            // Sets the start and end Pos for the incident ray
+            // Start pos is currently based on length of text in the aOI textbox will change dependency
+            // End pos is in a fixed position 
+            Point startPoint = new Point(angleOfIncidence.Text.Length * 10, this.Height / 100 * 40);
+            Point endPoint = new Point(this.Width / 100 * 63, this.Height / 100 * 61);
+
+            // Draws the line using the AOIPen and specified loactions
+            aOILine.DrawLine(aOIPen, startPoint, endPoint);
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)

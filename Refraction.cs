@@ -26,16 +26,15 @@ namespace Physics_Simulation
 
             // Sets font size for text based on clients resolution
             menuText.Font = new Font(menuText.Font.FontFamily,
-                this.Width / 10);
+                ClientSize.Width / 15);
 
             
-            
-
+           
             interact.Font = new Font(interact.Font.FontFamily, 
                 ClientSize.Width / 15);
             questions.Font = new Font(questions.Font.FontFamily,
                 ClientSize.Width / 15);
-                
+
 
         }
 
