@@ -156,14 +156,20 @@ namespace Physics_Simulation
             // Clears any graphic objects on the AoLine 'canvas'
             aOILine.Clear(Color.Black);
 
-            // Sets the start and end Pos for the incident ray
-            // Start pos is currently based on length of text in the aOI textbox will change dependency
-            // End pos is in a fixed position 
-            Point startPoint = new Point(angleOfIncidence.Text.Length * 10, this.Height / 100 * 40);
-            Point endPoint = new Point(this.Width / 100 * 63, this.Height / 100 * 61);
+            // Checks if the angleOfIncidence value is an integer
+            if (int.TryParse(angleOfIncidence.Text, out int value))
+            {
+                // Converts aOI text from string to integer for x coord use
+                int xValue = System.Convert.ToInt32(angleOfIncidence.Text);
 
-            // Draws the line using the AOIPen and specified loactions
-            aOILine.DrawLine(aOIPen, startPoint, endPoint);
+                // Sets the startPos using the inputted value for x coord
+                // And sets the endPos
+                Point startPos = new Point(xValue, this.Height / 100 * 40);
+                Point endPos = new Point(this.Width / 100 * 63, this.Height / 100 * 61);
+
+                // Draws the line using the AOIPen at the specified loactions
+                aOILine.DrawLine(aOIPen, startPos, endPos);
+            }
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
