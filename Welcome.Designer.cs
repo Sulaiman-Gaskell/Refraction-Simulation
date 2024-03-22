@@ -93,7 +93,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "welcomeScreen";
-            this.Text = "V1.1.3";
+            this.Text = "V1.2.0";
             this.Load += new System.EventHandler(this.welcomeScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
