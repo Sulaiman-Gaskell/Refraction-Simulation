@@ -3,6 +3,12 @@ Changelog:
 
 Prototype No.1:
 
+V1.2.0,
+  Added experimental line movements to interactive mode for refraction
+  Removed border lines from interactive mode for refracton (for now)
+  Decreased refaction main menu font size (scaling issues)
+
+
 V1.1.3, 19/03/24 (Final update pre interact mode):
   Improved and added animations everywhere to improve fluidity
   Submenus (not including welcome menu) now stay open in the background to allow users to create multiple instances if they wish and to allow for fluid animations
