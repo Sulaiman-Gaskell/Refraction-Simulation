@@ -26,9 +26,10 @@ namespace Physics_Simulation
 
             // Sets font size for text based on clients resolution
             menuText.Font = new Font(menuText.Font.FontFamily,
-                ClientSize.Width / 10);
-            
+                this.Width / 10);
 
+            
+            
 
             interact.Font = new Font(interact.Font.FontFamily, 
                 ClientSize.Width / 15);
@@ -119,6 +120,11 @@ namespace Physics_Simulation
             {
                 this.Close();
             }
+        }
+
+        private void menuText_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 

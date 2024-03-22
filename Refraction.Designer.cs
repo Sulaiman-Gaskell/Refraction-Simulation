@@ -102,6 +102,7 @@
             this.menuText.Size = new System.Drawing.Size(106, 16);
             this.menuText.TabIndex = 3;
             this.menuText.Text = "Choose a mode:";
+            this.menuText.Click += new System.EventHandler(this.menuText_Click_1);
             // 
             // bArrow
             // 
