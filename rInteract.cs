@@ -165,17 +165,17 @@ namespace Physics_Simulation
                 && Convert.ToDouble(angleOfIncidence.Text) <= 90)
             {
                 // Converts aOI text from string to integer for x coord use
-                double angle = (360 - System.Convert.ToDouble(angleOfIncidence.Text))
+                double angle = (System.Convert.ToDouble(angleOfIncidence.Text))
                     * Math.PI / 180;
                 
                 
                 // Sets the x and y coords of the start and end of the aOI
                 // based on the angle inputted
-                double length = 400;
+                double length = this.Width / 4;
                 double x1 = this.Width / 100 * 63;
                 double y1 = this.Height / 100 * 61;
-                double x2 = x1 + Math.Cos(angle) * length;
-                double y2 = y1 + Math.Sin(angle) * length;
+                double x2 = x1 - Math.Cos(angle) * length;
+                double y2 = y1 - Math.Sin(angle) * length;
           
               
                 // Draws the line using the AOIPen at the specified loactions
