@@ -3,7 +3,12 @@ Changelog:
 
 Prototype No.1:
 
-V1.2.0,
+V1.2.1, 23/03/24
+Changed input to angle between 0 and 90 inclusive for aOI line
+Increased aOI line quality
+
+
+V1.2.0, 22/03/24
   Added experimental line movements to interactive mode for refraction
   Removed border lines from interactive mode for refracton (for now)
   Decreased refaction main menu font size (scaling issues)
