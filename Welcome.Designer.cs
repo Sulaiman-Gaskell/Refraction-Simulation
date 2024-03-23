@@ -96,7 +96,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "welcomeScreen";
-            this.Text = "V1.2.0";
+            this.Text = "V1.2.1";
             this.Load += new System.EventHandler(this.welcomeScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
