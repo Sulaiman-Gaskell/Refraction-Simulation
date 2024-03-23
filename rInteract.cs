@@ -153,22 +153,32 @@ namespace Physics_Simulation
             // Creates a graphic 'canvas' to draw on the tableLayoutPanel
             Graphics aOILine = tableLayoutPanel1.CreateGraphics();
 
+            // Increases the quality of the line 
+            aOILine.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+
             // Clears any graphic objects on the AoLine 'canvas'
             aOILine.Clear(Color.Black);
 
             // Checks if the angleOfIncidence value is an integer
-            if (int.TryParse(angleOfIncidence.Text, out int value))
+            if (int.TryParse(angleOfIncidence.Text, out int value1)
+                | double.TryParse(angleOfIncidence.Text, out double value2))
             {
                 // Converts aOI text from string to integer for x coord use
-                int xValue = System.Convert.ToInt32(angleOfIncidence.Text);
-
-                // Sets the startPos using the inputted value for x coord
-                // And sets the endPos
-                Point startPos = new Point(xValue, this.Height / 100 * 40);
-                Point endPos = new Point(this.Width / 100 * 63, this.Height / 100 * 61);
-
+                double angle = (360 - System.Convert.ToDouble(angleOfIncidence.Text))
+                    * Math.PI / 180;
+                
+                
+                // Sets the x and y coords of the start and end of the aOI
+                // based on the angle inputted
+                double length = 400;
+                double x1 = this.Width / 100 * 63;
+                double y1 = this.Height / 100 * 61;
+                double x2 = x1 + Math.Cos(angle) * length;
+                double y2 = y1 + Math.Sin(angle) * length;
+          
+              
                 // Draws the line using the AOIPen at the specified loactions
-                aOILine.DrawLine(aOIPen, startPos, endPos);
+                aOILine.DrawLine(aOIPen, (float)x1, (float)y1,(float)x2,(float)y2);
             }
         }
 
