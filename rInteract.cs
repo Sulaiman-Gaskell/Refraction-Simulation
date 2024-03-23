@@ -160,8 +160,9 @@ namespace Physics_Simulation
             aOILine.Clear(Color.Black);
 
             // Checks if the angleOfIncidence value is an integer
-            if (int.TryParse(angleOfIncidence.Text, out int value1)
+            if ((int.TryParse(angleOfIncidence.Text, out int value1)
                 | double.TryParse(angleOfIncidence.Text, out double value2))
+                && Convert.ToDouble(angleOfIncidence.Text) <= 90)
             {
                 // Converts aOI text from string to integer for x coord use
                 double angle = (360 - System.Convert.ToDouble(angleOfIncidence.Text))
