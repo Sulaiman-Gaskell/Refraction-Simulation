@@ -162,7 +162,7 @@ namespace Physics_Simulation
         {
             // Creates a pen object to draw the incident ray
             // A white pen with a thickness of 3 
-            Pen aOIPen = new Pen(Color.White,6);
+            Pen aOIPen = new Pen(Color.Red,6);
 
             // Creates a graphic 'canvas' to draw on the tableLayoutPanel
             Graphics aOILine = tableLayoutPanel1.CreateGraphics();
