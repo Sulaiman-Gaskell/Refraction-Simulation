@@ -37,8 +37,7 @@ namespace Physics_Simulation
             // Start the fade to animate the form
             fadeIn.Enabled = true;
 
-            // Breaks the flow when after angleOfIncidence
-            flowLayoutPanel1.SetFlowBreak(angleOfIncidence, true);
+           
 
 
             // Adds some margin gaps between controls to look better
@@ -49,10 +48,10 @@ namespace Physics_Simulation
                 ClientSize.Width / 150, ClientSize.Height / 50, 0, 0);
 
             rI1Text.Margin = new System.Windows.Forms.Padding(
-                 ClientSize.Width / 50, 0, 0, 0);
+                 ClientSize.Width / 150, ClientSize.Height / 20, 0, 0);
 
             refractiveIndex1.Margin = new System.Windows.Forms.Padding(
-                ClientSize.Width / 50, ClientSize.Height / 50, 0, 0);
+                ClientSize.Width / 150, ClientSize.Height / 50, 0, 0);
 
 
 
@@ -63,6 +62,7 @@ namespace Physics_Simulation
             angleOfIncidence.Font = new Font(angleOfIncidence.Font.
                 FontFamily, ClientSize.Width / 80);
             
+            // Sets the same size for matching objects
             angleOfIncidence.Size = aOIText.Size;
 
             rI1Text.Font = new Font(aOIText.Font.FontFamily,
@@ -71,8 +71,10 @@ namespace Physics_Simulation
             refractiveIndex1.Font = new Font(angleOfIncidence.Font.
                 FontFamily, ClientSize.Width / 80);
             
-            refractiveIndex1.Size = rI1Text.Size;
+            // Keeps sizing consistent
+            refractiveIndex1.Size = aOIText.Size;
 
+            // Calls the text_changed  method when text changes
             angleOfIncidence.TextChanged += angleOfIncidence_TextChanged;
 
         }
@@ -92,17 +94,27 @@ namespace Physics_Simulation
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-            // Creates a white pen
-            Pen pen = new Pen(Color.White,5);
-
-            // Creates a white line at the right loaction
-
-           
-           
-
-
+            // Calls the initDraw method to draw some lines
+            initDraw();
         }
 
+        // For drawing the static lines
+        private void initDraw()
+        {
+            // Creates a white pen
+            Pen pen = new Pen(Color.White, 3);
+
+            // Creates a new graphic object
+            Graphics g = tableLayoutPanel1.CreateGraphics();
+
+            // Draws a horizontal line
+            g.DrawLine(pen, 0, this.Height / 100 * 60,
+                this.Width, this.Height / 100 * 60);
+
+            // Draws a vertical line
+            g.DrawLine(pen,this.Width / 100 * 60, 0,
+                this.Width / 100 * 60, this.Height);
+        }
 
         // For the fade in animation
         private void fade_Tick(object sender, EventArgs e)
@@ -126,10 +138,12 @@ namespace Physics_Simulation
         {
             if (this.Opacity > 0)
             {
+                // Slowely decrease opacity
                 this.Opacity -= 0.1;
             }
             else
             {
+                // When opacity == o close the form
                 this.Close();
             }
         }
@@ -140,7 +154,7 @@ namespace Physics_Simulation
 
         private void angleOfIncidence_TextChanged(object sender, EventArgs e)
         {
-            // Calls the drawline method whenever text is changed in the textbox
+            // Calls the DrawLineOfIncidence method whenever text is changed in the textbox
             DrawLineOfIncidence();
         }
 
@@ -148,7 +162,7 @@ namespace Physics_Simulation
         {
             // Creates a pen object to draw the incident ray
             // A white pen with a thickness of 3 
-            Pen aOIPen = new Pen(Color.White,3);
+            Pen aOIPen = new Pen(Color.White,6);
 
             // Creates a graphic 'canvas' to draw on the tableLayoutPanel
             Graphics aOILine = tableLayoutPanel1.CreateGraphics();
@@ -158,6 +172,8 @@ namespace Physics_Simulation
 
             // Clears any graphic objects on the AoLine 'canvas'
             aOILine.Clear(Color.Black);
+
+            initDraw();
 
             // Checks if the angleOfIncidence value is an integer
             if ((int.TryParse(angleOfIncidence.Text, out int value1)
@@ -171,9 +187,9 @@ namespace Physics_Simulation
                 
                 // Sets the x and y coords of the start and end of the aOI
                 // based on the angle inputted
-                double length = this.Width / 4;
-                double x1 = this.Width / 100 * 63;
-                double y1 = this.Height / 100 * 61;
+                double length = this.Width / 3;
+                double x1 = this.Width / 100 * 60;
+                double y1 = this.Height / 100 * 60;
                 double x2 = x1 - Math.Cos(angle) * length;
                 double y2 = y1 - Math.Sin(angle) * length;
           

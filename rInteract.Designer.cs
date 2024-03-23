@@ -83,7 +83,7 @@
             this.flowLayoutPanel1.Controls.Add(this.angleOfIncidence);
             this.flowLayoutPanel1.Controls.Add(this.rI1Text);
             this.flowLayoutPanel1.Controls.Add(this.refractiveIndex1);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 341);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
