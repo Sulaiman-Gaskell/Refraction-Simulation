@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,7 +51,7 @@ namespace Physics_Simulation
             rI1Text.Margin = new System.Windows.Forms.Padding(
                  ClientSize.Width / 150, ClientSize.Height / 20, 0, 0);
 
-            refractiveIndex1.Margin = new System.Windows.Forms.Padding(
+            refractiveIndex2.Margin = new System.Windows.Forms.Padding(
                 ClientSize.Width / 150, ClientSize.Height / 50, 0, 0);
 
 
@@ -68,11 +69,11 @@ namespace Physics_Simulation
             rI1Text.Font = new Font(aOIText.Font.FontFamily,
                 ClientSize.Width / 80);
 
-            refractiveIndex1.Font = new Font(angleOfIncidence.Font.
+            refractiveIndex2.Font = new Font(angleOfIncidence.Font.
                 FontFamily, ClientSize.Width / 80);
             
             // Keeps sizing consistent
-            refractiveIndex1.Size = aOIText.Size;
+            refractiveIndex2.Size = aOIText.Size;
 
             // Calls the text_changed  method when text changes
             angleOfIncidence.TextChanged += angleOfIncidence_TextChanged;
@@ -104,19 +105,25 @@ namespace Physics_Simulation
             // Creates a white pen
             Pen pen = new Pen(Color.White, 3);
 
+        
+
             // Creates a new graphic object
             Graphics g = tableLayoutPanel1.CreateGraphics();
 
-            // Draws a horizontal line
-            g.DrawLine(pen, 0, this.Height / 100 * 60,
-                this.Width, this.Height / 100 * 60);
+           
 
             // Draws a vertical line
             g.DrawLine(pen,this.Width / 100 * 60, 0,
                 this.Width / 100 * 60, this.Height);
+
+
+            // Draws a  dotted horizontal line for the normal
+            pen.DashStyle = DashStyle.Dot;
+
+            g.DrawLine(pen, this.Width / 100 * 45, this.Height / 100 * 60,
+                this.Width / 100 * 75, this.Height / 100 * 60);
         }
 
-        // For the fade in animation
         private void fade_Tick(object sender, EventArgs e)
         {
             // Gradually increase the form's opacity
@@ -161,17 +168,19 @@ namespace Physics_Simulation
         private void DrawLineOfIncidence()
         {
             // Creates a pen object to draw the incident ray
-            // A white pen with a thickness of 3 
             Pen aOIPen = new Pen(Color.Red,6);
 
+            // Creates another pen but for the refracted ray
+            Pen aORPen = new Pen(Color.Green, 6);
+
             // Creates a graphic 'canvas' to draw on the tableLayoutPanel
-            Graphics aOILine = tableLayoutPanel1.CreateGraphics();
+            Graphics rays = tableLayoutPanel1.CreateGraphics();
 
             // Increases the quality of the line 
-            aOILine.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            rays.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
 
-            // Clears any graphic objects on the AoLine 'canvas'
-            aOILine.Clear(Color.Black);
+            // Clears any graphic objects on the rays 'canvas'
+            rays.Clear(Color.Black);
 
             initDraw();
 
@@ -181,21 +190,42 @@ namespace Physics_Simulation
                 && Convert.ToDouble(angleOfIncidence.Text) <= 90)
             {
                 // Converts aOI text from string to integer for x coord use
-                double angle = (System.Convert.ToDouble(angleOfIncidence.Text))
+                double angleI = (System.Convert.ToDouble(angleOfIncidence.Text))
                     * Math.PI / 180;
                 
                 
-                // Sets the x and y coords of the start and end of the aOI
+                // Sets the x and y coords of the start and end of the aOI and 
                 // based on the angle inputted
+                //************************************************* change after prototpye
                 double length = this.Width / 3;
                 double x1 = this.Width / 100 * 60;
                 double y1 = this.Height / 100 * 60;
-                double x2 = x1 - Math.Cos(angle) * length;
-                double y2 = y1 - Math.Sin(angle) * length;
+                double x2I = x1 - Math.Cos(angleI) * length;
+                double y2I = y1 - Math.Sin(angleI) * length;
+
+                
+
+                // Calculates the angle of refracion
+                double angleR;
+                if (angleI != Math.PI / 2)
+                {
+                    // Change this after prototype
+                    angleR = Math.Asin(Math.Sin(angleI) * 1 / 
+                        Convert.ToDouble(refractiveIndex2.Text));
+                }
+                else { angleR = Math.PI / 2; }
+            
+
+                double x2R = x1 + Math.Cos(angleR) * length;
+                double y2R = y1 + Math.Sin(angleR) * length;
           
               
-                // Draws the line using the AOIPen at the specified loactions
-                aOILine.DrawLine(aOIPen, (float)x1, (float)y1,(float)x2,(float)y2);
+                // Draws a line using the AOIPen at the specified loactions
+                rays.DrawLine(aOIPen, (float)x1, (float)y1,(float)x2I,(float)y2I);
+
+                // Draws the aOR ray
+                rays.DrawLine(aORPen, (float)x1, (float)y1, (float)x2R,(float)y2R);
+
             }
         }
 
@@ -204,6 +234,7 @@ namespace Physics_Simulation
 
         }
 
+        // Refractive index 2
         private void refractiveIndex1_TextChanged(object sender, EventArgs e)
         {
 

@@ -36,7 +36,7 @@
             this.aOIText = new System.Windows.Forms.Label();
             this.angleOfIncidence = new System.Windows.Forms.TextBox();
             this.rI1Text = new System.Windows.Forms.Label();
-            this.refractiveIndex1 = new System.Windows.Forms.TextBox();
+            this.refractiveIndex2 = new System.Windows.Forms.TextBox();
             this.fadeIn = new System.Windows.Forms.Timer(this.components);
             this.fadeOut = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
@@ -82,7 +82,7 @@
             this.flowLayoutPanel1.Controls.Add(this.aOIText);
             this.flowLayoutPanel1.Controls.Add(this.angleOfIncidence);
             this.flowLayoutPanel1.Controls.Add(this.rI1Text);
-            this.flowLayoutPanel1.Controls.Add(this.refractiveIndex1);
+            this.flowLayoutPanel1.Controls.Add(this.refractiveIndex2);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 341);
@@ -121,18 +121,18 @@
             this.rI1Text.Name = "rI1Text";
             this.rI1Text.Size = new System.Drawing.Size(203, 29);
             this.rI1Text.TabIndex = 2;
-            this.rI1Text.Text = "Refractive Index 1";
+            this.rI1Text.Text = "Refractive Index 2";
             this.rI1Text.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.rI1Text.Click += new System.EventHandler(this.rI1Text_Click);
             // 
-            // refractiveIndex1
+            // refractiveIndex2
             // 
-            this.refractiveIndex1.Location = new System.Drawing.Point(3, 96);
-            this.refractiveIndex1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.refractiveIndex1.Name = "refractiveIndex1";
-            this.refractiveIndex1.Size = new System.Drawing.Size(194, 26);
-            this.refractiveIndex1.TabIndex = 3;
-            this.refractiveIndex1.TextChanged += new System.EventHandler(this.refractiveIndex1_TextChanged);
+            this.refractiveIndex2.Location = new System.Drawing.Point(3, 96);
+            this.refractiveIndex2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.refractiveIndex2.Name = "refractiveIndex2";
+            this.refractiveIndex2.Size = new System.Drawing.Size(194, 26);
+            this.refractiveIndex2.TabIndex = 3;
+            this.refractiveIndex2.TextChanged += new System.EventHandler(this.refractiveIndex1_TextChanged);
             // 
             // fadeIn
             // 
@@ -177,6 +177,6 @@
         private System.Windows.Forms.Label aOIText;
         private System.Windows.Forms.TextBox angleOfIncidence;
         private System.Windows.Forms.Label rI1Text;
-        private System.Windows.Forms.TextBox refractiveIndex1;
+        private System.Windows.Forms.TextBox refractiveIndex2;
     }
 }
