@@ -54,6 +54,9 @@ namespace Physics_Simulation
             refractiveIndex2.Margin = new System.Windows.Forms.Padding(
                 ClientSize.Width / 150, ClientSize.Height / 50, 0, 0);
 
+            aoR.Margin = new System.Windows.Forms.Padding(
+                ClientSize.Width / 150, ClientSize.Height / 50, 0, 0);
+
 
 
             // For sizing objects based on clients resoloution
@@ -212,9 +215,9 @@ namespace Physics_Simulation
                 }
                 else { angleR = Math.PI / 2; }
 
-              //  double angleRDegrees = angleR * 180 / Math.PI;
-              //  aoR.Text = Convert.ToString(angleRDegrees);
-
+                double angleRDegrees = Math.Round(angleR * 180 / Math.PI,2);
+                aoR.Text = angleRDegrees.ToString() + "°";
+              
                 double x2R = x1 + Math.Cos(angleR) * length;
                 double y2R = y1 + Math.Sin(angleR) * length;
           
