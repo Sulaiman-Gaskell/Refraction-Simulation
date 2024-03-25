@@ -230,6 +230,12 @@ namespace Physics_Simulation
 
                 
             }
+
+            else if (angleOfIncidence.Text == "")
+            {
+                aoR.Text = "Angle of reflection";
+                initDraw();
+            }
         }
 
       
