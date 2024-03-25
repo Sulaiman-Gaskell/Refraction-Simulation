@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rInteract));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.aoR = new System.Windows.Forms.Label();
             this.bArrow = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.aOIText = new System.Windows.Forms.Label();
@@ -51,6 +52,7 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.5F));
+            this.tableLayoutPanel1.Controls.Add(this.aoR, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.bArrow, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -63,6 +65,19 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(900, 562);
             this.tableLayoutPanel1.TabIndex = 1;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // aoR
+            // 
+            this.aoR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.aoR.AutoSize = true;
+            this.aoR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aoR.Location = new System.Drawing.Point(681, 533);
+            this.aoR.Name = "aoR";
+            this.aoR.Size = new System.Drawing.Size(216, 29);
+            this.aoR.TabIndex = 2;
+            this.aoR.Text = "Angle of Refraction";
+            this.aoR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.aoR.Click += new System.EventHandler(this.aoR_Click);
             // 
             // bArrow
             // 
@@ -160,6 +175,7 @@
             this.Text = "rInteract";
             this.Load += new System.EventHandler(this.rInteract_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bArrow)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
@@ -178,5 +194,6 @@
         private System.Windows.Forms.TextBox angleOfIncidence;
         private System.Windows.Forms.Label rI1Text;
         private System.Windows.Forms.TextBox refractiveIndex2;
+        private System.Windows.Forms.Label aoR;
     }
 }

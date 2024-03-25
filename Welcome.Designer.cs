@@ -75,6 +75,7 @@
             this.waves.TabIndex = 1;
             this.waves.Text = "Waves";
             this.waves.UseVisualStyleBackColor = true;
+            this.waves.Click += new System.EventHandler(this.waves_Click);
             // 
             // fadeIn
             // 

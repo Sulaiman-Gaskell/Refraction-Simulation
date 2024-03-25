@@ -60,6 +60,9 @@ namespace Physics_Simulation
             aOIText.Font = new Font(aOIText.Font.FontFamily,
             ClientSize.Width / 80);
 
+            aoR.Font = new Font(aoR.Font.FontFamily,
+                ClientSize.Width / 80);
+
             angleOfIncidence.Font = new Font(angleOfIncidence.Font.
                 FontFamily, ClientSize.Width / 80);
             
@@ -79,10 +82,6 @@ namespace Physics_Simulation
             angleOfIncidence.TextChanged += angleOfIncidence_TextChanged;
 
         }
-
-
-  
-
 
 
         private void bArrow_Click_1(object sender, EventArgs e)
@@ -105,13 +104,11 @@ namespace Physics_Simulation
             // Creates a white pen
             Pen pen = new Pen(Color.White, 3);
 
-        
-
+       
             // Creates a new graphic object
             Graphics g = tableLayoutPanel1.CreateGraphics();
 
            
-
             // Draws a vertical line
             g.DrawLine(pen,this.Width / 100 * 60, 0,
                 this.Width / 100 * 60, this.Height);
@@ -161,11 +158,11 @@ namespace Physics_Simulation
 
         private void angleOfIncidence_TextChanged(object sender, EventArgs e)
         {
-            // Calls the DrawLineOfIncidence method whenever text is changed in the textbox
-            DrawLineOfIncidence();
+            // Calls the DrawRays method whenever text is changed in the textbox
+            DrawRays();
         }
 
-        private void DrawLineOfIncidence()
+        private void DrawRays()
         {
             // Creates a pen object to draw the incident ray
             Pen aOIPen = new Pen(Color.Red,6);
@@ -185,8 +182,8 @@ namespace Physics_Simulation
             initDraw();
 
             // Checks if the angleOfIncidence value is an integer
-            if ((int.TryParse(angleOfIncidence.Text, out int value1)
-                | double.TryParse(angleOfIncidence.Text, out double value2))
+            if ((int.TryParse(angleOfIncidence.Text, out int _)
+                | double.TryParse(angleOfIncidence.Text, out double _))
                 && Convert.ToDouble(angleOfIncidence.Text) <= 90)
             {
                 // Converts aOI text from string to integer for x coord use
@@ -209,12 +206,14 @@ namespace Physics_Simulation
                 double angleR;
                 if (angleI != Math.PI / 2)
                 {
-                    // Change this after prototype
+                    // Change this after prototype *************
                     angleR = Math.Asin(Math.Sin(angleI) * 1 / 
                         Convert.ToDouble(refractiveIndex2.Text));
                 }
                 else { angleR = Math.PI / 2; }
-            
+
+              //  double angleRDegrees = angleR * 180 / Math.PI;
+              //  aoR.Text = Convert.ToString(angleRDegrees);
 
                 double x2R = x1 + Math.Cos(angleR) * length;
                 double y2R = y1 + Math.Sin(angleR) * length;
@@ -226,8 +225,11 @@ namespace Physics_Simulation
                 // Draws the aOR ray
                 rays.DrawLine(aORPen, (float)x1, (float)y1, (float)x2R,(float)y2R);
 
+                
             }
         }
+
+      
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -243,6 +245,11 @@ namespace Physics_Simulation
         private void rI1Text_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void aoR_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -64,5 +64,10 @@ namespace Physics_Simulation
                 fadeIn.Enabled = false;
             }
         }
+
+        private void waves_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
