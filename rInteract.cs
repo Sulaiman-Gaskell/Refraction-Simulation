@@ -49,13 +49,13 @@ namespace Physics_Simulation
                 ClientSize.Width / 150, ClientSize.Height / 50, 0, 0);
 
             rI1Text.Margin = new System.Windows.Forms.Padding(
-                 ClientSize.Width / 150, ClientSize.Height / 20, 0, 0);
+                 ClientSize.Width / 150, ClientSize.Height / 50, 0, 0);
 
             refractiveIndex2.Margin = new System.Windows.Forms.Padding(
                 ClientSize.Width / 150, ClientSize.Height / 50, 0, 0);
 
             aoR.Margin = new System.Windows.Forms.Padding(
-                ClientSize.Width / 150, ClientSize.Height / 50, 0, 0);
+                ClientSize.Width / 150, ClientSize.Height / 10, 0, 0);
 
 
 
