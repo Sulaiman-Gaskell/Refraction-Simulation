@@ -49,7 +49,13 @@ namespace Physics_Simulation
                 ClientSize.Width / 150, ClientSize.Height / 50, 0, 0);
 
             rI1Text.Margin = new System.Windows.Forms.Padding(
+                ClientSize.Width / 150, ClientSize.Height / 50, 0, 0);
+
+            rI2Text.Margin = new System.Windows.Forms.Padding(
                  ClientSize.Width / 150, ClientSize.Height / 50, 0, 0);
+
+            refractiveIndex1.Margin = new System.Windows.Forms.Padding(
+                ClientSize.Width / 150, ClientSize.Height / 50, 0, 0);
 
             refractiveIndex2.Margin = new System.Windows.Forms.Padding(
                 ClientSize.Width / 150, ClientSize.Height / 50, 0, 0);
@@ -72,13 +78,20 @@ namespace Physics_Simulation
             // Sets the same size for matching objects
             angleOfIncidence.Size = aOIText.Size;
 
-            rI1Text.Font = new Font(aOIText.Font.FontFamily,
+            rI1Text.Font = new Font(rI1Text.Font.FontFamily,
                 ClientSize.Width / 80);
+
+            rI2Text.Font = new Font(aOIText.Font.FontFamily,
+                ClientSize.Width / 80);
+
+            refractiveIndex1.Font = new Font(refractiveIndex1.Font.
+                FontFamily, ClientSize.Width / 80);
 
             refractiveIndex2.Font = new Font(angleOfIncidence.Font.
                 FontFamily, ClientSize.Width / 80);
             
             // Keeps sizing consistent
+            refractiveIndex1.Size = aOIText.Size;
             refractiveIndex2.Size = aOIText.Size;
 
             // Calls the text_changed  method when text changes
@@ -113,15 +126,15 @@ namespace Physics_Simulation
 
            
             // Draws a vertical line
-            g.DrawLine(pen,this.Width / 100 * 60, 0,
-                this.Width / 100 * 60, this.Height);
+            g.DrawLine(pen,this.Width / 100 * 70, 0,
+                this.Width / 100 * 70, this.Height);
 
 
             // Draws a  dotted horizontal line for the normal
             pen.DashStyle = DashStyle.Dot;
 
-            g.DrawLine(pen, this.Width / 100 * 45, this.Height / 100 * 60,
-                this.Width / 100 * 75, this.Height / 100 * 60);
+            g.DrawLine(pen, this.Width / 100 * 50, this.Height / 100 * 60,
+                this.Width / 100 * 90, this.Height / 100 * 60);
         }
 
         private void fade_Tick(object sender, EventArgs e)
@@ -187,7 +200,8 @@ namespace Physics_Simulation
             // Checks if the angleOfIncidence value is an integer
             if ((int.TryParse(angleOfIncidence.Text, out int _)
                 | double.TryParse(angleOfIncidence.Text, out double _))
-                && Convert.ToDouble(angleOfIncidence.Text) <= 90)
+                && (Convert.ToDouble(angleOfIncidence.Text) <= 90 && 
+                Convert.ToDouble(angleOfIncidence.Text) >= 0))
             {
                 // Converts aOI text from string to integer for x coord use
                 double angleI = (System.Convert.ToDouble(angleOfIncidence.Text))
@@ -198,7 +212,7 @@ namespace Physics_Simulation
                 // based on the angle inputted
                 //************************************************* change after prototpye
                 double length = this.Width / 3;
-                double x1 = this.Width / 100 * 60;
+                double x1 = this.Width / 100 * 70;
                 double y1 = this.Height / 100 * 60;
                 double x2I = x1 - Math.Cos(angleI) * length;
                 double y2I = y1 - Math.Sin(angleI) * length;
@@ -210,7 +224,8 @@ namespace Physics_Simulation
                 if (angleI != Math.PI / 2)
                 {
                     // Change this after prototype *************
-                    angleR = Math.Asin(Math.Sin(angleI) * 1 / 
+                    angleR = Math.Asin(Math.Sin(angleI) * 
+                        Convert.ToDouble(refractiveIndex1.Text) / 
                         Convert.ToDouble(refractiveIndex2.Text));
                 }
                 else { angleR = Math.PI / 2; }

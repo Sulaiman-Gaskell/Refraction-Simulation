@@ -34,12 +34,14 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.aOIText = new System.Windows.Forms.Label();
             this.angleOfIncidence = new System.Windows.Forms.TextBox();
-            this.rI1Text = new System.Windows.Forms.Label();
+            this.rI2Text = new System.Windows.Forms.Label();
             this.refractiveIndex2 = new System.Windows.Forms.TextBox();
             this.aoR = new System.Windows.Forms.Label();
             this.bArrow = new System.Windows.Forms.PictureBox();
             this.fadeIn = new System.Windows.Forms.Timer(this.components);
             this.fadeOut = new System.Windows.Forms.Timer(this.components);
+            this.rI1Text = new System.Windows.Forms.Label();
+            this.refractiveIndex1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bArrow)).BeginInit();
@@ -67,13 +69,15 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.aOIText);
-            this.flowLayoutPanel1.Controls.Add(this.angleOfIncidence);
-            this.flowLayoutPanel1.Controls.Add(this.rI1Text);
             this.flowLayoutPanel1.Controls.Add(this.refractiveIndex2);
+            this.flowLayoutPanel1.Controls.Add(this.rI2Text);
+            this.flowLayoutPanel1.Controls.Add(this.refractiveIndex1);
+            this.flowLayoutPanel1.Controls.Add(this.rI1Text);
+            this.flowLayoutPanel1.Controls.Add(this.angleOfIncidence);
+            this.flowLayoutPanel1.Controls.Add(this.aOIText);
             this.flowLayoutPanel1.Controls.Add(this.aoR);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 341);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -85,7 +89,7 @@
             // 
             this.aOIText.AutoSize = true;
             this.aOIText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aOIText.Location = new System.Drawing.Point(3, 0);
+            this.aOIText.Location = new System.Drawing.Point(3, 28);
             this.aOIText.Name = "aOIText";
             this.aOIText.Size = new System.Drawing.Size(211, 29);
             this.aOIText.TabIndex = 0;
@@ -95,28 +99,28 @@
             // 
             // angleOfIncidence
             // 
-            this.angleOfIncidence.Location = new System.Drawing.Point(3, 33);
+            this.angleOfIncidence.Location = new System.Drawing.Point(3, 61);
             this.angleOfIncidence.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.angleOfIncidence.Name = "angleOfIncidence";
             this.angleOfIncidence.Size = new System.Drawing.Size(194, 26);
             this.angleOfIncidence.TabIndex = 1;
             this.angleOfIncidence.TextChanged += new System.EventHandler(this.angleOfIncidence_TextChanged);
             // 
-            // rI1Text
+            // rI2Text
             // 
-            this.rI1Text.AutoSize = true;
-            this.rI1Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rI1Text.Location = new System.Drawing.Point(3, 63);
-            this.rI1Text.Name = "rI1Text";
-            this.rI1Text.Size = new System.Drawing.Size(203, 29);
-            this.rI1Text.TabIndex = 2;
-            this.rI1Text.Text = "Refractive Index 2";
-            this.rI1Text.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.rI1Text.Click += new System.EventHandler(this.rI1Text_Click);
+            this.rI2Text.AutoSize = true;
+            this.rI2Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rI2Text.Location = new System.Drawing.Point(3, 154);
+            this.rI2Text.Name = "rI2Text";
+            this.rI2Text.Size = new System.Drawing.Size(203, 29);
+            this.rI2Text.TabIndex = 2;
+            this.rI2Text.Text = "Refractive Index 2";
+            this.rI2Text.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.rI2Text.Click += new System.EventHandler(this.rI1Text_Click);
             // 
             // refractiveIndex2
             // 
-            this.refractiveIndex2.Location = new System.Drawing.Point(3, 96);
+            this.refractiveIndex2.Location = new System.Drawing.Point(3, 187);
             this.refractiveIndex2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.refractiveIndex2.Name = "refractiveIndex2";
             this.refractiveIndex2.Size = new System.Drawing.Size(194, 26);
@@ -128,7 +132,7 @@
             this.aoR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.aoR.AutoSize = true;
             this.aoR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aoR.Location = new System.Drawing.Point(3, 126);
+            this.aoR.Location = new System.Drawing.Point(220, 188);
             this.aoR.Name = "aoR";
             this.aoR.Size = new System.Drawing.Size(216, 29);
             this.aoR.TabIndex = 2;
@@ -159,6 +163,25 @@
             // 
             this.fadeOut.Interval = 1;
             this.fadeOut.Tick += new System.EventHandler(this.fadeOut_Tick);
+            // 
+            // rI1Text
+            // 
+            this.rI1Text.AutoSize = true;
+            this.rI1Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rI1Text.Location = new System.Drawing.Point(3, 91);
+            this.rI1Text.Name = "rI1Text";
+            this.rI1Text.Size = new System.Drawing.Size(203, 29);
+            this.rI1Text.TabIndex = 4;
+            this.rI1Text.Text = "Refractive Index 1";
+            this.rI1Text.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // refractiveIndex1
+            // 
+            this.refractiveIndex1.Location = new System.Drawing.Point(3, 124);
+            this.refractiveIndex1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.refractiveIndex1.Name = "refractiveIndex1";
+            this.refractiveIndex1.Size = new System.Drawing.Size(194, 26);
+            this.refractiveIndex1.TabIndex = 5;
             // 
             // rInteract
             // 
@@ -191,8 +214,10 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label aOIText;
         private System.Windows.Forms.TextBox angleOfIncidence;
-        private System.Windows.Forms.Label rI1Text;
+        private System.Windows.Forms.Label rI2Text;
         private System.Windows.Forms.TextBox refractiveIndex2;
         private System.Windows.Forms.Label aoR;
+        private System.Windows.Forms.TextBox refractiveIndex1;
+        private System.Windows.Forms.Label rI1Text;
     }
 }
