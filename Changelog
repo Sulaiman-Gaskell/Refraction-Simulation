@@ -7,7 +7,7 @@ V1.3.2, 26/03/24
 
 Added ability to change inital refractive index
 Optimised loaction of the refraction diagram
-Fix bug where you could enter negative values of degrees in 
+Fix bug where you could enter negative values for all inputs
 
 V1.3.1, 25/03/24
 Added refracted ray angle stat
