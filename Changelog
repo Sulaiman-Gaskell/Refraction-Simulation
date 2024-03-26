@@ -2,6 +2,13 @@ Changelog:
 
 
 Prototype No.1:
+
+V1.3.2, 26/03/24
+
+Added ability to change inital refractive index
+Optimised loaction of the refraction diagram
+Fix bug where you could enter negative values of degrees in 
+
 V1.3.1, 25/03/24
 Added refracted ray angle stat
 Leaving AoI textbox blank clears the screen
