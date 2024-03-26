@@ -7,6 +7,7 @@ V1.3.2, 26/03/24
 
 Added ability to change inital refractive index
 Added a border around the angle of reflection box
+Added default starting refractive indexts of "1"
 Increased the length of the "normal" line to be better scaled with the rest of the app
 Optimised loaction of the refraction diagram
 Fixed bug where you could enter negative values for all inputs
@@ -14,7 +15,7 @@ Fixed bug where app would crash when entering a string into the refractive index
 Fixed spacing issues with the boxes
 Fixed angle of reflection displaying wrong infomation in certain cases
 
-
+KNOWN BUGS: leaving refrative index boxes blank causes the app to crash
 
 V1.3.1, 25/03/24
 Added refracted ray angle stat
