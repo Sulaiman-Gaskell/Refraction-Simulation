@@ -198,14 +198,15 @@ namespace Physics_Simulation
 
             initDraw();
 
-            // Checks if the angleOfIncidence value is an integer
+            // Validation
             if (double.TryParse(angleOfIncidence.Text, out double _)
-                && (Convert.ToDouble(angleOfIncidence.Text) <= 90 
+                && double.TryParse(refractiveIndex1.Text, out double _)
+                && double.TryParse(refractiveIndex2.Text, out double _)
+                && Convert.ToDouble(angleOfIncidence.Text) <= 90 
                 && Convert.ToDouble(angleOfIncidence.Text) >= 0
                 && Convert.ToDouble(refractiveIndex1.Text) >= 0
                 && Convert.ToDouble(refractiveIndex2.Text) >= 0
-                
-                ))
+                )
             {
                 // Converts aOI text from string to integer for x coord use
                 double angleI = (System.Convert.ToDouble(angleOfIncidence.Text))
@@ -227,7 +228,6 @@ namespace Physics_Simulation
                 double angleR;
                 if (angleI != Math.PI / 2)
                 {
-                    // Change this after prototype *************
                     angleR = Math.Asin(Math.Sin(angleI) * 
                         Convert.ToDouble(refractiveIndex1.Text) / 
                         Convert.ToDouble(refractiveIndex2.Text));
