@@ -12,6 +12,7 @@ Increased the length of the "normal" line to be better scaled with the rest of t
 Optimised loaction of the refraction diagram
 Fixed bug where you could enter negative values for all inputs
 Fixed bug where app would crash when entering a string into the refractive indexes
+Fixed bug where app would crash if you leave the refractive indexs blank
 Fixed spacing issues with the boxes
 Fixed angle of reflection displaying wrong infomation in certain cases
 
