@@ -93,6 +93,7 @@ namespace Physics_Simulation
             // Keeps sizing consistent
             refractiveIndex1.Size = aOIText.Size;
             refractiveIndex2.Size = aOIText.Size;
+           
 
             // Calls the text_changed  method when text changes
             angleOfIncidence.TextChanged += angleOfIncidence_TextChanged;
@@ -198,10 +199,13 @@ namespace Physics_Simulation
             initDraw();
 
             // Checks if the angleOfIncidence value is an integer
-            if ((int.TryParse(angleOfIncidence.Text, out int _)
-                | double.TryParse(angleOfIncidence.Text, out double _))
-                && (Convert.ToDouble(angleOfIncidence.Text) <= 90 && 
-                Convert.ToDouble(angleOfIncidence.Text) >= 0))
+            if (double.TryParse(angleOfIncidence.Text, out double _)
+                && (Convert.ToDouble(angleOfIncidence.Text) <= 90 
+                && Convert.ToDouble(angleOfIncidence.Text) >= 0
+                && Convert.ToDouble(refractiveIndex1.Text) >= 0
+                && Convert.ToDouble(refractiveIndex2.Text) >= 0
+                
+                ))
             {
                 // Converts aOI text from string to integer for x coord use
                 double angleI = (System.Convert.ToDouble(angleOfIncidence.Text))
@@ -248,7 +252,7 @@ namespace Physics_Simulation
 
             else if (angleOfIncidence.Text == "")
             {
-                aoR.Text = "Angle of reflection";
+                aoR.Text = "Angle of Refraction";
                 initDraw();
             }
         }
@@ -263,17 +267,22 @@ namespace Physics_Simulation
         // Refractive index 2
         private void refractiveIndex1_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void rI1Text_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void aoR_Click(object sender, EventArgs e)
         {
-            
+          
+        }
+
+        private void refractiveIndex1_TextChanged_1(object sender, EventArgs e)
+        {
+           
         }
     }
 }
