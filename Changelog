@@ -3,36 +3,42 @@ Changelog:
 
 Prototype No.1:
 
+V1.3.2 Hotfix, 28/03/24
+  Brought back top level bar
+  You can now tab out of the programm
+  For the next update will fix wierd animations and fix multiple windows staying open in the background
+
+
+
 V1.3.2, 26/03/24
+  Added ability to change inital refractive index
+  Added a border around the angle of reflection box
+  Added default starting refractive indexts of "1"
+  Increased the length of the "normal" line to be better scaled with the rest of the app
+  Optimised loaction of the refraction diagram
+  Fixed bug where you could enter negative values for all inputs
+  Fixed bug where app would crash when entering a string into the refractive indexes
+  Fixed bug where app would crash if you leave the refractive indexs blank
+  Fixed spacing issues with the boxes
+  Fixed angle of reflection displaying wrong infomation in certain cases
 
-Added ability to change inital refractive index
-Added a border around the angle of reflection box
-Added default starting refractive indexts of "1"
-Increased the length of the "normal" line to be better scaled with the rest of the app
-Optimised loaction of the refraction diagram
-Fixed bug where you could enter negative values for all inputs
-Fixed bug where app would crash when entering a string into the refractive indexes
-Fixed bug where app would crash if you leave the refractive indexs blank
-Fixed spacing issues with the boxes
-Fixed angle of reflection displaying wrong infomation in certain cases
-
-KNOWN BUGS: leaving refrative index boxes blank causes the app to crash
+  KNOWN BUGS: leaving refrative index boxes blank causes the app to crash
 
 V1.3.1, 25/03/24
-Added refracted ray angle stat
-Leaving AoI textbox blank clears the screen
+  Added refracted ray angle stat
+  Leaving AoI textbox blank clears the screen
 
 V1.3.0, 24/03/24
-Changed horziontal line to represent the normal
-Added ability to change refractive index of second material
-Added refracted line
+  Changed horziontal line to represent the normal
+  Added ability to change refractive index of second material
+  Added refracted line
 
 V1.2.1, 23/03/24
-Added back borderlines via graphics  instead of by tableLayoutPanel
-Changed input to angle between 0 and 90 inclusive for aOI line
-Increased aOI line quality
-Reordered and resized textboxes for interactive mode for refracton to be more consistant
-Changed angle of incidence line colour to red
+  Added back borderlines via graphics  instead of by tableLayoutPanel
+  Changed input to angle between 0 and 90 inclusive for aOI line
+  Increased aOI line quality
+  Reordered and resized textboxes for interactive mode for refracton to be more consistant
+  Changed angle of incidence line colour to red
 
 
 V1.2.0, 22/03/24
