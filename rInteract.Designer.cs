@@ -52,8 +52,8 @@
             this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.bArrow, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -81,7 +81,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 341);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(529, 217);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(354, 217);
             this.flowLayoutPanel1.TabIndex = 6;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -155,9 +155,9 @@
             this.aoR.AutoSize = true;
             this.aoR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.aoR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aoR.Location = new System.Drawing.Point(220, 186);
+            this.aoR.Location = new System.Drawing.Point(220, 157);
             this.aoR.Name = "aoR";
-            this.aoR.Size = new System.Drawing.Size(218, 31);
+            this.aoR.Size = new System.Drawing.Size(124, 60);
             this.aoR.TabIndex = 2;
             this.aoR.Text = "Angle of Refraction";
             this.aoR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

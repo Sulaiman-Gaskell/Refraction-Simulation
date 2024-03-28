@@ -20,10 +20,9 @@ namespace Physics_Simulation
             InitializeComponent();
             //Maximises the form and stops the user
             //from resizing it
-            //and removes the topbar
             this.WindowState = FormWindowState.Maximized;
-            //this.FormBorderStyle = FormBorderStyle.None;
-            //this.TopMost = true;
+          
+            
 
 
 
@@ -124,6 +123,8 @@ namespace Physics_Simulation
        
             // Creates a new graphic object
             Graphics g = tableLayoutPanel1.CreateGraphics();
+
+           
 
            
             // Draws a vertical line
