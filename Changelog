@@ -1,11 +1,16 @@
 Changelog:
 
+Next phase:
+
+V1.3.4, 31/03/24
+  Brought back smooth transision animations
+  Added bottom line interactive mode for refraction to seprerate the window with the bottom whitespace
 
 Prototype No.1:
 
 V1.3.3, 28/03/24
   Brought back top level bar
-  You can now tab out of the programm
+  You can now tab out of the program
   For the next update will fix wierd animations and fix multiple windows staying open in the background
 
 
