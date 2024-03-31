@@ -69,14 +69,14 @@ namespace Physics_Simulation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             // Opens the refraction widnow and keeps this open
             // Without being seen in the taskbar
-            
+         
             rInteract rInteract = new rInteract();
             rInteract.ShowDialog();
-
-            this.Show();
+           
+    
 
         }
 
@@ -94,7 +94,7 @@ namespace Physics_Simulation
         // For fade in animation
         private void fadeIn_Tick(object sender, EventArgs e)
         {
-            // Gradually increase the form's opacity
+            // Fixes wierd scaling animation bug when maximising the window
             if (this.Opacity < 1)
             {
                 this.Opacity += 0.1;

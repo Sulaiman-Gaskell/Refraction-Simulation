@@ -21,6 +21,7 @@ namespace Physics_Simulation
             //Maximises the form and stops the user
             //from resizing it
             this.WindowState = FormWindowState.Maximized;
+            
           
             
 
@@ -57,10 +58,12 @@ namespace Physics_Simulation
                 ClientSize.Width / 150, ClientSize.Height / 50, 0, 0);
 
             refractiveIndex2.Margin = new System.Windows.Forms.Padding(
-                ClientSize.Width / 150, ClientSize.Height / 50, 0, 0);
+                ClientSize.Width / 150, ClientSize.Height / 50,
+                0, ClientSize.Height / 100);
 
             aoR.Margin = new System.Windows.Forms.Padding(
-                ClientSize.Width / 150, ClientSize.Height / 10, 0, 0);
+                ClientSize.Width / 150, ClientSize.Height / 10, 
+                0, ClientSize.Height / 100);
 
 
 
@@ -102,8 +105,8 @@ namespace Physics_Simulation
 
         private void bArrow_Click_1(object sender, EventArgs e)
         {
-            // triggers the fade out timer
             fadeOut.Enabled = true;
+           
 
         }
 
@@ -126,7 +129,10 @@ namespace Physics_Simulation
 
            
 
-           
+           // Draws bottom line for athsetics
+           g.DrawLine(pen, 0, ClientSize.Height, ClientSize.Width, ClientSize.Height);
+
+
             // Draws a vertical line
             g.DrawLine(pen,this.Width / 100 * 70, 0,
                 this.Width / 100 * 70, this.Height);
@@ -141,7 +147,7 @@ namespace Physics_Simulation
 
         private void fade_Tick(object sender, EventArgs e)
         {
-            // Gradually increase the form's opacity
+            // Fades in the form
             if (this.Opacity < 1)
             {
                 this.Opacity += 0.1;
@@ -155,19 +161,9 @@ namespace Physics_Simulation
         }
 
 
-        // For the fade out animation
+        // For the fade out animation  (now obselete)
         private void fadeOut_Tick(object sender, EventArgs e)
         {
-            if (this.Opacity > 0)
-            {
-                // Slowely decrease opacity
-                this.Opacity -= 0.1;
-            }
-            else
-            {
-                // When opacity == o close the form
-                this.Close();
-            }
         }
 
         private void aOIText_Click(object sender, EventArgs e)
@@ -284,6 +280,20 @@ namespace Physics_Simulation
         private void refractiveIndex1_TextChanged_1(object sender, EventArgs e)
         {
            
+        }
+
+        // For the fade out animation
+        private void fadeOut_Tick_1(object sender, EventArgs e)
+        {
+            if (this.Opacity > 0 )
+            {
+                this.Opacity -= 0.1;
+            }
+            else
+            {
+                // When the opacity is 0, close the form
+                this.Close();
+            }
         }
     }
 }

@@ -185,7 +185,7 @@
             // fadeOut
             // 
             this.fadeOut.Interval = 1;
-            this.fadeOut.Tick += new System.EventHandler(this.fadeOut_Tick);
+            this.fadeOut.Tick += new System.EventHandler(this.fadeOut_Tick_1);
             // 
             // rInteract
             // 
@@ -199,6 +199,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimizeBox = false;
             this.Name = "rInteract";
+            this.Opacity = 0D;
             this.Text = "rInteract";
             this.Load += new System.EventHandler(this.rInteract_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -214,7 +215,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.PictureBox bArrow;
         private System.Windows.Forms.Timer fadeIn;
-        private System.Windows.Forms.Timer fadeOut;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label aOIText;
         private System.Windows.Forms.TextBox angleOfIncidence;
@@ -223,5 +223,6 @@
         private System.Windows.Forms.Label aoR;
         private System.Windows.Forms.TextBox refractiveIndex1;
         private System.Windows.Forms.Label rI1Text;
+        private System.Windows.Forms.Timer fadeOut;
     }
 }
