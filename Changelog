@@ -2,6 +2,11 @@ Changelog:
 
 Next phase:
 
+V1.4.0, 03/04/24
+  Refreshed the back arrow design and removed the slight background tint
+  Fixed bug where interactive diagram would't update after changing refractive index 1 or 2
+
+
 V1.3.4, 31/03/24
   Brought back smooth transision animations
   Added bottom line interactive mode for refraction to seprerate the window with the bottom whitespace
