@@ -116,7 +116,7 @@
             this.bArrow.Location = new System.Drawing.Point(4, 4);
             this.bArrow.Margin = new System.Windows.Forms.Padding(4);
             this.bArrow.Name = "bArrow";
-            this.bArrow.Size = new System.Drawing.Size(140, 100);
+            this.bArrow.Size = new System.Drawing.Size(104, 100);
             this.bArrow.TabIndex = 4;
             this.bArrow.TabStop = false;
             this.bArrow.Click += new System.EventHandler(this.bArrow_Click);
@@ -146,7 +146,7 @@
             this.ClientSize = new System.Drawing.Size(960, 540);
             this.Controls.Add(this.refractionMenu);
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -154,7 +154,7 @@
             this.Name = "Refraction";
             this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Refraction";
+            this.Text = "V1.3.5";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Refraction_Load);
             this.refractionMenu.ResumeLayout(false);

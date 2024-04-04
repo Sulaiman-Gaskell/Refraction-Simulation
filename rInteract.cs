@@ -61,9 +61,6 @@ namespace Physics_Simulation
                 ClientSize.Width / 150, ClientSize.Height / 50,
                 0, ClientSize.Height / 100);
 
-            aoR.Margin = new System.Windows.Forms.Padding(
-                ClientSize.Width / 150, ClientSize.Height / 10, 
-                0, ClientSize.Height / 100);
 
 
 
@@ -95,11 +92,14 @@ namespace Physics_Simulation
             // Keeps sizing consistent
             refractiveIndex1.Size = aOIText.Size;
             refractiveIndex2.Size = aOIText.Size;
+
+           
            
 
             // Calls the text_changed  method when text changes
             angleOfIncidence.TextChanged += angleOfIncidence_TextChanged;
 
+            
         }
 
 
@@ -113,6 +113,7 @@ namespace Physics_Simulation
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
+            
             // Calls the initDraw method to draw some lines
             initDraw();
         }
@@ -120,6 +121,7 @@ namespace Physics_Simulation
         // For drawing the static lines
         private void initDraw()
         {
+
             // Creates a white pen
             Pen pen = new Pen(Color.White, 3);
 
@@ -129,8 +131,6 @@ namespace Physics_Simulation
 
            
 
-           // Draws bottom line for athsetics
-           g.DrawLine(pen, 0, ClientSize.Height, ClientSize.Width, ClientSize.Height);
 
 
             // Draws a vertical line
@@ -176,6 +176,8 @@ namespace Physics_Simulation
             DrawRays();
         }
 
+    
+
         private void DrawRays()
         {
             // Creates a pen object to draw the incident ray
@@ -193,7 +195,8 @@ namespace Physics_Simulation
             // Clears any graphic objects on the rays 'canvas'
             rays.Clear(Color.Black);
 
-            initDraw();
+            // Refreshes the tableLayout panel to redraw everthing
+            tableLayoutPanel1.Refresh();
 
             // Validation
             if (double.TryParse(angleOfIncidence.Text, out double _)
@@ -232,7 +235,16 @@ namespace Physics_Simulation
                 else { angleR = Math.PI / 2; }
 
                 double angleRDegrees = Math.Round(angleR * 180 / Math.PI,2);
-                aoR.Text = angleRDegrees.ToString() + "°";
+                if (double.IsNaN(angleRDegrees))
+                {
+                    aoR.Text = "What have you done!!!";
+                }
+                else
+                {
+                    aoR.Text = angleRDegrees.ToString() + "°";
+                }
+
+           
               
                 double x2R = x1 + Math.Cos(angleR) * length;
                 double y2R = y1 + Math.Sin(angleR) * length;
@@ -244,7 +256,8 @@ namespace Physics_Simulation
                 // Draws the aOR ray
                 rays.DrawLine(aORPen, (float)x1, (float)y1, (float)x2R,(float)y2R);
 
-                
+                double oldx2I = x2I;
+                double oldy2I = y2I;
             }
 
             else if (angleOfIncidence.Text == "")
@@ -264,7 +277,10 @@ namespace Physics_Simulation
         // Refractive index 2
         private void refractiveIndex1_TextChanged(object sender, EventArgs e)
         {
-            
+            // Calls the DrawRays method whenever text is changed in the textbox
+            // Twice for odd bug to be fixed
+            DrawRays();
+            DrawRays();
         }
 
         private void rI1Text_Click(object sender, EventArgs e)
@@ -279,7 +295,10 @@ namespace Physics_Simulation
 
         private void refractiveIndex1_TextChanged_1(object sender, EventArgs e)
         {
-           
+            // Calls the DrawRays method whenever text is changed in the textbox
+            // Twice for odd bug to be fixed
+            DrawRays();
+            DrawRays();
         }
 
         // For the fade out animation
@@ -294,6 +313,22 @@ namespace Physics_Simulation
                 // When the opacity is 0, close the form
                 this.Close();
             }
+        }
+
+        private void torch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // For changing each individual cell
+        private void tableLayoutPanel1_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
+        {
+            // If it is [0,1] then the bg of it will change to grey
+            if (e.Column == 0 && e.Row == 1) 
+            {
+                e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
+            }
+          
         }
     }
 }
