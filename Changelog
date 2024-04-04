@@ -2,10 +2,17 @@ Changelog:
 
 Next phase:
 
-V1.4.0, 03/04/24
+V1.3.5, 03/04/24
   Refreshed the back arrow design and removed the slight background tint
+  Added white border around the input boxes in interactive mode for refraction
+  Added a fun error message when a number cannot be produced for the AoR
+  Updated some window names to match version number
+  Moved angle of refracton stat to bottom right hand corner
+  Removed bottom line and taskbar padding
+  Removed icons from the top_level bar
+  Removed border from angle of Refraction box
   Fixed bug where interactive diagram would't update after changing refractive index 1 or 2
-
+  
 
 V1.3.4, 31/03/24
   Brought back smooth transision animations
