@@ -21,6 +21,9 @@ namespace Physics_Simulation
             //Maximises the form and stops the user
             //from resizing it
             this.WindowState = FormWindowState.Maximized;
+
+            // Disables annoying windows sounds
+            this.AcceptButton = null;
             
           
             
@@ -98,6 +101,9 @@ namespace Physics_Simulation
 
             // Calls the text_changed  method when text changes
             angleOfIncidence.TextChanged += angleOfIncidence_TextChanged;
+
+            // Puts the back arrow in the top left hand corner
+            bArrow.Location = new Point(0, 0);
 
             
         }
@@ -204,8 +210,10 @@ namespace Physics_Simulation
                 && double.TryParse(refractiveIndex2.Text, out double _)
                 && Convert.ToDouble(angleOfIncidence.Text) <= 90 
                 && Convert.ToDouble(angleOfIncidence.Text) >= 0
-                && Convert.ToDouble(refractiveIndex1.Text) >= 0
-                && Convert.ToDouble(refractiveIndex2.Text) >= 0
+                && Convert.ToDouble(refractiveIndex1.Text) >= 1
+                && Convert.ToDouble(refractiveIndex1.Text) <= 2
+                && Convert.ToDouble(refractiveIndex2.Text) >= 1
+                && Convert.ToDouble(refractiveIndex2.Text) <= 2
                 )
             {
                 // Converts aOI text from string to integer for x coord use

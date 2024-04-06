@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Waves.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Waves.Designer.cs">
+      <DependentUpon>Waves.cs</DependentUpon>
+    </Compile>
     <Compile Include="rInteract.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Waves.resx">
+      <DependentUpon>Waves.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Refraction.resx">
       <DependentUpon>Refraction.cs</DependentUpon>
     </EmbeddedResource>

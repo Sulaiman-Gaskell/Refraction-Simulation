@@ -159,7 +159,7 @@
             this.bArrow.Location = new System.Drawing.Point(3, 4);
             this.bArrow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bArrow.Name = "bArrow";
-            this.bArrow.Size = new System.Drawing.Size(102, 105);
+            this.bArrow.Size = new System.Drawing.Size(90, 105);
             this.bArrow.TabIndex = 5;
             this.bArrow.TabStop = false;
             this.bArrow.Click += new System.EventHandler(this.bArrow_Click_1);
@@ -203,7 +203,7 @@
             this.Name = "rInteract";
             this.Opacity = 0D;
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Text = "V1.3.5";
+            this.Text = "V1.3.6";
             this.Load += new System.EventHandler(this.rInteract_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

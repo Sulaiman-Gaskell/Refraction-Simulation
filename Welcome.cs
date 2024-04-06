@@ -18,6 +18,9 @@ namespace Physics_Simulation
 
             // Sets the opactiy to 0 for the fade in animation
             this.Opacity = 0;
+
+            // Disables annoying windows sounds
+            this.AcceptButton = null;
         }
 
         private void button1_Click(object sender, EventArgs e) // Refraction
@@ -47,6 +50,11 @@ namespace Physics_Simulation
         {
             // Triggers the fade in animation
             fadeIn.Enabled = true;
+
+            // Chnages font to a nicer one for both buttons
+            wTxt.Font = new Font ("Microsoft Sans Serif",16);
+            refraction.Font = new Font("Microsoft Sans Serif", 11);
+            waves.Font = new Font("Microsoft Sans Serif",11);
         }
 
         // For fade in animation
@@ -67,7 +75,21 @@ namespace Physics_Simulation
 
         private void waves_Click(object sender, EventArgs e)
         {
+            // Hides the Welcome Form (Form1)
+            this.Hide();
 
+            // Creates an instance of the refraction form when
+            // the button is pressed
+            Waves waves = new Waves();
+            waves.ShowDialog();
+
+            // When the refaction instance is closed by the user
+            // the Welcome menu will open again
+            this.Show();
+            // When the screen is next shown the opactiy is set to 0
+            // and the fade in animation is triggered
+            this.Opacity = 0;
+            fadeIn.Enabled = true;
         }
     }
 }

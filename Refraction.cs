@@ -18,22 +18,13 @@ namespace Physics_Simulation
 
             // Maximises the window and removes the top bar
             this.WindowState = FormWindowState.Maximized;
-            //this.FormBorderStyle = FormBorderStyle.None;
-            //this.TopMost = true;
+       
 
             // Triggers Refracion_Resize when a resize event happens
             this.Resize += Refraction_Resize;
 
-            // Sets font size for text based on clients resolution
-            menuText.Font = new Font(menuText.Font.FontFamily,
-                ClientSize.Width / 15);
-
-            
-           
-            interact.Font = new Font(interact.Font.FontFamily, 
-                ClientSize.Width / 15);
-            questions.Font = new Font(questions.Font.FontFamily,
-                ClientSize.Width / 15);
+            // Disables annoying windows sounds
+            this.AcceptButton = null;
 
 
         }
@@ -49,6 +40,23 @@ namespace Physics_Simulation
 
             // Start the fade to animate the form
             fadeIn.Enabled = true;
+
+            // Puts the back arrow in the top left hand corner
+            bArrow.Location = new Point(0, 0);
+
+            // Sets font size for text based on clients resolution
+            menuText.Font = new Font(menuText.Font.FontFamily,
+                ClientSize.Width / 30);
+
+
+
+            interact.Font = new Font(interact.Font.FontFamily,
+                ClientSize.Width / 30);
+            questions.Font = new Font(questions.Font.FontFamily,
+                ClientSize.Width / 30);
+
+            // Sizes the back arrow
+            bArrow.Size = new Size(ClientSize.Height / 10, ClientSize.Height / 10);
         }
 
 

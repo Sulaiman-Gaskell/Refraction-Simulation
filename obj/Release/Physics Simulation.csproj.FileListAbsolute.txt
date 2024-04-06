@@ -22,3 +22,4 @@ C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Phy
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics Simulation.csproj.CoreCompileInputs.cache
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics Simulation.exe
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics Simulation.pdb
+C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.Waves.resources
