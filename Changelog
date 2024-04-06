@@ -3,7 +3,8 @@ Changelog:
 Next phase:
 
 V1.3.6, 06,04,24
-  Updated font style for all text
+  Added menu for waves (no more development for waves will happen for a while)
+  Slight adjustment to welcome screen font sizes
   Attempt to disable default window sounds have been made (unstable)
   Fixed bug where you could input any refractive index greater than 0 (now 1-2 inlcusive)
 
