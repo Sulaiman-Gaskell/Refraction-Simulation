@@ -2,6 +2,11 @@ Changelog:
 
 Next phase:
 
+V1.3.6, 06,04,24
+  Updated font style for all text
+  Attempt to disable default window sounds have been made (unstable)
+  Fixed bug where you could input any refractive index greater than 0 (now 1-2 inlcusive)
+
 V1.3.5, 03/04/24
   Refreshed the back arrow design and removed the slight background tint
   Added white border around the input boxes in interactive mode for refraction
