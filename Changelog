@@ -2,6 +2,9 @@ Changelog:
 
 Next phase:
 
+V1.3.6A, 12/04/24
+  Refractive index stat now provides details as to why there is no angle of refracton, if none is produced
+
 V1.3.6, 06,04,24
   Added menu for waves (no more development for waves will happen for a while)
   Slight adjustment to welcome screen font sizes
