@@ -3,7 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\welcome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|c:\\users\\sulai\\source\\repos\\sulaiman-gaskell\\physics-simulations\\waves.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|solutionrelative:waves.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\refraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|solutionrelative:refraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\rinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|solutionrelative:rinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|c:\\users\\sulai\\source\\repos\\sulaiman-gaskell\\physics-simulations\\welcome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|solutionrelative:welcome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -13,14 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\refraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|solutionrelative:refraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|c:\\users\\sulai\\source\\repos\\sulaiman-gaskell\\physics-simulations\\rinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|solutionrelative:rinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\refraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|solutionrelative:refraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulation.csproj|C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\welcome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,11 +38,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "Waves.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\Waves.cs",
+              "RelativeDocumentMoniker": "Waves.cs",
+              "ToolTip": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\Waves.cs [Design]",
+              "RelativeToolTip": "Waves.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T14:09:29.003Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Refraction.cs",
               "DocumentMoniker": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\Refraction.cs",
               "RelativeDocumentMoniker": "Refraction.cs",
@@ -51,7 +67,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Refraction.cs [Design]",
               "DocumentMoniker": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\Refraction.cs",
               "RelativeDocumentMoniker": "Refraction.cs",
@@ -63,7 +79,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Welcome.cs",
               "DocumentMoniker": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\Welcome.cs",
               "RelativeDocumentMoniker": "Welcome.cs",
@@ -76,7 +92,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "rInteract.cs [Design]",
               "DocumentMoniker": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\rInteract.cs",
               "RelativeDocumentMoniker": "rInteract.cs",
@@ -88,7 +104,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Welcome.cs [Design]",
               "DocumentMoniker": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\Welcome.cs",
               "RelativeDocumentMoniker": "Welcome.cs",
@@ -100,7 +116,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "rInteract.cs",
               "DocumentMoniker": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\rInteract.cs",
               "RelativeDocumentMoniker": "rInteract.cs",

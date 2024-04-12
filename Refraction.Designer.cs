@@ -154,7 +154,7 @@
             this.Name = "Refraction";
             this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "V1.3.6";
+            this.Text = "V1.3.6A";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Refraction_Load);
             this.refractionMenu.ResumeLayout(false);

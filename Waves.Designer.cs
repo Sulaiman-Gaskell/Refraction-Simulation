@@ -141,7 +141,7 @@
             this.MinimizeBox = false;
             this.Name = "Waves";
             this.Opacity = 0D;
-            this.Text = "V1.3.6";
+            this.Text = "V1.3.6A";
             this.Load += new System.EventHandler(this.Waves_Load);
             this.refractionMenu.ResumeLayout(false);
             this.refractionMenu.PerformLayout();
