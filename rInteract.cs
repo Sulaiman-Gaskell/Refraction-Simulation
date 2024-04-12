@@ -245,7 +245,7 @@ namespace Physics_Simulation
                 double angleRDegrees = Math.Round(angleR * 180 / Math.PI,2);
                 if (double.IsNaN(angleRDegrees))
                 {
-                    aoR.Text = "What have you done!!!";
+                    aoR.Text = "The ray is not refracted, only reflected";
                 }
                 else
                 {
