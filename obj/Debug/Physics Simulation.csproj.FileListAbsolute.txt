@@ -23,3 +23,4 @@ C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\obj\Debug\Ph
 C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\obj\Debug\Physics Simulation.exe
 C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\obj\Debug\Physics Simulation.pdb
 C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.Waves.resources
+C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\obj\Debug\Physics_Simulation.Waves.resources

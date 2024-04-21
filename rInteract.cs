@@ -91,7 +91,8 @@ namespace Physics_Simulation
 
             refractiveIndex2.Font = new Font(angleOfIncidence.Font.
                 FontFamily, ClientSize.Width / 80);
-            
+
+
             // Keeps sizing consistent
             refractiveIndex1.Size = aOIText.Size;
             refractiveIndex2.Size = aOIText.Size;
@@ -104,24 +105,28 @@ namespace Physics_Simulation
 
             // Puts the back arrow in the top left hand corner
             bArrow.Location = new Point(0, 0);
+            bArrow.Size = new Size(ClientSize.Height / 10, ClientSize.Height / 10);
 
             
+           
+          
         }
 
 
         private void bArrow_Click_1(object sender, EventArgs e)
         {
             fadeOut.Enabled = true;
-           
 
         }
 
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-            
+
             // Calls the initDraw method to draw some lines
             initDraw();
+           
+
         }
 
         // For drawing the static lines
@@ -135,16 +140,13 @@ namespace Physics_Simulation
             // Creates a new graphic object
             Graphics g = tableLayoutPanel1.CreateGraphics();
 
-           
-
-
 
             // Draws a vertical line
             g.DrawLine(pen,this.Width / 100 * 70, 0,
                 this.Width / 100 * 70, this.Height);
 
 
-            // Draws a  dotted horizontal line for the normal
+            // Draws a dotted horizontal line for the normal
             pen.DashStyle = DashStyle.Dot;
 
             g.DrawLine(pen, this.Width / 100 * 50, this.Height / 100 * 60,
@@ -188,9 +190,13 @@ namespace Physics_Simulation
         {
             // Creates a pen object to draw the incident ray
             Pen aOIPen = new Pen(Color.Red,6);
+    
 
             // Creates another pen but for the refracted ray
             Pen aORPen = new Pen(Color.Green, 6);
+
+            // Creates another pen but for the reflected ray
+            Pen aORePen = new Pen(Color.Green, 6);
 
             // Creates a graphic 'canvas' to draw on the tableLayoutPanel
             Graphics rays = tableLayoutPanel1.CreateGraphics();
@@ -230,7 +236,10 @@ namespace Physics_Simulation
                 double x2I = x1 - Math.Cos(angleI) * length;
                 double y2I = y1 - Math.Sin(angleI) * length;
 
-                
+                // For the reflected line
+                double x2Re = x1 - Math.Cos(angleI + Math.PI / 2) * length;
+                double y2Re = y1 - Math.Sin(angleI + Math.PI / 2) * length;
+
 
                 // Calculates the angle of refracion
                 double angleR;
@@ -245,15 +254,31 @@ namespace Physics_Simulation
                 double angleRDegrees = Math.Round(angleR * 180 / Math.PI,2);
                 if (double.IsNaN(angleRDegrees))
                 {
-                    aoR.Text = "The ray is not refracted, only reflected";
+                    aoR.Text = "Total internal reflection has occured";
+
+                    // Draws the end point for the refected ray
+                    rays.DrawLine(aORePen, (float)x1, (float)y1, (float)x2Re, (float)y2Re);
+                   
                 }
                 else
                 {
                     aoR.Text = angleRDegrees.ToString() + "°";
+
+                    // Draws a  dotted horizontal line for the normal if angle != 0 or 90
+                    if (Convert.ToInt32(angleOfIncidence.Text) != 0
+                        && Convert.ToInt32(angleOfIncidence.Text) != 90)
+                    {
+                        // Sets the attriubtes of the pen and draws the ray
+                        aORePen.DashStyle = DashStyle.Dot;
+                        aORePen.Width = 4;
+                        rays.DrawLine(aORePen, (float)x1, (float)y1, (float)x2Re, (float)y2Re);
+                    }
+                   
+
                 }
 
-           
-              
+
+                // Calculates the end point for the aoR
                 double x2R = x1 + Math.Cos(angleR) * length;
                 double y2R = y1 + Math.Sin(angleR) * length;
           
@@ -337,6 +362,11 @@ namespace Physics_Simulation
                 e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
             }
           
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
