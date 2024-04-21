@@ -2,17 +2,23 @@ Changelog:
 
 Next phase:
 
-V1.3.6A, 12/04/24
+V1.4.0, BETA1, 21/04,24
+  Added dotted line of reflection, becomes thicker and not dotted if total internal reflection occurs
+  Refraction diagram now displays an inital simulation when first opening up that page (broken)
+  Updated angle of refraction text to give better info of what happens when there is no refraction happening
+  The bArrow is now stationary when tranisitoning between screens (looks better)
+
+V1.3.6A, HOTFIX, 12/04/24
   Refractive index stat now provides details as to why there is no angle of refracton, if none is produced
   No release made for this update
 
-V1.3.6, 06,04,24
+V1.3.6, STABLE, 06,04,24
   Added menu for waves (no more development for waves will happen for a while)
   Slight adjustment to welcome screen font sizes
   Attempt to disable default window sounds have been made (unstable)
   Fixed bug where you could input any refractive index greater than 0 (now 1-2 inlcusive)
 
-V1.3.5, 03/04/24
+V1.3.5, STABLE, 03/04/24
   Refreshed the back arrow design and removed the slight background tint
   Added white border around the input boxes in interactive mode for refraction
   Added a fun error message when a number cannot be produced for the AoR
@@ -24,20 +30,20 @@ V1.3.5, 03/04/24
   Fixed bug where interactive diagram would't update after changing refractive index 1 or 2
   
 
-V1.3.4, 31/03/24
+V1.3.4, STABLE, 31/03/24
   Brought back smooth transision animations
   Added bottom line interactive mode for refraction to seprerate the window with the bottom whitespace
 
 Prototype No.1:
 
-V1.3.3, 28/03/24
+V1.3.3, UNSTABLE, 28/03/24
   Brought back top level bar
   You can now tab out of the program
   For the next update will fix wierd animations and fix multiple windows staying open in the background
 
 
 
-V1.3.2, 26/03/24
+V1.3.2, UNSTABLE, 26/03/24
   Added ability to change inital refractive index
   Added a border around the angle of reflection box
   Added default starting refractive indexts of "1"
@@ -51,16 +57,16 @@ V1.3.2, 26/03/24
 
   KNOWN BUGS: leaving refrative index boxes blank causes the app to crash
 
-V1.3.1, 25/03/24
+V1.3.1, STABLE, 25/03/24
   Added refracted ray angle stat
   Leaving AoI textbox blank clears the screen
 
-V1.3.0, 24/03/24
+V1.3.0, STABLE, 24/03/24
   Changed horziontal line to represent the normal
   Added ability to change refractive index of second material
   Added refracted line
 
-V1.2.1, 23/03/24
+V1.2.1, STABLE, 23/03/24
   Added back borderlines via graphics  instead of by tableLayoutPanel
   Changed input to angle between 0 and 90 inclusive for aOI line
   Increased aOI line quality
@@ -68,30 +74,30 @@ V1.2.1, 23/03/24
   Changed angle of incidence line colour to red
 
 
-V1.2.0, 22/03/24
+V1.2.0, UNSTABLE, 22/03/24
   Added experimental line movements to interactive mode for refraction
   Removed border lines from interactive mode for refracton (for now)
   Decreased refaction main menu font size (scaling issues)
 
 
-V1.1.3, 19/03/24 (Final update pre interact mode):
+V1.1.3, UNSTABLE, 19/03/24 (Final update pre interact mode):
   Improved and added animations everywhere to improve fluidity
   Submenus (not including welcome menu) now stay open in the background to allow users to create multiple instances if they wish and to allow for fluid animations
   Added references file
 
-V1.1.2, 15/03/24:
+V1.1.2, UNSTABLE, 15/03/24:
   Added back arrow for certain menus
   Removed the top bar from some menus
   Reworked 'Welcome!' text to be more inline with the  theme
   Increased font size for the welcome menu
 
-V1.1.1, 12/03/24:
+V1.1.1, UNSTABLE, 12/03/24:
   Switched to dark mode, using black bg and white fg.
   Added button scaling on the main Refraxction menu
   Prepared code for interact mode
 
 
-V1.1, 10/03/24:
+V1.1, UNSTABLE, 10/03/24:
   Added varying label size on the refracton menu
   Added non varying (for now) button on the refaction menu
   Added slight blue tint to the background
