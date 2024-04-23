@@ -4,7 +4,7 @@ Next phase:
 
 V1.4.1, BETA2, ?/04/24
   Updated colour scheme througout the system
-  Added colour and animations to the refraction main menu (BETA)
+  Added colour and animations to the refraction main menu
   Fixed refraction diagram on startup not showing
   Smoother transition between the welcome menu and adjecent menus
   Stopped strings being able to be entered in textboxes
