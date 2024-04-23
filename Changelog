@@ -6,7 +6,7 @@ V1.4.0, BETA1, 21/04,24
   Added dotted line of reflection, becomes thicker and not dotted if total internal reflection occurs
   Refraction diagram now displays an inital simulation when first opening up that page (broken)
   Updated angle of refraction text to give better info of what happens when there is no refraction happening
-  The bArrow is now stationary when tranisitoning between screens (looks better)
+  The bArrow is now stationary when transitioning between screens (looks better)
 
 V1.3.6A, HOTFIX, 12/04/24
   Refractive index stat now provides details as to why there is no angle of refracton, if none is produced
