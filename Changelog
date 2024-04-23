@@ -6,6 +6,7 @@ V1.4.1, BETA2, 23/04/24
   Fixed refraction diagram on startup not showing
   Smoother transition between the welcome menu and adjecent menus
   Stopped strings being able to be entered in textboxes
+  Fixed bug where app crashes when entering in an angle that is a decimal for angle of incidence
   Refractive angle label now resets when an inalvid angle is entered
 
 
