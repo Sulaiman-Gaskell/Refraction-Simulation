@@ -25,13 +25,12 @@ namespace Physics_Simulation
 
         private void button1_Click(object sender, EventArgs e) // Refraction
         {
-            // Hides the Welcome Form (Form1)
-            this.Hide();
+        
 
             // Creates an instance of the refraction form when
             // the button is pressed
             Refraction refraction = new Refraction();
-            refraction.ShowDialog();
+            refraction.Show();
 
             // When the refaction instance is closed by the user
             // the Welcome menu will open again
@@ -75,13 +74,12 @@ namespace Physics_Simulation
 
         private void waves_Click(object sender, EventArgs e)
         {
-            // Hides the Welcome Form (Form1)
-            this.Hide();
+          
 
             // Creates an instance of the refraction form when
             // the button is pressed
             Waves waves = new Waves();
-            waves.ShowDialog();
+            waves.Show();
 
             // When the refaction instance is closed by the user
             // the Welcome menu will open again

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -34,6 +35,8 @@ namespace Physics_Simulation
 
         private void rInteract_Load(object sender, EventArgs e)
         {
+    
+
             // for fade in effect
             // Set the form's initial opacity to 0 (completely transparent)
             this.Opacity = 0;
@@ -164,6 +167,10 @@ namespace Physics_Simulation
             // When fully solid stop the timer
             else
             {
+                // Draws the inital diagram
+                // Called twice to fix wierd bug
+                DrawRays();
+                DrawRays();
                 fadeIn.Enabled = false;
             }
         }
@@ -189,14 +196,14 @@ namespace Physics_Simulation
         private void DrawRays()
         {
             // Creates a pen object to draw the incident ray
-            Pen aOIPen = new Pen(Color.Red,6);
+            Pen aOIPen = new Pen(Color.Blue,6);
     
 
             // Creates another pen but for the refracted ray
-            Pen aORPen = new Pen(Color.Green, 6);
+            Pen aORPen = new Pen(Color.Orange, 6);
 
             // Creates another pen but for the reflected ray
-            Pen aORePen = new Pen(Color.Green, 6);
+            Pen aORePen = new Pen(Color.Blue, 6);
 
             // Creates a graphic 'canvas' to draw on the tableLayoutPanel
             Graphics rays = tableLayoutPanel1.CreateGraphics();
@@ -265,8 +272,8 @@ namespace Physics_Simulation
                     aoR.Text = angleRDegrees.ToString() + "°";
 
                     // Draws a  dotted horizontal line for the normal if angle != 0 or 90
-                    if (Convert.ToInt32(angleOfIncidence.Text) != 0
-                        && Convert.ToInt32(angleOfIncidence.Text) != 90)
+                    if (Convert.ToDouble(angleOfIncidence.Text) != 0
+                        && Convert.ToDouble(angleOfIncidence.Text) != 90)
                     {
                         // Sets the attriubtes of the pen and draws the ray
                         aORePen.DashStyle = DashStyle.Dot;
@@ -289,11 +296,10 @@ namespace Physics_Simulation
                 // Draws the aOR ray
                 rays.DrawLine(aORPen, (float)x1, (float)y1, (float)x2R,(float)y2R);
 
-                double oldx2I = x2I;
-                double oldy2I = y2I;
+         
             }
 
-            else if (angleOfIncidence.Text == "")
+            else
             {
                 aoR.Text = "Angle of Refraction";
                 initDraw();
@@ -367,6 +373,52 @@ namespace Physics_Simulation
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void angleOfIncidence_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Stops the user from entering any values other than 0-9, backspace and full stop 
+            if ((e.KeyChar > (char)Keys.D9 || 
+                 e.KeyChar < (char)Keys.D0) && 
+                 e.KeyChar != (char)Keys.Back &&
+                 e.KeyChar != '.')
+            {
+                 e.Handled = true;
+            }
+        }
+
+        private void refractiveIndex1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Stops the user from entering any values other than 0-9, backspace and full stop 
+            if ((e.KeyChar > (char)Keys.D9 ||
+                 e.KeyChar < (char)Keys.D0) &&
+                 e.KeyChar != (char)Keys.Back &&
+                 e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void refractiveIndex2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Stops the user from entering any values other than 0-9, backspace and full stop 
+            if ((e.KeyChar > (char)Keys.D9 ||
+                 e.KeyChar < (char)Keys.D0) &&
+                 e.KeyChar != (char)Keys.Back &&
+                 e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void bArrow_MouseDown(object sender, MouseEventArgs e)
+        {
+            bArrow.Size = new Size(ClientSize.Height / 7, ClientSize.Height / 7);
+        }
+
+        private void bArrow_MouseLeave(object sender, EventArgs e)
+        {
+            bArrow.Size = new Size(ClientSize.Height / 10, ClientSize.Height / 10);
         }
     }
 }

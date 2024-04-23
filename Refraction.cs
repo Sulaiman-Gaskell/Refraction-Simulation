@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -31,6 +34,8 @@ namespace Physics_Simulation
 
         private void Refraction_Load(object sender, EventArgs e)
         {
+ 
+
             // Makes the form full screen
             this.WindowState = FormWindowState.Maximized;
 
@@ -57,6 +62,11 @@ namespace Physics_Simulation
 
             // Sizes the back arrow
             bArrow.Size = new Size(ClientSize.Height / 10, ClientSize.Height / 10);
+
+
+  
+
+            animateObjects.Enabled = true;
         }
 
 
@@ -65,14 +75,14 @@ namespace Physics_Simulation
             // Calls the folliwng methods to:
             // Recenter the layout when full screened
             
-            refractionMenu.Dock = DockStyle.Fill;
+             refractionMenu.Dock = DockStyle.Fill;
           
 
         }
 
         private void refractionMenu_Paint(object sender, PaintEventArgs e)
         {
-          
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -80,9 +90,10 @@ namespace Physics_Simulation
             
             // Opens the refraction widnow and keeps this open
             // Without being seen in the taskbar
-         
+
             rInteract rInteract = new rInteract();
             rInteract.ShowDialog();
+            menuText.ForeColor = Color.White;
            
     
 
@@ -135,6 +146,96 @@ namespace Physics_Simulation
         private void menuText_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        // For menuText animation
+        private int tickCount = 0;
+        private void menuTextGrow_Tick(object sender, EventArgs e)
+        {
+            string label = "Choose a mode:";
+        
+            if (tickCount < label.Length)
+            {
+                menuText.Text = label.Substring(0,tickCount);
+                tickCount++;
+            }
+            else
+            {
+                interact.BackColor = Color.Blue;
+                questions.BackColor = Color.Orange;
+                animateObjects.Enabled = false;
+            }
+
+
+
+        }
+
+        // ALL BELOW FOR ANIMATIONS
+        private void interact_MouseDown(object sender, MouseEventArgs e)
+        {
+            menuText.ForeColor = Color.Blue;
+
+
+            interact.Font = new Font(interact.Font.FontFamily,
+                ClientSize.Width / 25);
+        }
+
+        private void interact_MouseLeave(object sender, EventArgs e)
+        {
+            menuText.ForeColor= Color.White;
+         
+
+            interact.Font = new Font(interact.Font.FontFamily,
+                ClientSize.Width / 30);
+        }
+
+        private void questions_MouseDown(object sender, MouseEventArgs e)
+        {
+            questions.Font = new Font(questions.Font.FontFamily,
+                 ClientSize.Width / 25);
+
+        }
+
+        private void questions_MouseLeave(object sender, EventArgs e)
+        {
+            menuText.ForeColor = (Color.White);
+
+            questions.Font = new Font(questions.Font.FontFamily,
+                ClientSize.Width / 30);
+        }
+
+        // Useless
+        private void interact_MouseHover(object sender, EventArgs e)
+        {
+        }
+
+        // Useless
+        private void questions_MouseHover(object sender, EventArgs e)
+        {
+        }
+
+        private void bArrow_MouseEnter(object sender, EventArgs e)
+        {
+        }
+
+        private void bArrow_MouseLeave(object sender, EventArgs e)
+        {
+            bArrow.Size = new Size(ClientSize.Height / 10, ClientSize.Height / 10);
+        }
+
+        private void interact_MouseEnter(object sender, EventArgs e)
+        {
+            menuText.ForeColor = (Color.Blue);
+        }
+
+        private void questions_MouseEnter(object sender, EventArgs e)
+        {
+            menuText.ForeColor = (Color.Orange);
+        }
+
+        private void bArrow_MouseDown(object sender, MouseEventArgs e)
+        {
+            bArrow.Size = new Size(ClientSize.Height / 7, ClientSize.Height / 7);
         }
     }
 
