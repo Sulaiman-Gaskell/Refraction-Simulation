@@ -2,7 +2,13 @@ Changelog:
 
 Next phase:
 
-V1.4.0, BETA1, 21/04,24
+V1.4.1, BETA2, 23/04/24
+  Bugfixes: fixed refraction diagram on startup
+  Smoother transition between the welcome menu and adjecent menus
+  Stopped strings being able to be entered in textboxes
+
+
+V1.4.0, BETA1, 21/04/24
   Added dotted line of reflection, becomes thicker and not dotted if total internal reflection occurs
   Refraction diagram now displays an inital simulation when first opening up that page (broken)
   Updated angle of refraction text to give better info of what happens when there is no refraction happening
