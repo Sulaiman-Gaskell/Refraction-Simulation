@@ -2,12 +2,15 @@ Changelog:
 
 Next phase:
 
-V1.4.1, BETA2, 23/04/24
+V1.4.1, BETA2, ?/04/24
+  Updated colour scheme througout the system
+  Added colour and animations to the refraction main menu (BETA)
   Fixed refraction diagram on startup not showing
   Smoother transition between the welcome menu and adjecent menus
   Stopped strings being able to be entered in textboxes
   Fixed bug where app crashes when entering in an angle that is a decimal for angle of incidence
   Refractive angle label now resets when an inalvid angle is entered
+  Known bug: Redundent windows stay open in taskbar
 
 
 V1.4.0, BETA1, 21/04/24
