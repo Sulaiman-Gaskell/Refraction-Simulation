@@ -2,7 +2,13 @@ Changelog:
 
 Next phase:
 
-V1.4.1, BETA2, ?/04/24
+V1.4.2, ?/04/24 (ANIMATIONS AND VISUALS FOCUS)
+  Updated colour scheme to be more user friendly
+  Updated welcome screen with animations and visuals
+  Improved visuals and animatons on the refracton menu screen
+  Updated back arrow animation
+
+V1.4.1, BETA2, 23/04/24
   Updated colour scheme througout the system
   Added colour and animations to the refraction main menu
   Fixed refraction diagram on startup not showing
