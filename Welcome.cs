@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -25,16 +26,22 @@ namespace Physics_Simulation
 
         private void button1_Click(object sender, EventArgs e) // Refraction
         {
-        
+            
+            this.ShowInTaskbar = false;
+            this.Hide();
 
             // Creates an instance of the refraction form when
             // the button is pressed
             Refraction refraction = new Refraction();
-            refraction.Show();
+            refraction.ShowDialog();
+            this.ShowInTaskbar = true;
+            this.Show();
+     
+
 
             // When the refaction instance is closed by the user
             // the Welcome menu will open again
-            this.Show();
+            
             // When the screen is next shown the opactiy is set to 0
             // and the fade in animation is triggered
             this.Opacity = 0;

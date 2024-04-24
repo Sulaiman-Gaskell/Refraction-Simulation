@@ -118,8 +118,8 @@ namespace Physics_Simulation
 
         private void bArrow_Click_1(object sender, EventArgs e)
         {
-            fadeOut.Enabled = true;
-
+                fadeOut.Enabled = true;
+            
         }
 
 
@@ -196,14 +196,14 @@ namespace Physics_Simulation
         private void DrawRays()
         {
             // Creates a pen object to draw the incident ray
-            Pen aOIPen = new Pen(Color.Blue,6);
+            Pen aOIPen = new Pen(Color.Teal,6);
     
 
             // Creates another pen but for the refracted ray
-            Pen aORPen = new Pen(Color.Orange, 6);
+            Pen aORPen = new Pen(Color.Maroon, 6);
 
             // Creates another pen but for the reflected ray
-            Pen aORePen = new Pen(Color.Blue, 6);
+            Pen aORePen = new Pen(Color.Teal, 6);
 
             // Creates a graphic 'canvas' to draw on the tableLayoutPanel
             Graphics rays = tableLayoutPanel1.CreateGraphics();
@@ -351,6 +351,7 @@ namespace Physics_Simulation
             {
                 // When the opacity is 0, close the form
                 this.Close();
+               
             }
         }
 
@@ -413,7 +414,7 @@ namespace Physics_Simulation
 
         private void bArrow_MouseDown(object sender, MouseEventArgs e)
         {
-            bArrow.Size = new Size(ClientSize.Height / 7, ClientSize.Height / 7);
+            bArrow.Size = new Size(ClientSize.Height / 13, ClientSize.Height / 13);
         }
 
         private void bArrow_MouseLeave(object sender, EventArgs e)

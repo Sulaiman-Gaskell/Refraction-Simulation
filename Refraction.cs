@@ -87,13 +87,18 @@ namespace Physics_Simulation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             // Opens the refraction widnow and keeps this open
             // Without being seen in the taskbar
 
+        
             rInteract rInteract = new rInteract();
             rInteract.ShowDialog();
+           
             menuText.ForeColor = Color.White;
+           
+            
+            
            
     
 
@@ -154,7 +159,7 @@ namespace Physics_Simulation
         {
             string label = "Choose a mode:";
         
-            if (tickCount < label.Length)
+            if (tickCount <= label.Length)
             {
                 menuText.Text = label.Substring(0,tickCount);
                 tickCount++;
@@ -162,7 +167,7 @@ namespace Physics_Simulation
             else
             {
                 interact.BackColor = Color.Blue;
-                questions.BackColor = Color.Orange;
+                questions.BackColor = Color.OrangeRed;
                 animateObjects.Enabled = false;
             }
 
@@ -177,7 +182,7 @@ namespace Physics_Simulation
 
 
             interact.Font = new Font(interact.Font.FontFamily,
-                ClientSize.Width / 25);
+                ClientSize.Width / 35);
         }
 
         private void interact_MouseLeave(object sender, EventArgs e)
@@ -192,7 +197,9 @@ namespace Physics_Simulation
         private void questions_MouseDown(object sender, MouseEventArgs e)
         {
             questions.Font = new Font(questions.Font.FontFamily,
-                 ClientSize.Width / 25);
+                 ClientSize.Width / 35);
+
+            menuText.ForeColor = Color.OrangeRed;
 
         }
 
@@ -225,17 +232,20 @@ namespace Physics_Simulation
 
         private void interact_MouseEnter(object sender, EventArgs e)
         {
-            menuText.ForeColor = (Color.Blue);
+            interact.Font = new Font(interact.Font.FontFamily,
+                ClientSize.Width / 25);
+           
         }
 
         private void questions_MouseEnter(object sender, EventArgs e)
         {
-            menuText.ForeColor = (Color.Orange);
+            questions.Font = new Font(questions.Font.FontFamily,
+                ClientSize.Width / 25);
         }
 
         private void bArrow_MouseDown(object sender, MouseEventArgs e)
         {
-            bArrow.Size = new Size(ClientSize.Height / 7, ClientSize.Height / 7);
+            bArrow.Size = new Size(ClientSize.Height / 13, ClientSize.Height / 13);
         }
     }
 
