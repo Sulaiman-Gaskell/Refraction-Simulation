@@ -7,7 +7,8 @@ V1.4.2, ?/04/24 (ANIMATIONS AND VISUALS FOCUS)
   Updated welcome screen with animations and visuals
   Improved visuals and animatons on the refracton menu screen
   Updated back arrow animation
-  Fixed redundent screens being shown in taskbar
+  Improved perforance of the welcome screen 
+  Stopped the welcome screen from showing when not required
   
  
 
