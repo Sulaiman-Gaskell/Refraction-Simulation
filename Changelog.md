@@ -2,7 +2,7 @@ Changelog:
 
 Next phase:
 
-V1.4.2, 27/04/24, (Visuals and animations focus)
+V1.4.2, STABLE, 27/04/24, (Visuals and animations focus)
   Updated colour scheme to be more user friendly
   Redesigned the welcome screen to fit in with the new colouring theme (Animated welcome screen coming soon)
   Improved and added new visuals and animatons on the refracton menu screen
