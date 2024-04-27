@@ -64,7 +64,7 @@
             this.refractionMenu.Controls.Add(this.bArrow, 0, 0);
             this.refractionMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.refractionMenu.Location = new System.Drawing.Point(0, 0);
-            this.refractionMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.refractionMenu.Margin = new System.Windows.Forms.Padding(4);
             this.refractionMenu.Name = "refractionMenu";
             this.refractionMenu.RowCount = 4;
             this.refractionMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -82,7 +82,7 @@
             this.interact.Cursor = System.Windows.Forms.Cursors.Hand;
             this.interact.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.interact.Location = new System.Drawing.Point(204, 94);
-            this.interact.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.interact.Margin = new System.Windows.Forms.Padding(4);
             this.interact.Name = "interact";
             this.interact.Size = new System.Drawing.Size(392, 127);
             this.interact.TabIndex = 0;
@@ -97,7 +97,7 @@
             this.questions.Cursor = System.Windows.Forms.Cursors.Hand;
             this.questions.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.questions.Location = new System.Drawing.Point(204, 229);
-            this.questions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.questions.Margin = new System.Windows.Forms.Padding(4);
             this.questions.Name = "questions";
             this.questions.Size = new System.Drawing.Size(392, 127);
             this.questions.TabIndex = 2;
@@ -121,7 +121,7 @@
             this.bArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bArrow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bArrow.Location = new System.Drawing.Point(4, 4);
-            this.bArrow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bArrow.Margin = new System.Windows.Forms.Padding(4);
             this.bArrow.Name = "bArrow";
             this.bArrow.Size = new System.Drawing.Size(104, 82);
             this.bArrow.TabIndex = 4;
@@ -142,7 +142,7 @@
             this.MinimizeBox = false;
             this.Name = "Waves";
             this.Opacity = 0D;
-            this.Text = "V1.4.1, BETA2";
+            this.Text = "V1.4.2";
             this.Load += new System.EventHandler(this.Waves_Load);
             this.refractionMenu.ResumeLayout(false);
             this.refractionMenu.PerformLayout();

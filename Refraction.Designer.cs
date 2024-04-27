@@ -39,6 +39,11 @@
             this.fadeIn = new System.Windows.Forms.Timer(this.components);
             this.fadeOut = new System.Windows.Forms.Timer(this.components);
             this.animateObjects = new System.Windows.Forms.Timer(this.components);
+            this.popOutInteract = new System.Windows.Forms.Timer(this.components);
+            this.popInInteract = new System.Windows.Forms.Timer(this.components);
+            this.popOutQuestions = new System.Windows.Forms.Timer(this.components);
+            this.popInQuestions = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.refractionMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bArrow)).BeginInit();
             this.SuspendLayout();
@@ -151,8 +156,28 @@
             // animateObjects
             // 
             this.animateObjects.Enabled = true;
-            this.animateObjects.Interval = 30;
+            this.animateObjects.Interval = 13;
             this.animateObjects.Tick += new System.EventHandler(this.menuTextGrow_Tick);
+            // 
+            // popOutInteract
+            // 
+            this.popOutInteract.Interval = 13;
+            this.popOutInteract.Tick += new System.EventHandler(this.popOutInteract_Tick);
+            // 
+            // popInInteract
+            // 
+            this.popInInteract.Interval = 13;
+            this.popInInteract.Tick += new System.EventHandler(this.popInInteract_Tick);
+            // 
+            // popOutQuestions
+            // 
+            this.popOutQuestions.Interval = 13;
+            this.popOutQuestions.Tick += new System.EventHandler(this.popOutQuestions_Tick);
+            // 
+            // popInQuestions
+            // 
+            this.popInQuestions.Interval = 13;
+            this.popInQuestions.Tick += new System.EventHandler(this.popInQuestions_Tick);
             // 
             // Refraction
             // 
@@ -171,7 +196,7 @@
             this.Name = "Refraction";
             this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "V1.4.1, BETA2";
+            this.Text = "V1.4.2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Refraction_Load);
             this.refractionMenu.ResumeLayout(false);
@@ -192,5 +217,10 @@
         private System.Windows.Forms.Timer fadeIn;
         private System.Windows.Forms.Timer fadeOut;
         private System.Windows.Forms.Timer animateObjects;
+        private System.Windows.Forms.Timer popOutInteract;
+        private System.Windows.Forms.Timer popInInteract;
+        private System.Windows.Forms.Timer popOutQuestions;
+        private System.Windows.Forms.Timer popInQuestions;
+        private System.Windows.Forms.Timer timer1;
     }
 }

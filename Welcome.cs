@@ -54,13 +54,22 @@ namespace Physics_Simulation
 
         private void welcomeScreen_Load(object sender, EventArgs e)
         {
+            // Sets the colours for the buttons
+            refraction.BackColor = Color.Blue;
+            waves.BackColor = Color.OrangeRed;
+
+
             // Triggers the fade in animation
             fadeIn.Enabled = true;
 
             // Chnages font to a nicer one for both buttons
-            wTxt.Font = new Font ("Microsoft Sans Serif",16);
-            refraction.Font = new Font("Microsoft Sans Serif", 11);
-            waves.Font = new Font("Microsoft Sans Serif",11);
+            wTxt.Font = new Font ("Microsoft Sans Serif",21);
+            refraction.Font = new Font("Microsoft Sans Serif", 20);
+            waves.Font = new Font("Microsoft Sans Serif", 20);
+
+            // Keeps sizing consistant
+            waves.Size = refraction.Size;
+
         }
 
         // For fade in animation

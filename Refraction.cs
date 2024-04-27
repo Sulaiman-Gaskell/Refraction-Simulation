@@ -34,6 +34,12 @@ namespace Physics_Simulation
 
         private void Refraction_Load(object sender, EventArgs e)
         {
+            // Disables the buttons during the animation
+            interact.Enabled = false;
+            questions.Enabled = false;
+
+            interact.BackColor = Color.Blue;
+            questions.BackColor = Color.OrangeRed;
  
 
             // Makes the form full screen
@@ -153,7 +159,8 @@ namespace Physics_Simulation
 
         }
 
-        // For menuText animation
+        
+        // For menuText animation and fontsize initally growing
         private int tickCount = 0;
         private void menuTextGrow_Tick(object sender, EventArgs e)
         {
@@ -162,12 +169,18 @@ namespace Physics_Simulation
             if (tickCount <= label.Length)
             {
                 menuText.Text = label.Substring(0,tickCount);
+
+                interact.Font = new Font(interact.Font.FontFamily,
+                ClientSize.Width / (tickCount + 16));
+                questions.Font = new Font(questions.Font.FontFamily,
+                ClientSize.Width / (tickCount + 16));
+
                 tickCount++;
             }
             else
             {
-                interact.BackColor = Color.Blue;
-                questions.BackColor = Color.OrangeRed;
+                interact.Enabled = true;
+                questions.Enabled = true;
                 animateObjects.Enabled = false;
             }
 
@@ -188,10 +201,9 @@ namespace Physics_Simulation
         private void interact_MouseLeave(object sender, EventArgs e)
         {
             menuText.ForeColor= Color.White;
-         
 
-            interact.Font = new Font(interact.Font.FontFamily,
-                ClientSize.Width / 30);
+
+            popInInteract.Enabled = true;
         }
 
         private void questions_MouseDown(object sender, MouseEventArgs e)
@@ -207,8 +219,7 @@ namespace Physics_Simulation
         {
             menuText.ForeColor = (Color.White);
 
-            questions.Font = new Font(questions.Font.FontFamily,
-                ClientSize.Width / 30);
+            popInQuestions.Enabled = true;
         }
 
         // Useless
@@ -232,20 +243,94 @@ namespace Physics_Simulation
 
         private void interact_MouseEnter(object sender, EventArgs e)
         {
-            interact.Font = new Font(interact.Font.FontFamily,
-                ClientSize.Width / 25);
-           
+            popOutInteract.Enabled = true;
         }
 
         private void questions_MouseEnter(object sender, EventArgs e)
         {
-            questions.Font = new Font(questions.Font.FontFamily,
-                ClientSize.Width / 25);
+            popOutQuestions.Enabled = true;
         }
 
         private void bArrow_MouseDown(object sender, MouseEventArgs e)
         {
             bArrow.Size = new Size(ClientSize.Height / 13, ClientSize.Height / 13);
+        }
+
+
+        // Animates the interact text
+        // Slowely increases the font size
+        private int popOutSize = 29;
+        private void popOutInteract_Tick(object sender, EventArgs e)
+        {
+            if (popOutSize >= 25)
+            {
+                interact.Font = new Font(interact.Font.FontFamily,
+                ClientSize.Width / popOutSize);
+                popOutSize--;
+                
+            }
+            else
+            {
+                popOutSize = 29;
+                popOutInteract.Enabled = false;
+            }
+        
+        }
+
+        // Slowely decreases the font size when the mouse leaves the interact box
+        private int popInSize = 25;
+        private void popInInteract_Tick(object sender, EventArgs e)
+        {
+            if (popInSize <= 30)
+            {
+                interact.Font = new Font(interact.Font.FontFamily,
+                ClientSize.Width / popInSize);
+                popInSize++;
+
+            }
+            else
+            {
+                popInSize = 25;
+                popInInteract.Enabled = false;
+            }
+
+        }
+
+        // Slowely increases the font size of the questions mode when hovering over it
+        // TEMP: CHANGES IT TO COMING SOON
+        private void popOutQuestions_Tick(object sender, EventArgs e)
+        {
+            if (popOutSize >= 25)
+            {
+                questions.Text = "Coming Soon!";
+                questions.Font = new Font(questions.Font.FontFamily,
+                ClientSize.Width / popOutSize);
+                popOutSize--;
+
+            }
+            else
+            {
+                popOutSize = 29;
+                popOutQuestions.Enabled = false;
+            }
+        }
+
+        // Slowely decreases the font size and changes the text back to questions
+        private void popInQuestions_Tick(object sender, EventArgs e)
+        {
+            if (popInSize <= 30)
+            {
+                questions.Text = "Questions";
+                questions.Font = new Font(questions.Font.FontFamily,
+                ClientSize.Width / popInSize);
+                popInSize++;
+
+            }
+            else
+            {
+                popInSize = 25;
+                popInQuestions.Enabled = false;
+            }
         }
     }
 

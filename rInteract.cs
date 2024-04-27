@@ -196,14 +196,14 @@ namespace Physics_Simulation
         private void DrawRays()
         {
             // Creates a pen object to draw the incident ray
-            Pen aOIPen = new Pen(Color.Teal,6);
+            Pen aOIPen = new Pen(Color.Blue,6);
     
 
             // Creates another pen but for the refracted ray
-            Pen aORPen = new Pen(Color.Maroon, 6);
+            Pen aORPen = new Pen(Color.OrangeRed, 6);
 
             // Creates another pen but for the reflected ray
-            Pen aORePen = new Pen(Color.Teal, 6);
+            Pen aORePen = new Pen(Color.Blue, 6);
 
             // Creates a graphic 'canvas' to draw on the tableLayoutPanel
             Graphics rays = tableLayoutPanel1.CreateGraphics();
@@ -357,7 +357,6 @@ namespace Physics_Simulation
 
         private void torch_Click(object sender, EventArgs e)
         {
-
         }
 
         // For changing each individual cell

@@ -209,7 +209,7 @@
             this.Name = "rInteract";
             this.Opacity = 0D;
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Text = "V1.4.1, BETA2";
+            this.Text = "V1.4.2";
             this.Load += new System.EventHandler(this.rInteract_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
