@@ -2,11 +2,13 @@ Changelog:
 
 Next phase:
 
-V1.4.2, BETA 3 ?/04/24 (ANIMATIONS AND VISUALS FOCUS)
+V1.4.2, 27/04/24, (Visuals and animations focus)
   Updated colour scheme to be more user friendly
-  Improved visuals and animatons on the refracton menu screen
+  Redesigned the welcome screen to fit in with the new colouring theme (Animated welcome screen coming soon)
+  Improved and added new visuals and animatons on the refracton menu screen
   Updated back arrow animation
   Improved perforance of the welcome screen 
+  Decreased rendering time of the refraction menu screen and disabled buttons during animation time
   Stopped the welcome screen from showing when not required
   
  
@@ -35,7 +37,7 @@ V1.3.6A, HOTFIX, 12/04/24
 V1.3.6, STABLE, 06,04,24
   Added menu for waves (no more development for waves will happen for a while)
   Slight adjustment to welcome screen font sizes
-  Attempt to disable default window sounds have been made (unstable)
+  Attempt to disable default window sounds has been made (unstable)
   Fixed bug where you could input any refractive index greater than 0 (now 1-2 inlcusive)
 
 V1.3.5, STABLE, 03/04/24
