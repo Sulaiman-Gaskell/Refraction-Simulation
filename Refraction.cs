@@ -38,8 +38,8 @@ namespace Physics_Simulation
             interact.Enabled = false;
             questions.Enabled = false;
 
-            interact.BackColor = Color.Blue;
-            questions.BackColor = Color.OrangeRed;
+            interact.BackColor = Color.White;
+            questions.BackColor = Color.White;
  
 
             // Makes the form full screen
@@ -217,6 +217,7 @@ namespace Physics_Simulation
 
         private void questions_MouseLeave(object sender, EventArgs e)
         {
+            questions.BackColor = Color.White;
             menuText.ForeColor = (Color.White);
 
             popInQuestions.Enabled = true;
@@ -248,6 +249,7 @@ namespace Physics_Simulation
 
         private void questions_MouseEnter(object sender, EventArgs e)
         {
+            questions.BackColor = Color.OrangeRed;
             popOutQuestions.Enabled = true;
         }
 
