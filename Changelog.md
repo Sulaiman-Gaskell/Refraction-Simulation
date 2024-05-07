@@ -2,9 +2,10 @@ Changelog:
 
 Next phase:
 
-V1.4.3, STABLE, ?/05/24
+V1.4.3, STABLE, 07/05/24
   Added animatons to welcome screen
-  Reworked animations on refraction meniu screen keep simplicty of older versions of the simulation
+  Reworked animations on refraction menu screen keep simplicty of older versions of the simulation
+  Changed the way menus open up from the main menu for quicker access and speed.
 
 V1.4.2, STABLE, 27/04/24, (Visuals and animations focus)
   Updated colour scheme to be more user friendly
