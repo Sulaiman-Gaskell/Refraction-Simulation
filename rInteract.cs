@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Physics_Simulation.welcomeScreen;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using TextBox = System.Windows.Forms.TextBox;
 
@@ -35,7 +36,9 @@ namespace Physics_Simulation
 
         private void rInteract_Load(object sender, EventArgs e)
         {
-    
+            // Sets the form text as the version num defined by the class
+            // TitleVersion
+            this.Text = TitleVersion.titleVersion;
 
             // for fade in effect
             // Set the form's initial opacity to 0 (completely transparent)
@@ -244,8 +247,8 @@ namespace Physics_Simulation
                 double y2I = y1 - Math.Sin(angleI) * length;
 
                 // For the reflected line
-                double x2Re = x1 - Math.Cos(angleI + Math.PI / 2) * length;
-                double y2Re = y1 - Math.Sin(angleI + Math.PI / 2) * length;
+                double x2Re = x1 + Math.Cos(Math.PI - angleI) * length;
+                double y2Re = y1 + Math.Sin(Math.PI - angleI) * length;
 
 
                 // Calculates the angle of refracion
@@ -415,10 +418,24 @@ namespace Physics_Simulation
         {
             bArrow.Size = new Size(ClientSize.Height / 13, ClientSize.Height / 13);
         }
+     
+
+
+
 
         private void bArrow_MouseLeave(object sender, EventArgs e)
         {
+            // Returns bArrow size back to normal
+            bArrow.BackgroundImageLayout = ImageLayout.Zoom;
             bArrow.Size = new Size(ClientSize.Height / 10, ClientSize.Height / 10);
+        }
+
+        private void bArrow_MouseEnter(object sender, EventArgs e)
+        {
+            // Slighly increases the size of the bArrow
+            bArrow.BackgroundImageLayout = ImageLayout.Stretch;
+
+
         }
     }
 }

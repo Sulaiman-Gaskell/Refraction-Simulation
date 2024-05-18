@@ -168,6 +168,7 @@
             this.bArrow.TabStop = false;
             this.bArrow.Click += new System.EventHandler(this.bArrow_Click_1);
             this.bArrow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bArrow_MouseDown);
+            this.bArrow.MouseEnter += new System.EventHandler(this.bArrow_MouseEnter);
             this.bArrow.MouseLeave += new System.EventHandler(this.bArrow_MouseLeave);
             // 
             // aoR
@@ -209,7 +210,6 @@
             this.Name = "rInteract";
             this.Opacity = 0D;
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Text = "V1.4.2";
             this.Load += new System.EventHandler(this.rInteract_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

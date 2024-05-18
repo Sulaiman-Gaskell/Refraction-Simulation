@@ -12,9 +12,11 @@ using System.Windows.Forms;
 namespace Physics_Simulation
 {
     public partial class welcomeScreen : Form
+
     {
         public welcomeScreen()
         {
+
             InitializeComponent();
 
             // Sets the opactiy to 0 for the fade in animation
@@ -24,20 +26,22 @@ namespace Physics_Simulation
             this.AcceptButton = null;
         }
 
+        public class TitleVersion
+        {
+            public static string titleVersion = "V1.4.3";
+        }
+
         private void button1_Click(object sender, EventArgs e) // Refraction
         {
             refraction.BackColor = Color.White;
-            this.ShowInTaskbar = false;
+            
             this.Hide();
 
             // Creates an instance of the refraction form when
             // the button is pressed
             Refraction refractionWin = new Refraction();
             refractionWin.ShowDialog();
-            this.ShowInTaskbar = true;
             this.Show();
-            refraction.Refresh();
-            
 
 
 
@@ -56,9 +60,9 @@ namespace Physics_Simulation
 
         private void welcomeScreen_Load(object sender, EventArgs e)
         {
-            // Sets the colours for the buttons
-
-
+            // Sets the form text as the version num defined by the class
+            // TitleVersion
+            this.Text = TitleVersion.titleVersion;
 
             // Triggers the fade in animation
             fadeIn.Enabled = true;
@@ -79,7 +83,7 @@ namespace Physics_Simulation
             // Gradually increase the form's opacity
             if (this.Opacity < 1)
             {
-                this.Opacity += 0.1;
+                this.Opacity += 0.3;
             }
 
             // When fully solid stop the timer
@@ -114,7 +118,30 @@ namespace Physics_Simulation
 
         private void refraction_MouseLeave(object sender, EventArgs e)
         {
+            wTxt.ForeColor = Color.White;
             refraction.BackColor = Color.White;
+        }
+
+        private void waves_MouseEnter(object sender, EventArgs e)
+        {
+            waves.BackColor = Color.OrangeRed;
+        }
+
+        private void waves_MouseLeave(object sender, EventArgs e)
+        {
+            waves.BackColor = Color.White;
+            wTxt.ForeColor = Color.White;
+            
+        }
+
+        private void refraction_MouseDown(object sender, MouseEventArgs e)
+        {
+            wTxt.ForeColor = Color.Blue;
+        }
+
+        private void waves_MouseDown(object sender, MouseEventArgs e)
+        {
+            wTxt.ForeColor = Color.OrangeRed;
         }
     }
 }

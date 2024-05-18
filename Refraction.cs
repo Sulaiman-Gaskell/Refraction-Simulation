@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Physics_Simulation.welcomeScreen;
 
 namespace Physics_Simulation
 {
@@ -34,6 +35,10 @@ namespace Physics_Simulation
 
         private void Refraction_Load(object sender, EventArgs e)
         {
+            // Sets the form text as the version num defined by the class
+            // TitleVersion
+            this.Text = TitleVersion.titleVersion;
+
             // Disables the buttons during the animation
             interact.Enabled = false;
             questions.Enabled = false;
@@ -201,7 +206,7 @@ namespace Physics_Simulation
         private void interact_MouseLeave(object sender, EventArgs e)
         {
             menuText.ForeColor= Color.White;
-
+            interact.BackColor = Color.White;
 
             popInInteract.Enabled = true;
         }
@@ -235,15 +240,21 @@ namespace Physics_Simulation
 
         private void bArrow_MouseEnter(object sender, EventArgs e)
         {
+            // Slighly increases the size of the bArrow
+            bArrow.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         private void bArrow_MouseLeave(object sender, EventArgs e)
         {
+            // Returns bArrow size back to normal
+            bArrow.BackgroundImageLayout = ImageLayout.Zoom;
             bArrow.Size = new Size(ClientSize.Height / 10, ClientSize.Height / 10);
+
         }
 
         private void interact_MouseEnter(object sender, EventArgs e)
         {
+            interact.BackColor = Color.Blue;
             popOutInteract.Enabled = true;
         }
 
@@ -332,6 +343,15 @@ namespace Physics_Simulation
             {
                 popInSize = 25;
                 popInQuestions.Enabled = false;
+            }
+        }
+
+        private void refractionMenu_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
+        {
+            // Not using as of now
+            if ((e.Row == 2 | e.Row == 1) && e.Column == 1)
+            {
+                e.Graphics.FillRectangle(new SolidBrush(Color.Black), e.CellBounds);
             }
         }
     }

@@ -69,6 +69,7 @@
             this.refractionMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.refractionMenu.Size = new System.Drawing.Size(960, 540);
             this.refractionMenu.TabIndex = 0;
+            this.refractionMenu.CellPaint += new System.Windows.Forms.TableLayoutCellPaintEventHandler(this.refractionMenu_CellPaint);
             this.refractionMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.refractionMenu_Paint);
             // 
             // interact
@@ -196,7 +197,6 @@
             this.Name = "Refraction";
             this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "V1.4.2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Refraction_Load);
             this.refractionMenu.ResumeLayout(false);

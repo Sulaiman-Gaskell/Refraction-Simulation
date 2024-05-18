@@ -1,15 +1,3 @@
-C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\bin\Debug\Physics Simulation.exe.config
-C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\bin\Debug\Physics Simulation.exe
-C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\bin\Debug\Physics Simulation.pdb
-C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics Simulation.csproj.AssemblyReference.cache
-C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.Refraction.resources
-C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.rInteract.resources
-C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.welcomeScreen.resources
-C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.Properties.Resources.resources
-C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics Simulation.csproj.GenerateResource.cache
-C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics Simulation.csproj.CoreCompileInputs.cache
-C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics Simulation.exe
-C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics Simulation.pdb
 C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\bin\Debug\Physics Simulation.exe.config
 C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\bin\Debug\Physics Simulation.exe
 C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\bin\Debug\Physics Simulation.pdb
@@ -22,5 +10,17 @@ C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\obj\Debug\Ph
 C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\obj\Debug\Physics Simulation.csproj.CoreCompileInputs.cache
 C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\obj\Debug\Physics Simulation.exe
 C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\obj\Debug\Physics Simulation.pdb
-C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.Waves.resources
 C:\Users\sulai\source\repos\Physics Simulations\Physics-Simulations\obj\Debug\Physics_Simulation.Waves.resources
+C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\bin\Debug\Physics Simulation.exe.config
+C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\bin\Debug\Physics Simulation.exe
+C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\bin\Debug\Physics Simulation.pdb
+C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics Simulation.csproj.AssemblyReference.cache
+C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.Waves.resources
+C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.Refraction.resources
+C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.rInteract.resources
+C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.welcomeScreen.resources
+C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.Properties.Resources.resources
+C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics Simulation.csproj.GenerateResource.cache
+C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics Simulation.csproj.CoreCompileInputs.cache
+C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics Simulation.exe
+C:\Users\sulai\Source\Repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics Simulation.pdb

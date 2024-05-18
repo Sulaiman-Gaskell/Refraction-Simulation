@@ -88,6 +88,7 @@
             this.interact.TabIndex = 0;
             this.interact.Text = "Coming soon!";
             this.interact.UseVisualStyleBackColor = true;
+            this.interact.Click += new System.EventHandler(this.interact_Click);
             // 
             // questions
             // 
@@ -142,7 +143,6 @@
             this.MinimizeBox = false;
             this.Name = "Waves";
             this.Opacity = 0D;
-            this.Text = "V1.4.2";
             this.Load += new System.EventHandler(this.Waves_Load);
             this.refractionMenu.ResumeLayout(false);
             this.refractionMenu.PerformLayout();

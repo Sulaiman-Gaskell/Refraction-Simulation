@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Physics_Simulation.welcomeScreen;
 
 namespace Physics_Simulation
 {
@@ -19,6 +20,11 @@ namespace Physics_Simulation
 
         private void Waves_Load(object sender, EventArgs e)
         {
+            // Sets the form text as the version num defined by the class
+            // TitleVersion
+            this.Text = TitleVersion.titleVersion;
+
+
             // Maximises the form
             this.WindowState = FormWindowState.Maximized;
 
@@ -78,6 +84,11 @@ namespace Physics_Simulation
             {
                 this.Close();
             }
+        }
+
+        private void interact_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
