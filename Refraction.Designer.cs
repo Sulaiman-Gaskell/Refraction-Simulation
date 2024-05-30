@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Refraction));
             this.refractionMenu = new System.Windows.Forms.TableLayoutPanel();
+            this.bArrow = new System.Windows.Forms.PictureBox();
             this.interact = new System.Windows.Forms.Button();
             this.questions = new System.Windows.Forms.Button();
             this.menuText = new System.Windows.Forms.Label();
-            this.bArrow = new System.Windows.Forms.PictureBox();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.fadeIn = new System.Windows.Forms.Timer(this.components);
             this.fadeOut = new System.Windows.Forms.Timer(this.components);
@@ -54,10 +54,10 @@
             this.refractionMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.refractionMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.refractionMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.refractionMenu.Controls.Add(this.bArrow, 0, 0);
             this.refractionMenu.Controls.Add(this.interact, 1, 1);
             this.refractionMenu.Controls.Add(this.questions, 1, 2);
             this.refractionMenu.Controls.Add(this.menuText, 1, 0);
-            this.refractionMenu.Controls.Add(this.bArrow, 0, 0);
             this.refractionMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.refractionMenu.Location = new System.Drawing.Point(0, 0);
             this.refractionMenu.Margin = new System.Windows.Forms.Padding(4);
@@ -71,6 +71,23 @@
             this.refractionMenu.TabIndex = 0;
             this.refractionMenu.CellPaint += new System.Windows.Forms.TableLayoutCellPaintEventHandler(this.refractionMenu_CellPaint);
             this.refractionMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.refractionMenu_Paint);
+            // 
+            // bArrow
+            // 
+            this.bArrow.BackColor = System.Drawing.SystemColors.ControlText;
+            this.bArrow.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bArrow.BackgroundImage")));
+            this.bArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bArrow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bArrow.Location = new System.Drawing.Point(3, 4);
+            this.bArrow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bArrow.Name = "bArrow";
+            this.bArrow.Size = new System.Drawing.Size(90, 100);
+            this.bArrow.TabIndex = 6;
+            this.bArrow.TabStop = false;
+            this.bArrow.Click += new System.EventHandler(this.bArrow_Click_1);
+            this.bArrow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bArrow_MouseDown);
+            this.bArrow.MouseEnter += new System.EventHandler(this.bArrow_MouseEnter);
+            this.bArrow.MouseLeave += new System.EventHandler(this.bArrow_MouseLeave);
             // 
             // interact
             // 
@@ -121,22 +138,6 @@
             this.menuText.Size = new System.Drawing.Size(0, 20);
             this.menuText.TabIndex = 3;
             this.menuText.Click += new System.EventHandler(this.menuText_Click_1);
-            // 
-            // bArrow
-            // 
-            this.bArrow.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bArrow.BackgroundImage")));
-            this.bArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.bArrow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bArrow.Location = new System.Drawing.Point(4, 4);
-            this.bArrow.Margin = new System.Windows.Forms.Padding(4);
-            this.bArrow.Name = "bArrow";
-            this.bArrow.Size = new System.Drawing.Size(82, 100);
-            this.bArrow.TabIndex = 4;
-            this.bArrow.TabStop = false;
-            this.bArrow.Click += new System.EventHandler(this.bArrow_Click);
-            this.bArrow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bArrow_MouseDown);
-            this.bArrow.MouseEnter += new System.EventHandler(this.bArrow_MouseEnter);
-            this.bArrow.MouseLeave += new System.EventHandler(this.bArrow_MouseLeave);
             // 
             // toolStripMenuItem1
             // 
@@ -213,7 +214,6 @@
         private System.Windows.Forms.Button questions;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Label menuText;
-        private System.Windows.Forms.PictureBox bArrow;
         private System.Windows.Forms.Timer fadeIn;
         private System.Windows.Forms.Timer fadeOut;
         private System.Windows.Forms.Timer animateObjects;
@@ -222,5 +222,6 @@
         private System.Windows.Forms.Timer popOutQuestions;
         private System.Windows.Forms.Timer popInQuestions;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox bArrow;
     }
 }

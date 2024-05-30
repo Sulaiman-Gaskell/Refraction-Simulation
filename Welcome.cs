@@ -1,13 +1,16 @@
-﻿using System;
+﻿using Physics_Simulation.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace Physics_Simulation
 {
@@ -26,9 +29,15 @@ namespace Physics_Simulation
             this.AcceptButton = null;
         }
 
+        // Used for all winforms so made public
         public class TitleVersion
         {
-            public static string titleVersion = "V1.4.3";
+            public static string titleVersion = "V1.5.0-Beta1";
+        }
+
+        public class LightTheme
+        {
+            public static bool lightTheme = Settings.Default.lightTheme;
         }
 
         private void button1_Click(object sender, EventArgs e) // Refraction
@@ -60,9 +69,28 @@ namespace Physics_Simulation
 
         private void welcomeScreen_Load(object sender, EventArgs e)
         {
+
+
+
             // Sets the form text as the version num defined by the class
             // TitleVersion
             this.Text = TitleVersion.titleVersion;
+
+            // Sets colours acorrdingly
+            if (LightTheme.lightTheme == true)
+            {
+                this.BackColor = Color.White;
+                refraction.BackColor = Color.Black;
+                refraction.ForeColor = Color.White;
+                waves.BackColor = Color.Black;
+                waves.ForeColor = Color.White;
+                wTxt.BackColor = Color.White;
+                wTxt.ForeColor = Color.Black;
+                settings.Image = Properties.Resources.settingsLight;
+                settings.BackColor = Color.Black;
+                
+            }
+
 
             // Triggers the fade in animation
             fadeIn.Enabled = true;
@@ -73,7 +101,10 @@ namespace Physics_Simulation
             waves.Font = new Font("Microsoft Sans Serif", 20);
 
             // Keeps sizing consistant
+            refraction.Height = Convert.ToInt32(wTxt.Height / 1.5);
+            refraction.Width = Convert.ToInt32(wTxt.Width / 1.5);
             waves.Size = refraction.Size;
+            
 
         }
 
@@ -118,8 +149,17 @@ namespace Physics_Simulation
 
         private void refraction_MouseLeave(object sender, EventArgs e)
         {
-            wTxt.ForeColor = Color.White;
-            refraction.BackColor = Color.White;
+            if (LightTheme.lightTheme == true)
+            {
+                refraction.BackColor = Color.Black;
+                wTxt.ForeColor = Color.Black;
+            }
+            else
+            {
+                refraction.BackColor = Color.White;
+                wTxt.ForeColor = Color.White;
+            }
+
         }
 
         private void waves_MouseEnter(object sender, EventArgs e)
@@ -129,8 +169,16 @@ namespace Physics_Simulation
 
         private void waves_MouseLeave(object sender, EventArgs e)
         {
-            waves.BackColor = Color.White;
-            wTxt.ForeColor = Color.White;
+            if (LightTheme.lightTheme == true)
+            {
+                waves.BackColor = Color.Black;
+                wTxt.ForeColor = Color.Black;
+            }
+            else
+            {
+                waves.BackColor = Color.White;
+                wTxt.ForeColor = Color.White;
+            }
             
         }
 
@@ -142,6 +190,44 @@ namespace Physics_Simulation
         private void waves_MouseDown(object sender, MouseEventArgs e)
         {
             wTxt.ForeColor = Color.OrangeRed;
+        }
+
+        private void welcomeScreen_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Settings.Default.lightTheme = LightTheme.lightTheme;
+            Settings.Default.Save();
+        }
+
+        private void wTxt_MouseClick(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void themePrompt_Tick(object sender, EventArgs e)
+        {
+            string defaultText = "Physics Simulations!";
+            if (wTxt.Text == defaultText)
+            {
+                wTxt.Text = "By Sulaiman Gaskell";
+            }
+            else
+            {
+                wTxt.Text = defaultText;
+            }
+        }
+
+        private void settings_Click(object sender, EventArgs e)
+        {
+           
+
+            // Creates an instance of the settings form when
+            // the button is pressed
+            settings settings = new settings();
+            settings.ShowDialog();
+            
+            // When the screen is next shown the opactiy is set to 0
+            // and the fade in animation is triggered
+            this.Opacity = 0;
+            fadeIn.Enabled = true;
         }
     }
 }

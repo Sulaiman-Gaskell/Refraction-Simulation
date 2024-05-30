@@ -36,9 +36,32 @@ namespace Physics_Simulation
 
         private void rInteract_Load(object sender, EventArgs e)
         {
+            // Changes colours based on the them selected
+            if (LightTheme.lightTheme == true)
+            {
+                this.BackColor = Color.White;
+                refractiveIndex1.BackColor = Color.Black;
+                refractiveIndex1.ForeColor = Color.White;
+                refractiveIndex2.BackColor = Color.Black;
+                refractiveIndex2.ForeColor = Color.White;
+                angleOfIncidence.BackColor = Color.Black;
+                angleOfIncidence.ForeColor = Color.White;
+                aoR.ForeColor = Color.Black;
+                aOIText.ForeColor = Color.Black;
+                rI1Text.ForeColor = Color.Black;
+                rI2Text.ForeColor = Color.Black;
+                bArrow.BackgroundImage = Properties.Resources.lightBackArrow;
+                bArrow.BackColor = Color.White;
+
+            }
+            
+
             // Sets the form text as the version num defined by the class
             // TitleVersion
             this.Text = TitleVersion.titleVersion;
+
+            // Removes the x
+            this.ControlBox = false;
 
             // for fade in effect
             // Set the form's initial opacity to 0 (completely transparent)
@@ -138,9 +161,18 @@ namespace Physics_Simulation
         // For drawing the static lines
         private void initDraw()
         {
+            // Changes line col based on the theme
+            Color lineCol = Color.White;
+
+            if (LightTheme.lightTheme == true)
+            {
+                this.BackColor = Color.White;
+                lineCol = Color.Black;
+            }
+
 
             // Creates a white pen
-            Pen pen = new Pen(Color.White, 3);
+            Pen pen = new Pen(lineCol, 3);
 
        
             // Creates a new graphic object
@@ -368,7 +400,12 @@ namespace Physics_Simulation
             // If it is [0,1] then the bg of it will change to grey
             if (e.Column == 0 && e.Row == 1) 
             {
-                e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
+                if (LightTheme.lightTheme == true)
+                {
+                    e.Graphics.FillRectangle(new SolidBrush(Color.Black), e.CellBounds);
+                }
+                else { e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);}
+                
             }
           
         }

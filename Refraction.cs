@@ -35,16 +35,26 @@ namespace Physics_Simulation
 
         private void Refraction_Load(object sender, EventArgs e)
         {
+            // For light theme
+            if (LightTheme.lightTheme == true)
+            {
+                this.BackColor = Color.White;
+                interact.BackColor = Color.Black;
+                interact.ForeColor = Color.White;
+                questions.BackColor = Color.Black;
+                questions.ForeColor = Color.White;
+                menuText.ForeColor = Color.Black;
+                bArrow.BackgroundImage = Properties.Resources.lightBackArrow;
+                bArrow.BackColor = Color.White;
+                
+            }
             // Sets the form text as the version num defined by the class
             // TitleVersion
             this.Text = TitleVersion.titleVersion;
-
-            // Disables the buttons during the animation
-            interact.Enabled = false;
-            questions.Enabled = false;
-
-            interact.BackColor = Color.White;
-            questions.BackColor = Color.White;
+            // Removes the x
+            this.ControlBox = false;
+  
+       
  
 
             // Makes the form full screen
@@ -106,24 +116,17 @@ namespace Physics_Simulation
             rInteract rInteract = new rInteract();
             rInteract.ShowDialog();
            
-            menuText.ForeColor = Color.White;
-           
-            
-            
-           
-    
-
+            if (LightTheme.lightTheme == true)
+            {
+                menuText.ForeColor = Color.Black;
+            }
+            else { menuText.ForeColor = Color.White; }
         }
 
         private void menuText_Click(object sender, EventArgs e)
         {
         }
 
-        private void bArrow_Click(object sender, EventArgs e)
-        {
-            // Calls the fadeOut timer
-            fadeOut.Enabled = true; 
-        }
 
 
         // For fade in animation
@@ -205,8 +208,17 @@ namespace Physics_Simulation
 
         private void interact_MouseLeave(object sender, EventArgs e)
         {
-            menuText.ForeColor= Color.White;
-            interact.BackColor = Color.White;
+            if (LightTheme.lightTheme == true)
+            {
+                menuText.ForeColor = Color.Black;
+                interact.BackColor = Color.Black;
+            }
+            else
+            {
+                menuText.ForeColor = Color.White;
+                interact.BackColor = Color.White;
+            }
+
 
             popInInteract.Enabled = true;
         }
@@ -222,8 +234,16 @@ namespace Physics_Simulation
 
         private void questions_MouseLeave(object sender, EventArgs e)
         {
-            questions.BackColor = Color.White;
-            menuText.ForeColor = (Color.White);
+            if (LightTheme.lightTheme == true)
+            {
+                menuText.ForeColor = Color.Black;
+                questions.BackColor = Color.Black;
+            }
+            else
+            {
+                menuText.ForeColor = Color.White;
+                questions.BackColor = Color.White;
+            }
 
             popInQuestions.Enabled = true;
         }
@@ -238,19 +258,7 @@ namespace Physics_Simulation
         {
         }
 
-        private void bArrow_MouseEnter(object sender, EventArgs e)
-        {
-            // Slighly increases the size of the bArrow
-            bArrow.BackgroundImageLayout = ImageLayout.Stretch;
-        }
 
-        private void bArrow_MouseLeave(object sender, EventArgs e)
-        {
-            // Returns bArrow size back to normal
-            bArrow.BackgroundImageLayout = ImageLayout.Zoom;
-            bArrow.Size = new Size(ClientSize.Height / 10, ClientSize.Height / 10);
-
-        }
 
         private void interact_MouseEnter(object sender, EventArgs e)
         {
@@ -264,10 +272,7 @@ namespace Physics_Simulation
             popOutQuestions.Enabled = true;
         }
 
-        private void bArrow_MouseDown(object sender, MouseEventArgs e)
-        {
-            bArrow.Size = new Size(ClientSize.Height / 13, ClientSize.Height / 13);
-        }
+
 
 
         // Animates the interact text
@@ -353,6 +358,31 @@ namespace Physics_Simulation
             {
                 e.Graphics.FillRectangle(new SolidBrush(Color.Black), e.CellBounds);
             }
+        }
+
+        private void bArrow_Click_1(object sender, EventArgs e)
+        {
+            // Calls the fadeOut timer
+            fadeOut.Enabled = true;
+
+        }
+
+        private void bArrow_MouseDown(object sender, MouseEventArgs e)
+        {
+            bArrow.Size = new Size(ClientSize.Height / 13, ClientSize.Height / 13);
+        }
+
+        private void bArrow_MouseLeave(object sender, EventArgs e)
+        {
+            // Returns bArrow size back to normal
+            bArrow.BackgroundImageLayout = ImageLayout.Zoom;
+            bArrow.Size = new Size(ClientSize.Height / 10, ClientSize.Height / 10);
+        }
+
+        private void bArrow_MouseEnter(object sender, EventArgs e)
+        {
+            // Slighly increases the size of the bArrow
+            bArrow.BackgroundImageLayout = ImageLayout.Stretch;
         }
     }
 
