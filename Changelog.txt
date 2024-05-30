@@ -2,6 +2,15 @@ Changelog:
 
 Next phase:
 
+V1.5.0, BETA1, 30/05/24
+  Added settings button to welcome screen and added settings popout menu
+  Added light theme
+  Added new setting where you can toggle between light and dark themes
+  Added credit text on the welcome menu
+  Improved the layout the layout of the welcome menu
+  Removed useless x button from top right of full screen forms
+
+
 V1.4.3, STABLE, 18/05/24
   Added animatons to welcome screen
   Reworked animations on refraction menu screen keep simplicty of older versions of the simulation
@@ -11,8 +20,8 @@ V1.4.3, STABLE, 18/05/24
   Fixed bug where reflection line was not accurate
   Cleaned up build and misc code improvements
   
-  
 
+  
 V1.4.2, STABLE, 27/04/24, (Visuals and animations focus)
   Updated colour scheme to be more user friendly
   Redesigned the welcome screen to fit in with the new colouring theme (Animated welcome screen coming soon)
