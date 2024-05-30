@@ -2,7 +2,7 @@ Changelog:
 
 Next phase:
 
-V1.5.0, BETA1, ?/05/24
+V1.5.0, BETA1, 30/05/24
   Added settings button to welcome screen and added settings popout menu
   Added light theme
   Added new setting where you can toggle between light and dark themes
