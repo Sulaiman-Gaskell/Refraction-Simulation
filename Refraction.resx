@@ -232,30 +232,30 @@
         AABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="fadeIn.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="fadeIn.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>325, 17</value>
-  </metadata>
-  <metadata name="fadeOut.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="fadeOut.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>442, 17</value>
-  </metadata>
-  <metadata name="animateObjects.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="animateObjects.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>135, 17</value>
-  </metadata>
-  <metadata name="popOutInteract.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="popOutInteract.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>574, 17</value>
-  </metadata>
-  <metadata name="popInInteract.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="popInInteract.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>763, 17</value>
-  </metadata>
-  <metadata name="popOutQuestions.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="popOutQuestions.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>937, 17</value>
-  </metadata>
-  <metadata name="popInQuestions.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="popInQuestions.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>1147, 17</value>
-  </metadata>
-  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>17, 17</value>
-  </metadata>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAgIAAAAEAIAAoCAEAFgAAACgAAACAAAAAAAEAAAEAIAAAAAAAAAABAHudAAB7nQAAAAAAAAAA

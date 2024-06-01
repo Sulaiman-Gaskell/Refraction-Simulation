@@ -32,7 +32,7 @@ namespace Physics_Simulation
         // Used for all winforms so made public
         public class TitleVersion
         {
-            public static string titleVersion = "V1.5.0-Beta1";
+            public static string titleVersion = "V1.5.1";
         }
 
         public class LightTheme
@@ -86,10 +86,11 @@ namespace Physics_Simulation
                 waves.ForeColor = Color.White;
                 wTxt.BackColor = Color.White;
                 wTxt.ForeColor = Color.Black;
-                settings.Image = Properties.Resources.settingsLight;
-                settings.BackColor = Color.Black;
-                
+                theme.Image = Properties.Resources.sun;
+                theme.BackColor = Color.White;
+                theme.ForeColor = Color.White;
             }
+
 
 
             // Triggers the fade in animation
@@ -196,6 +197,7 @@ namespace Physics_Simulation
         {
             Settings.Default.lightTheme = LightTheme.lightTheme;
             Settings.Default.Save();
+            Application.Exit();
         }
 
         private void wTxt_MouseClick(object sender, MouseEventArgs e)
@@ -217,17 +219,32 @@ namespace Physics_Simulation
 
         private void settings_Click(object sender, EventArgs e)
         {
-           
+            // Changes the theme
+            if (LightTheme.lightTheme == true)
+            {
+                LightTheme.lightTheme = false;
+            }
+            else
+            {
+                LightTheme.lightTheme = true;
+            }
 
-            // Creates an instance of the settings form when
-            // the button is pressed
-            settings settings = new settings();
-            settings.ShowDialog();
+            // Applies changes
+            Application.Restart();
+        }
+
+        private void settings_MouseEnter(object sender, EventArgs e)
+        {
+            // Shows a tooltip when hovering over the button
+            if (LightTheme.lightTheme == true)
+            {
+                themeTip.SetToolTip(theme, "Click to switch to dark theme");
+            }
+            else 
+            {
+                themeTip.SetToolTip(theme, "Click to switch to light theme"); 
+            }
             
-            // When the screen is next shown the opactiy is set to 0
-            // and the fade in animation is triggered
-            this.Opacity = 0;
-            fadeIn.Enabled = true;
         }
     }
 }

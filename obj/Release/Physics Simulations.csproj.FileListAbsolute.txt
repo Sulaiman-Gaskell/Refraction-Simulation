@@ -2,7 +2,6 @@ C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\bin\Release\Phy
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\bin\Release\Physics Simulation.exe
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\bin\Release\Physics Simulation.pdb
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics Simulations.csproj.AssemblyReference.cache
-C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.settings.resources
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.Waves.resources
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.Refraction.resources
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.rInteract.resources

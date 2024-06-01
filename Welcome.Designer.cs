@@ -35,8 +35,9 @@
             this.fadeIn = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.wTxt = new System.Windows.Forms.Label();
-            this.settings = new System.Windows.Forms.Button();
+            this.theme = new System.Windows.Forms.Button();
             this.credit = new System.Windows.Forms.Timer(this.components);
+            this.themeTip = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,7 +92,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Controls.Add(this.wTxt, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.refraction, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.settings, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.theme, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.waves, 1, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -119,20 +120,22 @@
             this.wTxt.Click += new System.EventHandler(this.label1_Click);
             this.wTxt.MouseClick += new System.Windows.Forms.MouseEventHandler(this.wTxt_MouseClick);
             // 
-            // settings
+            // theme
             // 
-            this.settings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.settings.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.settings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.settings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.settings.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.settings.Image = ((System.Drawing.Image)(resources.GetObject("settings.Image")));
-            this.settings.Location = new System.Drawing.Point(710, 3);
-            this.settings.Name = "settings";
-            this.settings.Size = new System.Drawing.Size(65, 71);
-            this.settings.TabIndex = 3;
-            this.settings.UseVisualStyleBackColor = false;
-            this.settings.Click += new System.EventHandler(this.settings_Click);
+            this.theme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.theme.BackColor = System.Drawing.SystemColors.ControlText;
+            this.theme.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.theme.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.theme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.theme.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.theme.Image = global::Physics_Simulation.Properties.Resources.moon;
+            this.theme.Location = new System.Drawing.Point(710, 3);
+            this.theme.Name = "theme";
+            this.theme.Size = new System.Drawing.Size(65, 71);
+            this.theme.TabIndex = 3;
+            this.theme.UseVisualStyleBackColor = false;
+            this.theme.Click += new System.EventHandler(this.settings_Click);
+            this.theme.MouseEnter += new System.EventHandler(this.settings_MouseEnter);
             // 
             // credit
             // 
@@ -168,7 +171,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Timer credit;
         private System.Windows.Forms.Label wTxt;
-        private System.Windows.Forms.Button settings;
+        private System.Windows.Forms.Button theme;
+        private System.Windows.Forms.ToolTip themeTip;
     }
 }
 
