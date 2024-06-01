@@ -3,8 +3,8 @@ Changelog:
 Next phase:
 
 V1.5.1, STABLE, 01/06/24
-  Replaced settings button with theme toggle. Hovering over it shows a helpful tooltip
-  Fixed memory issue when toggling themes.
+  Replaced settings button with theme button. Hovering over it shows a helpful tooltip
+  Fixed memory build up when toggling themes
 
 V1.5.0, BETA1, 30/05/24
   Added settings button to welcome screen and added settings popout menu
