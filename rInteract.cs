@@ -132,7 +132,6 @@ namespace Physics_Simulation
             angleOfIncidence.TextChanged += angleOfIncidence_TextChanged;
 
             // Puts the back arrow in the top left hand corner
-            bArrow.Location = new Point(0, 0);
             bArrow.Size = new Size(ClientSize.Height / 10, ClientSize.Height / 10);
 
 
@@ -142,8 +141,9 @@ namespace Physics_Simulation
 
         private void bArrow_Click_1(object sender, EventArgs e)
         {
-                fadeOut.Enabled = true;
-            
+            fadeOut.Enabled = true;
+          
+
         }
 
 
@@ -151,13 +151,14 @@ namespace Physics_Simulation
         {
             // Calls the initDraw method to draw some lines
             initDraw();
-           
+
 
         }
 
         // For drawing the static lines
         private void initDraw()
         {
+
             // Changes line col based on the theme
             Color lineCol = Color.White;
 
@@ -190,6 +191,7 @@ namespace Physics_Simulation
 
         private void fade_Tick(object sender, EventArgs e)
         {
+            
             // Fades in the form
             if (this.Opacity < 1)
             {
@@ -241,10 +243,9 @@ namespace Physics_Simulation
             Graphics rays = tableLayoutPanel1.CreateGraphics();
 
             // Increases the quality of the line 
+            rays.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             rays.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-
-            // Clears any graphic objects on the rays 'canvas'
-            rays.Clear(Color.Black);
+            
 
             // Used as an arrow cap
             AdjustableArrowCap bigArrow = new AdjustableArrowCap
@@ -393,6 +394,7 @@ namespace Physics_Simulation
 
         private void refractiveIndex1_TextChanged_1(object sender, EventArgs e)
         {
+            bArrow.Location = new Point(0, 0);
             // Calls the DrawRays method whenever text is changed in the textbox
             // Twice for odd bug to be fixed
             DrawRays();

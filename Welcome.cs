@@ -43,24 +43,21 @@ namespace Physics_Simulation
         private void button1_Click(object sender, EventArgs e) // Refraction
         {
             refraction.BackColor = Color.White;
-            
-            this.Hide();
 
+      
+            this.Hide();
             // Creates an instance of the refraction form when
             // the button is pressed
             Refraction refractionWin = new Refraction();
             refractionWin.ShowDialog();
             this.Show();
-
-
+            
 
             // When the refaction instance is closed by the user
             // the Welcome menu will open again
 
             // When the screen is next shown the opactiy is set to 0
             // and the fade in animation is triggered
-            this.Opacity = 0;
-            fadeIn.Enabled  = true;
         }
 
         private void label1_Click(object sender, EventArgs e)
