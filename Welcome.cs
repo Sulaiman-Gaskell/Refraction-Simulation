@@ -32,7 +32,7 @@ namespace Physics_Simulation
         // Used for all winforms so made public
         public class TitleVersion
         {
-            public static string titleVersion = "V1.5.1";
+            public static string titleVersion = "V1.5.2";
         }
 
         public class LightTheme

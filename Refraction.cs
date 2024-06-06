@@ -52,8 +52,8 @@ namespace Physics_Simulation
             // TitleVersion
             this.Text = TitleVersion.titleVersion;
             // Removes the x
-            this.ControlBox = false;
-  
+            //this.ControlBox = false;
+         
        
  
 

@@ -55,13 +55,12 @@ namespace Physics_Simulation
 
             }
             
+            // Sets up the glossary loaction
+            
 
             // Sets the form text as the version num defined by the class
             // TitleVersion
             this.Text = TitleVersion.titleVersion;
-
-            // Removes the x
-            this.ControlBox = false;
 
             // for fade in effect
             // Set the form's initial opacity to 0 (completely transparent)
@@ -136,8 +135,7 @@ namespace Physics_Simulation
             bArrow.Location = new Point(0, 0);
             bArrow.Size = new Size(ClientSize.Height / 10, ClientSize.Height / 10);
 
-            
-           
+
           
         }
 
@@ -151,7 +149,6 @@ namespace Physics_Simulation
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-
             // Calls the initDraw method to draw some lines
             initDraw();
            
@@ -187,8 +184,8 @@ namespace Physics_Simulation
             // Draws a dotted horizontal line for the normal
             pen.DashStyle = DashStyle.Dot;
 
-            g.DrawLine(pen, this.Width / 100 * 50, this.Height / 100 * 60,
-                this.Width / 100 * 90, this.Height / 100 * 60);
+            g.DrawLine(pen, this.Width / 100 * 50, this.Height / 100 * 50,
+                this.Width / 100 * 90, this.Height / 100 * 50);
         }
 
         private void fade_Tick(object sender, EventArgs e)
@@ -249,6 +246,11 @@ namespace Physics_Simulation
             // Clears any graphic objects on the rays 'canvas'
             rays.Clear(Color.Black);
 
+            // Used as an arrow cap
+            AdjustableArrowCap bigArrow = new AdjustableArrowCap
+                (ClientSize.Height / 125, 
+                ClientSize.Width / 250);
+
             // Refreshes the tableLayout panel to redraw everthing
             tableLayoutPanel1.Refresh();
 
@@ -271,10 +273,10 @@ namespace Physics_Simulation
                 
                 // Sets the x and y coords of the start and end of the aOI and 
                 // based on the angle inputted
-                //************************************************* change after prototpye
+     
                 double length = this.Width / 3;
                 double x1 = this.Width / 100 * 70;
-                double y1 = this.Height / 100 * 60;
+                double y1 = this.Height / 100 * 50;
                 double x2I = x1 - Math.Cos(angleI) * length;
                 double y2I = y1 - Math.Sin(angleI) * length;
 
@@ -300,7 +302,14 @@ namespace Physics_Simulation
 
                     // Draws the end point for the refected ray
                     rays.DrawLine(aORePen, (float)x1, (float)y1, (float)x2Re, (float)y2Re);
-                   
+
+                    // To get an arrow in the middle of the line draw another line ending in the middle
+
+                    double arrowXRe = (x1 + x2Re) / 2;
+                    double arrowYRe = (y1 + y2Re) / 2;
+                    aORePen.CustomEndCap = bigArrow;
+                    rays.DrawLine(aORePen, (float)x1, (float)y1, (float)arrowXRe, (float)arrowYRe);
+
                 }
                 else
                 {
@@ -323,15 +332,30 @@ namespace Physics_Simulation
                 // Calculates the end point for the aoR
                 double x2R = x1 + Math.Cos(angleR) * length;
                 double y2R = y1 + Math.Sin(angleR) * length;
-          
-              
+
+               
                 // Draws a line using the AOIPen at the specified loactions
                 rays.DrawLine(aOIPen, (float)x1, (float)y1,(float)x2I,(float)y2I);
+
+                // To get an arrow in the middle of the line draw another line ending in the middle
+
+                double arrowXI = (x1 + x2I) / 2;
+                double arrowYI = (y1 + y2I) / 2;
+                aOIPen.CustomEndCap = bigArrow;
+                rays.DrawLine(aOIPen, (float)x2I, (float)y2I, (float)arrowXI, (float)arrowYI);
+
 
                 // Draws the aOR ray
                 rays.DrawLine(aORPen, (float)x1, (float)y1, (float)x2R,(float)y2R);
 
-         
+                // To get an arrow in the middle of the line draw another line ending in the middle
+
+                double arrowXR = (x1 + x2R) / 2;
+                double arrowYR = (y1 + y2R) / 2;
+                aORPen.CustomEndCap = bigArrow;
+                rays.DrawLine(aORPen, (float)x1, (float)y1, (float)arrowXR, (float)arrowYR);
+
+
             }
 
             else
@@ -398,7 +422,7 @@ namespace Physics_Simulation
         private void tableLayoutPanel1_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
         {
             // If it is [0,1] then the bg of it will change to grey
-            if (e.Column == 0 && e.Row == 1) 
+            if (e.Column == 1 && e.Row == 1) 
             {
                 if (LightTheme.lightTheme == true)
                 {
