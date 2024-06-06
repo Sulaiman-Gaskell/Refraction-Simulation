@@ -2,6 +2,9 @@ Changelog:
 
 Next phase:
 
+V1.5.2, HOTFIX , 06/06/24
+  Fixed welcome menu from bugging when returning to it from the refraction menu
+
 V1.5.2, STABLE, 06/06/24
   Added arrows to refraction diagram for clarity
   Updated location for the refaction diagram, now centered in the middle of the screen
