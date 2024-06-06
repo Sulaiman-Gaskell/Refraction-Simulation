@@ -2,6 +2,9 @@ Changelog:
 
 Next phase:
 
+V1.5.2, HOTFIX , 06/06/24
+  Fixed welcome menu from bugging when returning to it from the refraction menu
+
 V1.5.2, STABLE, 06/06/24
   Added arrows to refraction diagram for clarity
   Updated location for the refaction diagram, now centered in the middle of the screen
@@ -13,7 +16,7 @@ V1.5.1, STABLE, 01/06/24
 
 V1.5.0, BETA1, 30/05/24
   Added settings button to welcome screen and added settings popout menu
-  Added light theme
+  Added light theme - saves even after closing the program
   Added new setting where you can toggle between light and dark themes
   Added credit text on the welcome menu
   Improved the layout the layout of the welcome menu
