@@ -2,7 +2,10 @@ Changelog:
 
 Next phase:
 
-V1.5.3, 05/07/24
+V1.5.3, HOTFIX, 05/07/24
+	Updated the information link text
+
+V1.5.3, STABLE, 05/07/24
 	Added an information linklabel to the interactive mode for refraction
 	Fixed a bug where clicking the back button would clear the diagram
 
