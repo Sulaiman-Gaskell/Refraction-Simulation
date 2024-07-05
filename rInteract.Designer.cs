@@ -203,10 +203,10 @@
             this.glossary.LinkColor = System.Drawing.Color.White;
             this.glossary.Location = new System.Drawing.Point(0, 0);
             this.glossary.Name = "glossary";
-            this.glossary.Size = new System.Drawing.Size(148, 20);
+            this.glossary.Size = new System.Drawing.Size(131, 20);
             this.glossary.TabIndex = 2;
             this.glossary.TabStop = true;
-            this.glossary.Text = "Click for information";
+            this.glossary.Text = "Click here for info";
             this.glossary.VisitedLinkColor = System.Drawing.Color.White;
             this.glossary.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.glossary_LinkClicked);
             // 

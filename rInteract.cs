@@ -38,10 +38,6 @@ namespace Physics_Simulation
 
         private void rInteract_Load(object sender, EventArgs e)
         {
-            // Configures the link label
-                glossary.Size = new System.Drawing.Size(
-                    ClientSize.Width / 15,
-                    ClientSize.Height / 15);
 
             // Changes colours based on the them selected
             if (LightTheme.lightTheme == true)
@@ -71,7 +67,7 @@ namespace Physics_Simulation
                 Convert.ToInt32(ClientSize.Height / 1.75));
 
             glossary.Padding = new System.Windows.Forms.Padding(
-                ClientSize.Width / 60, 0, 0, 0);
+                ClientSize.Width / 40, 0, 0, 0);
 
 
             // Sets the form text as the version num defined by the class
