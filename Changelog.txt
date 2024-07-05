@@ -3,7 +3,7 @@ Changelog:
 Next phase:
 
 V1.5.3, 05/07/24
-	Added an infomation linklabel to the interactive mode for refraction
+	Added an information linklabel to the interactive mode for refraction
 	Fixed a bug where clicking the back button would clear the diagram
 
 V1.5.2, HOTFIX , 06/06/24
@@ -11,7 +11,7 @@ V1.5.2, HOTFIX , 06/06/24
 
 V1.5.2, STABLE, 06/06/24
   Added arrows to refraction diagram for clarity
-  Updated location for the refaction diagram, now centered in the middle of the screen
+  Updated location for the refraction diagram, now centered in the middle of the screen
   Improved padding on interactive mode for refraction, parameter box is now clearer
 
 V1.5.1, STABLE, 01/06/24
