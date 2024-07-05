@@ -38,10 +38,11 @@
             this.rI1Text = new System.Windows.Forms.Label();
             this.angleOfIncidence = new System.Windows.Forms.TextBox();
             this.aOIText = new System.Windows.Forms.Label();
-            this.bArrow = new System.Windows.Forms.PictureBox();
             this.aoR = new System.Windows.Forms.Label();
+            this.bArrow = new System.Windows.Forms.PictureBox();
             this.fadeIn = new System.Windows.Forms.Timer(this.components);
             this.fadeOut = new System.Windows.Forms.Timer(this.components);
+            this.glossary = new System.Windows.Forms.LinkLabel();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bArrow)).BeginInit();
@@ -156,6 +157,19 @@
             this.aOIText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.aOIText.Click += new System.EventHandler(this.aOIText_Click);
             // 
+            // aoR
+            // 
+            this.aoR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.aoR.AutoSize = true;
+            this.aoR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aoR.Location = new System.Drawing.Point(681, 522);
+            this.aoR.Name = "aoR";
+            this.aoR.Size = new System.Drawing.Size(216, 29);
+            this.aoR.TabIndex = 2;
+            this.aoR.Text = "Angle of Refraction";
+            this.aoR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.aoR.Click += new System.EventHandler(this.aoR_Click);
+            // 
             // bArrow
             // 
             this.bArrow.BackColor = System.Drawing.SystemColors.ControlText;
@@ -173,19 +187,6 @@
             this.bArrow.MouseEnter += new System.EventHandler(this.bArrow_MouseEnter);
             this.bArrow.MouseLeave += new System.EventHandler(this.bArrow_MouseLeave);
             // 
-            // aoR
-            // 
-            this.aoR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.aoR.AutoSize = true;
-            this.aoR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aoR.Location = new System.Drawing.Point(681, 522);
-            this.aoR.Name = "aoR";
-            this.aoR.Size = new System.Drawing.Size(216, 29);
-            this.aoR.TabIndex = 2;
-            this.aoR.Text = "Angle of Refraction";
-            this.aoR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.aoR.Click += new System.EventHandler(this.aoR_Click);
-            // 
             // fadeIn
             // 
             this.fadeIn.Interval = 1;
@@ -196,12 +197,26 @@
             this.fadeOut.Interval = 1;
             this.fadeOut.Tick += new System.EventHandler(this.fadeOut_Tick_1);
             // 
+            // glossary
+            // 
+            this.glossary.AutoSize = true;
+            this.glossary.LinkColor = System.Drawing.Color.White;
+            this.glossary.Location = new System.Drawing.Point(0, 0);
+            this.glossary.Name = "glossary";
+            this.glossary.Size = new System.Drawing.Size(148, 20);
+            this.glossary.TabIndex = 2;
+            this.glossary.TabStop = true;
+            this.glossary.Text = "Click for information";
+            this.glossary.VisitedLinkColor = System.Drawing.Color.White;
+            this.glossary.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.glossary_LinkClicked);
+            // 
             // rInteract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlText;
             this.ClientSize = new System.Drawing.Size(900, 562);
+            this.Controls.Add(this.glossary);
             this.Controls.Add(this.tableLayoutPanel1);
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -235,5 +250,6 @@
         private System.Windows.Forms.TextBox refractiveIndex1;
         private System.Windows.Forms.Label rI1Text;
         private System.Windows.Forms.Timer fadeOut;
+        private System.Windows.Forms.LinkLabel glossary;
     }
 }

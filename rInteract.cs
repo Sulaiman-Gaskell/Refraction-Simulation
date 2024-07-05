@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Security.Policy;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -36,6 +38,11 @@ namespace Physics_Simulation
 
         private void rInteract_Load(object sender, EventArgs e)
         {
+            // Configures the link label
+                glossary.Size = new System.Drawing.Size(
+                    ClientSize.Width / 15,
+                    ClientSize.Height / 15);
+
             // Changes colours based on the them selected
             if (LightTheme.lightTheme == true)
             {
@@ -52,11 +59,20 @@ namespace Physics_Simulation
                 rI2Text.ForeColor = Color.Black;
                 bArrow.BackgroundImage = Properties.Resources.lightBackArrow;
                 bArrow.BackColor = Color.White;
+                glossary.LinkColor = Color.Black;
 
             }
-            
+
             // Sets up the glossary loaction
-            
+            glossary.Font = new Font(
+                glossary.Font.FontFamily, ClientSize.Width / 80);
+
+            glossary.Location = new Point(Left, 
+                Convert.ToInt32(ClientSize.Height / 1.75));
+
+            glossary.Padding = new System.Windows.Forms.Padding(
+                ClientSize.Width / 60, 0, 0, 0);
+
 
             // Sets the form text as the version num defined by the class
             // TitleVersion
@@ -249,8 +265,8 @@ namespace Physics_Simulation
 
             // Used as an arrow cap
             AdjustableArrowCap bigArrow = new AdjustableArrowCap
-                (ClientSize.Height / 125, 
-                ClientSize.Width / 250);
+                (ClientSize.Height / 100, 
+                ClientSize.Width / 200);
 
             // Refreshes the tableLayout panel to redraw everthing
             tableLayoutPanel1.Refresh();
@@ -325,8 +341,6 @@ namespace Physics_Simulation
                         aORePen.Width = 4;
                         rays.DrawLine(aORePen, (float)x1, (float)y1, (float)x2Re, (float)y2Re);
                     }
-                   
-
                 }
 
 
@@ -365,8 +379,6 @@ namespace Physics_Simulation
                 initDraw();
             }
         }
-
-      
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -480,10 +492,16 @@ namespace Physics_Simulation
         private void bArrow_MouseDown(object sender, MouseEventArgs e)
         {
             bArrow.Size = new Size(ClientSize.Height / 13, ClientSize.Height / 13);
+            try
+            {
+                DrawRays();
+            }
+            catch 
+            {
+                initDraw();
+            }
+
         }
-     
-
-
 
 
         private void bArrow_MouseLeave(object sender, EventArgs e)
@@ -491,6 +509,16 @@ namespace Physics_Simulation
             // Returns bArrow size back to normal
             bArrow.BackgroundImageLayout = ImageLayout.Zoom;
             bArrow.Size = new Size(ClientSize.Height / 10, ClientSize.Height / 10);
+
+            // Stops the diagram from dissapering 
+            try
+            {
+                DrawRays();
+            }
+            catch
+            {
+                initDraw();
+            }
         }
 
         private void bArrow_MouseEnter(object sender, EventArgs e)
@@ -498,6 +526,22 @@ namespace Physics_Simulation
             // Slighly increases the size of the bArrow
             bArrow.BackgroundImageLayout = ImageLayout.Stretch;
 
+
+        }
+
+        private void glossary_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // Opens a link to a useful info page
+            System.Diagnostics.Process.Start("https://en.wikipedia.org/wiki/List_of_refractive_indices");
+            // redraws the diagram accordingly.
+            try
+            {
+                DrawRays();
+            }
+            catch
+            {
+                initDraw();
+            }
 
         }
     }
