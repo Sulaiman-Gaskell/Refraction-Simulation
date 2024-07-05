@@ -2,6 +2,10 @@ Changelog:
 
 Next phase:
 
+V1.5.3, 05/07/24
+	Added an infomation linklabel to the interactive mode for refraction
+	Fixed a bug where clicking the back button would clear the diagram
+
 V1.5.2, HOTFIX , 06/06/24
   Fixed welcome menu from bugging when returning to it from the refraction menu
 
