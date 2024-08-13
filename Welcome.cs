@@ -30,25 +30,27 @@ namespace Physics_Simulation
         }
 
         // Used for all winforms so made public
-        public class TitleVersion
+        public class systemWideVariables
         {
-            public static string titleVersion = "V1.5.3";
+            public static string titleVersion = "V2.0.0-BETA";
+            public static bool lightTheme = Settings.Default.lightTheme;
+            public static string whichSim = "";
         }
 
-        public class LightTheme
-        {
-            public static bool lightTheme = Settings.Default.lightTheme;
-        }
+    
 
         private void button1_Click(object sender, EventArgs e) // Refraction
         {
             refraction.BackColor = Color.White;
 
+            // Sets the var to tell the program which forms need to be loaded
+            systemWideVariables.whichSim = "refraction";
+
       
             this.Hide();
             // Creates an instance of the refraction form when
             // the button is pressed
-            Refraction refractionWin = new Refraction();
+            optionsMenu refractionWin = new optionsMenu();
             refractionWin.ShowDialog();
             this.Show();
             
@@ -71,10 +73,10 @@ namespace Physics_Simulation
 
             // Sets the form text as the version num defined by the class
             // TitleVersion
-            this.Text = TitleVersion.titleVersion;
+            this.Text = systemWideVariables.titleVersion;
 
             // Sets colours acorrdingly
-            if (LightTheme.lightTheme == true)
+            if (systemWideVariables.lightTheme == true)
             {
                 this.BackColor = Color.White;
                 refraction.BackColor = Color.Black;
@@ -124,12 +126,13 @@ namespace Physics_Simulation
 
         private void waves_Click(object sender, EventArgs e)
         {
-          
+            // Sets the var to tell the program which forms need to be loaded
+            systemWideVariables.whichSim = "waves";
 
             // Creates an instance of the refraction form when
             // the button is pressed
-            Waves waves = new Waves();
-            waves.Show();
+            optionsMenu options = new optionsMenu();
+            options.Show();
 
             // When the refaction instance is closed by the user
             // the Welcome menu will open again
@@ -142,12 +145,12 @@ namespace Physics_Simulation
 
         private void refraction_MouseEnter(object sender, EventArgs e)
         {
-            refraction.BackColor = Color.Blue;
+            refraction.BackColor = Color.LightSkyBlue;
         }
 
         private void refraction_MouseLeave(object sender, EventArgs e)
         {
-            if (LightTheme.lightTheme == true)
+            if (systemWideVariables.lightTheme == true)
             {
                 refraction.BackColor = Color.Black;
                 wTxt.ForeColor = Color.Black;
@@ -162,12 +165,12 @@ namespace Physics_Simulation
 
         private void waves_MouseEnter(object sender, EventArgs e)
         {
-            waves.BackColor = Color.OrangeRed;
+            waves.BackColor = Color.Coral;
         }
 
         private void waves_MouseLeave(object sender, EventArgs e)
         {
-            if (LightTheme.lightTheme == true)
+            if (systemWideVariables.lightTheme == true)
             {
                 waves.BackColor = Color.Black;
                 wTxt.ForeColor = Color.Black;
@@ -182,17 +185,17 @@ namespace Physics_Simulation
 
         private void refraction_MouseDown(object sender, MouseEventArgs e)
         {
-            wTxt.ForeColor = Color.Blue;
+            wTxt.ForeColor = Color.LightSkyBlue;
         }
 
         private void waves_MouseDown(object sender, MouseEventArgs e)
         {
-            wTxt.ForeColor = Color.OrangeRed;
+            wTxt.ForeColor = Color.Coral;
         }
 
         private void welcomeScreen_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Settings.Default.lightTheme = LightTheme.lightTheme;
+            Settings.Default.lightTheme = systemWideVariables.lightTheme;
             Settings.Default.Save();
             Application.Exit();
         }
@@ -217,13 +220,13 @@ namespace Physics_Simulation
         private void settings_Click(object sender, EventArgs e)
         {
             // Changes the theme
-            if (LightTheme.lightTheme == true)
+            if (systemWideVariables.lightTheme == true)
             {
-                LightTheme.lightTheme = false;
+                systemWideVariables.lightTheme = false;
             }
             else
             {
-                LightTheme.lightTheme = true;
+                systemWideVariables.lightTheme = true;
             }
 
             // Applies changes
@@ -233,7 +236,7 @@ namespace Physics_Simulation
         private void settings_MouseEnter(object sender, EventArgs e)
         {
             // Shows a tooltip when hovering over the button
-            if (LightTheme.lightTheme == true)
+            if (systemWideVariables.lightTheme == true)
             {
                 themeTip.SetToolTip(theme, "Click to switch to dark theme");
             }

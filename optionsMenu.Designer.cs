@@ -1,6 +1,6 @@
 ﻿namespace Physics_Simulation
 {
-    partial class Refraction
+    partial class optionsMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Refraction));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(optionsMenu));
             this.refractionMenu = new System.Windows.Forms.TableLayoutPanel();
             this.bArrow = new System.Windows.Forms.PictureBox();
             this.interact = new System.Windows.Forms.Button();

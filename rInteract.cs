@@ -40,7 +40,7 @@ namespace Physics_Simulation
         {
 
             // Changes colours based on the them selected
-            if (LightTheme.lightTheme == true)
+            if (systemWideVariables.lightTheme == true)
             {
                 this.BackColor = Color.White;
                 refractiveIndex1.BackColor = Color.Black;
@@ -72,7 +72,7 @@ namespace Physics_Simulation
 
             // Sets the form text as the version num defined by the class
             // TitleVersion
-            this.Text = TitleVersion.titleVersion;
+            this.Text = systemWideVariables.titleVersion;
 
             // for fade in effect
             // Set the form's initial opacity to 0 (completely transparent)
@@ -174,7 +174,7 @@ namespace Physics_Simulation
             // Changes line col based on the theme
             Color lineCol = Color.White;
 
-            if (LightTheme.lightTheme == true)
+            if (systemWideVariables.lightTheme == true)
             {
                 this.BackColor = Color.White;
                 lineCol = Color.Black;
@@ -313,7 +313,7 @@ namespace Physics_Simulation
                 {
                     aoR.Text = "Total internal reflection has occured";
 
-                    // Draws the end point for the refected ray
+                    // Draws the end point for the reflected ray
                     rays.DrawLine(aORePen, (float)x1, (float)y1, (float)x2Re, (float)y2Re);
 
                     // To get an arrow in the middle of the line draw another line ending in the middle
@@ -434,7 +434,7 @@ namespace Physics_Simulation
             // If it is [0,1] then the bg of it will change to grey
             if (e.Column == 1 && e.Row == 1) 
             {
-                if (LightTheme.lightTheme == true)
+                if (systemWideVariables.lightTheme == true)
                 {
                     e.Graphics.FillRectangle(new SolidBrush(Color.Black), e.CellBounds);
                 }

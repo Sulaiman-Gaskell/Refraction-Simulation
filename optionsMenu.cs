@@ -14,9 +14,9 @@ using static Physics_Simulation.welcomeScreen;
 
 namespace Physics_Simulation
 {
-    public partial class Refraction : Form
+    public partial class optionsMenu : Form
     {
-        public Refraction()
+        public optionsMenu()
         {
             InitializeComponent();
 
@@ -36,7 +36,7 @@ namespace Physics_Simulation
         private void Refraction_Load(object sender, EventArgs e)
         {
             // For light theme
-            if (LightTheme.lightTheme == true)
+            if (systemWideVariables.lightTheme == true)
             {
                 this.BackColor = Color.White;
                 interact.BackColor = Color.Black;
@@ -50,7 +50,7 @@ namespace Physics_Simulation
             }
             // Sets the form text as the version num defined by the class
             // TitleVersion
-            this.Text = TitleVersion.titleVersion;
+            this.Text = systemWideVariables.titleVersion;
             // Removes the x
             //this.ControlBox = false;
          
@@ -109,14 +109,22 @@ namespace Physics_Simulation
         private void button1_Click(object sender, EventArgs e)
         {
 
-            // Opens the refraction widnow and keeps this open
+            // Opens the right widnow and keeps this open
             // Without being seen in the taskbar
 
-        
-            rInteract rInteract = new rInteract();
-            rInteract.ShowDialog();
+            if (systemWideVariables.whichSim == "refraction")
+            {
+                rInteract rInteract = new rInteract();
+                rInteract.ShowDialog();
+
+            }
+            else
+            {
+                interact.Text = "Coming soon!";
+            }
+            
            
-            if (LightTheme.lightTheme == true)
+            if (systemWideVariables.lightTheme == true)
             {
                 menuText.ForeColor = Color.Black;
             }
@@ -199,7 +207,7 @@ namespace Physics_Simulation
         // ALL BELOW FOR ANIMATIONS
         private void interact_MouseDown(object sender, MouseEventArgs e)
         {
-            menuText.ForeColor = Color.Blue;
+            menuText.ForeColor = Color.LightSkyBlue;
 
 
             interact.Font = new Font(interact.Font.FontFamily,
@@ -208,7 +216,7 @@ namespace Physics_Simulation
 
         private void interact_MouseLeave(object sender, EventArgs e)
         {
-            if (LightTheme.lightTheme == true)
+            if (systemWideVariables.lightTheme == true)
             {
                 menuText.ForeColor = Color.Black;
                 interact.BackColor = Color.Black;
@@ -228,13 +236,13 @@ namespace Physics_Simulation
             questions.Font = new Font(questions.Font.FontFamily,
                  ClientSize.Width / 35);
 
-            menuText.ForeColor = Color.OrangeRed;
+            menuText.ForeColor = Color.Coral;
 
         }
 
         private void questions_MouseLeave(object sender, EventArgs e)
         {
-            if (LightTheme.lightTheme == true)
+            if (systemWideVariables.lightTheme == true)
             {
                 menuText.ForeColor = Color.Black;
                 questions.BackColor = Color.Black;
@@ -262,13 +270,13 @@ namespace Physics_Simulation
 
         private void interact_MouseEnter(object sender, EventArgs e)
         {
-            interact.BackColor = Color.Blue;
+            interact.BackColor = Color.LightSkyBlue;
             popOutInteract.Enabled = true;
         }
 
         private void questions_MouseEnter(object sender, EventArgs e)
         {
-            questions.BackColor = Color.OrangeRed;
+            questions.BackColor = Color.Coral;
             popOutQuestions.Enabled = true;
         }
 
