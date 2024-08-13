@@ -2,6 +2,10 @@ Changelog:
 
 Next phase:
 
+V2.5.0, ?,?
+	Updated some colours
+
+
 V1.5.3, HOTFIX, 05/07/24
 	Updated the information link text
 
