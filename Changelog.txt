@@ -2,8 +2,10 @@ Changelog:
 
 Next phase:
 
-V2.5.0, ?,?
-	Updated some colours
+V2.0.0, ?,?
+	Updated some colours - user complaint
+	Refactored code
+	Reworked menu logic - each simulation uses the same submenu for better file size and code logic.
 
 
 V1.5.3, HOTFIX, 05/07/24
