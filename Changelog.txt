@@ -12,6 +12,7 @@ V1.5.4, STABLE, 19/09/24
 	Reworked menu logic - each simulation uses the same submenu for better file size and code logic.
 	Fixed a bug where hovering over the back arrow in interactive mode for refraction causes diagram to flicker.
 	Removed the the back arrow shrinking animation
+	Removed start up diagram from interactive mode for refraction - only worked on some devices and looks buggy now.
 
 
 V1.5.3, HOTFIX, 05/07/24
