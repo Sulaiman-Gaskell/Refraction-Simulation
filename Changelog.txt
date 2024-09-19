@@ -8,8 +8,9 @@ V1.5.4, ?,?
 	Added the UI to support waves for interactive mode
 	Updated some colours - user complaint
 	Refactored code
-	Reworked menu logic - each simulation uses the same submenu for better file size and code logic.
-Fixed a bug where hovering over the back arrow in interactive mode for refraction causes diagram to flicker.
+	Reworked menu logic - each simulation uses the same submenu for better file 	size and code logic.
+	Fixed a bug where hovering over the back arrow in interactive mode for 		refraction causes diagram to flicker.
+	Removed the the back arrow shrinking animation
 
 
 V1.5.3, HOTFIX, 05/07/24
