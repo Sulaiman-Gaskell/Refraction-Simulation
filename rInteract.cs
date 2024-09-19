@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Security.Policy;
 using System.Text;
 using System.Threading;
@@ -38,6 +39,8 @@ namespace Physics_Simulation
 
         private void rInteract_Load(object sender, EventArgs e)
         {
+            // Sets the active colour of the link label to pink for dark mode
+            glossary.ActiveLinkColor = Color.Pink;
 
             // Changes colours based on the them selected
             if (systemWideVariables.lightTheme == true)
@@ -56,12 +59,14 @@ namespace Physics_Simulation
                 bArrow.BackgroundImage = Properties.Resources.lightBackArrow;
                 bArrow.BackColor = Color.White;
                 glossary.LinkColor = Color.Black;
+                glossary.ActiveLinkColor = Color.Blue;
 
             }
 
             // Sets up the glossary loaction
             glossary.Font = new Font(
                 glossary.Font.FontFamily, ClientSize.Width / 80);
+
 
             glossary.Location = new Point(Left, 
                 Convert.ToInt32(ClientSize.Height / 1.75));
@@ -146,8 +151,10 @@ namespace Physics_Simulation
             // Puts the back arrow in the top left hand corner
             bArrow.Size = new Size(ClientSize.Height / 10, ClientSize.Height / 10);
 
+            // Animates the lines as the program is first opened
+            linesAnimate.Enabled = true;
+            
 
-          
         }
 
 
@@ -161,10 +168,6 @@ namespace Physics_Simulation
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-            // Calls the initDraw method to draw some lines
-            initDraw();
-
-
         }
 
         // For drawing the static lines
@@ -213,10 +216,7 @@ namespace Physics_Simulation
             // When fully solid stop the timer
             else
             {
-                // Draws the inital diagram
-                // Called twice to fix wierd bug
-                DrawRays();
-                DrawRays();
+                // Stops timer
                 fadeIn.Enabled = false;
             }
         }
@@ -235,6 +235,7 @@ namespace Physics_Simulation
         {
             // Calls the DrawRays method whenever text is changed in the textbox
             DrawRays();
+          
         }
 
     
@@ -267,6 +268,8 @@ namespace Physics_Simulation
             // Refreshes the tableLayout panel to redraw everthing
             tableLayoutPanel1.Refresh();
 
+            // Redraws the base lines
+            initDraw();
             // Validation
             if (double.TryParse(angleOfIncidence.Text, out double _)
                 && double.TryParse(refractiveIndex1.Text, out double _)
@@ -344,9 +347,13 @@ namespace Physics_Simulation
                 double x2R = x1 + Math.Cos(angleR) * length;
                 double y2R = y1 + Math.Sin(angleR) * length;
 
-               
+
                 // Draws a line using the AOIPen at the specified loactions
-                rays.DrawLine(aOIPen, (float)x1, (float)y1,(float)x2I,(float)y2I);
+          
+                
+                rays.DrawLine(aOIPen, (float)x1, (float)y1, (float)x2I, (float)y2I);
+                
+               
 
                 // To get an arrow in the middle of the line draw another line ending in the middle
 
@@ -487,16 +494,6 @@ namespace Physics_Simulation
 
         private void bArrow_MouseDown(object sender, MouseEventArgs e)
         {
-            bArrow.Size = new Size(ClientSize.Height / 13, ClientSize.Height / 13);
-            try
-            {
-                DrawRays();
-            }
-            catch 
-            {
-                initDraw();
-            }
-
         }
 
 
@@ -506,15 +503,6 @@ namespace Physics_Simulation
             bArrow.BackgroundImageLayout = ImageLayout.Zoom;
             bArrow.Size = new Size(ClientSize.Height / 10, ClientSize.Height / 10);
 
-            // Stops the diagram from dissapering 
-            try
-            {
-                DrawRays();
-            }
-            catch
-            {
-                initDraw();
-            }
         }
 
         private void bArrow_MouseEnter(object sender, EventArgs e)
@@ -530,14 +518,86 @@ namespace Physics_Simulation
             // Opens a link to a useful info page
             System.Diagnostics.Process.Start("https://en.wikipedia.org/wiki/List_of_refractive_indices");
             // redraws the diagram accordingly.
-            try
+
+            
+           initDraw();
+            
+
+        }
+
+        // Sets up the vertical line
+        private float vertDrawPoint = 0;
+        private void getVertDrawPoint()
+        {
+            if (vertDrawPoint == 0)
             {
-                DrawRays();
+                vertDrawPoint = this.Height;
             }
-            catch
+        }
+
+        // Sets up the horizontal line 
+        private float horzDrawPoint = 0;
+
+        private void getHorzDrawPoint() 
+        {
+            if (horzDrawPoint == 0) 
             {
+                horzDrawPoint = this.Width / 100 * 50;
+            }
+        }
+        private void lineAnimate_Tick(object sender, EventArgs e)
+        {            
+            // Changes line col based on the theme
+            Color lineCol = Color.White;
+
+            if (systemWideVariables.lightTheme == true)
+            {
+                this.BackColor = Color.White;
+                lineCol = Color.Black;
+            }
+
+
+            // Creates a white pen
+            Pen pen = new Pen(lineCol, 3);
+
+
+            // Creates a new graphic object
+            Graphics g = tableLayoutPanel1.CreateGraphics();
+            getVertDrawPoint();
+            getHorzDrawPoint();
+
+
+            // Draws a vertical and horizontal line
+            
+            if (vertDrawPoint > 1) 
+            {
+                // Graduly draws a vertical line
+                g.DrawLine(pen, this.Width / 100 * 70, 0,
+                this.Width / 100 * 70, this.Height - vertDrawPoint);
+                vertDrawPoint -= 20;
+
+                // Draws the horizontal line 
+                if (horzDrawPoint <= this.Width / 100 * 90)
+                {
+                    pen.DashStyle = DashStyle.Dot;
+
+                    g.DrawLine(pen, this.Width / 100 * 50, this.Height / 100 * 50,
+                        horzDrawPoint, this.Height / 100 * 50);
+                    horzDrawPoint += 15;
+
+                }
+            }
+            else
+            {
+                // Stop the timer
+              //  DrawRays();
                 initDraw();
+                
+                linesAnimate.Enabled = false;
             }
+
+
+
 
         }
     }

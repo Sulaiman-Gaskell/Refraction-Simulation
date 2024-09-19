@@ -10,3 +10,4 @@ C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physi
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics Simulation.exe
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics Simulation.pdb
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.optionsMenu.resources
+C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.wInteract.resources

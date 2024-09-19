@@ -43,6 +43,7 @@
             this.fadeIn = new System.Windows.Forms.Timer(this.components);
             this.fadeOut = new System.Windows.Forms.Timer(this.components);
             this.glossary = new System.Windows.Forms.LinkLabel();
+            this.linesAnimate = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bArrow)).BeginInit();
@@ -199,6 +200,7 @@
             // 
             // glossary
             // 
+            this.glossary.ActiveLinkColor = System.Drawing.Color.Navy;
             this.glossary.AutoSize = true;
             this.glossary.LinkColor = System.Drawing.Color.White;
             this.glossary.Location = new System.Drawing.Point(0, 0);
@@ -209,6 +211,11 @@
             this.glossary.Text = "Click here for info";
             this.glossary.VisitedLinkColor = System.Drawing.Color.White;
             this.glossary.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.glossary_LinkClicked);
+            // 
+            // linesAnimate
+            // 
+            this.linesAnimate.Interval = 1;
+            this.linesAnimate.Tick += new System.EventHandler(this.lineAnimate_Tick);
             // 
             // rInteract
             // 
@@ -251,5 +258,6 @@
         private System.Windows.Forms.Label rI1Text;
         private System.Windows.Forms.Timer fadeOut;
         private System.Windows.Forms.LinkLabel glossary;
+        private System.Windows.Forms.Timer linesAnimate;
     }
 }

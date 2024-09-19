@@ -32,7 +32,7 @@ namespace Physics_Simulation
         // Used for all winforms so made public
         public class systemWideVariables
         {
-            public static string titleVersion = "V2.0.0-BETA";
+            public static string titleVersion = "V1.5.4";
             public static bool lightTheme = Settings.Default.lightTheme;
             public static string whichSim = "";
         }

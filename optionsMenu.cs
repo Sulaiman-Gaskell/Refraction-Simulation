@@ -120,7 +120,8 @@ namespace Physics_Simulation
             }
             else
             {
-                interact.Text = "Coming soon!";
+                wInteract wInteract = new wInteract();
+                wInteract.ShowDialog();
             }
             
            
@@ -377,7 +378,7 @@ namespace Physics_Simulation
 
         private void bArrow_MouseDown(object sender, MouseEventArgs e)
         {
-            bArrow.Size = new Size(ClientSize.Height / 13, ClientSize.Height / 13);
+       
         }
 
         private void bArrow_MouseLeave(object sender, EventArgs e)
