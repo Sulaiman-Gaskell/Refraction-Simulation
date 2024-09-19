@@ -4,8 +4,9 @@ Iteration 3 - Questions mode
 Iteration 2 - Simulation logic
 Iteration 1 - UI design and refinment:
 
-V1.5.4, ?,?
-	Added the UI to support waves for interactive mode
+V1.5.4, TEST, 19/09/24
+	Added loading in animations to the interactive mode for refraction
+	Added the UI to support to the interactive mode for refraction
 	Updated some colours - user complaint
 	Refactored code
 	Reworked menu logic - each simulation uses the same submenu for better file 	size and code logic.
