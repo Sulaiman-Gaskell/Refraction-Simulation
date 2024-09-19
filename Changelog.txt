@@ -9,6 +9,7 @@ V1.5.4, ?,?
 	Updated some colours - user complaint
 	Refactored code
 	Reworked menu logic - each simulation uses the same submenu for better file size and code logic.
+Fixed a bug where hovering over the back arrow in interactive mode for refraction causes diagram to flicker.
 
 
 V1.5.3, HOTFIX, 05/07/24
