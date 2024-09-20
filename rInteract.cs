@@ -256,7 +256,6 @@ namespace Physics_Simulation
             Graphics rays = tableLayoutPanel1.CreateGraphics();
 
             // Increases the quality of the line 
-            rays.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             rays.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             
 
@@ -265,11 +264,13 @@ namespace Physics_Simulation
                 (ClientSize.Height / 100, 
                 ClientSize.Width / 200);
 
-            // Refreshes the tableLayout panel to redraw everthing
+            // Redraws the base lines apart from the first time this is called
             tableLayoutPanel1.Refresh();
 
-            // Redraws the base lines
+            // Refreshes the tableLayout panel to redraw everthing
+
             initDraw();
+            
             // Validation
             if (double.TryParse(angleOfIncidence.Text, out double _)
                 && double.TryParse(refractiveIndex1.Text, out double _)
@@ -312,6 +313,54 @@ namespace Physics_Simulation
                 else { angleR = Math.PI / 2; }
 
                 double angleRDegrees = Math.Round(angleR * 180 / Math.PI,2);
+
+
+
+                // Calculates the end point for the aoR
+                double x2R = x1 + Math.Cos(angleR) * length;
+                double y2R = y1 + Math.Sin(angleR) * length;
+
+
+                // Draws a line using the AOIPen at the specified loactions
+          
+                
+                rays.DrawLine(aOIPen, (float)x1, (float)y1, (float)x2I, (float)y2I);
+                
+               
+
+                // To get an arrow in the middle of the line draw another line ending in the middle
+
+                double arrowXI = (x1 + x2I) / 2;
+                double arrowYI = (y1 + y2I) / 2;
+                aOIPen.CustomEndCap = bigArrow;
+                rays.DrawLine(aOIPen, (float)x2I, (float)y2I, (float)arrowXI, (float)arrowYI);
+
+                // delays the drawing first time this is called
+                if (vertDrawPoint == -1)
+                {
+                    Thread.Sleep(75);
+                }
+                
+
+
+                // Draws the aOR ray
+                rays.DrawLine(aORPen, (float)x1, (float)y1, (float)x2R,(float)y2R);
+
+                // To get an arrow in the middle of the line draw another line ending in the middle
+
+                double arrowXR = (x1 + x2R) / 2;
+                double arrowYR = (y1 + y2R) / 2;
+                aORPen.CustomEndCap = bigArrow;
+                rays.DrawLine(aORPen, (float)x1, (float)y1, (float)arrowXR, (float)arrowYR);
+
+                // delays the drawing first time this is called
+                if (vertDrawPoint == -1)
+                {
+                    Thread.Sleep(75);
+                    // Makes sure it is never triggered again
+                    vertDrawPoint = 1;
+                }
+
                 if (double.IsNaN(angleRDegrees))
                 {
                     aoR.Text = "Total internal reflection has occured";
@@ -341,39 +390,6 @@ namespace Physics_Simulation
                         rays.DrawLine(aORePen, (float)x1, (float)y1, (float)x2Re, (float)y2Re);
                     }
                 }
-
-
-                // Calculates the end point for the aoR
-                double x2R = x1 + Math.Cos(angleR) * length;
-                double y2R = y1 + Math.Sin(angleR) * length;
-
-
-                // Draws a line using the AOIPen at the specified loactions
-          
-                
-                rays.DrawLine(aOIPen, (float)x1, (float)y1, (float)x2I, (float)y2I);
-                
-               
-
-                // To get an arrow in the middle of the line draw another line ending in the middle
-
-                double arrowXI = (x1 + x2I) / 2;
-                double arrowYI = (y1 + y2I) / 2;
-                aOIPen.CustomEndCap = bigArrow;
-                rays.DrawLine(aOIPen, (float)x2I, (float)y2I, (float)arrowXI, (float)arrowYI);
-
-
-                // Draws the aOR ray
-                rays.DrawLine(aORPen, (float)x1, (float)y1, (float)x2R,(float)y2R);
-
-                // To get an arrow in the middle of the line draw another line ending in the middle
-
-                double arrowXR = (x1 + x2R) / 2;
-                double arrowYR = (y1 + y2R) / 2;
-                aORPen.CustomEndCap = bigArrow;
-                rays.DrawLine(aORPen, (float)x1, (float)y1, (float)arrowXR, (float)arrowYR);
-
-
             }
 
             else
@@ -590,15 +606,27 @@ namespace Physics_Simulation
             else
             {
                 // Stop the timer
-              //  DrawRays();
-                initDraw();
-                
+                vertDrawPoint = -1;
+                DrawRays();
+                DrawRays();
                 linesAnimate.Enabled = false;
             }
 
 
 
 
+        }
+
+        private void glossary_MouseLeave(object sender, EventArgs e)
+        {
+            // Redraws the intial lines and diagram lines
+          
+
+        }
+
+        private void glossary_MouseDown(object sender, MouseEventArgs e)
+        {
+            linesAnimate.Enabled = true;
         }
     }
 }

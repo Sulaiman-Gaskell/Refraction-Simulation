@@ -211,6 +211,8 @@
             this.glossary.Text = "Click here for info";
             this.glossary.VisitedLinkColor = System.Drawing.Color.White;
             this.glossary.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.glossary_LinkClicked);
+            this.glossary.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glossary_MouseDown);
+            this.glossary.MouseLeave += new System.EventHandler(this.glossary_MouseLeave);
             // 
             // linesAnimate
             // 
