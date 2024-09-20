@@ -2,7 +2,14 @@ Changelog:
 
 Iteration 3 - Questions mode
 Iteration 2 - Simulation logic
+
 Iteration 1 - UI design and refinment:
+
+V1.5.5, STABLE, 20/09/24
+	Updated loading in animation for interactive mode for refraction
+	Fixed a bug where clicking the gloassary button caused the diagram to disapear
+	Updated version text info to display build type
+	Known bugs: Diagram flickers sometimes when first loading in or clicking the gloassary text (.NET issue)
 
 V1.5.4, STABLE, 19/09/24
 	Added loading in animations to the interactive mode for refraction
