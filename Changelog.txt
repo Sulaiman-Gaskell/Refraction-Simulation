@@ -5,6 +5,15 @@ Iteration 2 - Simulation logic
 
 Iteration 1 - UI design and refinment:
 
+V1.5.6, STABLE-EOL, 18/10/24
+	Added question submenu complete with animations
+	Designed part of the waves menu (hidden for now as this comes in iteration 2)
+	Removed the rays the first time the refraction mode is loaded (may or may not document)
+	Reworked the theme toggle logic for a better execution (program does not restart anymore)
+	Updated the icon for the main option menu to match the welcome menu
+	
+
+
 V1.5.5, STABLE, 20/09/24
 	Updated loading in animation for interactive mode for refraction
 	Fixed a bug where clicking the gloassary button caused the diagram to disapear
@@ -18,7 +27,7 @@ V1.5.4, STABLE, 19/09/24
 	Refactored code
 	Reworked menu logic - each simulation uses the same submenu for better file size and code logic.
 	Fixed a bug where hovering over the back arrow in interactive mode for refraction causes diagram to flicker.
-	Removed the the back arrow shrinking animation
+	Removed the back arrow shrinking animation
 	Removed start up diagram from interactive mode for refraction - only worked on some devices and looks buggy now.
 
 

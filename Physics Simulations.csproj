@@ -51,6 +51,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="qMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="qMenu.Designer.cs">
+      <DependentUpon>qMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="rInteract.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,9 @@
     </Compile>
     <EmbeddedResource Include="optionsMenu.resx">
       <DependentUpon>optionsMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="qMenu.resx">
+      <DependentUpon>qMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rInteract.resx">
       <DependentUpon>rInteract.cs</DependentUpon>

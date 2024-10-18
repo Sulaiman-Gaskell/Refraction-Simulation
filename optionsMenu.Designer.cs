@@ -123,6 +123,7 @@
             this.questions.TabIndex = 2;
             this.questions.Text = "Questions";
             this.questions.UseVisualStyleBackColor = true;
+            this.questions.Click += new System.EventHandler(this.questions_Click);
             this.questions.MouseDown += new System.Windows.Forms.MouseEventHandler(this.questions_MouseDown);
             this.questions.MouseEnter += new System.EventHandler(this.questions_MouseEnter);
             this.questions.MouseLeave += new System.EventHandler(this.questions_MouseLeave);
@@ -181,7 +182,7 @@
             this.popInQuestions.Interval = 13;
             this.popInQuestions.Tick += new System.EventHandler(this.popInQuestions_Tick);
             // 
-            // Refraction
+            // optionsMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -195,7 +196,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Refraction";
+            this.Name = "optionsMenu";
             this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

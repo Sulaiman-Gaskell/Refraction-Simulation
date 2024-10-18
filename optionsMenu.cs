@@ -51,12 +51,8 @@ namespace Physics_Simulation
             // Sets the form text as the version num defined by the class
             // TitleVersion
             this.Text = systemWideVariables.titleVersion;
-            // Removes the x
-            //this.ControlBox = false;
          
        
- 
-
             // Makes the form full screen
             this.WindowState = FormWindowState.Maximized;
 
@@ -93,12 +89,6 @@ namespace Physics_Simulation
 
         private void Refraction_Resize(object sender, EventArgs e)
         {
-            // Calls the folliwng methods to:
-            // Recenter the layout when full screened
-            
-             refractionMenu.Dock = DockStyle.Fill;
-          
-
         }
 
         private void refractionMenu_Paint(object sender, PaintEventArgs e)
@@ -116,12 +106,14 @@ namespace Physics_Simulation
             {
                 rInteract rInteract = new rInteract();
                 rInteract.ShowDialog();
+               
+               
 
             }
             else
-            {
-                wInteract wInteract = new wInteract();
-                wInteract.ShowDialog();
+            {   
+               // wInteract wInteract = new wInteract();
+                //wInteract.ShowDialog();
             }
             
            
@@ -324,12 +316,10 @@ namespace Physics_Simulation
         }
 
         // Slowely increases the font size of the questions mode when hovering over it
-        // TEMP: CHANGES IT TO COMING SOON
         private void popOutQuestions_Tick(object sender, EventArgs e)
         {
             if (popOutSize >= 25)
             {
-                questions.Text = "Coming Soon!";
                 questions.Font = new Font(questions.Font.FontFamily,
                 ClientSize.Width / popOutSize);
                 popOutSize--;
@@ -347,7 +337,6 @@ namespace Physics_Simulation
         {
             if (popInSize <= 30)
             {
-                questions.Text = "Questions";
                 questions.Font = new Font(questions.Font.FontFamily,
                 ClientSize.Width / popInSize);
                 popInSize++;
@@ -362,11 +351,19 @@ namespace Physics_Simulation
 
         private void refractionMenu_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
         {
-            // Not using as of now
-            if ((e.Row == 2 | e.Row == 1) && e.Column == 1)
-            {
-                e.Graphics.FillRectangle(new SolidBrush(Color.Black), e.CellBounds);
-            }
+            // Remove after write up
+            //if ((e.Row == 2 | e.Row == 1) && e.Column == 1)
+            //{
+                //if (systemWideVariables.lightTheme == true)
+                //{
+                   // e.Graphics.FillRectangle(new SolidBrush(Color.Black), e.CellBounds);
+                //}
+                //else
+               // {
+                    //e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);
+                //}
+
+            //}
         }
 
         private void bArrow_Click_1(object sender, EventArgs e)
@@ -392,6 +389,13 @@ namespace Physics_Simulation
         {
             // Slighly increases the size of the bArrow
             bArrow.BackgroundImageLayout = ImageLayout.Stretch;
+        }
+
+        private void questions_Click(object sender, EventArgs e)
+        {
+            // Loads the question sub menu
+            qMenu qMenu = new qMenu();
+            qMenu.ShowDialog();
         }
     }
 

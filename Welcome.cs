@@ -32,7 +32,7 @@ namespace Physics_Simulation
         // Used for all winforms so made public
         public class systemWideVariables
         {
-            public static string titleVersion = "V1.5.5 - STABLE";
+            public static string titleVersion = "V1.5.6 - STABLE-EOL";
             public static bool lightTheme = Settings.Default.lightTheme;
             public static string whichSim = "";
         }
@@ -66,15 +66,8 @@ namespace Physics_Simulation
         {
         }
 
-        private void welcomeScreen_Load(object sender, EventArgs e)
+        private void updateTheme()
         {
-
-
-
-            // Sets the form text as the version num defined by the class
-            // TitleVersion
-            this.Text = systemWideVariables.titleVersion;
-
             // Sets colours acorrdingly
             if (systemWideVariables.lightTheme == true)
             {
@@ -86,11 +79,35 @@ namespace Physics_Simulation
                 wTxt.BackColor = Color.White;
                 wTxt.ForeColor = Color.Black;
                 theme.Image = Properties.Resources.sun;
-                theme.BackColor = Color.White;
-                theme.ForeColor = Color.White;
+                theme.BackColor = Color.Transparent;
+                theme.ForeColor = Color.Transparent;
             }
+            else
+            {
+                this.BackColor = Color.Black;
+                refraction.BackColor = Color.White;
+                refraction.ForeColor = Color.Black;
+                waves.BackColor = Color.White;
+                waves.ForeColor = Color.Black;
+                wTxt.BackColor = Color.Black;
+                wTxt.ForeColor = Color.White;
+                theme.Image = Properties.Resources.moon;
+                theme.BackColor = Color.Black;
+                theme.ForeColor = Color.Black; 
+            }
+        }
+
+    private void welcomeScreen_Load(object sender, EventArgs e)
+        {
 
 
+
+            // Sets the form text as the version num defined by the class attribute
+            // TitleVersion
+            this.Text = systemWideVariables.titleVersion;
+
+            // Sets the right theme
+            updateTheme();
 
             // Triggers the fade in animation
             fadeIn.Enabled = true;
@@ -104,6 +121,8 @@ namespace Physics_Simulation
             refraction.Height = Convert.ToInt32(wTxt.Height / 1.5);
             refraction.Width = Convert.ToInt32(wTxt.Width / 1.5);
             waves.Size = refraction.Size;
+
+           
             
 
         }
@@ -132,7 +151,8 @@ namespace Physics_Simulation
             // Creates an instance of the refraction form when
             // the button is pressed
             optionsMenu options = new optionsMenu();
-            options.Show();
+            this.Hide();
+            options.ShowDialog();
 
             // When the refaction instance is closed by the user
             // the Welcome menu will open again
@@ -195,6 +215,7 @@ namespace Physics_Simulation
 
         private void welcomeScreen_FormClosed(object sender, FormClosedEventArgs e)
         {
+            // Not used anymore
             Settings.Default.lightTheme = systemWideVariables.lightTheme;
             Settings.Default.Save();
             Application.Exit();
@@ -230,7 +251,9 @@ namespace Physics_Simulation
             }
 
             // Applies changes
-            Application.Restart();
+            updateTheme();
+            
+            
         }
 
         private void settings_MouseEnter(object sender, EventArgs e)

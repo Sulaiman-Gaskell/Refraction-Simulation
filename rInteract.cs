@@ -134,7 +134,7 @@ namespace Physics_Simulation
             refractiveIndex1.Font = new Font(refractiveIndex1.Font.
                 FontFamily, ClientSize.Width / 80);
 
-            refractiveIndex2.Font = new Font(angleOfIncidence.Font.
+            refractiveIndex2.Font = new Font(refractiveIndex2.Font.
                 FontFamily, ClientSize.Width / 80);
 
 
@@ -264,11 +264,12 @@ namespace Physics_Simulation
                 (ClientSize.Height / 100, 
                 ClientSize.Width / 200);
 
-            // Redraws the base lines apart from the first time this is called
+            // Refreshes the tableLayout panel to redraw everthing
             tableLayoutPanel1.Refresh();
 
-            // Refreshes the tableLayout panel to redraw everthing
 
+
+            // Redraws the base lines apart from the first time this is called
             initDraw();
             
             // Validation
@@ -278,9 +279,9 @@ namespace Physics_Simulation
                 && Convert.ToDouble(angleOfIncidence.Text) <= 90 
                 && Convert.ToDouble(angleOfIncidence.Text) >= 0
                 && Convert.ToDouble(refractiveIndex1.Text) >= 1
-                && Convert.ToDouble(refractiveIndex1.Text) <= 2
+                && Convert.ToDouble(refractiveIndex1.Text) <= 2.65
                 && Convert.ToDouble(refractiveIndex2.Text) >= 1
-                && Convert.ToDouble(refractiveIndex2.Text) <= 2
+                && Convert.ToDouble(refractiveIndex2.Text) <= 2.65
                 )
             {
                 // Converts aOI text from string to integer for x coord use
@@ -335,11 +336,10 @@ namespace Physics_Simulation
                 aOIPen.CustomEndCap = bigArrow;
                 rays.DrawLine(aOIPen, (float)x2I, (float)y2I, (float)arrowXI, (float)arrowYI);
 
-                // delays the drawing first time this is called
-                if (vertDrawPoint == -1)
-                {
-                    Thread.Sleep(75);
-                }
+                // delays the drawing slightly
+             
+                //Thread.Sleep(75);
+                
                 
 
 
@@ -353,13 +353,7 @@ namespace Physics_Simulation
                 aORPen.CustomEndCap = bigArrow;
                 rays.DrawLine(aORPen, (float)x1, (float)y1, (float)arrowXR, (float)arrowYR);
 
-                // delays the drawing first time this is called
-                if (vertDrawPoint == -1)
-                {
-                    Thread.Sleep(75);
-                    // Makes sure it is never triggered again
-                    vertDrawPoint = 1;
-                }
+       
 
                 if (double.IsNaN(angleRDegrees))
                 {
@@ -425,11 +419,11 @@ namespace Physics_Simulation
 
         private void refractiveIndex1_TextChanged_1(object sender, EventArgs e)
         {
-            bArrow.Location = new Point(0, 0);
             // Calls the DrawRays method whenever text is changed in the textbox
             // Twice for odd bug to be fixed
             DrawRays();
             DrawRays();
+          
         }
 
         // For the fade out animation
@@ -447,14 +441,12 @@ namespace Physics_Simulation
             }
         }
 
-        private void torch_Click(object sender, EventArgs e)
-        {
-        }
+  
 
         // For changing each individual cell
         private void tableLayoutPanel1_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
         {
-            // If it is [0,1] then the bg of it will change to grey
+            // If it is [0,1] then the bg of it will change to the right colour
             if (e.Column == 1 && e.Row == 1) 
             {
                 if (systemWideVariables.lightTheme == true)
@@ -517,7 +509,6 @@ namespace Physics_Simulation
         {
             // Returns bArrow size back to normal
             bArrow.BackgroundImageLayout = ImageLayout.Zoom;
-            bArrow.Size = new Size(ClientSize.Height / 10, ClientSize.Height / 10);
 
         }
 
@@ -606,9 +597,6 @@ namespace Physics_Simulation
             else
             {
                 // Stop the timer
-                vertDrawPoint = -1;
-                DrawRays();
-                DrawRays();
                 linesAnimate.Enabled = false;
             }
 
@@ -619,7 +607,7 @@ namespace Physics_Simulation
 
         private void glossary_MouseLeave(object sender, EventArgs e)
         {
-            // Redraws the intial lines and diagram lines
+       
           
 
         }
