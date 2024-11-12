@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
@@ -85,6 +86,8 @@ namespace Physics_Simulation
 
             // Start the fade to animate the form
             fadeIn.Enabled = true;
+
+            
 
            
 
@@ -200,8 +203,10 @@ namespace Physics_Simulation
             // Draws a dotted horizontal line for the normal
             pen.DashStyle = DashStyle.Dot;
 
+
             g.DrawLine(pen, this.Width / 100 * 50, this.Height / 100 * 50,
                 this.Width / 100 * 90, this.Height / 100 * 50);
+
         }
 
         private void fade_Tick(object sender, EventArgs e)
@@ -252,7 +257,7 @@ namespace Physics_Simulation
             // Creates another pen but for the reflected ray
             Pen aORePen = new Pen(Color.Blue, 6);
 
-            // Creates a graphic 'canvas' to draw on the tableLayoutPanel
+            // Creates a grapics to draw on the tableLayoutPanel
             Graphics rays = tableLayoutPanel1.CreateGraphics();
 
             // Increases the quality of the line 

@@ -1,7 +1,18 @@
 Changelog:
 
 Iteration 3 - Questions mode
+
+
 Iteration 2 - Simulation logic
+
+V.2.0.0, PREVIEW, 12/11/24
+	Added wave simulation (interactive mode):
+		Shows live wave function (animation may be changed later)
+		Very barebones
+		Amplitude and wavespeed allow for test inputs
+		Known issues include buggy light mode and lag on low wavespeeds
+
+
 
 Iteration 1 - UI design and refinment:
 

@@ -32,7 +32,7 @@ namespace Physics_Simulation
         // Used for all winforms so made public
         public class systemWideVariables
         {
-            public static string titleVersion = "V1.5.6 - STABLE-EOL";
+            public static string titleVersion = "V2.0.0 - PREVIEW";
             public static bool lightTheme = Settings.Default.lightTheme;
             public static string whichSim = "";
         }
@@ -45,13 +45,14 @@ namespace Physics_Simulation
 
             // Sets the var to tell the program which forms need to be loaded
             systemWideVariables.whichSim = "refraction";
+           
 
       
             this.Hide();
             // Creates an instance of the refraction form when
             // the button is pressed
-            optionsMenu refractionWin = new optionsMenu();
-            refractionWin.ShowDialog();
+            optionsMenu options = new optionsMenu();
+            options.ShowDialog();
             this.Show();
             
 

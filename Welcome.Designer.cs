@@ -92,8 +92,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Controls.Add(this.wTxt, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.refraction, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.theme, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.waves, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.theme, 2, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";

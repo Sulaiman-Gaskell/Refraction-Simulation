@@ -130,6 +130,7 @@
             this.pQuestions.TabIndex = 2;
             this.pQuestions.Text = "Player Questions";
             this.pQuestions.UseVisualStyleBackColor = true;
+            this.pQuestions.Click += new System.EventHandler(this.pQuestions_Click);
             this.pQuestions.MouseEnter += new System.EventHandler(this.pQuestions_MouseEnter);
             this.pQuestions.MouseLeave += new System.EventHandler(this.pQuestions_MouseLeave);
             // 

@@ -31,6 +31,7 @@ namespace Physics_Simulation
             // Starts the fadeIn timer
             fadeIn.Enabled = true;
 
+
         }
 
         private void qMenu_Load(object sender, EventArgs e)
@@ -236,7 +237,16 @@ namespace Physics_Simulation
 
         private void qPlay_Click(object sender, EventArgs e)
         {
-
+            if (systemWideVariables.whichSim == "refraction")
+            {
+                refractionQQuestions refractionQQuestions = new refractionQQuestions();
+                refractionQQuestions.ShowDialog();
+            }
+            else
+            {
+                wavesQQuestions wavesQQuestions = new wavesQQuestions();
+                wavesQQuestions.ShowDialog();
+            }
         }
 
         private void qPlay_MouseClick(object sender, MouseEventArgs e)
@@ -306,6 +316,21 @@ namespace Physics_Simulation
                 // Disables the timer
                 popInPQuestions.Enabled = false;
 
+            }
+        }
+
+        private void pQuestions_Click(object sender, EventArgs e)
+        {
+            if (systemWideVariables.whichSim == "refraction")
+            {
+                refractionPQuestions refractionPQuestions = new refractionPQuestions();
+                refractionPQuestions.ShowDialog();
+            }
+            
+            else
+            {
+                wavesPQuestions wavesPQuestions = new wavesPQuestions();
+                wavesPQuestions.ShowDialog();
             }
         }
     }

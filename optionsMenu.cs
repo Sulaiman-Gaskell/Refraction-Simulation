@@ -112,8 +112,8 @@ namespace Physics_Simulation
             }
             else
             {   
-               // wInteract wInteract = new wInteract();
-                //wInteract.ShowDialog();
+                wInteract wInteract = new wInteract();
+                wInteract.ShowDialog();
             }
             
            
@@ -382,7 +382,7 @@ namespace Physics_Simulation
         {
             // Returns bArrow size back to normal
             bArrow.BackgroundImageLayout = ImageLayout.Zoom;
-            bArrow.Size = new Size(ClientSize.Height / 10, ClientSize.Height / 10);
+          
         }
 
         private void bArrow_MouseEnter(object sender, EventArgs e)
