@@ -36,8 +36,8 @@ namespace Physics_Simulation
 
         private void wInteract_Load(object sender, EventArgs e)
         {
-    
 
+            
             // Sets the form text as the version num defined by the class
             // TitleVersion
             this.Text = systemWideVariables.titleVersion;
@@ -277,11 +277,6 @@ namespace Physics_Simulation
 
             diagram.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
 
-            // Used as an arrow cap
-            AdjustableArrowCap bigArrow = new AdjustableArrowCap
-                (ClientSize.Height / 10,
-                ClientSize.Width / 20);
-
            
 
             // resets the points to be reused
@@ -309,30 +304,39 @@ namespace Physics_Simulation
               Point[] curvePoints = { point0, point1, point2, point3, point4, point5, point6, point7,point8,point9,point10 };
 
             // Refreshs the screen using two differenent methods based on the speed
-            
+            // Not used as of now
+
             if (waveDraw.Interval <= 25)
                 if (refreshCount == 1)
                 {
-                    tableLayoutPanel1.Invalidate();
+                    // tableLayoutPanel1.Invalidate();
+                    tableLayoutPanel1.Refresh();
                     refreshCount = 0;
+                    ofsetX = ofsetX + 2;
                 }
                 else
+                {
                     refreshCount++;
+                    ofsetX = ofsetX + 2;
+                }
             else if (waveDraw.Interval <= 50)
             {
                 if (refreshCount >= 1)
                 {
                     tableLayoutPanel1.Invalidate();
+                    ofsetX = ofsetX + 1;
                     refreshCount = 0;
                 }
                 else
                 {
                     refreshCount++;
+                    ofsetX = ofsetX + 1;
                 }
             }
-           else
+            else
             {
                 tableLayoutPanel1.Refresh();
+                ofsetX = ofsetX + 1;
             }
            
 
@@ -343,6 +347,7 @@ namespace Physics_Simulation
             for (int i = 0; i <= 1; i++)
             {
                 diagram.DrawCurve(wave, curvePoints);
+               
                 
 
             }
@@ -356,11 +361,11 @@ namespace Physics_Simulation
             {
                 ofsetY = 0;
             }
-            else if (ofsetY <= (upperOfsetY-1) & waveFlag == true)
+            else if (ofsetY < upperOfsetY & waveFlag == true)
             {
                 ofsetY++;
             }
-            else if (ofsetY <= (upperOfsetY-1) & ofsetY != 0 & waveFlag == false)
+            else if (ofsetY < upperOfsetY & ofsetY != (-upperOfsetY) & waveFlag == false)
             {
                 ofsetY--;
             }
@@ -369,13 +374,13 @@ namespace Physics_Simulation
                 waveFlag = false;
                 ofsetY--;
             }
-            else if (ofsetY ==0  & waveFlag == false )
+            else if (ofsetY == (-upperOfsetY)  & waveFlag == false )
             {
                 waveFlag = true;
                 ofsetY++;
             }
 
-            ofsetX = ofsetX + 1;
+            
 
         }
 
@@ -388,6 +393,7 @@ namespace Physics_Simulation
         private void waveSpeed_TextChanged(object sender, EventArgs e)
         {
             waveDraw.Interval = Convert.ToInt32(waveSpeed.Text);
+            ofsetX = 0;
         }
 
         private void frequency_TextChanged(object sender, EventArgs e)
@@ -399,6 +405,7 @@ namespace Physics_Simulation
         {
             upperOfsetY = Convert.ToInt32(amplitude.Text);
             ofsetY = 0;
+
         }
     }
 

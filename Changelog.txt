@@ -5,7 +5,12 @@ Iteration 3 - Questions mode
 
 Iteration 2 - Simulation logic
 
-V.2.0.0, PREVIEW, 12/11/24
+V2.0.1, PREVIEW,14.11.24
+	fixed wave animation
+	Increased wave speed
+
+
+V2.0.0, PREVIEW, 12/11/24
 	Added wave simulation (interactive mode):
 		Shows live wave function (animation may be changed later)
 		Very barebones
