@@ -5,7 +5,13 @@ Iteration 3 - Questions mode
 
 Iteration 2 - Simulation logic
 
-V2.0.1, PREVIEW,14.11.24
+V2.0.2, PREVIEW,15/11/24
+	Reverted wave speed changes
+	Increased thickness of the wave line
+	Changed default amplitude
+
+
+V2.0.1, PREVIEW,14/11/24
 	fixed wave animation
 	Increased wave speed
 

@@ -32,7 +32,7 @@ namespace Physics_Simulation
         // Used for all winforms so made public
         public class systemWideVariables
         {
-            public static string titleVersion = "V2.0.1 - PREVIEW";
+            public static string titleVersion = "V2.0.2 - PREVIEW";
             public static bool lightTheme = Settings.Default.lightTheme;
             public static string whichSim = "";
         }
@@ -55,12 +55,6 @@ namespace Physics_Simulation
             options.ShowDialog();
             this.Show();
             
-
-            // When the refaction instance is closed by the user
-            // the Welcome menu will open again
-
-            // When the screen is next shown the opactiy is set to 0
-            // and the fade in animation is triggered
         }
 
         private void label1_Click(object sender, EventArgs e)

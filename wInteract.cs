@@ -26,16 +26,18 @@ namespace Physics_Simulation
             //Maximises the form and stops the user
             //from resizing it
             this.WindowState = FormWindowState.Maximized;
-
+            
+            
             // Disables annoying windows sounds
             this.AcceptButton = null;
-    
+
 
             
         }
 
         private void wInteract_Load(object sender, EventArgs e)
         {
+            
 
             
             // Sets the form text as the version num defined by the class
@@ -127,7 +129,7 @@ namespace Physics_Simulation
             // Adds margins between objects to look nicer
             // Adds some margin gaps between controls to look better
             frequencyText.Margin = new System.Windows.Forms.Padding(
-                ClientSize.Width / 75, ClientSize.Width / 150, 0, 0);
+                ClientSize.Height / 75, ClientSize.Width / 150, 0, 0);
 
             frequency.Margin = new System.Windows.Forms.Padding(
                 ClientSize.Width / 150, ClientSize.Width / 100, 0, 0);
@@ -261,11 +263,11 @@ namespace Physics_Simulation
         private int ofsetX = 0;
         private bool waveFlag = true;
         private int refreshCount = 0;
-        private int upperOfsetY = 50;
+        private int upperOfsetY = 15;
 
         private void waveDraw_Tick(object sender, EventArgs e)
         {
-            Pen wave = new Pen(Color.White, 6);
+            Pen wave = new Pen(Color.White, 20);
             if (systemWideVariables.lightTheme == true)
             {
                 wave.Color = Color.Black;
@@ -276,6 +278,7 @@ namespace Physics_Simulation
              Graphics diagram = tableLayoutPanel1.CreateGraphics();
 
             diagram.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            
 
            
 
@@ -310,27 +313,27 @@ namespace Physics_Simulation
                 if (refreshCount == 1)
                 {
                     // tableLayoutPanel1.Invalidate();
-                    tableLayoutPanel1.Refresh();
+                    tableLayoutPanel1.Invalidate();
                     refreshCount = 0;
-                    ofsetX = ofsetX + 2;
+               
                 }
                 else
                 {
                     refreshCount++;
-                    ofsetX = ofsetX + 2;
+                   
                 }
             else if (waveDraw.Interval <= 50)
             {
                 if (refreshCount >= 1)
                 {
                     tableLayoutPanel1.Invalidate();
-                    ofsetX = ofsetX + 1;
+             
                     refreshCount = 0;
                 }
                 else
                 {
                     refreshCount++;
-                    ofsetX = ofsetX + 1;
+               
                 }
             }
             else
@@ -347,8 +350,9 @@ namespace Physics_Simulation
             for (int i = 0; i <= 1; i++)
             {
                 diagram.DrawCurve(wave, curvePoints);
-               
-                
+        
+
+
 
             }
 
@@ -380,7 +384,7 @@ namespace Physics_Simulation
                 ofsetY++;
             }
 
-            
+            ofsetX = ofsetX + 1;
 
         }
 
@@ -405,6 +409,13 @@ namespace Physics_Simulation
         {
             upperOfsetY = Convert.ToInt32(amplitude.Text);
             ofsetY = 0;
+
+        }
+
+        private void tableLayoutPanel1_SizeChanged(object sender, EventArgs e)
+        {
+          
+        
 
         }
     }
