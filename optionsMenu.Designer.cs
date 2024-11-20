@@ -50,6 +50,7 @@
             // 
             // refractionMenu
             // 
+            this.refractionMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.refractionMenu.ColumnCount = 3;
             this.refractionMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.refractionMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -58,6 +59,7 @@
             this.refractionMenu.Controls.Add(this.interact, 1, 1);
             this.refractionMenu.Controls.Add(this.questions, 1, 2);
             this.refractionMenu.Controls.Add(this.menuText, 1, 0);
+            this.refractionMenu.Cursor = System.Windows.Forms.Cursors.Default;
             this.refractionMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.refractionMenu.Location = new System.Drawing.Point(0, 0);
             this.refractionMenu.Margin = new System.Windows.Forms.Padding(4);

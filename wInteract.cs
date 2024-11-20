@@ -37,9 +37,9 @@ namespace Physics_Simulation
 
         private void wInteract_Load(object sender, EventArgs e)
         {
-            
 
-            
+
+            bArrow.Hide();
             // Sets the form text as the version num defined by the class
             // TitleVersion
             this.Text = systemWideVariables.titleVersion;
@@ -391,7 +391,7 @@ namespace Physics_Simulation
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
            // calls drawLine to draw the rest line
-            drawLine(e.Graphics);
+            //drawLine(e.Graphics);
         }
 
         private void waveSpeed_TextChanged(object sender, EventArgs e)

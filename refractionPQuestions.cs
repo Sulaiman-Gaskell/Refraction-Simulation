@@ -20,6 +20,7 @@ namespace Physics_Simulation
         
         private void refractionPQuestions_Load(object sender, EventArgs e)
         {
+
             // Sets the form text as the version num defined by the class
             // TitleVersion
             this.Text = systemWideVariables.titleVersion;
@@ -89,6 +90,10 @@ namespace Physics_Simulation
         {
             // Returns bArrow size back to normal
             bArrow.BackgroundImageLayout = ImageLayout.Zoom;
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
         }
     }
 }

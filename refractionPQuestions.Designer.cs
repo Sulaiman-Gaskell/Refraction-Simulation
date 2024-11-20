@@ -33,6 +33,7 @@
             this.fadeIn = new System.Windows.Forms.Timer(this.components);
             this.bArrow = new System.Windows.Forms.PictureBox();
             this.fadeOut = new System.Windows.Forms.Timer(this.components);
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.bArrow)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,6 +64,22 @@
             this.fadeOut.Interval = 1;
             this.fadeOut.Tick += new System.EventHandler(this.fadeOut_Tick);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.45454F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.45454F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.TabIndex = 8;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
             // refractionPQuestions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -70,6 +87,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlText;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.bArrow);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "refractionPQuestions";
@@ -86,5 +104,6 @@
         private System.Windows.Forms.Timer fadeIn;
         private System.Windows.Forms.PictureBox bArrow;
         private System.Windows.Forms.Timer fadeOut;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

@@ -199,7 +199,6 @@
             // 
             // waveDraw
             // 
-            this.waveDraw.Enabled = true;
             this.waveDraw.Interval = 1;
             this.waveDraw.Tick += new System.EventHandler(this.waveDraw_Tick);
             // 

@@ -32,7 +32,7 @@ namespace Physics_Simulation
         // Used for all winforms so made public
         public class systemWideVariables
         {
-            public static string titleVersion = "V2.0.2 - PREVIEW";
+            public static string titleVersion = "V1.3.7";
             public static bool lightTheme = Settings.Default.lightTheme;
             public static string whichSim = "";
         }
@@ -63,6 +63,8 @@ namespace Physics_Simulation
 
         private void updateTheme()
         {
+
+         
             // Sets colours acorrdingly
             if (systemWideVariables.lightTheme == true)
             {
@@ -94,7 +96,7 @@ namespace Physics_Simulation
 
     private void welcomeScreen_Load(object sender, EventArgs e)
         {
-
+           
 
 
             // Sets the form text as the version num defined by the class attribute
@@ -225,7 +227,7 @@ namespace Physics_Simulation
             string defaultText = "Physics Simulations!";
             if (wTxt.Text == defaultText)
             {
-                wTxt.Text = "By Sulaiman Gaskell";
+                wTxt.Text = "Physics Simulations!!";
             }
             else
             {

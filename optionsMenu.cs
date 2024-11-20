@@ -24,17 +24,15 @@ namespace Physics_Simulation
             this.WindowState = FormWindowState.Maximized;
        
 
-            // Triggers Refracion_Resize when a resize event happens
-            this.Resize += Refraction_Resize;
-
             // Disables annoying windows sounds
             this.AcceptButton = null;
-
+            
 
         }
 
         private void Refraction_Load(object sender, EventArgs e)
         {
+            
             // For light theme
             if (systemWideVariables.lightTheme == true)
             {
