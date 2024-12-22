@@ -34,7 +34,9 @@
             this.bArrow = new System.Windows.Forms.PictureBox();
             this.fadeOut = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.playButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bArrow)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // fadeIn
@@ -49,10 +51,10 @@
             this.bArrow.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bArrow.BackgroundImage")));
             this.bArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bArrow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bArrow.Location = new System.Drawing.Point(-1, 0);
+            this.bArrow.Location = new System.Drawing.Point(3, 4);
             this.bArrow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bArrow.Name = "bArrow";
-            this.bArrow.Size = new System.Drawing.Size(90, 100);
+            this.bArrow.Size = new System.Drawing.Size(90, 73);
             this.bArrow.TabIndex = 7;
             this.bArrow.TabStop = false;
             this.bArrow.Click += new System.EventHandler(this.bArrow_Click);
@@ -69,16 +71,31 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.playButton, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.bArrow, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.45454F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.45454F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.09925F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.95037F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.95037F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
             this.tableLayoutPanel1.TabIndex = 8;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // playButton
+            // 
+            this.playButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.playButton.AutoSize = true;
+            this.playButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.playButton.Location = new System.Drawing.Point(162, 123);
+            this.playButton.Name = "playButton";
+            this.playButton.Size = new System.Drawing.Size(75, 100);
+            this.playButton.TabIndex = 0;
+            this.playButton.Text = "Play";
+            this.playButton.UseVisualStyleBackColor = true;
+            this.playButton.Click += new System.EventHandler(this.playButton_Click);
             // 
             // refractionPQuestions
             // 
@@ -86,7 +103,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlText;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.bArrow);
             this.Controls.Add(this.tableLayoutPanel1);
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -95,6 +111,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.refractionPQuestions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bArrow)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -105,5 +123,6 @@
         private System.Windows.Forms.PictureBox bArrow;
         private System.Windows.Forms.Timer fadeOut;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button playButton;
     }
 }

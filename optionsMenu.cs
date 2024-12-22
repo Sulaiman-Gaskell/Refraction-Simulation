@@ -66,17 +66,17 @@ namespace Physics_Simulation
 
             // Sets font size for text based on clients resolution
             menuText.Font = new Font(menuText.Font.FontFamily,
-                ClientSize.Width / 30);
+                this.Width / 30);
 
 
 
             interact.Font = new Font(interact.Font.FontFamily,
-                ClientSize.Width / 30);
+                this.Width / 30);
             questions.Font = new Font(questions.Font.FontFamily,
-                ClientSize.Width / 30);
+                this.Width / 30);
 
             // Sizes the back arrow
-            bArrow.Size = new Size(ClientSize.Height / 10, ClientSize.Height / 10);
+            bArrow.Size = new Size(this.Height / 10, this.Height / 10);
 
 
   
@@ -97,29 +97,62 @@ namespace Physics_Simulation
         private void button1_Click(object sender, EventArgs e)
         {
 
-            // Opens the right widnow and keeps this open
-            // Without being seen in the taskbar
+            // Opens the right widnow based on what options are being displayed and keeps this open 
 
-            if (systemWideVariables.whichSim == "refraction")
+            if (interact.Text == "Interactive")
             {
-                rInteract rInteract = new rInteract();
-                rInteract.ShowDialog();
-               
-               
+                if (systemWideVariables.whichSim == "refraction")
+                {
+                    rInteract rInteract = new rInteract();
+                    rInteract.ShowDialog();
 
+
+
+                }
+                else
+                {
+                    wInteract wInteract = new wInteract();
+                    wInteract.ShowDialog();
+                }
             }
-            else
-            {   
-                wInteract wInteract = new wInteract();
-                wInteract.ShowDialog();
+            else if (interact.Text == "Random")
+                if (systemWideVariables.whichSim == "refraction")
+                {
+                    refractionQQuestions refractionQQuestions = new refractionQQuestions();
+                    refractionQQuestions.ShowDialog();
+                }
+                else
+                {
+                    wavesQQuestions wavesQQuestions = new wavesQQuestions();
+                    wavesQQuestions.ShowDialog();
+                }
+
+            else if (interact.Text == "Play")
+            {
+                if (systemWideVariables.whichSim == "refraction")
+                {
+                    refractionPQuestions refractionPQuestions = new refractionPQuestions();
+                    refractionPQuestions.ShowDialog();
+                }
+
+                else
+                {
+                    wavesPQuestions wavesPQuestions = new wavesPQuestions();
+                    wavesPQuestions.ShowDialog();
+
+                }
+
+                        
             }
-            
-           
+
+
+
             if (systemWideVariables.lightTheme == true)
             {
                 menuText.ForeColor = Color.Black;
             }
             else { menuText.ForeColor = Color.White; }
+
         }
 
         private void menuText_Click(object sender, EventArgs e)
@@ -169,13 +202,24 @@ namespace Physics_Simulation
         
         // For menuText animation and fontsize initally growing
         private int tickCount = 0;
+        private bool menuTextAnimate = true;
         private void menuTextGrow_Tick(object sender, EventArgs e)
         {
             string label = "Choose a mode:";
         
             if (tickCount <= label.Length)
             {
-                menuText.Text = label.Substring(0,tickCount);
+                // Only triggers once
+                if (menuTextAnimate == true)
+                {
+                    menuText.Text = label.Substring(0, tickCount);
+
+                    // so it doesnt trigger again
+                    if (tickCount == label.Length)
+                    {
+                        menuTextAnimate = false;
+                    }
+                }
 
                 interact.Font = new Font(interact.Font.FontFamily,
                 ClientSize.Width / (tickCount + 16));
@@ -186,6 +230,7 @@ namespace Physics_Simulation
             }
             else
             {
+                tickCount = 0;
                 interact.Enabled = true;
                 questions.Enabled = true;
                 animateObjects.Enabled = false;
@@ -366,8 +411,23 @@ namespace Physics_Simulation
 
         private void bArrow_Click_1(object sender, EventArgs e)
         {
-            // Calls the fadeOut timer
-            fadeOut.Enabled = true;
+            if (questions.Text == "Questions")
+            {
+                // Calls the fadeOut timer
+                fadeOut.Enabled = true;
+            }
+            else if (questions.Text == "Player Made")
+            {
+                interact.Text = "Interactive";
+                questions.Text = "Questions";
+                animateObjects.Enabled = true;
+            }
+            else if (questions.Text == "Create")
+            {
+                interact.Text = "Random";
+                questions.Text = "Player Made";
+                animateObjects.Enabled= true;
+            }
 
         }
 
@@ -391,9 +451,56 @@ namespace Physics_Simulation
 
         private void questions_Click(object sender, EventArgs e)
         {
-            // Loads the question sub menu
-            qMenu qMenu = new qMenu();
-            qMenu.ShowDialog();
+            // Logic for whether to present the user with more options or to open a new form
+            if (questions.Text == "Questions")
+            {
+                interact.Text = "Random";
+                questions.Text = "Player Made";
+                animateObjects.Enabled = true;
+            }
+            else if (questions.Text == "Player Made")
+            {
+                interact.Text = "Play";
+                questions.Text = "Create";
+                animateObjects.Enabled = true;
+            }
+            else if (questions.Text == "Create")
+            {
+                if (systemWideVariables.whichSim == "refraction")
+                {
+                    refractionBuilder refractionBuilder = new refractionBuilder();
+                    refractionBuilder.ShowDialog();
+           
+                }
+
+                else
+                {
+                    wavesBuilder wavesBuilder = new wavesBuilder();
+                    wavesBuilder.ShowDialog();
+            
+                }
+            }
+            
+        }
+
+        private void optionsMenu_SizeChanged(object sender, EventArgs e)
+        {
+
+            // Updates the size of controls if the window changes
+            // Sets font size for text based on clients resolution
+            menuText.Font = new Font(menuText.Font.FontFamily,
+                this.Width / 30);
+
+
+
+            interact.Font = new Font(interact.Font.FontFamily,
+                this.Width / 30);
+            questions.Font = new Font(questions.Font.FontFamily,
+                this.Width / 30);
+
+            // Sizes the back arrow
+            bArrow.Size = new Size(this.Height / 10, this.Height / 10);
+    
         }
     }
 

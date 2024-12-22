@@ -55,8 +55,8 @@
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.64975F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.35024F));
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.aoR, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.bArrow, 1, 0);
@@ -65,8 +65,8 @@
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 58.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(900, 562);
             this.tableLayoutPanel1.TabIndex = 1;
@@ -83,16 +83,16 @@
             this.flowLayoutPanel1.Controls.Add(this.aOIText);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 351);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 326);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(145, 196);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(142, 222);
             this.flowLayoutPanel1.TabIndex = 6;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // refractiveIndex2
             // 
-            this.refractiveIndex2.Location = new System.Drawing.Point(3, 166);
+            this.refractiveIndex2.Location = new System.Drawing.Point(3, 192);
             this.refractiveIndex2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.refractiveIndex2.Name = "refractiveIndex2";
             this.refractiveIndex2.Size = new System.Drawing.Size(194, 26);
@@ -105,7 +105,7 @@
             // 
             this.rI2Text.AutoSize = true;
             this.rI2Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rI2Text.Location = new System.Drawing.Point(3, 104);
+            this.rI2Text.Location = new System.Drawing.Point(3, 130);
             this.rI2Text.Name = "rI2Text";
             this.rI2Text.Size = new System.Drawing.Size(184, 58);
             this.rI2Text.TabIndex = 2;
@@ -115,7 +115,7 @@
             // 
             // refractiveIndex1
             // 
-            this.refractiveIndex1.Location = new System.Drawing.Point(3, 74);
+            this.refractiveIndex1.Location = new System.Drawing.Point(3, 100);
             this.refractiveIndex1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.refractiveIndex1.Name = "refractiveIndex1";
             this.refractiveIndex1.Size = new System.Drawing.Size(194, 26);
@@ -128,7 +128,7 @@
             // 
             this.rI1Text.AutoSize = true;
             this.rI1Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rI1Text.Location = new System.Drawing.Point(3, 12);
+            this.rI1Text.Location = new System.Drawing.Point(3, 38);
             this.rI1Text.Name = "rI1Text";
             this.rI1Text.Size = new System.Drawing.Size(184, 58);
             this.rI1Text.TabIndex = 4;
@@ -137,7 +137,7 @@
             // 
             // angleOfIncidence
             // 
-            this.angleOfIncidence.Location = new System.Drawing.Point(203, 166);
+            this.angleOfIncidence.Location = new System.Drawing.Point(3, 8);
             this.angleOfIncidence.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.angleOfIncidence.Name = "angleOfIncidence";
             this.angleOfIncidence.Size = new System.Drawing.Size(194, 26);
@@ -150,7 +150,7 @@
             // 
             this.aOIText.AutoSize = true;
             this.aOIText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aOIText.Location = new System.Drawing.Point(203, 133);
+            this.aOIText.Location = new System.Drawing.Point(203, 193);
             this.aOIText.Name = "aOIText";
             this.aOIText.Size = new System.Drawing.Size(211, 29);
             this.aOIText.TabIndex = 0;
@@ -163,7 +163,7 @@
             this.aoR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.aoR.AutoSize = true;
             this.aoR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aoR.Location = new System.Drawing.Point(681, 522);
+            this.aoR.Location = new System.Drawing.Point(681, 523);
             this.aoR.Name = "aoR";
             this.aoR.Size = new System.Drawing.Size(216, 29);
             this.aoR.TabIndex = 2;
@@ -228,15 +228,14 @@
             this.Controls.Add(this.glossary);
             this.Controls.Add(this.tableLayoutPanel1);
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MinimizeBox = false;
             this.Name = "rInteract";
             this.Opacity = 0D;
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.rInteract_Load);
+            this.SizeChanged += new System.EventHandler(this.rInteract_SizeChanged);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);

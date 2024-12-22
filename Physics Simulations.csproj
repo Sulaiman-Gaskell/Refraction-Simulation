@@ -51,11 +51,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="qMenu.cs">
+    <Compile Include="refractionBuilder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="qMenu.Designer.cs">
-      <DependentUpon>qMenu.cs</DependentUpon>
+    <Compile Include="refractionBuilder.Designer.cs">
+      <DependentUpon>refractionBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="refractionPQuestions.cs">
       <SubType>Form</SubType>
@@ -74,6 +74,12 @@
     </Compile>
     <Compile Include="rInteract.Designer.cs">
       <DependentUpon>rInteract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="wavesBuilder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wavesBuilder.Designer.cs">
+      <DependentUpon>wavesBuilder.cs</DependentUpon>
     </Compile>
     <Compile Include="wavesPQuestions.cs">
       <SubType>Form</SubType>
@@ -109,9 +115,6 @@
     </Compile>
     <EmbeddedResource Include="optionsMenu.resx">
       <DependentUpon>optionsMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="qMenu.resx">
-      <DependentUpon>qMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="refractionPQuestions.resx">
       <DependentUpon>refractionPQuestions.cs</DependentUpon>

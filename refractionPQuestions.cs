@@ -21,6 +21,7 @@ namespace Physics_Simulation
         private void refractionPQuestions_Load(object sender, EventArgs e)
         {
 
+
             // Sets the form text as the version num defined by the class
             // TitleVersion
             this.Text = systemWideVariables.titleVersion;
@@ -45,11 +46,40 @@ namespace Physics_Simulation
             // Sizes the back arrow
             bArrow.Size = new Size(ClientSize.Height / 10, ClientSize.Height / 10);
 
+
+            // Draws the middle line
+            lineManip(tableLayoutPanel1.CreateGraphics(), false);
+
+            // Sets font size for text based on clients resolution
+            playButton.Font = new Font(playButton.Font.FontFamily,
+                ClientSize.Width / 30);
+
         }
 
+
+        private void lineManip(Graphics diagram,bool play)
+        {
+
+            Pen mLine = new Pen(Color.White, 7);
+            if (play)
+            {
+                tableLayoutPanel1.Refresh();
+                diagram.DrawLine(mLine,
+                ClientSize.Width / 100 * 70, 0,
+                ClientSize.Width / 100 * 70, ClientSize.Height);
+            }
+            else
+            {
+                diagram.DrawLine(mLine,
+                    ClientSize.Width / 2, 0,
+                    ClientSize.Width / 2, ClientSize.Height);
+            }
+
+        }
         private void fadeIn_Tick(object sender, EventArgs e)
         {
             // Fixes wierd scaling animation bug when maximising the window
+
             if (this.Opacity < 1)
             {
                 this.Opacity += 0.1;
@@ -94,6 +124,14 @@ namespace Physics_Simulation
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
+
+
+        }
+
+        private void playButton_Click(object sender, EventArgs e)
+        {
+            lineManip(tableLayoutPanel1.CreateGraphics(), true);
+           
         }
     }
 }

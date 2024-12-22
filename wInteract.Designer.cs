@@ -39,12 +39,12 @@
             this.frequency = new System.Windows.Forms.TextBox();
             this.wSpeedText = new System.Windows.Forms.Label();
             this.waveSpeed = new System.Windows.Forms.TextBox();
-            this.placeholder = new System.Windows.Forms.Label();
             this.amplitudeText = new System.Windows.Forms.Label();
             this.amplitude = new System.Windows.Forms.TextBox();
             this.glossary = new System.Windows.Forms.LinkLabel();
             this.unitConvert = new System.Windows.Forms.Button();
             this.waveDraw = new System.Windows.Forms.Timer(this.components);
+            this.lineAnimate = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bArrow)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -101,7 +101,6 @@
             this.flowLayoutPanel1.Controls.Add(this.frequency);
             this.flowLayoutPanel1.Controls.Add(this.wSpeedText);
             this.flowLayoutPanel1.Controls.Add(this.waveSpeed);
-            this.flowLayoutPanel1.Controls.Add(this.placeholder);
             this.flowLayoutPanel1.Controls.Add(this.amplitudeText);
             this.flowLayoutPanel1.Controls.Add(this.amplitude);
             this.flowLayoutPanel1.Controls.Add(this.glossary);
@@ -148,19 +147,10 @@
             this.waveSpeed.TabIndex = 3;
             this.waveSpeed.TextChanged += new System.EventHandler(this.waveSpeed_TextChanged);
             // 
-            // placeholder
-            // 
-            this.placeholder.AutoSize = true;
-            this.placeholder.Location = new System.Drawing.Point(3, 104);
-            this.placeholder.Name = "placeholder";
-            this.placeholder.Size = new System.Drawing.Size(92, 20);
-            this.placeholder.TabIndex = 4;
-            this.placeholder.Text = "Placeholder";
-            // 
             // amplitudeText
             // 
             this.amplitudeText.AutoSize = true;
-            this.amplitudeText.Location = new System.Drawing.Point(109, 0);
+            this.amplitudeText.Location = new System.Drawing.Point(3, 104);
             this.amplitudeText.Name = "amplitudeText";
             this.amplitudeText.Size = new System.Drawing.Size(80, 20);
             this.amplitudeText.TabIndex = 5;
@@ -168,7 +158,7 @@
             // 
             // amplitude
             // 
-            this.amplitude.Location = new System.Drawing.Point(109, 23);
+            this.amplitude.Location = new System.Drawing.Point(109, 3);
             this.amplitude.Name = "amplitude";
             this.amplitude.Size = new System.Drawing.Size(100, 26);
             this.amplitude.TabIndex = 6;
@@ -179,7 +169,7 @@
             this.glossary.AutoSize = true;
             this.glossary.ForeColor = System.Drawing.SystemColors.ControlText;
             this.glossary.LinkColor = System.Drawing.Color.White;
-            this.glossary.Location = new System.Drawing.Point(109, 52);
+            this.glossary.Location = new System.Drawing.Point(109, 32);
             this.glossary.Name = "glossary";
             this.glossary.Size = new System.Drawing.Size(71, 20);
             this.glossary.TabIndex = 8;
@@ -190,7 +180,7 @@
             // unitConvert
             // 
             this.unitConvert.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.unitConvert.Location = new System.Drawing.Point(109, 75);
+            this.unitConvert.Location = new System.Drawing.Point(109, 55);
             this.unitConvert.Name = "unitConvert";
             this.unitConvert.Size = new System.Drawing.Size(75, 23);
             this.unitConvert.TabIndex = 7;
@@ -201,6 +191,11 @@
             // 
             this.waveDraw.Interval = 1;
             this.waveDraw.Tick += new System.EventHandler(this.waveDraw_Tick);
+            // 
+            // lineAnimate
+            // 
+            this.lineAnimate.Interval = 1;
+            this.lineAnimate.Tick += new System.EventHandler(this.lineAnimate_Tick);
             // 
             // wInteract
             // 
@@ -236,11 +231,11 @@
         private System.Windows.Forms.TextBox frequency;
         private System.Windows.Forms.Label wSpeedText;
         private System.Windows.Forms.TextBox waveSpeed;
-        private System.Windows.Forms.Label placeholder;
         private System.Windows.Forms.Label amplitudeText;
         private System.Windows.Forms.TextBox amplitude;
         private System.Windows.Forms.Button unitConvert;
         private System.Windows.Forms.LinkLabel glossary;
         private System.Windows.Forms.Timer waveDraw;
+        private System.Windows.Forms.Timer lineAnimate;
     }
 }

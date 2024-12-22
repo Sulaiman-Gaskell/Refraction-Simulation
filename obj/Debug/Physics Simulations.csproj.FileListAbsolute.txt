@@ -3,7 +3,6 @@ C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\bin\Debug\Physi
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\bin\Debug\Physics Simulation.pdb
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics Simulations.csproj.AssemblyReference.cache
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.optionsMenu.resources
-C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.qMenu.resources
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.rInteract.resources
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.welcomeScreen.resources
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.Properties.Resources.resources

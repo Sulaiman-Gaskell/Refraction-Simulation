@@ -40,6 +40,8 @@ namespace Physics_Simulation
 
         private void rInteract_Load(object sender, EventArgs e)
         {
+          
+
             // Sets the active colour of the link label to pink for dark mode
             glossary.ActiveLinkColor = Color.Pink;
 
@@ -63,17 +65,7 @@ namespace Physics_Simulation
                 glossary.ActiveLinkColor = Color.Blue;
 
             }
-
-            // Sets up the glossary loaction
-            glossary.Font = new Font(
-                glossary.Font.FontFamily, ClientSize.Width / 80);
-
-
-            glossary.Location = new Point(Left, 
-                Convert.ToInt32(ClientSize.Height / 1.75));
-
-            glossary.Padding = new System.Windows.Forms.Padding(
-                ClientSize.Width / 40, 0, 0, 0);
+            
 
 
             // Sets the form text as the version num defined by the class
@@ -87,78 +79,89 @@ namespace Physics_Simulation
             // Start the fade to animate the form
             fadeIn.Enabled = true;
 
-            
-
            
 
+            // Animates the lines as the program is first opened
+            linesAnimate.Enabled = true;
+            
+            aoR.Hide(); 
+            
+
+        }
+
+        private void configControls()
+        {
+            // Sets up the glossary loaction
+            glossary.Font = new Font(
+                glossary.Font.FontFamily, this.Width / 80);
+
+
+            glossary.Location = new Point(0,
+                Convert.ToInt32(this.Height / 2));
+
+            glossary.Padding = new System.Windows.Forms.Padding(
+                this.Width / 60,0, 0,0);
 
             // Adds some margin gaps between controls to look better
             aOIText.Margin = new System.Windows.Forms.Padding(
-                ClientSize.Width / 150, 0, 0, 0);
+                this.Width / 150, 0, 0, 0);
 
             angleOfIncidence.Margin = new System.Windows.Forms.Padding(
-                ClientSize.Width / 150, ClientSize.Height / 50, 0, 0);
+                this.Width / 150, this.Height / 50, 0, 0);
 
             rI1Text.Margin = new System.Windows.Forms.Padding(
-                ClientSize.Width / 150, ClientSize.Height / 50, 0, 0);
+                this.Width / 150, this.Height / 50, 0, 0);
 
             rI2Text.Margin = new System.Windows.Forms.Padding(
-                 ClientSize.Width / 150, ClientSize.Height / 50, 0, 0);
+                 this.Width / 150, this.Height / 50, 0, 0);
 
             refractiveIndex1.Margin = new System.Windows.Forms.Padding(
-                ClientSize.Width / 150, ClientSize.Height / 50, 0, 0);
+                this.Width / 150, this.Height / 50, 0, 0);
 
             refractiveIndex2.Margin = new System.Windows.Forms.Padding(
-                ClientSize.Width / 150, ClientSize.Height / 50,
-                0, ClientSize.Height / 100);
+                this.Width / 150, this.Height / 50,
+                0, this.Height / 100);
 
 
 
 
             // For sizing objects based on clients resoloution
             aOIText.Font = new Font(aOIText.Font.FontFamily,
-            ClientSize.Width / 80);
+            this.Width / 80);
 
             aoR.Font = new Font(aoR.Font.FontFamily,
-                ClientSize.Width / 80);
+                this.Width / 80);
 
             angleOfIncidence.Font = new Font(angleOfIncidence.Font.
-                FontFamily, ClientSize.Width / 80);
-            
+                FontFamily, this.Width / 80);
+
             // Sets the same size for matching objects
             angleOfIncidence.Size = aOIText.Size;
 
             rI1Text.Font = new Font(rI1Text.Font.FontFamily,
-                ClientSize.Width / 80);
+                        this.Width / 80);
 
             rI2Text.Font = new Font(aOIText.Font.FontFamily,
-                ClientSize.Width / 80);
+                this.Size.Width / 80);
 
             refractiveIndex1.Font = new Font(refractiveIndex1.Font.
-                FontFamily, ClientSize.Width / 80);
+                FontFamily, this.Width / 80);
 
             refractiveIndex2.Font = new Font(refractiveIndex2.Font.
-                FontFamily, ClientSize.Width / 80);
+                FontFamily, this.Width / 80);
 
 
             // Keeps sizing consistent
             refractiveIndex1.Size = aOIText.Size;
             refractiveIndex2.Size = aOIText.Size;
 
-           
-           
 
-            // Calls the text_changed  method when text changes
-            angleOfIncidence.TextChanged += angleOfIncidence_TextChanged;
+
 
             // Puts the back arrow in the top left hand corner
-            bArrow.Size = new Size(ClientSize.Height / 10, ClientSize.Height / 10);
-
-            // Animates the lines as the program is first opened
-            linesAnimate.Enabled = true;
-            
-
+            bArrow.Size = new Size(this.Height / 10, this.Height / 10);
         }
+
 
 
         private void bArrow_Click_1(object sender, EventArgs e)
@@ -171,6 +174,7 @@ namespace Physics_Simulation
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
+       
         }
 
         // For drawing the static lines
@@ -188,7 +192,7 @@ namespace Physics_Simulation
 
 
             // Creates a white pen
-            Pen pen = new Pen(lineCol, 3);
+            Pen pen = new Pen(lineCol, 6);
 
        
             // Creates a new graphic object
@@ -240,6 +244,7 @@ namespace Physics_Simulation
         {
             // Calls the DrawRays method whenever text is changed in the textbox
             DrawRays();
+            DrawRays();
           
         }
 
@@ -257,21 +262,21 @@ namespace Physics_Simulation
             // Creates another pen but for the reflected ray
             Pen aORePen = new Pen(Color.Blue, 6);
 
-            // Creates a grapics to draw on the tableLayoutPanel
+            // Creates a graphics to draw on the tableLayoutPanel
             Graphics rays = tableLayoutPanel1.CreateGraphics();
 
             // Increases the quality of the line 
-            rays.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            rays.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             
 
             // Used as an arrow cap
             AdjustableArrowCap bigArrow = new AdjustableArrowCap
-                (ClientSize.Height / 100, 
-                ClientSize.Width / 200);
+                (this.Height / 100, 
+                this.Width / 200);
 
-            // Refreshes the tableLayout panel to redraw everthing
+            // Refreshes the tableLayout panel to redraw everything
             tableLayoutPanel1.Refresh();
-
+            
 
 
             // Redraws the base lines apart from the first time this is called
@@ -362,7 +367,7 @@ namespace Physics_Simulation
 
                 if (double.IsNaN(angleRDegrees))
                 {
-                    aoR.Text = "Total internal reflection has occured";
+                    aoR.Text = "Total internal reflection has occurred";
 
                     // Draws the end point for the reflected ray
                     rays.DrawLine(aORePen, (float)x1, (float)y1, (float)x2Re, (float)y2Re);
@@ -570,7 +575,7 @@ namespace Physics_Simulation
 
 
             // Creates a white pen
-            Pen pen = new Pen(lineCol, 3);
+            Pen pen = new Pen(lineCol, 6);
 
 
             // Creates a new graphic object
@@ -620,6 +625,12 @@ namespace Physics_Simulation
         private void glossary_MouseDown(object sender, MouseEventArgs e)
         {
             linesAnimate.Enabled = true;
+        }
+
+        private void rInteract_SizeChanged(object sender, EventArgs e)
+        {
+            configControls();
+            DrawRays();
         }
     }
 }

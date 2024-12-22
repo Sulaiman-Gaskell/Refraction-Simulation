@@ -193,16 +193,14 @@
             this.ClientSize = new System.Drawing.Size(960, 540);
             this.Controls.Add(this.refractionMenu);
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "optionsMenu";
             this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Refraction_Load);
+            this.SizeChanged += new System.EventHandler(this.optionsMenu_SizeChanged);
             this.refractionMenu.ResumeLayout(false);
             this.refractionMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bArrow)).EndInit();

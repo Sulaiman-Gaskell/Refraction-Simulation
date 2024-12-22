@@ -39,7 +39,6 @@ namespace Physics_Simulation
         {
 
 
-            bArrow.Hide();
             // Sets the form text as the version num defined by the class
             // TitleVersion
             this.Text = systemWideVariables.titleVersion;
@@ -81,7 +80,7 @@ namespace Physics_Simulation
             unitConvert.FlatStyle = FlatStyle.System;
 
             // Hides a placeholder label for consistancy
-            placeholder.Hide();
+            //placeholder.Hide();
 
             // Puts the back arrow in the top left hand corner
             bArrow.Location = new Point(0, 0);
@@ -154,7 +153,7 @@ namespace Physics_Simulation
             glossary.Margin = new System.Windows.Forms.Padding(
                 ClientSize.Width / 50, ClientSize.Width/100, 0, 0);
 
-
+            lineAnimate.Enabled = true;
         }
 
     
@@ -186,7 +185,6 @@ namespace Physics_Simulation
             {
                 // When the opacity is 0, close the form
                 this.Close();
-
             }
         }
 
@@ -230,7 +228,7 @@ namespace Physics_Simulation
         {
             // Opens a link to a useful info page
             System.Diagnostics.Process.Start("https://pmt.physicsandmathstutor.com/download/Physics/A-level/Notes/AQA/03-Waves/Detailed%20Notes%20-%20Section%2003%20Waves%20-%20AQA%20Physics%20A-level.pdf");
-            // redraws the diagram accordingly.
+
         }
 
 
@@ -238,21 +236,18 @@ namespace Physics_Simulation
 
         private void drawLine(Graphics graphics)
         {
-            // Creates a pen object and chnages in accordingly
+            // Creates a pen object and chnages colour accordingly
             Pen line = new Pen(Color.Red, 6);
             if (systemWideVariables.lightTheme == true)
             {
                line.Color = Color.Blue;
             }
 
-
-            
-
             graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             line.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
 
             graphics.DrawLine(line, 0, ClientSize.Height / 100 * 50,
-    ClientSize.Width, ClientSize.Height / 100 * 50);
+                ClientSize.Width, ClientSize.Height / 100 * 50);
 
             line.Dispose();
         }
@@ -264,9 +259,11 @@ namespace Physics_Simulation
         private bool waveFlag = true;
         private int refreshCount = 0;
         private int upperOfsetY = 15;
+        private bool temp = true;
 
         private void waveDraw_Tick(object sender, EventArgs e)
         {
+
             Pen wave = new Pen(Color.White, 20);
             if (systemWideVariables.lightTheme == true)
             {
@@ -276,6 +273,8 @@ namespace Physics_Simulation
 
             // Creates a graphic 'diagram' to draw on the tableLayoutPanel
              Graphics diagram = tableLayoutPanel1.CreateGraphics();
+
+            drawLine(diagram);
 
             diagram.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             
@@ -306,54 +305,61 @@ namespace Physics_Simulation
 
               Point[] curvePoints = { point0, point1, point2, point3, point4, point5, point6, point7,point8,point9,point10 };
 
-            // Refreshs the screen using two differenent methods based on the speed
+            // Refreshs the screen using two differnent methods based on the speed
             // Not used as of now
 
-            if (waveDraw.Interval <= 25)
-                if (refreshCount == 1)
-                {
+           //if (waveDraw.Interval <= 25)
+             //   if (refreshCount == 1)
+                //{
                     // tableLayoutPanel1.Invalidate();
-                    tableLayoutPanel1.Invalidate();
-                    refreshCount = 0;
+               //     tableLayoutPanel1.Invalidate();
+                 //   refreshCount = 0;
                
-                }
-                else
-                {
-                    refreshCount++;
+                //}
+                //else
+                //{
+                  //  refreshCount++;
                    
-                }
-            else if (waveDraw.Interval <= 50)
-            {
-                if (refreshCount >= 1)
-                {
-                    tableLayoutPanel1.Invalidate();
+                //}
+            //else if (waveDraw.Interval <= 50)
+            //{
+              //  if (refreshCount >= 1)
+                //{
+                  //  tableLayoutPanel1.Invalidate();
              
-                    refreshCount = 0;
-                }
-                else
-                {
-                    refreshCount++;
+                    //refreshCount = 0;
+                //}
+                //else
+                //{
+                  //  refreshCount++;
                
-                }
-            }
-            else
-            {
-                tableLayoutPanel1.Refresh();
-                ofsetX = ofsetX + 1;
-            }
+             //   }
+            //}
+//            else
+  //          {
+    //            tableLayoutPanel1.Refresh();
+      //          ofsetX = ofsetX + 1;
+        //    }
            
 
 
             // Draws the wave function
 
 
-            for (int i = 0; i <= 1; i++)
+           // for (int i = 0; i <= 1; i++)
+           // {
+               
+             //   diagram.DrawCurve(wave, curvePoints);
+            //}
+
+            if (temp == true)
             {
                 diagram.DrawCurve(wave, curvePoints);
-        
-
-
-
+                temp = false;
+            }
+            else
+            {
+                this.Invalidate();
             }
 
 
@@ -390,8 +396,6 @@ namespace Physics_Simulation
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-           // calls drawLine to draw the rest line
-            //drawLine(e.Graphics);
         }
 
         private void waveSpeed_TextChanged(object sender, EventArgs e)
@@ -416,6 +420,51 @@ namespace Physics_Simulation
         {
           
         
+
+        }
+
+
+        // Sets up the persistant var
+        private float endPoint = 0;
+        private void getEndPoint()
+        {
+            if (endPoint == 0)
+            {
+                endPoint = this.Width;
+            }
+        }
+        private void lineAnimate_Tick(object sender, EventArgs e)
+        {
+            // Creates a pen object and chnages colour accordingly
+            Pen line = new Pen(Color.Red, 6);
+            if (systemWideVariables.lightTheme == true)
+            {
+                line.Color = Color.Blue;
+            }
+
+            Graphics graphics = tableLayoutPanel1.CreateGraphics();
+
+
+            // Smooths the line and makes it dotted
+            graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            line.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+
+            // Gets an updated value for the end point
+            getEndPoint();
+
+            // draws a new line based on the var endPoint
+            graphics.DrawLine(line, 0, ClientSize.Height / 100 * 50,
+                this.Width - endPoint, ClientSize.Height / 100 * 50);
+
+            // Decreases the value of endPoint
+            endPoint= endPoint - 20;
+
+            if (endPoint <= 0)
+            {
+                // Stops the timer    
+                waveDraw.Enabled = true;
+                lineAnimate.Enabled = false;
+            }
 
         }
     }

@@ -32,7 +32,7 @@ namespace Physics_Simulation
         // Used for all winforms so made public
         public class systemWideVariables
         {
-            public static string titleVersion = "V1.3.7";
+            public static string titleVersion = "V1.3.8";
             public static bool lightTheme = Settings.Default.lightTheme;
             public static string whichSim = "";
         }
@@ -110,7 +110,7 @@ namespace Physics_Simulation
             fadeIn.Enabled = true;
 
             // Chnages font to a nicer one for both buttons
-            wTxt.Font = new Font ("Microsoft Sans Serif",21);
+            wTxt.Font = new Font ("Microsoft Sans Serif", 21);
             refraction.Font = new Font("Microsoft Sans Serif", 20);
             waves.Font = new Font("Microsoft Sans Serif", 20);
 
@@ -145,13 +145,13 @@ namespace Physics_Simulation
             // Sets the var to tell the program which forms need to be loaded
             systemWideVariables.whichSim = "waves";
 
-            // Creates an instance of the refraction form when
+            // Creates an instance of optionMenu form when
             // the button is pressed
             optionsMenu options = new optionsMenu();
             this.Hide();
             options.ShowDialog();
 
-            // When the refaction instance is closed by the user
+            // When the optionMenu instance is closed by the user
             // the Welcome menu will open again
             this.Show();
             // When the screen is next shown the opactiy is set to 0
@@ -265,6 +265,11 @@ namespace Physics_Simulation
                 themeTip.SetToolTip(theme, "Click to switch to light theme"); 
             }
             
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
