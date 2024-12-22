@@ -5,13 +5,14 @@ Iteration 3 - Questions mode
 
 Iteration 2 - Simulation logic
 
-V2.0.3 PREVIEW,?/11/24
+V2.0.3 PREVIEW (Prototype for Iteration 2),22/12/24
 	Added another submenu to the questions menu. 
 	Refactored menu logic (menus don't stay open in the background anymore)
 	Added some extra animations to the menu.
 	Removed full screen from previously full screen menus and simulations
 	Allowed resizing of all previously full screen menus and simulations
 	Increased the thickness of the static simulation lines on the refraction simulation screen to be in line with all other lines on that screen
+	Reduced flickering of the wave diagram
 
 V2.0.2, PREVIEW,15/11/24
 	Reverted wave speed changes

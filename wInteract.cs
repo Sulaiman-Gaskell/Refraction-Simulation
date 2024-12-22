@@ -38,6 +38,9 @@ namespace Physics_Simulation
         private void wInteract_Load(object sender, EventArgs e)
         {
 
+            this.DoubleBuffered = true; // Enable double buffering
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint, true);
+            this.UpdateStyles();
 
             // Sets the form text as the version num defined by the class
             // TitleVersion
@@ -305,52 +308,39 @@ namespace Physics_Simulation
 
               Point[] curvePoints = { point0, point1, point2, point3, point4, point5, point6, point7,point8,point9,point10 };
 
-            // Refreshs the screen using two differnent methods based on the speed
-            // Not used as of now
+            // Refreshs the screen or clears it
 
-           //if (waveDraw.Interval <= 25)
-             //   if (refreshCount == 1)
-                //{
-                    // tableLayoutPanel1.Invalidate();
-               //     tableLayoutPanel1.Invalidate();
-                 //   refreshCount = 0;
-               
-                //}
-                //else
-                //{
-                  //  refreshCount++;
+            if (refreshCount == 1)
+            {
+                if (systemWideVariables.lightTheme == true)
+                {
+                    diagram.Clear(Color.White);
+                }
+                else
+
+                    diagram.Clear(Color.Black);
+
+                refreshCount = 0;
+
+            }
+            else
+            {
+                this.Invalidate();
+                refreshCount++;
+            }
                    
-                //}
-            //else if (waveDraw.Interval <= 50)
-            //{
-              //  if (refreshCount >= 1)
-                //{
-                  //  tableLayoutPanel1.Invalidate();
-             
-                    //refreshCount = 0;
-                //}
-                //else
-                //{
-                  //  refreshCount++;
-               
-             //   }
-            //}
-//            else
-  //          {
-    //            tableLayoutPanel1.Refresh();
-      //          ofsetX = ofsetX + 1;
-        //    }
+        
            
 
 
             // Draws the wave function
 
 
-           // for (int i = 0; i <= 1; i++)
-           // {
+            for (int i = 0; i <= 1; i++)
+            {
                
-             //   diagram.DrawCurve(wave, curvePoints);
-            //}
+                diagram.DrawCurve(wave, curvePoints);
+            }
 
             if (temp == true)
             {

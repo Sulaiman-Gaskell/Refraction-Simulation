@@ -11,6 +11,5 @@ C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Phy
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics Simulation.pdb
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.optionsMenu.resources
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.wInteract.resources
-C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.qMenu.resources
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.refractionPQuestions.resources
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.refractionQQuestions.resources
