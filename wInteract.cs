@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -75,6 +76,7 @@ namespace Physics_Simulation
                 amplitude.ForeColor = Color.White;
                 unitConvert.BackColor = Color.Black;
                 unitConvert.ForeColor = Color.White;
+                waveLength.ForeColor = Color.Black;
 
 
             }
@@ -115,7 +117,10 @@ namespace Physics_Simulation
 
             glossary.Font = new Font(glossary.Font.FontFamily,
                 ClientSize.Width / 80);
-            
+
+            waveLength.Font = new Font(glossary.Font.FontFamily,
+                ClientSize.Width / 80);
+
             // Sets the same size as the largest item
 
             frequency.Size = wSpeedText.Size;
@@ -123,15 +128,17 @@ namespace Physics_Simulation
             waveSpeed.Size = wSpeedText.Size;
             amplitudeText.Size = wSpeedText.Size;
             amplitude.Size = wSpeedText.Size;
-            unitConvert.Size = wSpeedText.Size;
+            unitConvert.Size = waveSpeed.Size;
             glossary.Size = wSpeedText.Size;
+            waveLength.Size = wSpeedText.Size;
+
         
             
 
             // Adds margins between objects to look nicer
             // Adds some margin gaps between controls to look better
             frequencyText.Margin = new System.Windows.Forms.Padding(
-                ClientSize.Height / 75, ClientSize.Width / 150, 0, 0);
+                0, ClientSize.Width / 150, 0, 0);
 
             frequency.Margin = new System.Windows.Forms.Padding(
                 ClientSize.Width / 150, ClientSize.Width / 100, 0, 0);
@@ -145,16 +152,16 @@ namespace Physics_Simulation
 
             // new column
             amplitudeText.Margin = new System.Windows.Forms.Padding(
-                ClientSize.Width / 75, ClientSize.Width / 150,0,0);
+                ClientSize.Width / 250, ClientSize.Width / 150,0,0);
 
             amplitude.Margin = new System.Windows.Forms.Padding(
                 ClientSize.Width / 150, ClientSize.Width / 100,0,0);
 
             unitConvert.Margin = new System.Windows.Forms.Padding(
-                ClientSize.Width / 150, ClientSize.Width / 75, 0, 0);
+                0, ClientSize.Width / 100, 0, 0);
 
             glossary.Margin = new System.Windows.Forms.Padding(
-                ClientSize.Width / 50, ClientSize.Width/100, 0, 0);
+                ClientSize.Width / 150, ClientSize.Width/100, 0, 0);
 
             lineAnimate.Enabled = true;
         }
@@ -262,7 +269,6 @@ namespace Physics_Simulation
         private bool waveFlag = true;
         private int refreshCount = 0;
         private int upperOfsetY = 15;
-        private bool temp = true;
 
         private void waveDraw_Tick(object sender, EventArgs e)
         {
@@ -277,7 +283,7 @@ namespace Physics_Simulation
             // Creates a graphic 'diagram' to draw on the tableLayoutPanel
              Graphics diagram = tableLayoutPanel1.CreateGraphics();
 
-            drawLine(diagram);
+            
 
             diagram.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             
@@ -310,47 +316,51 @@ namespace Physics_Simulation
 
             // Refreshs the screen or clears it
 
-            if (refreshCount == 1)
+            if (refreshCount == 1 & waveDraw.Interval < 500)
             {
                 if (systemWideVariables.lightTheme == true)
                 {
                     diagram.Clear(Color.White);
                 }
                 else
-
+                {
                     diagram.Clear(Color.Black);
+                }
+
+                
+
 
                 refreshCount = 0;
 
+            }
+
+            else if (waveDraw.Interval >= 500)
+            {
+                if (systemWideVariables.lightTheme == true)
+                {
+                    diagram.Clear(Color.White);
+                }
+                else
+                {
+                    diagram.Clear(Color.Black);
+                }
+                refreshCount = 0;
             }
             else
             {
                 this.Invalidate();
                 refreshCount++;
             }
-                   
-        
-           
+
+            drawLine(diagram);
+
+
 
 
             // Draws the wave function
 
+            diagram.DrawCurve(wave, curvePoints);
 
-            for (int i = 0; i <= 1; i++)
-            {
-               
-                diagram.DrawCurve(wave, curvePoints);
-            }
-
-            if (temp == true)
-            {
-                diagram.DrawCurve(wave, curvePoints);
-                temp = false;
-            }
-            else
-            {
-                this.Invalidate();
-            }
 
 
 
@@ -380,7 +390,32 @@ namespace Physics_Simulation
                 ofsetY++;
             }
 
-            ofsetX = ofsetX + 1;
+
+            // Fine tune visual effect
+            if (waveDraw.Interval < 50)
+            {
+                ofsetX = ofsetX + 2;
+            }
+            else
+            {
+                ofsetX ++;
+            }
+
+
+            // Forces any changes to the wavelength stat if needed
+            try
+            {
+                // Updates the stat and rounds to one dp
+                waveLength.Text = "Wavelength: " +
+                    Convert.ToString(Math.Round(Convert.ToDouble(waveSpeed.Text) / Convert.ToInt32(frequency.Text),1)
+                    + " m (1.dp)");
+            }
+            catch
+            {
+                // To pause wave animation if an invalid input is put in and give error messg
+                waveDraw.Interval = 1000000;
+                waveLength.Text = "Error!";
+            }
 
         }
 
@@ -388,21 +423,73 @@ namespace Physics_Simulation
         {
         }
 
+
+        private double upperWaveSpeed = 101;
         private void waveSpeed_TextChanged(object sender, EventArgs e)
         {
-            waveDraw.Interval = Convert.ToInt32(waveSpeed.Text);
+            try
+            {
+                waveDraw.Interval = Convert.ToInt32(upperWaveSpeed - Convert.ToDouble(waveSpeed.Text)
+                    - (Convert.ToInt32(frequency.Text)));
+            }
+            catch
+            {
+                // give error messg and update values if invalid value is given
+
+                if (waveSpeed.Text == "")
+                {
+
+                }
+                else
+                {
+                    waveLength.Text = "Error! This wave cannot exist!";
+                    waveDraw.Interval = 1;
+                }
+                
+                
+
+                waveLength.Text = "Error!";
+            }
+
             ofsetX = 0;
         }
 
         private void frequency_TextChanged(object sender, EventArgs e)
         {
+            try
+            {
+                waveDraw.Interval = Convert.ToInt32(upperWaveSpeed - Convert.ToDouble(waveSpeed.Text)
+                    - (Convert.ToInt32(frequency.Text)));
+            }
+            catch
+            {
 
+                // To pause wave animation if an invalid input is put in and give error msg
+                waveDraw.Interval = 1;
+                waveLength.Text = "Error! Wave doesn't exist! Change the frequency or wave speed";
+            }
+            ofsetX = 0;
         }
 
         private void amplitude_TextChanged(object sender, EventArgs e)
         {
-            upperOfsetY = Convert.ToInt32(amplitude.Text);
-            ofsetY = 0;
+            try
+            {
+
+                // Conversion string --> double (*2) -- > integer
+                upperOfsetY = Convert.ToInt32(Convert.ToDouble(amplitude.Text) * 2);
+                ofsetY = 0;
+
+              
+            }
+            catch
+            {
+                //give error messg and prevent error from happening
+                upperOfsetY = 1;
+                waveLength.Text = "Error!";
+            }
+
+      
 
         }
 
@@ -457,6 +544,78 @@ namespace Physics_Simulation
             }
 
         }
+
+        private void unitConvert_Click(object sender, EventArgs e)
+        {
+            if (unitConvert.Text == "m/s")
+            {
+                // Updates the text occordingly
+                unitConvert.Text = "km/h";
+
+                // Converts occordingly
+                waveSpeed.Text = Convert.ToString(Convert.ToDouble(waveSpeed.Text) * 3.6);
+                upperWaveSpeed = upperWaveSpeed * 3.6;
+
+            }
+            else
+            {
+                // Same but in reverse
+                unitConvert.Text = "m/s";
+
+                waveSpeed.Text = Convert.ToString(Convert.ToDouble(waveSpeed.Text) / 3.6);
+                upperWaveSpeed = upperWaveSpeed / 3.6;
+
+            }
+
+            // Sets the new converted speed properly
+
+            try
+            {
+                waveDraw.Interval = Convert.ToInt32(upperWaveSpeed - Convert.ToDouble(waveSpeed.Text));
+            }
+            catch
+            {
+                // To pause wave animation if an invalid input is put in
+                waveDraw.Interval = 1000000;
+            }
+
+        }
+
+        private void frequency_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Stops the user from entering any values other than 0-9, backspace and full stop 
+            if ((e.KeyChar > (char)Keys.D9 || 
+                 e.KeyChar < (char)Keys.D0) && 
+                 e.KeyChar != (char)Keys.Back)
+            {
+                 e.Handled = true;
+            }
+        }
+
+        private void waveSpeed_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Stops the user from entering any values other than 0-9, backspace and full stop 
+            if ((e.KeyChar > (char)Keys.D9 ||
+                 e.KeyChar < (char)Keys.D0) &&
+                 e.KeyChar != (char)Keys.Back &&
+                 e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void amplitude_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Stops the user from entering any values other than 0-9, backspace and full stop 
+            if ((e.KeyChar > (char)Keys.D9 ||
+                 e.KeyChar < (char)Keys.D0) &&
+                 e.KeyChar != (char)Keys.Back &&
+                 e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
     }
 
 }
+ 

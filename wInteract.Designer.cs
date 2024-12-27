@@ -45,6 +45,7 @@
             this.unitConvert = new System.Windows.Forms.Button();
             this.waveDraw = new System.Windows.Forms.Timer(this.components);
             this.lineAnimate = new System.Windows.Forms.Timer(this.components);
+            this.waveLength = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bArrow)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -79,9 +80,10 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.78791F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.21209F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.32271F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.67729F));
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.waveLength, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -109,7 +111,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 424);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(199, 135);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(221, 135);
             this.flowLayoutPanel1.TabIndex = 0;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -118,9 +120,9 @@
             this.frequencyText.AutoSize = true;
             this.frequencyText.Location = new System.Drawing.Point(3, 0);
             this.frequencyText.Name = "frequencyText";
-            this.frequencyText.Size = new System.Drawing.Size(84, 20);
+            this.frequencyText.Size = new System.Drawing.Size(114, 20);
             this.frequencyText.TabIndex = 0;
-            this.frequencyText.Text = "Frequency";
+            this.frequencyText.Text = "Frequency(Hz)";
             // 
             // frequency
             // 
@@ -128,7 +130,9 @@
             this.frequency.Name = "frequency";
             this.frequency.Size = new System.Drawing.Size(100, 26);
             this.frequency.TabIndex = 1;
+            this.frequency.Text = "1";
             this.frequency.TextChanged += new System.EventHandler(this.frequency_TextChanged);
+            this.frequency.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frequency_KeyPress);
             // 
             // wSpeedText
             // 
@@ -145,31 +149,35 @@
             this.waveSpeed.Name = "waveSpeed";
             this.waveSpeed.Size = new System.Drawing.Size(100, 26);
             this.waveSpeed.TabIndex = 3;
+            this.waveSpeed.Text = "100";
             this.waveSpeed.TextChanged += new System.EventHandler(this.waveSpeed_TextChanged);
+            this.waveSpeed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.waveSpeed_KeyPress);
             // 
             // amplitudeText
             // 
             this.amplitudeText.AutoSize = true;
             this.amplitudeText.Location = new System.Drawing.Point(3, 104);
             this.amplitudeText.Name = "amplitudeText";
-            this.amplitudeText.Size = new System.Drawing.Size(80, 20);
+            this.amplitudeText.Size = new System.Drawing.Size(103, 20);
             this.amplitudeText.TabIndex = 5;
-            this.amplitudeText.Text = "Amplitude";
+            this.amplitudeText.Text = "Amplitude(m)";
             // 
             // amplitude
             // 
-            this.amplitude.Location = new System.Drawing.Point(109, 3);
+            this.amplitude.Location = new System.Drawing.Point(123, 3);
             this.amplitude.Name = "amplitude";
             this.amplitude.Size = new System.Drawing.Size(100, 26);
             this.amplitude.TabIndex = 6;
+            this.amplitude.Text = "7.5";
             this.amplitude.TextChanged += new System.EventHandler(this.amplitude_TextChanged);
+            this.amplitude.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.amplitude_KeyPress);
             // 
             // glossary
             // 
             this.glossary.AutoSize = true;
             this.glossary.ForeColor = System.Drawing.SystemColors.ControlText;
             this.glossary.LinkColor = System.Drawing.Color.White;
-            this.glossary.Location = new System.Drawing.Point(109, 32);
+            this.glossary.Location = new System.Drawing.Point(123, 32);
             this.glossary.Name = "glossary";
             this.glossary.Size = new System.Drawing.Size(71, 20);
             this.glossary.TabIndex = 8;
@@ -180,12 +188,13 @@
             // unitConvert
             // 
             this.unitConvert.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.unitConvert.Location = new System.Drawing.Point(109, 55);
+            this.unitConvert.Location = new System.Drawing.Point(123, 55);
             this.unitConvert.Name = "unitConvert";
             this.unitConvert.Size = new System.Drawing.Size(75, 23);
             this.unitConvert.TabIndex = 7;
-            this.unitConvert.Text = "Unit convert";
+            this.unitConvert.Text = "m/s";
             this.unitConvert.UseVisualStyleBackColor = true;
+            this.unitConvert.Click += new System.EventHandler(this.unitConvert_Click);
             // 
             // waveDraw
             // 
@@ -196,6 +205,16 @@
             // 
             this.lineAnimate.Interval = 1;
             this.lineAnimate.Tick += new System.EventHandler(this.lineAnimate_Tick);
+            // 
+            // waveLength
+            // 
+            this.waveLength.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.waveLength.AutoSize = true;
+            this.waveLength.Location = new System.Drawing.Point(804, 542);
+            this.waveLength.Name = "waveLength";
+            this.waveLength.Size = new System.Drawing.Size(93, 20);
+            this.waveLength.TabIndex = 9;
+            this.waveLength.Text = "Wavelength";
             // 
             // wInteract
             // 
@@ -214,6 +233,7 @@
             this.Load += new System.EventHandler(this.wInteract_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bArrow)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -237,5 +257,6 @@
         private System.Windows.Forms.LinkLabel glossary;
         private System.Windows.Forms.Timer waveDraw;
         private System.Windows.Forms.Timer lineAnimate;
+        private System.Windows.Forms.Label waveLength;
     }
 }

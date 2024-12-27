@@ -116,6 +116,9 @@
     <EmbeddedResource Include="optionsMenu.resx">
       <DependentUpon>optionsMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="refractionBuilder.resx">
+      <DependentUpon>refractionBuilder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="refractionPQuestions.resx">
       <DependentUpon>refractionPQuestions.cs</DependentUpon>
     </EmbeddedResource>

@@ -83,7 +83,7 @@
             this.flowLayoutPanel1.Controls.Add(this.aOIText);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 326);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 325);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(142, 222);
@@ -163,7 +163,7 @@
             this.aoR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.aoR.AutoSize = true;
             this.aoR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aoR.Location = new System.Drawing.Point(681, 523);
+            this.aoR.Location = new System.Drawing.Point(681, 522);
             this.aoR.Name = "aoR";
             this.aoR.Size = new System.Drawing.Size(216, 29);
             this.aoR.TabIndex = 2;

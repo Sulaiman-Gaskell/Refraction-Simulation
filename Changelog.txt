@@ -4,12 +4,24 @@ Iteration 3 - Questions mode
 
 
 Iteration 2 - Simulation logic
+V2.0.4 STABLE, 27/12/24
+	Added proper user parameters to the wave diagram
+	Added a wave speed unit converter button
+	Reworked wave speed logic
+	Added wavelength stat
+	Implemented error feedback system to the wave simulation via the wavelength stat
+
+	Notes:
+		Parameter box border is broken (for now)
+		Unit converter bugs for a wave speed value of 100 m/s (for now)
+		Wave simulation animation may not update speed for all parameter values due to interval constraints within the .Net Framework
+
 
 V2.0.3 PREVIEW (Prototype for Iteration 2),22/12/24
 	Added another submenu to the questions menu. 
 	Refactored menu logic (menus don't stay open in the background anymore)
 	Added some extra animations to the menu.
-	Removed full screen from previously full screen menus and simulations
+	Removed full screen from some previously full screen menus and simulations
 	Allowed resizing of all previously full screen menus and simulations
 	Increased the thickness of the static simulation lines on the refraction simulation screen to be in line with all other lines on that screen
 	Reduced flickering of the wave diagram

@@ -29,11 +29,94 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(refractionBuilder));
+            this.bArrow = new System.Windows.Forms.PictureBox();
+            this.fadeIn = new System.Windows.Forms.Timer(this.components);
+            this.fadeOut = new System.Windows.Forms.Timer(this.components);
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.qNameLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.bArrow)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // bArrow
+            // 
+            this.bArrow.BackColor = System.Drawing.SystemColors.ControlText;
+            this.bArrow.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bArrow.BackgroundImage")));
+            this.bArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bArrow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bArrow.Location = new System.Drawing.Point(2, 1);
+            this.bArrow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bArrow.Name = "bArrow";
+            this.bArrow.Size = new System.Drawing.Size(90, 100);
+            this.bArrow.TabIndex = 7;
+            this.bArrow.TabStop = false;
+            this.bArrow.Click += new System.EventHandler(this.bArrow_Click);
+            this.bArrow.MouseEnter += new System.EventHandler(this.bArrow_MouseEnter);
+            this.bArrow.MouseLeave += new System.EventHandler(this.bArrow_MouseLeave);
+            // 
+            // fadeIn
+            // 
+            this.fadeIn.Enabled = true;
+            this.fadeIn.Interval = 1;
+            this.fadeIn.Tick += new System.EventHandler(this.fadeIn_Tick);
+            // 
+            // fadeOut
+            // 
+            this.fadeOut.Interval = 1;
+            this.fadeOut.Tick += new System.EventHandler(this.fadeOut_Tick);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.qNameLabel, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.TabIndex = 8;
+            // 
+            // qNameLabel
+            // 
+            this.qNameLabel.AutoSize = true;
+            this.qNameLabel.Location = new System.Drawing.Point(3, 225);
+            this.qNameLabel.Name = "qNameLabel";
+            this.qNameLabel.Size = new System.Drawing.Size(121, 20);
+            this.qNameLabel.TabIndex = 0;
+            this.qNameLabel.Text = "Question name:";
+            this.qNameLabel.Click += new System.EventHandler(this.qNameLabel_Click);
+            // 
+            // refractionBuilder
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "refractionBuilder";
+            this.Controls.Add(this.bArrow);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.Name = "refractionBuilder";
+            this.Load += new System.EventHandler(this.refractionBuilder_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bArrow)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox bArrow;
+        private System.Windows.Forms.Timer fadeIn;
+        private System.Windows.Forms.Timer fadeOut;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label qNameLabel;
     }
 }
