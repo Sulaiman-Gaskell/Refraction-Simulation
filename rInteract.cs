@@ -97,7 +97,7 @@ namespace Physics_Simulation
 
 
             glossary.Location = new Point(0,
-                Convert.ToInt32(this.Height / 2));
+                Convert.ToInt32(this.Height / 1.85));
 
             glossary.Padding = new System.Windows.Forms.Padding(
                 this.Width / 60,0, 0,0);

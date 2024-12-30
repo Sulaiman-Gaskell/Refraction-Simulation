@@ -103,6 +103,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.Name = "refractionBuilder";
+            this.Opacity = 0D;
             this.Load += new System.EventHandler(this.refractionBuilder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bArrow)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);

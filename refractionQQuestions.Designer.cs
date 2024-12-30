@@ -41,12 +41,12 @@
             this.promptText = new System.Windows.Forms.Label();
             this.mParameter = new System.Windows.Forms.TextBox();
             this.stats = new System.Windows.Forms.Label();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.generateQuestion = new System.Windows.Forms.Button();
+            this.glossary = new System.Windows.Forms.LinkLabel();
             this.result = new System.Windows.Forms.Label();
             this.linesAnimate = new System.Windows.Forms.Timer(this.components);
             this.resetResult = new System.Windows.Forms.Timer(this.components);
-            this.glossary = new System.Windows.Forms.LinkLabel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.bArrow)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -175,6 +175,17 @@
             this.stats.TabIndex = 11;
             this.stats.Text = "Percentage correct:\r\nQuestions answered:\r\n";
             // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.generateQuestion);
+            this.flowLayoutPanel2.Controls.Add(this.glossary);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(13, 310);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(267, 64);
+            this.flowLayoutPanel2.TabIndex = 13;
+            // 
             // generateQuestion
             // 
             this.generateQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -187,6 +198,20 @@
             this.generateQuestion.Text = "Generate Question";
             this.generateQuestion.UseVisualStyleBackColor = true;
             this.generateQuestion.Click += new System.EventHandler(this.Test_Click);
+            // 
+            // glossary
+            // 
+            this.glossary.ActiveLinkColor = System.Drawing.Color.Navy;
+            this.glossary.AutoSize = true;
+            this.glossary.LinkColor = System.Drawing.Color.White;
+            this.glossary.Location = new System.Drawing.Point(164, 44);
+            this.glossary.Name = "glossary";
+            this.glossary.Size = new System.Drawing.Size(83, 20);
+            this.glossary.TabIndex = 12;
+            this.glossary.TabStop = true;
+            this.glossary.Text = "Extra Help";
+            this.glossary.VisitedLinkColor = System.Drawing.Color.White;
+            this.glossary.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.glossary_LinkClicked);
             // 
             // result
             // 
@@ -207,31 +232,6 @@
             this.resetResult.Interval = 1000;
             this.resetResult.Tick += new System.EventHandler(this.resetResult_Tick);
             // 
-            // glossary
-            // 
-            this.glossary.ActiveLinkColor = System.Drawing.Color.Navy;
-            this.glossary.AutoSize = true;
-            this.glossary.LinkColor = System.Drawing.Color.White;
-            this.glossary.Location = new System.Drawing.Point(164, 44);
-            this.glossary.Name = "glossary";
-            this.glossary.Size = new System.Drawing.Size(83, 20);
-            this.glossary.TabIndex = 12;
-            this.glossary.TabStop = true;
-            this.glossary.Text = "Extra Help";
-            this.glossary.VisitedLinkColor = System.Drawing.Color.White;
-            this.glossary.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.glossary_LinkClicked);
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Controls.Add(this.generateQuestion);
-            this.flowLayoutPanel2.Controls.Add(this.glossary);
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(13, 310);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(267, 64);
-            this.flowLayoutPanel2.TabIndex = 13;
-            // 
             // refractionQQuestions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -243,7 +243,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "refractionQQuestions";
+            this.Opacity = 0D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "refractionQQuestions";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.refractionQQuestions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bArrow)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);

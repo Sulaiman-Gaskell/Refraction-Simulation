@@ -21,10 +21,25 @@ namespace Physics_Simulation
             InitializeComponent();
         }
 
+        private class AltKeyFilter : IMessageFilter
+        {
+            public bool PreFilterMessage(ref Message m)
+            {
+                return m.Msg == 0x0104 && ((int)m.LParam & 0x20000000) != 0;
+            }
+        }
+
         private void refractionQQuestions_Load(object sender, EventArgs e)
         {
+           
+
+            Application.AddMessageFilter(new AltKeyFilter());
             // Gives a full screen window
             this.WindowState = FormWindowState.Maximized;
+
+            // removes annoying windows sound
+            this.AcceptButton = null;
+           
 
             // Sets the form text as the version num defined by the class
             // TitleVersion
@@ -245,39 +260,43 @@ namespace Physics_Simulation
         private double answer;
         private void createQuestion()
         {
-            // Creates random parameters and calcs the angle of refraction
             Random rnd = new Random();
 
-
-            angleOfIncidence = rnd.Next(0,91);
-
-            refractiveIndex1 = rnd.Next(100,265);
-            refractiveIndex1 = refractiveIndex1 / 100;
-
-            refractiveIndex2 = rnd.Next(100,265);
-            refractiveIndex2 = refractiveIndex2 / 100;
-
-
-            // Calculates the angle of refraction
-            double angleI = angleOfIncidence
-                * Math.PI / 180;
-            double angleRad;
-            if (angleI != Math.PI / 2)
+            if (systemWideVariables.isRandom == true)
             {
-                angleRad = Math.Asin((Math.Sin(angleI) *
-                    refractiveIndex1) /
-                    refractiveIndex2);
+                // Creates random parameters and calcs the angle of refraction
 
-       
-            }
-            else { angleRad = Math.PI / 2; }
 
-            angleOfRefraction = Math.Round(angleRad * 180 / Math.PI,1);
+                angleOfIncidence = rnd.Next(0, 91);
 
-            // Sets it to the angle of reflection
-            if (double.IsNaN(angleOfRefraction))
-            {
-                angleOfRefraction = angleOfIncidence;
+                refractiveIndex1 = rnd.Next(100, 265);
+                refractiveIndex1 = refractiveIndex1 / 100;
+
+                refractiveIndex2 = rnd.Next(100, 265);
+                refractiveIndex2 = refractiveIndex2 / 100;
+
+
+                // Calculates the angle of refraction
+                double angleI = angleOfIncidence
+                    * Math.PI / 180;
+                double angleRad;
+                if (angleI != Math.PI / 2)
+                {
+                    angleRad = Math.Asin((Math.Sin(angleI) *
+                        refractiveIndex1) /
+                        refractiveIndex2);
+
+
+                }
+                else { angleRad = Math.PI / 2; }
+
+                angleOfRefraction = Math.Round(angleRad * 180 / Math.PI, 1);
+
+                // Sets it to the angle of reflection
+                if (double.IsNaN(angleOfRefraction))
+                {
+                    angleOfRefraction = angleOfIncidence;
+                }
             }
 
 
@@ -474,6 +493,8 @@ namespace Physics_Simulation
         private double total;
         private void Test_Click(object sender, EventArgs e)
         {
+
+            // For first time the user presses the button
             if ( generateQuestion.Text == "Generate Question")
             {
                 generateQuestion.Text = "Check Answer";
@@ -490,6 +511,7 @@ namespace Physics_Simulation
 
             else if ( generateQuestion.Text == "Check Answer")
             {
+                generateQuestion.Enabled = false;
 
                 // Shows if the user got it correct or not and updates the stats
                 if (mParameter.Text == Convert.ToString(answer))
@@ -640,6 +662,7 @@ namespace Physics_Simulation
         private bool flag = true;
         private void resetResult_Tick(object sender, EventArgs e)
         {
+            
             if (flag)
             {
                 flag = false;
@@ -649,6 +672,7 @@ namespace Physics_Simulation
                 result.Text = "";
                 flag = true;
                 createQuestion();
+                generateQuestion.Enabled = true;
                 resetResult.Enabled = false;
             }
         }

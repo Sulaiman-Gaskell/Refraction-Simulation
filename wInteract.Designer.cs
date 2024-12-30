@@ -43,9 +43,9 @@
             this.amplitude = new System.Windows.Forms.TextBox();
             this.glossary = new System.Windows.Forms.LinkLabel();
             this.unitConvert = new System.Windows.Forms.Button();
+            this.waveLength = new System.Windows.Forms.Label();
             this.waveDraw = new System.Windows.Forms.Timer(this.components);
             this.lineAnimate = new System.Windows.Forms.Timer(this.components);
-            this.waveLength = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bArrow)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -196,16 +196,6 @@
             this.unitConvert.UseVisualStyleBackColor = true;
             this.unitConvert.Click += new System.EventHandler(this.unitConvert_Click);
             // 
-            // waveDraw
-            // 
-            this.waveDraw.Interval = 1;
-            this.waveDraw.Tick += new System.EventHandler(this.waveDraw_Tick);
-            // 
-            // lineAnimate
-            // 
-            this.lineAnimate.Interval = 1;
-            this.lineAnimate.Tick += new System.EventHandler(this.lineAnimate_Tick);
-            // 
             // waveLength
             // 
             this.waveLength.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -215,6 +205,16 @@
             this.waveLength.Size = new System.Drawing.Size(93, 20);
             this.waveLength.TabIndex = 9;
             this.waveLength.Text = "Wavelength";
+            // 
+            // waveDraw
+            // 
+            this.waveDraw.Interval = 1;
+            this.waveDraw.Tick += new System.EventHandler(this.waveDraw_Tick);
+            // 
+            // lineAnimate
+            // 
+            this.lineAnimate.Interval = 1;
+            this.lineAnimate.Tick += new System.EventHandler(this.lineAnimate_Tick);
             // 
             // wInteract
             // 
@@ -229,6 +229,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MinimizeBox = false;
             this.Name = "wInteract";
+            this.Opacity = 0D;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.wInteract_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bArrow)).EndInit();

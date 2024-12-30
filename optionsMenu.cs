@@ -119,6 +119,7 @@ namespace Physics_Simulation
                 if (systemWideVariables.whichSim == "refraction")
                 {
                     refractionQQuestions refractionQQuestions = new refractionQQuestions();
+              
                     refractionQQuestions.ShowDialog();
                 }
                 else
@@ -131,14 +132,14 @@ namespace Physics_Simulation
             {
                 if (systemWideVariables.whichSim == "refraction")
                 {
-                    refractionPQuestions refractionPQuestions = new refractionPQuestions();
-                    refractionPQuestions.ShowDialog();
+                    //refractionPQuestions refractionPQuestions = new refractionPQuestions();
+                    //refractionPQuestions.ShowDialog();
                 }
 
                 else
                 {
-                    wavesPQuestions wavesPQuestions = new wavesPQuestions();
-                    wavesPQuestions.ShowDialog();
+                    //wavesPQuestions wavesPQuestions = new wavesPQuestions();
+                   // wavesPQuestions.ShowDialog();
 
                 }
 

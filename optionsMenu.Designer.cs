@@ -193,6 +193,7 @@
             this.ClientSize = new System.Drawing.Size(960, 540);
             this.Controls.Add(this.refractionMenu);
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "optionsMenu";

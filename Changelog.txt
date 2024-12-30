@@ -5,7 +5,17 @@ Iteration 3 - Questions mode
 
 Iteration 2 - Simulation logic
 
-V2.1.0: STABLE, 30,12,24
+V2.1.1  STABLE, 30,12,24
+	Fixed bug where you could click "Check answer" during when the result was given. Led to false stats
+	Removed ability to resize windows and removed bottom taskbar from showing, (menu pop-up view not removed)
+	Fixed padding issues on the interactive mode for refraction
+	Fixed buggy transition animations between some menus
+	Fixed window default sounds from playing on the questions mode for refraction
+
+	Notes:
+		Alt key clears refraction diagrams once only, after that it is ok. Not fixing as of now.
+
+V2.1.0: STABLE-(no release), 30,12,24
 	Added Random question mode for refraction:
 		Generate random questions on the go and track your progress
 		Questions include working out the missing parameter which could be any of the,
