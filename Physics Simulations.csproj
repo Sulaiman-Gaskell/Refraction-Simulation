@@ -128,6 +128,15 @@
     <EmbeddedResource Include="rInteract.resx">
       <DependentUpon>rInteract.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="wavesBuilder.resx">
+      <DependentUpon>wavesBuilder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="wavesPQuestions.resx">
+      <DependentUpon>wavesPQuestions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="wavesQQuestions.resx">
+      <DependentUpon>wavesQQuestions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>
     </EmbeddedResource>

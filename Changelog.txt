@@ -4,6 +4,19 @@ Iteration 3 - Questions mode
 
 
 Iteration 2 - Simulation logic
+V2.1.0: STABLE, 30,12,24
+	Added Random question mode for refraction:
+		Generate random questions on the go and track your progress
+		Questions include working out the missing parameter which could be any of the,
+		Extra help button to explain refraction
+		Live diagram
+	Reenabled refraction stat on the interactive mode for refraction (accidently removed in previous version)
+	Updated reflection/refraction info to be 1.dp on interactive mode for refraction
+
+	Notes:
+		Future diagrams (including this one) will not be freeform windows. This may come at a later date.
+
+
 V2.0.4 STABLE, 27/12/24
 	Added proper user parameters to the wave diagram
 	Added a wave speed unit converter button

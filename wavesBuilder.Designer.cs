@@ -29,11 +29,61 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(wavesBuilder));
+            this.bArrow = new System.Windows.Forms.PictureBox();
+            this.fadeIn = new System.Windows.Forms.Timer(this.components);
+            this.fadeOut = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bArrow)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // bArrow
+            // 
+            this.bArrow.BackColor = System.Drawing.SystemColors.ControlText;
+            this.bArrow.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bArrow.BackgroundImage")));
+            this.bArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bArrow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bArrow.Location = new System.Drawing.Point(-3, 1);
+            this.bArrow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bArrow.Name = "bArrow";
+            this.bArrow.Size = new System.Drawing.Size(90, 105);
+            this.bArrow.TabIndex = 7;
+            this.bArrow.TabStop = false;
+            this.bArrow.Click += new System.EventHandler(this.bArrow_Click);
+            this.bArrow.MouseEnter += new System.EventHandler(this.bArrow_MouseEnter);
+            this.bArrow.MouseLeave += new System.EventHandler(this.bArrow_MouseLeave);
+            // 
+            // fadeIn
+            // 
+            this.fadeIn.Interval = 1;
+            this.fadeIn.Tick += new System.EventHandler(this.fadeIn_Tick);
+            // 
+            // fadeOut
+            // 
+            this.fadeOut.Interval = 1;
+            this.fadeOut.Tick += new System.EventHandler(this.fadeOut_Tick);
+            // 
+            // wavesBuilder
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bArrow);
+            this.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "wavesBuilder";
             this.Text = "wavesBuilder";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.wavesBuilder_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bArrow)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox bArrow;
+        private System.Windows.Forms.Timer fadeIn;
+        private System.Windows.Forms.Timer fadeOut;
     }
 }

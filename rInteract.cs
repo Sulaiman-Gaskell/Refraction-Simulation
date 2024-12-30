@@ -84,7 +84,7 @@ namespace Physics_Simulation
             // Animates the lines as the program is first opened
             linesAnimate.Enabled = true;
             
-            aoR.Hide(); 
+       
             
 
         }
@@ -323,7 +323,7 @@ namespace Physics_Simulation
                 }
                 else { angleR = Math.PI / 2; }
 
-                double angleRDegrees = Math.Round(angleR * 180 / Math.PI,2);
+                double angleRDegrees = Math.Round(angleR * 180 / Math.PI,1);
 
 
 

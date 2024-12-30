@@ -14,3 +14,6 @@ C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Phy
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.refractionPQuestions.resources
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.refractionQQuestions.resources
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.refractionBuilder.resources
+C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.wavesBuilder.resources
+C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.wavesPQuestions.resources
+C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.wavesQQuestions.resources
