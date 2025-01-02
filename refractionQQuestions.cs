@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -128,6 +129,8 @@ namespace Physics_Simulation
             stats.Font = new Font(stats.Font.FontFamily,
                 this.Width / 80);
 
+            flowLayoutPanel2.Size = new Size(this.Width, this.Height / 20);
+
 
             //Adds some margins between controls
 
@@ -198,6 +201,8 @@ namespace Physics_Simulation
             }
             else
             {
+                //Close the file.
+               
                 this.Close();
             }
         }
@@ -274,6 +279,63 @@ namespace Physics_Simulation
 
                 refractiveIndex2 = rnd.Next(100, 265);
                 refractiveIndex2 = refractiveIndex2 / 100;
+            }
+
+            else
+            {
+
+
+                // Gets number of lines in a file
+                try
+                {
+                    int lineCount = File.ReadLines("refractionQuestions.txt").Count();
+
+                    // Selects a random int
+                    int chosenQuestion = rnd.Next(0, lineCount);
+
+
+                    // Reads a random line from the file
+                    string qString = File.ReadLines("refractionQuestions.txt").Skip(chosenQuestion).FirstOrDefault();
+
+                    // creates a list from the string
+                    string[] qList = qString.Split(new char[] { ',' });
+
+                    // Adds the values accordingly
+
+                    angleOfIncidence = Convert.ToDouble(qList[1]);
+                    refractiveIndex1 = Convert.ToDouble(qList[2]);
+                    refractiveIndex2 = Convert.ToDouble(qList[3]);
+
+                    // Shows question name:
+                    if (systemWideVariables.lightTheme)
+                    {
+                        result.ForeColor = Color.Black;
+                    }
+                    else
+                    {
+                        result.ForeColor = Color.White;
+                    }
+
+                    result.Text = qList[0];
+                } 
+                catch 
+                {
+                    if (systemWideVariables.lightTheme)
+                    {
+                        result.ForeColor = Color.Black;
+                    }
+                    else
+                    {
+                        result.ForeColor = Color.White;
+                    }
+
+                    result.Text = "Please head to the refraction builder to make a question!";
+
+
+                }
+
+            }
+
 
 
                 // Calculates the angle of refraction
@@ -297,7 +359,7 @@ namespace Physics_Simulation
                 {
                     angleOfRefraction = angleOfIncidence;
                 }
-            }
+            
 
 
             // Chooses and sets missing and found parameters on a random chance
@@ -341,9 +403,6 @@ namespace Physics_Simulation
             }
 
   
-
-
-
 
 
 
@@ -491,8 +550,17 @@ namespace Physics_Simulation
         // Stats
         private double numberOfCorrect;
         private double total;
+
+        
+ 
+      
+       
+       
+
+
         private void Test_Click(object sender, EventArgs e)
         {
+
 
             // For first time the user presses the button
             if ( generateQuestion.Text == "Generate Question")
@@ -695,7 +763,7 @@ namespace Physics_Simulation
         private void glossary_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             // Opens a link to a useful info page
-            System.Diagnostics.Process.Start("https://en.wikipedia.org/wiki/List_of_refractive_indices");
+            System.Diagnostics.Process.Start("https://www.savemyexams.com/a-level/physics/aqa/17/revision-notes/3-waves/3-5-refraction/3-5-2-snells-law/");
             // redraws the diagram accordingly.
 
 

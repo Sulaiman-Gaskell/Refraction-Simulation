@@ -72,6 +72,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "wavesQQuestions";
+            this.Opacity = 0D;
             this.Text = "wavesQQuestions";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.wavesQQuestions_Load);

@@ -118,6 +118,7 @@ namespace Physics_Simulation
             else if (interact.Text == "Random")
                 if (systemWideVariables.whichSim == "refraction")
                 {
+                    systemWideVariables.isRandom = true;
                     refractionQQuestions refractionQQuestions = new refractionQQuestions();
               
                     refractionQQuestions.ShowDialog();
@@ -132,8 +133,9 @@ namespace Physics_Simulation
             {
                 if (systemWideVariables.whichSim == "refraction")
                 {
-                    //refractionPQuestions refractionPQuestions = new refractionPQuestions();
-                    //refractionPQuestions.ShowDialog();
+                    systemWideVariables.isRandom = false;
+                    refractionQQuestions refractionQQuestions = new refractionQQuestions();
+                    refractionQQuestions.ShowDialog();
                 }
 
                 else

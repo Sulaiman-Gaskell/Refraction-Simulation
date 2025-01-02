@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Physics_Simulation.welcomeScreen;
@@ -34,8 +36,92 @@ namespace Physics_Simulation
 
             fadeIn.Enabled = true;
 
+            if(systemWideVariables.lightTheme)
+            {
+                bArrow.BackgroundImage = Properties.Resources.lightBackArrow;
+                bArrow.BackColor = Color.White;
+                this.BackColor = Color.White;
+                qNameLabel.ForeColor = Color.Black;
+                qNameLabel.BackColor = Color.White;
+                qName.ForeColor = Color.White;
+                qName.BackColor = Color.Black;
+                aOILabel.ForeColor = Color.Black;
+                aOILabel.BackColor = Color.White;
+                aOI.ForeColor = Color.White;
+                aOI.BackColor = Color.Black;
+                rI1Label.ForeColor = Color.Black;
+                rI1Label.BackColor = Color.White;
+                rI1.ForeColor = Color.White;
+                rI1.BackColor = Color.Black;
+                rI2Label.ForeColor = Color.Black;
+                rI2Label.BackColor = Color.White;
+                rI2.ForeColor = Color.White;
+                rI2.BackColor = Color.Black;
+                saveButton.ForeColor = Color.White;
+                saveButton.BackColor = Color.Black;
+                clearAll.ForeColor = Color.White;
+                clearAll.BackColor = Color.Black;
 
-            qNameLabel.Location = new Point(this.Width / 2, this.Height / 100 * 20);
+
+            }
+
+
+
+            // Sizes controls on the screen
+
+            qNameLabel.Font = new Font(qNameLabel.Font.FontFamily,
+                this.Width / 80);
+            qName.Font = new Font(qName.Font.FontFamily,
+                this.Width / 80);
+
+
+            aOILabel.Font = new Font(aOILabel.Font.FontFamily,
+                this.Width / 80);
+            aOI.Font = new Font(aOI.Font.FontFamily,
+                this.Width / 80);
+            
+
+
+            rI1Label.Font = new Font(rI1Label.Font.FontFamily,
+                this.Width / 80);
+            rI1.Font = new Font(rI1.Font.FontFamily,
+                this.Width / 80);
+            
+
+
+            rI2Label.Font = new Font(rI2Label.Font.FontFamily,
+                this.Width / 80);
+            rI2.Font = new Font(rI2.Font.FontFamily,
+                this.Width / 80);
+
+            saveButton.Font = new Font(saveButton.Font.FontFamily,
+                this.Width / 80);
+            clearAll.Font = new Font(clearAll.Font.FontFamily,
+                this.Width / 80);
+
+
+          
+            
+
+
+            // Same size for controls
+            rI2.Size = aOILabel.Size;
+            rI1.Size = aOILabel.Size;
+            aOI.Size = aOILabel.Size;
+            qName.Size = aOILabel.Size;
+            saveButton.Size = clearAll.Size;
+          
+
+
+            // Adds some padding
+            qNameLabel.Padding = new Padding(0, this.Height / 6, 0, 0);
+            aOILabel.Padding = new Padding(0, this.Height / 25, 0, 0);
+            rI1Label.Padding = new Padding(0, this.Height / 25, 0, 0);
+            rI2Label.Padding = new Padding(0, this.Height / 25, 0, 0);
+        
+           
+
+
 
         }
 
@@ -86,6 +172,81 @@ namespace Physics_Simulation
         private void qNameLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void aOILabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
+        {
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+
+            // Calcs the aoR to ensure that it can be done
+            try
+            {
+                double angleI = Convert.ToDouble(aOI.Text)
+                        * Math.PI / 180;
+                double angleRad;
+                if (angleI != Math.PI / 2)
+                {
+                    angleRad = Math.Asin((Math.Sin(angleI) *
+                        Convert.ToDouble(rI1.Text) /
+                        Convert.ToDouble(rI2.Text)));
+
+
+                }
+                else { angleRad = Math.PI / 2; }
+
+
+
+                // Validation
+                if (double.TryParse(aOI.Text, out double _)
+                    && double.TryParse(rI1.Text, out double _)
+                    && double.TryParse(rI2.Text, out double _)
+                    && Convert.ToDouble(aOI.Text) <= 90
+                    && Convert.ToDouble(aOI.Text) >= 0
+                    && Convert.ToDouble(rI1.Text) >= 1
+                    && Convert.ToDouble(rI1.Text) <= 2.65
+                    && Convert.ToDouble(rI2.Text) >= 1
+                    && Convert.ToDouble(rI2.Text) <= 2.65
+                    )
+                {
+                    using (StreamWriter outputFile = new StreamWriter(Path.Combine("refractionQuestions.txt"), true))
+                    {
+                        outputFile.WriteLine(qName.Text + "," + aOI.Text + "," + rI1.Text + "," + rI2.Text);
+
+                        qName.Text = "";
+                        aOI.Text = "";
+                        rI1.Text = "";
+                        rI2.Text = "";
+
+                    }
+                }
+
+                else { saveButton.Text = "Error! Invalid parameter(s)"; }
+
+            }
+
+            catch {
+                saveButton.Text = "Error!";
+            }
+
+        }
+
+        private void clearAll_Click(object sender, EventArgs e)
+        {
+            File.Delete("refractionQuestions.txt");
+            clearAll.Text = "Cleared all questions";
         }
     }
 }

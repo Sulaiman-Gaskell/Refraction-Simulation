@@ -5,3 +5,7 @@ https://learn.microsoft.com/en-us/dotnet/api/system.drawing.graphics.drawcurve?v
 https://stackoverflow.com/questions/19090125/round-to-1-decimal-place-in-c-sharp, for rounding values
 https://stackoverflow.com/questions/2706500/how-do-i-generate-a-random-integer-in-c, for creating a random integer
 https://www.geeksforgeeks.org/c-sharp-random-nextdouble-method/, for generating a random float between 0 and 1
+https://learn.microsoft.com/en-us/dotnet/standard/io/how-to-write-text-to-a-file, To write to a txt file
+https://stackoverflow.com/questions/5516870/how-to-write-data-to-a-text-file-without-overwriting-the-current-data, so not to overwrite the txt file
+https://learn.microsoft.com/en-us/troubleshoot/developer/visualstudio/csharp/language-compilers/read-write-text-file, reading from a file
+https://www.scaler.com/topics/csharp/delete-file-in-c-sharp/, to delete a file

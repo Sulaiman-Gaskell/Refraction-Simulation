@@ -5,7 +5,21 @@ Iteration 3 - Questions mode
 
 Iteration 2 - Simulation logic
 
-V2.1.1  STABLE, 30,12,24
+V2.2.0: STABLE, 02/01/25
+	Added a questions builder for refraction: 
+		Build your own questions
+		Name your own questions
+		Permanently save questions
+		Delete all questions 
+	Added a player questions mode for refraction: 
+		Play your own questions
+		Random question selected
+		Random parameter missing (both of these features ensure wide coverage on the topic)
+	Updated help webpage to a more useful one for refraction
+	Fixed some controls from being cut off partially on some resolutions on the question mode for refraction.
+
+
+V2.1.1: STABLE, 30,12,24
 	Fixed bug where you could click "Check answer" during when the result was given. Led to false stats
 	Removed ability to resize windows and removed bottom taskbar from showing, (menu pop-up view not removed)
 	Fixed padding issues on the interactive mode for refraction

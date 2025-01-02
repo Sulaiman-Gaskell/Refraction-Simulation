@@ -533,7 +533,7 @@ namespace Physics_Simulation
         private void glossary_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             // Opens a link to a useful info page
-            System.Diagnostics.Process.Start("https://en.wikipedia.org/wiki/List_of_refractive_indices");
+            System.Diagnostics.Process.Start("https://www.savemyexams.com/a-level/physics/aqa/17/revision-notes/3-waves/3-5-refraction/3-5-2-snells-law/");
             // redraws the diagram accordingly.
 
             
