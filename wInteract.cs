@@ -272,7 +272,6 @@ namespace Physics_Simulation
 
         private void waveDraw_Tick(object sender, EventArgs e)
         {
-
             Pen wave = new Pen(Color.White, 20);
             if (systemWideVariables.lightTheme == true)
             {
@@ -281,38 +280,38 @@ namespace Physics_Simulation
 
 
             // Creates a graphic 'diagram' to draw on the tableLayoutPanel
-             Graphics diagram = tableLayoutPanel1.CreateGraphics();
+            Graphics diagram = tableLayoutPanel1.CreateGraphics();
 
-            
+
 
             diagram.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            
 
-           
+
+
 
             // resets the points to be reused
             if (ClientSize.Width / 100 * (-80 + ofsetX) == 0)
             {
                 ofsetX = 0;
-             
+
 
             }
-        
+
 
             // Gets the points ready to be drawn
-              Point point0 = new Point(ClientSize.Width / 100 * (-80 + ofsetX), ClientSize.Height / 100 * (50 - ofsetY));
-              Point point1 = new Point(ClientSize.Width / 100 * (-60 + ofsetX), ClientSize.Height / 100 * (50 + ofsetY));
-              Point point2 = new Point(ClientSize.Width / 100 * (-40 + ofsetX), ClientSize.Height / 100 * (50 - ofsetY));
-              Point point3 = new Point(ClientSize.Width / 100 * (-20 + ofsetX), ClientSize.Height / 100 * (50 + ofsetY));
-              Point point4 = new Point(ClientSize.Width / 100 * (ofsetX), ClientSize.Height / 100 * (50 - ofsetY));
-              Point point5 = new Point(ClientSize.Width / 100 * (20 + ofsetX), ClientSize.Height / 100 * (50 + ofsetY));
-              Point point6 = new Point(ClientSize.Width / 100 * (40 + ofsetX), ClientSize.Height / 100 * (50 - ofsetY));
-              Point point7 = new Point(ClientSize.Width / 100 * (60 + ofsetX), ClientSize.Height / 100 * (50 + ofsetY));
-              Point point8 = new Point(ClientSize.Width / 100 * (80 + ofsetX), ClientSize.Height / 100 * (50 - ofsetY));
-              Point point9 = new Point(ClientSize.Width / 100 * (100 + ofsetX), ClientSize.Height / 100 * (50 + ofsetY));
-              Point point10 = new Point(ClientSize.Width / 100 * (120 + ofsetX), ClientSize.Height / 100 * (50 - ofsetY));
+            Point point0 = new Point(ClientSize.Width / 100 * (-80 + ofsetX), ClientSize.Height / 100 * (50 - ofsetY));
+            Point point1 = new Point(ClientSize.Width / 100 * (-60 + ofsetX), ClientSize.Height / 100 * (50 + ofsetY));
+            Point point2 = new Point(ClientSize.Width / 100 * (-40 + ofsetX), ClientSize.Height / 100 * (50 - ofsetY));
+            Point point3 = new Point(ClientSize.Width / 100 * (-20 + ofsetX), ClientSize.Height / 100 * (50 + ofsetY));
+            Point point4 = new Point(ClientSize.Width / 100 * (ofsetX), ClientSize.Height / 100 * (50 - ofsetY));
+            Point point5 = new Point(ClientSize.Width / 100 * (20 + ofsetX), ClientSize.Height / 100 * (50 + ofsetY));
+            Point point6 = new Point(ClientSize.Width / 100 * (40 + ofsetX), ClientSize.Height / 100 * (50 - ofsetY));
+            Point point7 = new Point(ClientSize.Width / 100 * (60 + ofsetX), ClientSize.Height / 100 * (50 + ofsetY));
+            Point point8 = new Point(ClientSize.Width / 100 * (80 + ofsetX), ClientSize.Height / 100 * (50 - ofsetY));
+            Point point9 = new Point(ClientSize.Width / 100 * (100 + ofsetX), ClientSize.Height / 100 * (50 + ofsetY));
+            Point point10 = new Point(ClientSize.Width / 100 * (120 + ofsetX), ClientSize.Height / 100 * (50 - ofsetY));
 
-              Point[] curvePoints = { point0, point1, point2, point3, point4, point5, point6, point7,point8,point9,point10 };
+            Point[] curvePoints = { point0, point1, point2, point3, point4, point5, point6, point7, point8, point9, point10 };
 
             // Refreshs the screen or clears it
 
@@ -327,7 +326,7 @@ namespace Physics_Simulation
                     diagram.Clear(Color.Black);
                 }
 
-                
+
 
 
                 refreshCount = 0;
@@ -366,7 +365,7 @@ namespace Physics_Simulation
 
 
             // Updates ofset accordingly to the inputted amplitude
-            
+
             if (upperOfsetY == 0)
             {
                 ofsetY = 0;
@@ -384,7 +383,7 @@ namespace Physics_Simulation
                 waveFlag = false;
                 ofsetY--;
             }
-            else if (ofsetY == (-upperOfsetY)  & waveFlag == false )
+            else if (ofsetY == (-upperOfsetY) & waveFlag == false)
             {
                 waveFlag = true;
                 ofsetY++;
@@ -398,9 +397,8 @@ namespace Physics_Simulation
             }
             else
             {
-                ofsetX ++;
+                ofsetX++;
             }
-
 
             // Forces any changes to the wavelength stat if needed
             try
@@ -477,10 +475,16 @@ namespace Physics_Simulation
             {
 
                 // Conversion string --> double (*2) -- > integer
-                upperOfsetY = Convert.ToInt32(Convert.ToDouble(amplitude.Text) * 2);
-                ofsetY = 0;
+                if (Convert.ToDouble(amplitude.Text) <= 35)
+                {
+                    upperOfsetY = Convert.ToInt32(Convert.ToDouble(amplitude.Text) * 2);
+                    ofsetY = 0;
+                }
 
-              
+                else
+                {
+                    upperOfsetY = 1;
+                }
             }
             catch
             {

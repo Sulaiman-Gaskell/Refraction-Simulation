@@ -65,8 +65,8 @@ namespace Physics_Simulation
                 glossary.ActiveLinkColor = Color.Blue;
 
             }
-            
 
+     
 
             // Sets the form text as the version num defined by the class
             // TitleVersion
@@ -333,8 +333,8 @@ namespace Physics_Simulation
 
 
                 // Draws a line using the AOIPen at the specified loactions
-          
-                
+
+             
                 rays.DrawLine(aOIPen, (float)x1, (float)y1, (float)x2I, (float)y2I);
                 
                
@@ -346,12 +346,7 @@ namespace Physics_Simulation
                 aOIPen.CustomEndCap = bigArrow;
                 rays.DrawLine(aOIPen, (float)x2I, (float)y2I, (float)arrowXI, (float)arrowYI);
 
-                // delays the drawing slightly
-             
-                //Thread.Sleep(75);
-                
-                
-
+        
 
                 // Draws the aOR ray
                 rays.DrawLine(aORPen, (float)x1, (float)y1, (float)x2R,(float)y2R);
@@ -412,9 +407,9 @@ namespace Physics_Simulation
         private void refractiveIndex1_TextChanged(object sender, EventArgs e)
         {
             // Calls the DrawRays method whenever text is changed in the textbox
-            // Twice for odd bug to be fixed
             DrawRays();
             DrawRays();
+      
         }
 
         private void rI1Text_Click(object sender, EventArgs e)

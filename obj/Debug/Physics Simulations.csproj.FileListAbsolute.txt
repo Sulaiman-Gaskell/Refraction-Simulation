@@ -11,7 +11,7 @@ C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physi
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics Simulations.csproj.CoreCompileInputs.cache
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics Simulation.exe
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics Simulation.pdb
-C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.refractionQQuestions.resources
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.refractionBuilder.resources
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.wavesBuilder.resources
-C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.wavesQQuestions.resources
+C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.refractionQuestions.resources
+C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.wavesQuestions.resources

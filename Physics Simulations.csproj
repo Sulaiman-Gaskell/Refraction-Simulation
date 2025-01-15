@@ -57,11 +57,11 @@
     <Compile Include="refractionBuilder.Designer.cs">
       <DependentUpon>refractionBuilder.cs</DependentUpon>
     </Compile>
-    <Compile Include="refractionQQuestions.cs">
+    <Compile Include="refractionQuestions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="refractionQQuestions.Designer.cs">
-      <DependentUpon>refractionQQuestions.cs</DependentUpon>
+    <Compile Include="refractionQuestions.Designer.cs">
+      <DependentUpon>refractionQuestions.cs</DependentUpon>
     </Compile>
     <Compile Include="rInteract.cs">
       <SubType>Form</SubType>
@@ -75,11 +75,11 @@
     <Compile Include="wavesBuilder.Designer.cs">
       <DependentUpon>wavesBuilder.cs</DependentUpon>
     </Compile>
-    <Compile Include="wavesQQuestions.cs">
+    <Compile Include="wavesQuestions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="wavesQQuestions.Designer.cs">
-      <DependentUpon>wavesQQuestions.cs</DependentUpon>
+    <Compile Include="wavesQuestions.Designer.cs">
+      <DependentUpon>wavesQuestions.cs</DependentUpon>
     </Compile>
     <Compile Include="Welcome.cs">
       <SubType>Form</SubType>
@@ -107,8 +107,8 @@
     <EmbeddedResource Include="refractionBuilder.resx">
       <DependentUpon>refractionBuilder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="refractionQQuestions.resx">
-      <DependentUpon>refractionQQuestions.cs</DependentUpon>
+    <EmbeddedResource Include="refractionQuestions.resx">
+      <DependentUpon>refractionQuestions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rInteract.resx">
       <DependentUpon>rInteract.cs</DependentUpon>
@@ -116,8 +116,8 @@
     <EmbeddedResource Include="wavesBuilder.resx">
       <DependentUpon>wavesBuilder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="wavesQQuestions.resx">
-      <DependentUpon>wavesQQuestions.cs</DependentUpon>
+    <EmbeddedResource Include="wavesQuestions.resx">
+      <DependentUpon>wavesQuestions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>

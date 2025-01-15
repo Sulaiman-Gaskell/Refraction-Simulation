@@ -94,7 +94,7 @@ namespace Physics_Simulation
            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // interactive button
         {
 
             // Opens the right widnow based on what options are being displayed and keeps this open 
@@ -116,36 +116,42 @@ namespace Physics_Simulation
                 }
             }
             else if (interact.Text == "Random")
+            {
+                systemWideVariables.isRandom = true;
+
                 if (systemWideVariables.whichSim == "refraction")
                 {
-                    systemWideVariables.isRandom = true;
-                    refractionQQuestions refractionQQuestions = new refractionQQuestions();
-              
+
+                    refractionQuestions refractionQQuestions = new refractionQuestions();
+
                     refractionQQuestions.ShowDialog();
                 }
                 else
                 {
-                    wavesQQuestions wavesQQuestions = new wavesQQuestions();
+                    wavesQuestions wavesQQuestions = new wavesQuestions();
                     wavesQQuestions.ShowDialog();
                 }
 
+            }
             else if (interact.Text == "Play")
             {
+                systemWideVariables.isRandom = false;
+
                 if (systemWideVariables.whichSim == "refraction")
                 {
-                    systemWideVariables.isRandom = false;
-                    refractionQQuestions refractionQQuestions = new refractionQQuestions();
-                    refractionQQuestions.ShowDialog();
+                    
+                    refractionQuestions refractionQuestions = new refractionQuestions();
+                    refractionQuestions.ShowDialog();
                 }
 
                 else
                 {
-                    //wavesPQuestions wavesPQuestions = new wavesPQuestions();
-                   // wavesPQuestions.ShowDialog();
+                    wavesQuestions wavesQuestions = new wavesQuestions();
+                     wavesQuestions.ShowDialog();
 
                 }
 
-                        
+
             }
 
 

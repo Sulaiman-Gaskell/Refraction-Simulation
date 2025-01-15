@@ -15,9 +15,9 @@ using static Physics_Simulation.welcomeScreen;
 
 namespace Physics_Simulation
 {
-    public partial class refractionQQuestions : Form
+    public partial class refractionQuestions : Form
     {
-        public refractionQQuestions()
+        public refractionQuestions()
         {
             InitializeComponent();
         }
@@ -153,6 +153,8 @@ namespace Physics_Simulation
                 this.Width / 150, this.Height / 50, 0, 0);
 
 
+
+
             // for consisant sizing
             fParameter1.Size = promptText.Size;
             fParameter2.Size = promptText.Size;
@@ -166,6 +168,7 @@ namespace Physics_Simulation
             fParameter3.Hide();
             mParameter.Hide();
             promptText.Hide();
+
 
             linesAnimate.Enabled = true;
 
@@ -330,6 +333,7 @@ namespace Physics_Simulation
                     }
 
                     result.Text = "Please head to the refraction builder to make a question!";
+                    generateQuestion.Enabled = false;
 
 
                 }
@@ -354,17 +358,25 @@ namespace Physics_Simulation
 
                 angleOfRefraction = Math.Round(angleRad * 180 / Math.PI, 1);
 
-                // Sets it to the angle of reflection
-                if (double.IsNaN(angleOfRefraction))
-                {
-                    angleOfRefraction = angleOfIncidence;
-                }
+
             
 
 
             // Chooses and sets missing and found parameters on a random chance
 
             int chooseMissing = rnd.Next(1, 5);
+
+
+            // Forces refraction to be missing if internal reflection question is given
+            if (double.IsNaN(angleOfRefraction))
+            {
+                answer = angleOfIncidence;
+                promptText.Text = "Enter angle of reflection below (1.dp):";
+                fParameter2.Text = "Refractive index 2: " + Convert.ToString(refractiveIndex2);
+                fParameter1.Text = "Refractive index 1: " + Convert.ToString(refractiveIndex1);
+                fParameter3.Text = "Angle of incidence: " + Convert.ToString(angleOfIncidence) + "°";
+                chooseMissing = 0;
+            }
 
             if (chooseMissing == 1)
             {
@@ -393,7 +405,7 @@ namespace Physics_Simulation
                 fParameter2.Text = "Angle of incidence: " + Convert.ToString(angleOfIncidence) + "°";
             } 
 
-            else
+            else if (chooseMissing == 4)
             {
                 answer = refractiveIndex1;
                 promptText.Text = "Enter refractive index 1 below (3.sf):";
@@ -768,6 +780,11 @@ namespace Physics_Simulation
 
 
             initDraw();
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

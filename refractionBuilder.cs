@@ -248,5 +248,41 @@ namespace Physics_Simulation
             File.Delete("refractionQuestions.txt");
             clearAll.Text = "Cleared all questions";
         }
+
+        private void aOI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Stops the user from entering any values other than 0-9, backspace and full stop 
+            if ((e.KeyChar > (char)Keys.D9 ||
+                 e.KeyChar < (char)Keys.D0) &&
+                 e.KeyChar != (char)Keys.Back &&
+                 e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void rI1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Stops the user from entering any values other than 0-9, backspace and full stop 
+            if ((e.KeyChar > (char)Keys.D9 ||
+                 e.KeyChar < (char)Keys.D0) &&
+                 e.KeyChar != (char)Keys.Back &&
+                 e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void rI2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Stops the user from entering any values other than 0-9, backspace and full stop 
+            if ((e.KeyChar > (char)Keys.D9 ||
+                 e.KeyChar < (char)Keys.D0) &&
+                 e.KeyChar != (char)Keys.Back &&
+                 e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
