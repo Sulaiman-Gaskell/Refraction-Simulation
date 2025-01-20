@@ -38,6 +38,7 @@
             this.theme = new System.Windows.Forms.Button();
             this.credit = new System.Windows.Forms.Timer(this.components);
             this.themeTip = new System.Windows.Forms.ToolTip(this.components);
+            this.cMove = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,10 +48,9 @@
             this.refraction.AutoSize = true;
             this.refraction.Cursor = System.Windows.Forms.Cursors.Hand;
             this.refraction.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refraction.Location = new System.Drawing.Point(313, 161);
-            this.refraction.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.refraction.Location = new System.Drawing.Point(279, 129);
             this.refraction.Name = "refraction";
-            this.refraction.Size = new System.Drawing.Size(149, 94);
+            this.refraction.Size = new System.Drawing.Size(132, 75);
             this.refraction.TabIndex = 0;
             this.refraction.Text = "Refraction";
             this.refraction.UseVisualStyleBackColor = true;
@@ -66,10 +66,9 @@
             this.waves.Cursor = System.Windows.Forms.Cursors.Hand;
             this.waves.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.waves.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.waves.Location = new System.Drawing.Point(313, 263);
-            this.waves.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.waves.Location = new System.Drawing.Point(279, 210);
             this.waves.Name = "waves";
-            this.waves.Size = new System.Drawing.Size(149, 131);
+            this.waves.Size = new System.Drawing.Size(132, 105);
             this.waves.TabIndex = 1;
             this.waves.Text = "Waves";
             this.waves.UseVisualStyleBackColor = true;
@@ -103,7 +102,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.76264F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.15136F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.086F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(778, 566);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(692, 453);
             this.tableLayoutPanel1.TabIndex = 3;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -115,9 +114,9 @@
             this.wTxt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.wTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wTxt.ForeColor = System.Drawing.SystemColors.Control;
-            this.wTxt.Location = new System.Drawing.Point(229, 0);
+            this.wTxt.Location = new System.Drawing.Point(207, 0);
             this.wTxt.Name = "wTxt";
-            this.wTxt.Size = new System.Drawing.Size(318, 38);
+            this.wTxt.Size = new System.Drawing.Size(276, 32);
             this.wTxt.TabIndex = 2;
             this.wTxt.Text = "Physics Simulations!";
             this.wTxt.Click += new System.EventHandler(this.label1_Click);
@@ -125,6 +124,7 @@
             // 
             // theme
             // 
+            this.theme.AllowDrop = true;
             this.theme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.theme.BackColor = System.Drawing.SystemColors.ControlText;
             this.theme.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -132,13 +132,16 @@
             this.theme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.theme.ForeColor = System.Drawing.SystemColors.ControlText;
             this.theme.Image = global::Physics_Simulation.Properties.Resources.moon;
-            this.theme.Location = new System.Drawing.Point(710, 3);
+            this.theme.Location = new System.Drawing.Point(631, 2);
+            this.theme.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.theme.Name = "theme";
-            this.theme.Size = new System.Drawing.Size(65, 71);
+            this.theme.Size = new System.Drawing.Size(58, 57);
             this.theme.TabIndex = 3;
             this.theme.UseVisualStyleBackColor = false;
             this.theme.Click += new System.EventHandler(this.settings_Click);
+            this.theme.MouseDown += new System.Windows.Forms.MouseEventHandler(this.theme_MouseDown);
             this.theme.MouseEnter += new System.EventHandler(this.settings_MouseEnter);
+            this.theme.MouseUp += new System.Windows.Forms.MouseEventHandler(this.theme_MouseUp);
             // 
             // credit
             // 
@@ -146,17 +149,21 @@
             this.credit.Interval = 400;
             this.credit.Tick += new System.EventHandler(this.themePrompt_Tick);
             // 
+            // cMove
+            // 
+            this.cMove.Interval = 1;
+            this.cMove.Tick += new System.EventHandler(this.cMove_Tick);
+            // 
             // welcomeScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(778, 566);
+            this.ClientSize = new System.Drawing.Size(692, 453);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "welcomeScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -177,6 +184,7 @@
         private System.Windows.Forms.Label wTxt;
         private System.Windows.Forms.Button theme;
         private System.Windows.Forms.ToolTip themeTip;
+        private System.Windows.Forms.Timer cMove;
     }
 }
 

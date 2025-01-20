@@ -544,7 +544,7 @@ namespace Physics_Simulation
                 answer = frequency;
                 promptText.Text = "Enter frequency below:";
                 fParameter1.Text = "Wave speed: " + Convert.ToString(waveSpeed);
-                fParameter2.Text = "Wavelength:" + Convert.ToString(waveLength);
+                fParameter2.Text = "Wavelength: " + Convert.ToString(waveLength);
             }
 
         }

@@ -4,6 +4,9 @@ Changelog:
 
 Iteration 2 - Simulation logic and questions mode
 
+V2.3.1: STABLE 20/01/25
+	Added a new animation to the welcome menu
+
 V2.3.0: STABLE, 15/01/25
 	Added wave question mode, player and random
 	Forces angle of refraction/reflection to be missing if internal reflection occurs

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -32,13 +33,57 @@ namespace Physics_Simulation
         // Used for all winforms so made public
         public class systemWideVariables
         {
-            public static string titleVersion = "V2.0.1";
+            public static string titleVersion = "V2.3.1";
             public static bool lightTheme = Settings.Default.lightTheme;
             public static string whichSim = "";
             public static bool isRandom = true;
         }
 
-    
+        private void leavingAnimation()
+        {
+            int x = this.DesktopLocation.X;
+            int y = this.DesktopLocation.Y;
+            int count = 2;
+            int flag = 0;
+            while (y < (this.Height * 3))
+            {
+                this.Location = new Point(x, y);
+                y = y + count;
+                Thread.Sleep(1);
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+                flag++;
+            }
+            this.Hide();
+
+        }
+
+        private void showingAnimation()
+        {
+            this.Show();
+            int x = this.DesktopLocation.X;
+            int y = this.DesktopLocation.Y;
+            int count = 2;
+            int flag = 0;
+            while (y > (this.Height / 100 * 50))
+            {
+                Thread.Sleep(1);
+                this.Location = new Point(x, y);
+                y = y - count;
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+                flag++;
+            }
+            
+
+        }
+
 
         private void button1_Click(object sender, EventArgs e) // Refraction
         {
@@ -46,18 +91,20 @@ namespace Physics_Simulation
 
             // Sets the var to tell the program which forms need to be loaded
             systemWideVariables.whichSim = "refraction";
-           
+
 
       
-            this.Hide();
+            leavingAnimation();
+   
             // Creates an instance of the refraction form when
             // the button is pressed
             optionsMenu options = new optionsMenu();
             options.ShowDialog();
-            this.Show();
+            showingAnimation();
+            
             
         }
-
+            
         private void label1_Click(object sender, EventArgs e)
         {
         }
@@ -148,13 +195,15 @@ namespace Physics_Simulation
 
             // Creates an instance of optionMenu form when
             // the button is pressed
+            leavingAnimation();
             optionsMenu options = new optionsMenu();
-            this.Hide();
+     
             options.ShowDialog();
 
             // When the optionMenu instance is closed by the user
             // the Welcome menu will open again
             this.Show();
+            this.Location = new Point(this.Width, this.Height / 100 * 50);
             // When the screen is next shown the opactiy is set to 0
             // and the fade in animation is triggered
             this.Opacity = 0;
@@ -271,6 +320,24 @@ namespace Physics_Simulation
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        
+
+        private void theme_MouseDown(object sender, MouseEventArgs e)
+        {
+
+         
+        }
+
+        private void theme_MouseUp(object sender, MouseEventArgs e)
+        {
+        
+        }
+
+        private void cMove_Tick(object sender, EventArgs e)
+        {
+          
         }
     }
 }
