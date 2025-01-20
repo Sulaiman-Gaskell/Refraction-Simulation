@@ -6,6 +6,7 @@ using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -39,14 +40,22 @@ namespace Physics_Simulation
             public static bool isRandom = true;
         }
 
+        private int initY;
+        private void getInitY()
+        {
+            initY = this.DesktopLocation.Y;
+        }
+            
         private void leavingAnimation()
         {
+            getInitY();
             int x = this.DesktopLocation.X;
             int y = this.DesktopLocation.Y;
             int count = 2;
             int flag = 0;
             while (y < (this.Height * 3))
             {
+
                 this.Location = new Point(x, y);
                 y = y + count;
                 Thread.Sleep(1);
@@ -61,21 +70,23 @@ namespace Physics_Simulation
 
         }
 
+
+
         private void showingAnimation()
         {
             this.Show();
             int x = this.DesktopLocation.X;
             int y = this.DesktopLocation.Y;
-            int count = 2;
+            int count = 50;
             int flag = 0;
-            while (y > (this.Height / 100 * 50))
+            while (y >= (initY))
             {
                 Thread.Sleep(1);
                 this.Location = new Point(x, y);
                 y = y - count;
                 if (flag == 1)
                 {
-                    count++;
+                    count--;
                     flag = 0;
                 }
                 flag++;
@@ -202,7 +213,7 @@ namespace Physics_Simulation
 
             // When the optionMenu instance is closed by the user
             // the Welcome menu will open again
-            this.Show();
+            showingAnimation();
             this.Location = new Point(this.Width, this.Height / 100 * 50);
             // When the screen is next shown the opactiy is set to 0
             // and the fade in animation is triggered
