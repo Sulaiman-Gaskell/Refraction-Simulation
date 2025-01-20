@@ -166,6 +166,7 @@ namespace Physics_Simulation
 
         private void bArrow_Click_1(object sender, EventArgs e)
         {
+         
             fadeOut.Enabled = true;
           
 

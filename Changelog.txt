@@ -4,6 +4,13 @@ Changelog:
 
 Iteration 2 - Simulation logic and questions mode
 
+V2.3.2: STABLE ?/01/25
+	Improved performance of the welcome screen fly animation
+	Fixed multiple windows staying open in the background (finally)
+
+V2.3.1: HOTFIX 20/01/25
+	Improved animation
+
 V2.3.1: STABLE 20/01/25
 	Added a new animation to the welcome menu
 

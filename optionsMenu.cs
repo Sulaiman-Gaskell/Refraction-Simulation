@@ -103,8 +103,13 @@ namespace Physics_Simulation
             {
                 if (systemWideVariables.whichSim == "refraction")
                 {
+                    
                     rInteract rInteract = new rInteract();
+                    this.Hide();
                     rInteract.ShowDialog();
+                    this.Show();
+                
+
 
 
 
@@ -195,7 +200,7 @@ namespace Physics_Simulation
         {
             if (this.Opacity > 0)
             {
-                this.Opacity -= 0.1;
+                this.Opacity -= 0.2;
             }
             else
             {
@@ -423,7 +428,7 @@ namespace Physics_Simulation
             if (questions.Text == "Questions")
             {
                 // Calls the fadeOut timer
-                fadeOut.Enabled = true;
+               fadeOut.Enabled = true;
             }
             else if (questions.Text == "Player Made")
             {

@@ -95,7 +95,7 @@ namespace Physics_Simulation
 
         }
 
-
+         
         private void button1_Click(object sender, EventArgs e) // Refraction
         {
             refraction.BackColor = Color.White;
@@ -106,7 +106,7 @@ namespace Physics_Simulation
 
       
             leavingAnimation();
-   
+
             // Creates an instance of the refraction form when
             // the button is pressed
             optionsMenu options = new optionsMenu();
@@ -215,10 +215,7 @@ namespace Physics_Simulation
             // the Welcome menu will open again
             showingAnimation();
             this.Location = new Point(this.Width, this.Height / 100 * 50);
-            // When the screen is next shown the opactiy is set to 0
-            // and the fade in animation is triggered
-            this.Opacity = 0;
-            fadeIn.Enabled = true;
+
         }
 
         private void refraction_MouseEnter(object sender, EventArgs e)
