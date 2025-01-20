@@ -499,22 +499,26 @@ namespace Physics_Simulation
         private void optionsMenu_SizeChanged(object sender, EventArgs e)
         {
 
-            // Updates the size of controls if the window changes
-            // Sets font size for text based on clients resolution
-            menuText.Font = new Font(menuText.Font.FontFamily,
-                this.Width / 30);
+            try
+            {
+                // Updates the size of controls if the window changes
+                // Sets font size for text based on clients resolution
+                menuText.Font = new Font(menuText.Font.FontFamily,
+                    this.Width / 30);
 
 
 
-            interact.Font = new Font(interact.Font.FontFamily,
-                this.Width / 30);
-            questions.Font = new Font(questions.Font.FontFamily,
-                this.Width / 30);
+                interact.Font = new Font(interact.Font.FontFamily,
+                    this.Width / 30);
+                questions.Font = new Font(questions.Font.FontFamily,
+                    this.Width / 30);
 
-            // Sizes the back arrow
-            bArrow.Size = new Size(this.Height / 10, this.Height / 10);
-    
+                // Sizes the back arrow
+                bArrow.Size = new Size(this.Height / 10, this.Height / 10);
+            }
+            catch  { }
         }
+        
     }
 
 

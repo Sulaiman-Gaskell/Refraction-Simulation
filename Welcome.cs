@@ -51,7 +51,7 @@ namespace Physics_Simulation
             getInitY();
             int x = this.DesktopLocation.X;
             int y = this.DesktopLocation.Y;
-            int count = 2;
+            int count = 5;
             int flag = 0;
             while (y < (this.Height * 3))
             {
