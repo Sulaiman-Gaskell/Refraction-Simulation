@@ -105,9 +105,8 @@ namespace Physics_Simulation
                 {
                     
                     rInteract rInteract = new rInteract();
-                    this.Hide();
                     rInteract.ShowDialog();
-                    this.Show();
+               
                 
 
 
