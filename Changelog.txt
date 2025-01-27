@@ -1,10 +1,9 @@
 Changelog:
 
 
+Alpha testing:
 
-Iteration 2 - Simulation logic and questions mode
-
-V2.3.2: STABLE ?/01/25
+V2.3.2: STABLE 27/01/25
 	Improved performance of the welcome screen fly animation
 	Replaced default icon of the .exe
 	Fixed some wave question bugs
@@ -16,6 +15,10 @@ V2.3.1: HOTFIX 20/01/25
 
 V2.3.1: STABLE 20/01/25
 	Added a new animation to the welcome menu
+
+
+Iteration 2 - Simulation logic and questions mode
+
 
 V2.3.0: STABLE, 15/01/25
 	Added wave question mode, player and random
