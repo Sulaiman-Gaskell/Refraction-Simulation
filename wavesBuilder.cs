@@ -52,9 +52,13 @@ namespace Physics_Simulation
                 clearAll.BackColor = Color.Black;
             }
 
-                // Sizes controls on the screen
+            // Sizes controls on the screen
 
-                qNameLabel.Font = new Font(qNameLabel.Font.FontFamily,
+
+            // Sizes the back arrow
+            bArrow.Size = new Size(this.Height / 10, this.Height / 10);
+
+            qNameLabel.Font = new Font(qNameLabel.Font.FontFamily,
                     this.Width / 80);
                 qName.Font = new Font(qName.Font.FontFamily,
                     this.Width / 80);
@@ -82,7 +86,7 @@ namespace Physics_Simulation
 
 
                 // Adds some padding
-                qNameLabel.Padding = new Padding(0, this.Height / 6, 0, 0);
+
             frequencyLabel.Padding = new Padding(0, this.Height / 25, 0, 0);
             wSpeedLabel.Padding = new Padding(0, this.Height / 25, 0, 0);
        
@@ -132,6 +136,46 @@ namespace Physics_Simulation
             bArrow.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
+        private void DrawLines(Graphics lines)
+        {
+
+            // draws nice graphical lines
+            Pen line = new Pen(Color.White, 5);
+
+            if (systemWideVariables.lightTheme)
+            {
+                line.Color = Color.Black;
+            }
+
+
+            Point point1Left = new Point(this.Width / 100 * 30, 0);
+            Point point2Left = new Point(this.Width / 100 * 30, this.Height);
+
+            lines.DrawLine(line, point1Left, point2Left);
+
+
+            Point point1Right = new Point(this.Width / 100 * 70, 0);
+            Point point2Right = new Point(this.Width / 100 * 70, this.Height);
+
+            lines.DrawLine(line, point1Right, point2Right);
+
+
+            Point point1Top = new Point(0, this.Height / 100 * 20);
+            Point point2Top = new Point(this.Width, this.Height / 100 * 20);
+
+            lines.DrawLine(line, point1Top, point2Top);
+
+
+            Point point1Bottom = new Point(0, this.Height / 100 * 85);
+            Point point2Bottom = new Point(this.Width, this.Height / 100 * 85);
+
+            lines.DrawLine(line, point1Bottom, point2Bottom);
+
+
+
+
+        }
+
         private void bArrow_MouseLeave(object sender, EventArgs e)
         {
             // Returns bArrow size back to normal
@@ -140,7 +184,7 @@ namespace Physics_Simulation
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-
+            DrawLines(e.Graphics);
         }
 
         private void frequency_KeyPress(object sender, KeyPressEventArgs e)

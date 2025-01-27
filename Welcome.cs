@@ -34,7 +34,7 @@ namespace Physics_Simulation
         // Used for all winforms so made public
         public class systemWideVariables
         {
-            public static string titleVersion = "V2.3.1";
+            public static string titleVersion = "V2.3.2";
             public static bool lightTheme = Settings.Default.lightTheme;
             public static string whichSim = "";
             public static bool isRandom = true;
@@ -52,19 +52,14 @@ namespace Physics_Simulation
             int x = this.DesktopLocation.X;
             int y = this.DesktopLocation.Y;
             int count = 5;
-            int flag = 0;
             while (y < (this.Height * 3))
             {
 
                 this.Location = new Point(x, y);
                 y = y + count;
                 Thread.Sleep(1);
-                if (flag == 1)
-                {
-                    count++;
-                    flag = 0;
-                }
-                flag++;
+                count++;
+             
             }
             this.Hide();
 
@@ -78,18 +73,15 @@ namespace Physics_Simulation
             int x = this.DesktopLocation.X;
             int y = this.DesktopLocation.Y;
             int count = 50;
-            int flag = 0;
+  
             while (y >= (initY))
             {
                 Thread.Sleep(1);
                 this.Location = new Point(x, y);
                 y = y - count;
-                if (flag == 1)
-                {
-                    count--;
-                    flag = 0;
-                }
-                flag++;
+        
+               count--;
+           
             }
             
 

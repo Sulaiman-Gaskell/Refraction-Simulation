@@ -20,6 +20,47 @@ namespace Physics_Simulation
             InitializeComponent();
         }
 
+
+        private void DrawLines(Graphics lines)
+        {
+
+            // draws nice graphical lines
+            Pen line = new Pen(Color.White, 5);
+
+            if (systemWideVariables.lightTheme)
+            {
+                line.Color = Color.Black;
+            }
+
+
+            Point point1Left = new Point(this.Width / 100 * 30, 0);
+            Point point2Left = new Point(this.Width / 100 * 30, this.Height);
+
+            lines.DrawLine(line, point1Left, point2Left);
+
+
+            Point point1Right = new Point(this.Width / 100 * 70, 0);
+            Point point2Right = new Point(this.Width / 100 * 70, this.Height);
+
+            lines.DrawLine(line,point1Right, point2Right);
+
+
+            Point point1Top = new Point(0, this.Height / 100 * 20);
+            Point point2Top = new Point(this.Width, this.Height / 100 * 20);
+                
+            lines.DrawLine(line,point1Top, point2Top);
+
+
+            Point point1Bottom = new Point(0, this.Height / 100 * 85);
+            Point point2Bottom = new Point(this.Width,this.Height / 100 * 85);
+
+            lines.DrawLine(line,point1Bottom, point2Bottom);
+
+
+
+
+        }
+
         private void refractionBuilder_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
@@ -36,6 +77,8 @@ namespace Physics_Simulation
 
             fadeIn.Enabled = true;
 
+
+            // For light mode
             if(systemWideVariables.lightTheme)
             {
                 bArrow.BackgroundImage = Properties.Resources.lightBackArrow;
@@ -114,7 +157,6 @@ namespace Physics_Simulation
 
 
             // Adds some padding
-            qNameLabel.Padding = new Padding(0, this.Height / 6, 0, 0);
             aOILabel.Padding = new Padding(0, this.Height / 25, 0, 0);
             rI1Label.Padding = new Padding(0, this.Height / 25, 0, 0);
             rI2Label.Padding = new Padding(0, this.Height / 25, 0, 0);
@@ -176,7 +218,7 @@ namespace Physics_Simulation
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-
+            DrawLines(e.Graphics);
         }
 
         private void aOILabel_Click(object sender, EventArgs e)
@@ -186,6 +228,9 @@ namespace Physics_Simulation
 
         private void tableLayoutPanel1_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
         {
+
+
+    
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -243,10 +288,13 @@ namespace Physics_Simulation
 
         }
 
+
+
         private void clearAll_Click(object sender, EventArgs e)
         {
             File.Delete("refractionQuestions.txt");
             clearAll.Text = "Cleared all questions";
+     
         }
 
         private void aOI_KeyPress(object sender, KeyPressEventArgs e)

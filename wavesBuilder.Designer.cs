@@ -53,9 +53,8 @@
             this.bArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bArrow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bArrow.Location = new System.Drawing.Point(-3, 1);
-            this.bArrow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bArrow.Name = "bArrow";
-            this.bArrow.Size = new System.Drawing.Size(90, 105);
+            this.bArrow.Size = new System.Drawing.Size(80, 84);
             this.bArrow.TabIndex = 7;
             this.bArrow.TabStop = false;
             this.bArrow.Click += new System.EventHandler(this.bArrow_Click);
@@ -78,18 +77,20 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.95626F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.08748F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.95626F));
-            this.tableLayoutPanel1.Controls.Add(this.qNameLabel, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.qName, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.frequencyLabel, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.frequency, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.wSpeedLabel, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.waveSpeed, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.saveButton, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.clearAll, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.qNameLabel, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.qName, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.frequencyLabel, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.frequency, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.wSpeedLabel, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.waveSpeed, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.saveButton, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.clearAll, 1, 10);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 10;
+            this.tableLayoutPanel1.RowCount = 12;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.45221F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -100,7 +101,8 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.54778F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(711, 360);
             this.tableLayoutPanel1.TabIndex = 9;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -108,36 +110,38 @@
             // 
             this.qNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.qNameLabel.AutoSize = true;
-            this.qNameLabel.Location = new System.Drawing.Point(338, 0);
+            this.qNameLabel.Location = new System.Drawing.Point(305, 80);
             this.qNameLabel.Name = "qNameLabel";
-            this.qNameLabel.Size = new System.Drawing.Size(121, 20);
+            this.qNameLabel.Size = new System.Drawing.Size(100, 16);
             this.qNameLabel.TabIndex = 0;
             this.qNameLabel.Text = "Question name:";
             // 
             // qName
             // 
             this.qName.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.qName.Location = new System.Drawing.Point(349, 23);
+            this.qName.Location = new System.Drawing.Point(310, 98);
+            this.qName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.qName.Name = "qName";
-            this.qName.Size = new System.Drawing.Size(100, 26);
+            this.qName.Size = new System.Drawing.Size(89, 22);
             this.qName.TabIndex = 1;
             // 
             // frequencyLabel
             // 
             this.frequencyLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.frequencyLabel.AutoSize = true;
-            this.frequencyLabel.Location = new System.Drawing.Point(338, 52);
+            this.frequencyLabel.Location = new System.Drawing.Point(304, 122);
             this.frequencyLabel.Name = "frequencyLabel";
-            this.frequencyLabel.Size = new System.Drawing.Size(122, 20);
+            this.frequencyLabel.Size = new System.Drawing.Size(101, 16);
             this.frequencyLabel.TabIndex = 2;
             this.frequencyLabel.Text = "Frequency (Hz):";
             // 
             // frequency
             // 
             this.frequency.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.frequency.Location = new System.Drawing.Point(349, 75);
+            this.frequency.Location = new System.Drawing.Point(310, 140);
+            this.frequency.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.frequency.Name = "frequency";
-            this.frequency.Size = new System.Drawing.Size(100, 26);
+            this.frequency.Size = new System.Drawing.Size(89, 22);
             this.frequency.TabIndex = 3;
             this.frequency.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frequency_KeyPress);
             // 
@@ -145,18 +149,19 @@
             // 
             this.wSpeedLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.wSpeedLabel.AutoSize = true;
-            this.wSpeedLabel.Location = new System.Drawing.Point(329, 104);
+            this.wSpeedLabel.Location = new System.Drawing.Point(294, 164);
             this.wSpeedLabel.Name = "wSpeedLabel";
-            this.wSpeedLabel.Size = new System.Drawing.Size(140, 20);
+            this.wSpeedLabel.Size = new System.Drawing.Size(121, 16);
             this.wSpeedLabel.TabIndex = 4;
             this.wSpeedLabel.Text = "Wave speed (m/s):";
             // 
             // waveSpeed
             // 
             this.waveSpeed.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.waveSpeed.Location = new System.Drawing.Point(349, 127);
+            this.waveSpeed.Location = new System.Drawing.Point(310, 182);
+            this.waveSpeed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.waveSpeed.Name = "waveSpeed";
-            this.waveSpeed.Size = new System.Drawing.Size(100, 26);
+            this.waveSpeed.Size = new System.Drawing.Size(89, 22);
             this.waveSpeed.TabIndex = 5;
             this.waveSpeed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.waveSpeed_KeyPress);
             // 
@@ -165,9 +170,10 @@
             this.saveButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.saveButton.AutoSize = true;
             this.saveButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.saveButton.Location = new System.Drawing.Point(361, 159);
+            this.saveButton.Location = new System.Drawing.Point(321, 208);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(75, 30);
+            this.saveButton.Size = new System.Drawing.Size(67, 26);
             this.saveButton.TabIndex = 1;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -178,9 +184,10 @@
             this.clearAll.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.clearAll.AutoSize = true;
             this.clearAll.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.clearAll.Location = new System.Drawing.Point(361, 195);
+            this.clearAll.Location = new System.Drawing.Point(321, 238);
+            this.clearAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.clearAll.Name = "clearAll";
-            this.clearAll.Size = new System.Drawing.Size(75, 30);
+            this.clearAll.Size = new System.Drawing.Size(67, 26);
             this.clearAll.TabIndex = 8;
             this.clearAll.Text = "Clear all";
             this.clearAll.UseVisualStyleBackColor = true;
@@ -188,14 +195,15 @@
             // 
             // wavesBuilder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(711, 360);
             this.Controls.Add(this.bArrow);
             this.Controls.Add(this.tableLayoutPanel1);
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "wavesBuilder";
             this.Opacity = 0D;
             this.Text = "wavesBuilder";

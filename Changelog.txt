@@ -6,7 +6,10 @@ Iteration 2 - Simulation logic and questions mode
 
 V2.3.2: STABLE ?/01/25
 	Improved performance of the welcome screen fly animation
-	Replaced default icon of the .exe	
+	Replaced default icon of the .exe
+	Fixed some wave question bugs
+	Improved UI of the builders
+	Fixed back arrow scaling on some screens	
 
 V2.3.1: HOTFIX 20/01/25
 	Improved animation

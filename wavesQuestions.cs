@@ -76,6 +76,11 @@ namespace Physics_Simulation
                 this.Width / 80);
 
 
+
+            // Sizes the back arrow
+            bArrow.Size = new Size(this.Height / 10, this.Height / 10);
+
+
             //Adds some margins between controls
 
 
@@ -440,7 +445,7 @@ namespace Physics_Simulation
 
         private double frequency;
         private double waveSpeed;
-        private double waveLength;
+        private double waveLength = 0;
         private double answer;
         private void createQuestion()
         {
@@ -448,23 +453,25 @@ namespace Physics_Simulation
 
             if (systemWideVariables.isRandom == true)
             {
-                // Creates random parameters and calcs the angle of refraction
 
-                // suitable freq upper bound
-                frequency = random.Next(1, 200);
+                while (waveLength == 0)
+                {
+                    // suitable freq upper bound
+                    frequency = random.Next(1, 200);
 
-                // Upper bound up a factor of 10 to get some floating values aswell
-                waveSpeed = random.Next(1, 3000);
-                waveSpeed = Math.Round(waveSpeed / 10,1);
-
-
-                // equation for wave speed
-                waveLength = Math.Round(waveSpeed / frequency,1);
+                    // Upper bound up a factor of 10 to get some floating values aswell
+                    waveSpeed = random.Next(1, 3000);
+                    waveSpeed = Math.Round(waveSpeed / 10, 1);
 
 
-                // Updates wave intervel
-                waveDraw.Interval = Convert.ToInt32(501 - Convert.ToDouble(waveSpeed)
-                    - (Convert.ToInt32(frequency)));
+                    // equation for wave speed
+                    waveLength = Math.Round(waveSpeed / frequency, 1);
+
+
+                    // Updates wave intervel
+                    waveDraw.Interval = Convert.ToInt32(501 - Convert.ToDouble(waveSpeed)
+                        - (Convert.ToInt32(frequency)));
+                }
 
 
             }
@@ -582,11 +589,24 @@ namespace Physics_Simulation
             }
             else
             {
+                waveLength = 0;
                 result.Text = "";
                 flag = true;
                 createQuestion();
                 generateQuestion.Enabled = true;
                 resetResult.Enabled = false;
+            }
+        }
+
+        private void mParameter_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Stops the user from entering any values other than 0-9, backspace and full stop 
+            if ((e.KeyChar > (char)Keys.D9 ||
+                 e.KeyChar < (char)Keys.D0) &&
+                 e.KeyChar != (char)Keys.Back &&
+                 e.KeyChar != '.')
+            {
+                e.Handled = true;
             }
         }
     }

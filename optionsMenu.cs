@@ -481,8 +481,10 @@ namespace Physics_Simulation
             {
                 if (systemWideVariables.whichSim == "refraction")
                 {
+                 
                     refractionBuilder refractionBuilder = new refractionBuilder();
                     refractionBuilder.ShowDialog();
+                   
            
                 }
 
