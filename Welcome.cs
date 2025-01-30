@@ -34,7 +34,7 @@ namespace Physics_Simulation
         // Used for all winforms so made public
         public class systemWideVariables
         {
-            public static string titleVersion = "V2.3.2";
+            public static string titleVersion = "V2.3.3";
             public static bool lightTheme = Settings.Default.lightTheme;
             public static string whichSim = "";
             public static bool isRandom = true;
@@ -206,7 +206,9 @@ namespace Physics_Simulation
             // When the optionMenu instance is closed by the user
             // the Welcome menu will open again
             showingAnimation();
-            this.Location = new Point(this.Width, this.Height / 100 * 50);
+
+            // This removed in beta testing.
+            //this.Location = new Point(this.Width, this.Height / 100 * 50);
 
         }
 

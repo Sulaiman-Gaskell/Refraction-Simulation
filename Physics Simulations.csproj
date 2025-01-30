@@ -164,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Letter_P_blue_34913.ico" />
+    <None Include="Resources\Icons\battery.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

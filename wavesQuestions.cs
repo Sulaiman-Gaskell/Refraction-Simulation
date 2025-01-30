@@ -40,7 +40,12 @@ namespace Physics_Simulation
                 amplitude.ForeColor = Color.White;
                 amplitudeText.ForeColor = Color.Black;
                 amplitudeText.BackColor = Color.White;
+
+                //Added in alpha testing
+                generateQuestion.ForeColor = Color.White;
+                generateQuestion.BackColor = Color.Black;
             }
+
 
          
             this.Text = systemWideVariables.titleVersion;
