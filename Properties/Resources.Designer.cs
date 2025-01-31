@@ -63,9 +63,9 @@ namespace Physics_Simulation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap battery {
+        internal static System.Drawing.Bitmap darkBackArrow {
             get {
-                object obj = ResourceManager.GetObject("battery", resourceCulture);
+                object obj = ResourceManager.GetObject("darkBackArrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,19 @@ namespace Physics_Simulation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap darkBackArrow {
+        internal static System.Drawing.Bitmap energy_saving_icondark {
             get {
-                object obj = ResourceManager.GetObject("darkBackArrow", resourceCulture);
+                object obj = ResourceManager.GetObject("energy_saving_icondark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap energysaverlight {
+            get {
+                object obj = ResourceManager.GetObject("energysaverlight", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

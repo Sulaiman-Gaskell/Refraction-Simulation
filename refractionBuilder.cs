@@ -207,8 +207,12 @@ namespace Physics_Simulation
 
         private void bArrow_MouseEnter(object sender, EventArgs e)
         {
-            // Slighly increases the size of the bArrow
-            bArrow.BackgroundImageLayout = ImageLayout.Stretch;
+            // Slighly increases the size of the bArrow in non power save
+
+            if (systemWideVariables.powerSave == false)
+            {
+                bArrow.BackgroundImageLayout = ImageLayout.Stretch;
+            }
         }
 
         private void qNameLabel_Click(object sender, EventArgs e)

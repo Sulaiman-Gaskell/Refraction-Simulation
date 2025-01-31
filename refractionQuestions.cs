@@ -170,7 +170,11 @@ namespace Physics_Simulation
             promptText.Hide();
 
 
-            linesAnimate.Enabled = true;
+            // Allow animaton on no power save
+            if (systemWideVariables.powerSave == false)
+            {
+                linesAnimate.Enabled = true;
+            }
 
         }
 
@@ -212,8 +216,12 @@ namespace Physics_Simulation
 
         private void bArrow_MouseEnter(object sender, EventArgs e)
         {
-            // Slighly increases the size of the bArrow
-            bArrow.BackgroundImageLayout = ImageLayout.Stretch;
+            // Slighly increases the size of the bArrow in non power save
+
+            if (systemWideVariables.powerSave == false)
+            {
+                bArrow.BackgroundImageLayout = ImageLayout.Stretch;
+            }
         }
 
         private void bArrow_MouseLeave(object sender, EventArgs e)
@@ -735,7 +743,11 @@ namespace Physics_Simulation
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-
+            // for power save, disabled animation in form_Load
+            if (systemWideVariables.powerSave)
+            {
+                initDraw();
+            }
         }
 
 

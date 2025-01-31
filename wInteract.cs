@@ -163,7 +163,17 @@ namespace Physics_Simulation
             glossary.Margin = new System.Windows.Forms.Padding(
                 ClientSize.Width / 150, ClientSize.Width/100, 0, 0);
 
-            lineAnimate.Enabled = true;
+
+            // for power save
+            if (systemWideVariables.powerSave == false)
+            {
+                lineAnimate.Enabled = true;
+            }
+            else
+            {
+                drawWavePowerSave();
+                
+            }
         }
 
     
@@ -205,8 +215,12 @@ namespace Physics_Simulation
 
         private void bArrow_MouseEnter(object sender, EventArgs e)
         {
-            // Slighly increases the size of the bArrow
-            bArrow.BackgroundImageLayout = ImageLayout.Stretch;
+            // Slighly increases the size of the bArrow in non power save
+
+            if (systemWideVariables.powerSave == false)
+            {
+                bArrow.BackgroundImageLayout = ImageLayout.Stretch;
+            }
         }
 
         private void bArrow_MouseLeave(object sender, EventArgs e)
@@ -262,7 +276,70 @@ namespace Physics_Simulation
             line.Dispose();
         }
 
+        private void drawWavePowerSave()
+        {
 
+            this.Refresh();
+
+            Pen wave = new Pen(Color.White, 20);
+            if (systemWideVariables.lightTheme == true)
+            {
+                wave.Color = Color.Black;
+            }
+
+
+            // Creates a graphic 'diagram' to draw on the tableLayoutPanel
+            Graphics diagram = tableLayoutPanel1.CreateGraphics();
+
+
+
+            diagram.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+
+
+            // Gets the points ready to be drawn
+            Point point0 = new Point(ClientSize.Width / 100 * (-80), ClientSize.Height / 100 * (50 - upperOfsetY));
+            Point point1 = new Point(ClientSize.Width / 100 * (-60), ClientSize.Height / 100 * (50 + upperOfsetY));
+            Point point2 = new Point(ClientSize.Width / 100 * (-40), ClientSize.Height / 100 * (50 - upperOfsetY));
+            Point point3 = new Point(ClientSize.Width / 100 * (-20), ClientSize.Height / 100 * (50 + upperOfsetY));
+            Point point4 = new Point(0, ClientSize.Height / 100 * (50 - upperOfsetY));
+            Point point5 = new Point(ClientSize.Width / 100 * (20), ClientSize.Height / 100 * (50 + upperOfsetY));
+            Point point6 = new Point(ClientSize.Width / 100 * (40), ClientSize.Height / 100 * (50 - upperOfsetY));
+            Point point7 = new Point(ClientSize.Width / 100 * (60), ClientSize.Height / 100 * (50 + upperOfsetY));
+            Point point8 = new Point(ClientSize.Width / 100 * (80), ClientSize.Height / 100 * (50 - upperOfsetY));
+            Point point9 = new Point(ClientSize.Width / 100 * (100), ClientSize.Height / 100 * (50 + upperOfsetY));
+            Point point10 = new Point(ClientSize.Width / 100 * (120), ClientSize.Height / 100 * (50 - upperOfsetY));
+
+            Point[] curvePoints = { point0, point1, point2, point3, point4, point5, point6, point7, point8, point9, point10 };
+
+
+            drawLine(diagram);
+
+
+
+
+            // Draws the wave function
+
+            diagram.DrawCurve(wave, curvePoints);
+
+
+            // Forces any changes to the wavelength stat if needed
+            try
+            {
+                // Updates the stat and rounds to one dp
+                waveLength.Text = "Wavelength: " +
+                    Convert.ToString(Math.Round(Convert.ToDouble(waveSpeed.Text) / Convert.ToInt32(frequency.Text), 1)
+                    + " m (1.dp)");
+            }
+            catch
+            {
+                // To pause wave animation if an invalid input is put in and give error messg
+                waveDraw.Interval = 1000000;
+                waveLength.Text = "Error!";
+            }
+
+
+
+        }
 
         private int ofsetY = 1;
         private int ofsetX = 0;
@@ -272,6 +349,8 @@ namespace Physics_Simulation
 
         private void waveDraw_Tick(object sender, EventArgs e)
         {
+
+
             Pen wave = new Pen(Color.White, 20);
             if (systemWideVariables.lightTheme == true)
             {
@@ -363,41 +442,53 @@ namespace Physics_Simulation
 
 
 
-
+            // all below disabled for powersave
             // Updates ofset accordingly to the inputted amplitude
+            if (systemWideVariables.powerSave == false)
+            {
+                if (upperOfsetY == 0)
+                {
+                    ofsetY = 0;
+                }
+                else if (ofsetY < upperOfsetY & waveFlag == true)
+                {
+                    ofsetY++;
+                }
+                else if (ofsetY < upperOfsetY & ofsetY != (-upperOfsetY) & waveFlag == false)
+                {
+                    ofsetY--;
+                }
+                else if (ofsetY == upperOfsetY & waveFlag == true)
+                {
+                    waveFlag = false;
+                    ofsetY--;
+                }
+                else if (ofsetY == (-upperOfsetY) & waveFlag == false)
+                {
+                    waveFlag = true;
+                    ofsetY++;
+                }
 
-            if (upperOfsetY == 0)
-            {
-                ofsetY = 0;
-            }
-            else if (ofsetY < upperOfsetY & waveFlag == true)
-            {
-                ofsetY++;
-            }
-            else if (ofsetY < upperOfsetY & ofsetY != (-upperOfsetY) & waveFlag == false)
-            {
-                ofsetY--;
-            }
-            else if (ofsetY == upperOfsetY & waveFlag == true)
-            {
-                waveFlag = false;
-                ofsetY--;
-            }
-            else if (ofsetY == (-upperOfsetY) & waveFlag == false)
-            {
-                waveFlag = true;
-                ofsetY++;
-            }
 
 
-            // Fine tune visual effect
-            if (waveDraw.Interval < 50)
-            {
-                ofsetX = ofsetX + 2;
+                // Fine tune visual effect
+                if (waveDraw.Interval < 50)
+                {
+                    ofsetX = ofsetX + 2;
+                }
+                else
+                {
+                    ofsetX++;
+                }
             }
+            
             else
             {
-                ofsetX++;
+                // Disables this and enables powersave verson
+                drawWavePowerSave();
+                waveDraw.Enabled = false;
+                
+               
             }
 
             // Forces any changes to the wavelength stat if needed
@@ -419,6 +510,12 @@ namespace Physics_Simulation
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
+            // for power save 
+            if (systemWideVariables.powerSave)
+            {
+                drawLine(e.Graphics);
+            }
+               
         }
 
 
@@ -427,6 +524,12 @@ namespace Physics_Simulation
         {
             try
             {
+                // for power save mode
+                if (systemWideVariables.powerSave)
+                {
+                    drawWavePowerSave();
+                }
+
                 waveDraw.Interval = Convert.ToInt32(upperWaveSpeed - Convert.ToDouble(waveSpeed.Text)
                     - (Convert.ToInt32(frequency.Text)));
             }
@@ -456,6 +559,13 @@ namespace Physics_Simulation
         {
             try
             {
+
+                // for power save mode
+                if (systemWideVariables.powerSave)
+                {
+                    drawWavePowerSave();
+                }
+
                 waveDraw.Interval = Convert.ToInt32(upperWaveSpeed - Convert.ToDouble(waveSpeed.Text)
                     - (Convert.ToInt32(frequency.Text)));
             }
@@ -474,6 +584,7 @@ namespace Physics_Simulation
             try
             {
 
+
                 // Conversion string --> double (*2) -- > integer
                 if (Convert.ToDouble(amplitude.Text) <= 35)
                 {
@@ -484,6 +595,11 @@ namespace Physics_Simulation
                 else
                 {
                     upperOfsetY = 1;
+                }
+
+                if (systemWideVariables.powerSave)
+                {
+                    drawWavePowerSave();
                 }
             }
             catch

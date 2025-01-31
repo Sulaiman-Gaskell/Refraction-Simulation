@@ -38,6 +38,7 @@ namespace Physics_Simulation
             public static bool lightTheme = Settings.Default.lightTheme;
             public static string whichSim = "";
             public static bool isRandom = true;
+            public static bool powerSave = Settings.Default.powerSave;
         }
 
         private int initY;
@@ -48,19 +49,26 @@ namespace Physics_Simulation
             
         private void leavingAnimation()
         {
-            getInitY();
-            int x = this.DesktopLocation.X;
-            int y = this.DesktopLocation.Y;
-            int count = 5;
-            while (y < (this.Height * 3))
+
+            // only triggers if powersave is disabled
+            if (systemWideVariables.powerSave == false)
             {
 
-                this.Location = new Point(x, y);
-                y = y + count;
-                Thread.Sleep(1);
-                count++;
-             
+                getInitY();
+                int x = this.DesktopLocation.X;
+                int y = this.DesktopLocation.Y;
+                int count = 5;
+                while (y < (this.Height * 3))
+                {
+
+                    this.Location = new Point(x, y);
+                    y = y + count;
+                    Thread.Sleep(1);
+                    count++;
+
+                }
             }
+
             this.Hide();
 
         }
@@ -70,20 +78,22 @@ namespace Physics_Simulation
         private void showingAnimation()
         {
             this.Show();
-            int x = this.DesktopLocation.X;
-            int y = this.DesktopLocation.Y;
-            int count = 50;
-  
-            while (y >= (initY))
+            if (systemWideVariables.powerSave == false)
             {
-                Thread.Sleep(1);
-                this.Location = new Point(x, y);
-                y = y - count;
-        
-               count--;
-           
+                int x = this.DesktopLocation.X;
+                int y = this.DesktopLocation.Y;
+                int count = 50;
+
+                while (y >= (initY))
+                {
+                    Thread.Sleep(1);
+                    this.Location = new Point(x, y);
+                    y = y - count;
+
+                    count--;
+
+                }
             }
-            
 
         }
 
@@ -96,7 +106,7 @@ namespace Physics_Simulation
             systemWideVariables.whichSim = "refraction";
 
 
-      
+       
             leavingAnimation();
 
             // Creates an instance of the refraction form when
@@ -129,6 +139,9 @@ namespace Physics_Simulation
                 theme.Image = Properties.Resources.sun;
                 theme.BackColor = Color.Transparent;
                 theme.ForeColor = Color.Transparent;
+                energySaver.Image = Properties.Resources.energy_saving_icondark;
+                energySaver.ForeColor = Color.Transparent;
+                energySaver.BackColor = Color.Transparent;
             }
             else
             {
@@ -142,7 +155,18 @@ namespace Physics_Simulation
                 theme.Image = Properties.Resources.moon;
                 theme.BackColor = Color.Black;
                 theme.ForeColor = Color.Black; 
+                energySaver.Image = Properties.Resources.energysaverlight;
+                energySaver.ForeColor= Color.Black;
+                energySaver.BackColor = Color.Black;
             }
+
+
+            // if power save is on or not
+            if (systemWideVariables.powerSave)
+            {
+                energySaver.BackColor= Color.Red;
+            }
+
         }
 
     private void welcomeScreen_Load(object sender, EventArgs e)
@@ -169,6 +193,14 @@ namespace Physics_Simulation
             refraction.Height = Convert.ToInt32(wTxt.Height / 1.5);
             refraction.Width = Convert.ToInt32(wTxt.Width / 1.5);
             waves.Size = refraction.Size;
+
+
+
+            // Enables screen animation if power save is off
+            if (systemWideVariables.powerSave == false)
+            {
+                credit.Enabled = true;
+            }
 
            
             
@@ -266,6 +298,7 @@ namespace Physics_Simulation
         {
             // Not used anymore
             Settings.Default.lightTheme = systemWideVariables.lightTheme;
+            Settings.Default.powerSave = systemWideVariables.powerSave;
             Settings.Default.Save();
             Application.Exit();
         }
@@ -340,6 +373,46 @@ namespace Physics_Simulation
         private void cMove_Tick(object sender, EventArgs e)
         {
           
+        }
+
+        private void energySaver_Click(object sender, EventArgs e)
+        {
+
+            // Updates the global attribute by swapping value
+            if (systemWideVariables.powerSave == true)
+            {
+                systemWideVariables.powerSave = false;
+
+                if (systemWideVariables.lightTheme)
+                { 
+                    energySaver.BackColor = Color.Transparent;
+                }
+                else
+                {
+                    energySaver.BackColor = Color.Black;
+                }
+
+                // renables text animation
+                credit.Enabled = true;
+                
+            }
+            else {
+                systemWideVariables.powerSave = true; 
+                energySaver.BackColor = Color.Red;
+
+                // Disables text animation
+                credit.Enabled = false;
+                // In case two ! are shown
+                wTxt.Text = "Physics Simulations!";
+
+            }
+
+                    
+        }
+
+        private void themeTip_Popup(object sender, PopupEventArgs e)
+        {
+
         }
     }
 }

@@ -46,5 +46,17 @@ namespace Physics_Simulation.Properties {
                 this["Setting"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool powerSave {
+            get {
+                return ((bool)(this["powerSave"]));
+            }
+            set {
+                this["powerSave"] = value;
+            }
+        }
     }
 }

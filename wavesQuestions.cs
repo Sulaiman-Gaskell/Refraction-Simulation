@@ -47,14 +47,18 @@ namespace Physics_Simulation
             }
 
 
-         
+
             this.Text = systemWideVariables.titleVersion;
 
             this.Opacity = 0;
 
             fadeIn.Enabled = true;
 
-            lineAnimate.Enabled = true;
+
+            if (systemWideVariables.powerSave == false)
+            {
+                lineAnimate.Enabled = true;
+            }
 
             // Sets equal font sizes for controls
 
@@ -219,6 +223,60 @@ namespace Physics_Simulation
 
         }
 
+
+        private void drawWavePowerSave()
+        {
+
+            this.Refresh();
+
+            Pen wave = new Pen(Color.White, 20);
+            if (systemWideVariables.lightTheme == true)
+            {
+                wave.Color = Color.Black;
+            }
+
+
+            // Creates a graphic 'diagram' to draw on the tableLayoutPanel
+            Graphics diagram = tableLayoutPanel1.CreateGraphics();
+
+
+
+            diagram.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+
+
+            // Gets the points ready to be drawn
+            Point point0 = new Point(ClientSize.Width / 100 * (-80), ClientSize.Height / 100 * (50 - upperOfsetY));
+            Point point1 = new Point(ClientSize.Width / 100 * (-60), ClientSize.Height / 100 * (50 + upperOfsetY));
+            Point point2 = new Point(ClientSize.Width / 100 * (-40), ClientSize.Height / 100 * (50 - upperOfsetY));
+            Point point3 = new Point(ClientSize.Width / 100 * (-20), ClientSize.Height / 100 * (50 + upperOfsetY));
+            Point point4 = new Point(0, ClientSize.Height / 100 * (50 - upperOfsetY));
+            Point point5 = new Point(ClientSize.Width / 100 * (20), ClientSize.Height / 100 * (50 + upperOfsetY));
+            Point point6 = new Point(ClientSize.Width / 100 * (40), ClientSize.Height / 100 * (50 - upperOfsetY));
+            Point point7 = new Point(ClientSize.Width / 100 * (60), ClientSize.Height / 100 * (50 + upperOfsetY));
+            Point point8 = new Point(ClientSize.Width / 100 * (80), ClientSize.Height / 100 * (50 - upperOfsetY));
+            Point point9 = new Point(ClientSize.Width / 100 * (100), ClientSize.Height / 100 * (50 + upperOfsetY));
+            Point point10 = new Point(ClientSize.Width / 100 * (120), ClientSize.Height / 100 * (50 - upperOfsetY));
+
+            Point[] curvePoints = { point0, point1, point2, point3, point4, point5, point6, point7, point8, point9, point10 };
+
+
+            drawLine(diagram);
+
+
+
+
+            // Draws the wave function
+
+            diagram.DrawCurve(wave, curvePoints);
+
+
+      
+
+
+
+
+        }
+
         private int ofsetY = 1;
         private int ofsetX = 0;
         private bool waveFlag = true;
@@ -378,6 +436,11 @@ namespace Physics_Simulation
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+            // for power save
+            if (systemWideVariables.powerSave)
+            {
+                drawLine(e.Graphics);
+            }
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -391,6 +454,11 @@ namespace Physics_Simulation
         private double total;
         private void generateQuestion_Click(object sender, EventArgs e)
         {
+            
+
+
+
+            
             // For first time the user presses the button
             if (generateQuestion.Text == "Generate Question")
             {
@@ -531,8 +599,15 @@ namespace Physics_Simulation
                 }
             }
 
-             
-            
+
+
+            // For powersave
+            if (systemWideVariables.powerSave)
+            {
+                drawWavePowerSave();
+            }
+
+
             // Chooses and sets missing and found parameters on a random chance
 
             int chooseMissing = random.Next(1, 4);

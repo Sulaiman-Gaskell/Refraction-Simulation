@@ -2,9 +2,11 @@ Changelog:
 
 Beta testing:
 
+V.2.4.0: STABLE 31/01/25
+	Introduced a new power saving option on the welcome menu. It disables the visually intensive 	animations
+
 
 V2.3.3: STABLE 30/01/25
-
 	Fixed Some colouring issues with light mode
 	Fixed an issue with the loading in animation on the welcome menu
 

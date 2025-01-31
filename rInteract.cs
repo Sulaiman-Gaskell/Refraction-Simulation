@@ -79,12 +79,23 @@ namespace Physics_Simulation
             // Start the fade to animate the form
             fadeIn.Enabled = true;
 
-           
 
-            // Animates the lines as the program is first opened
-            linesAnimate.Enabled = true;
+
+            if (systemWideVariables.powerSave == false)
+            { 
+                // Animates the lines as the program is first opened and with power save disabled
+                linesAnimate.Enabled = true;
+            }
+            else
+            {
+                // else draw the base lines normally
+                // doesnt work so tried in tableLayoutPanel_Load
+                initDraw();
+                
+            }
+
             
-       
+           
             
 
         }
@@ -175,7 +186,12 @@ namespace Physics_Simulation
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-       
+
+            // draws base lines (already disabled animation in form_Load)
+            if (systemWideVariables.powerSave)
+            {
+                initDraw();
+            }
         }
 
         // For drawing the static lines
@@ -520,8 +536,12 @@ namespace Physics_Simulation
 
         private void bArrow_MouseEnter(object sender, EventArgs e)
         {
-            // Slighly increases the size of the bArrow
-            bArrow.BackgroundImageLayout = ImageLayout.Stretch;
+            // Slighly increases the size of the bArrow in non power save
+
+            if (systemWideVariables.powerSave == false)
+            {
+                bArrow.BackgroundImageLayout = ImageLayout.Stretch;
+            }
 
 
         }

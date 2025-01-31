@@ -11,6 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Physics_Simulation.welcomeScreen;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace Physics_Simulation
 {
@@ -32,6 +33,18 @@ namespace Physics_Simulation
 
         private void Refraction_Load(object sender, EventArgs e)
         {
+
+
+            // Only enables if powersave is off
+            if (systemWideVariables.powerSave == false)
+            {
+                animateObjects.Enabled = true;
+            }
+            else
+            {
+                // Otherwis sets the text
+                menuText.Text = "Choose a mode:";
+            }
             
             // For light theme
             if (systemWideVariables.lightTheme == true)
@@ -81,7 +94,6 @@ namespace Physics_Simulation
 
   
 
-            animateObjects.Enabled = true;
         }
 
 
@@ -258,9 +270,11 @@ namespace Physics_Simulation
         {
             menuText.ForeColor = Color.LightSkyBlue;
 
-
-            interact.Font = new Font(interact.Font.FontFamily,
-                ClientSize.Width / 35);
+            if (systemWideVariables.powerSave == false)
+            {
+                interact.Font = new Font(interact.Font.FontFamily,
+                    ClientSize.Width / 35);
+            }
         }
 
         private void interact_MouseLeave(object sender, EventArgs e)
@@ -276,14 +290,19 @@ namespace Physics_Simulation
                 interact.BackColor = Color.White;
             }
 
-
-            popInInteract.Enabled = true;
+            if (systemWideVariables.powerSave == false)
+            {
+                popInInteract.Enabled = true;
+            }
         }
 
         private void questions_MouseDown(object sender, MouseEventArgs e)
         {
-            questions.Font = new Font(questions.Font.FontFamily,
-                 ClientSize.Width / 35);
+            if (systemWideVariables.powerSave == false)
+            {
+                questions.Font = new Font(questions.Font.FontFamily,
+                     ClientSize.Width / 35);
+            }
 
             menuText.ForeColor = Color.Coral;
 
@@ -302,7 +321,10 @@ namespace Physics_Simulation
                 questions.BackColor = Color.White;
             }
 
-            popInQuestions.Enabled = true;
+            if (systemWideVariables.powerSave == false)
+            {
+                popInQuestions.Enabled = true;
+            }
         }
 
         // Useless
@@ -320,13 +342,21 @@ namespace Physics_Simulation
         private void interact_MouseEnter(object sender, EventArgs e)
         {
             interact.BackColor = Color.LightSkyBlue;
-            popOutInteract.Enabled = true;
+
+            if (systemWideVariables.powerSave == false)
+            {
+                popOutInteract.Enabled = true;
+            }
         }
 
         private void questions_MouseEnter(object sender, EventArgs e)
         {
             questions.BackColor = Color.Coral;
-            popOutQuestions.Enabled = true;
+
+            if (systemWideVariables.powerSave == false)
+            {
+                popOutQuestions.Enabled = true;
+            }
         }
 
 
@@ -433,13 +463,21 @@ namespace Physics_Simulation
             {
                 interact.Text = "Interactive";
                 questions.Text = "Questions";
-                animateObjects.Enabled = true;
+
+                if (systemWideVariables.powerSave == false)
+                {
+                    animateObjects.Enabled = true;
+                }
             }
             else if (questions.Text == "Create")
             {
                 interact.Text = "Random";
                 questions.Text = "Player Made";
-                animateObjects.Enabled= true;
+
+                if (systemWideVariables.powerSave == false)
+                {
+                    animateObjects.Enabled = true;
+                }
             }
 
         }
@@ -458,8 +496,12 @@ namespace Physics_Simulation
 
         private void bArrow_MouseEnter(object sender, EventArgs e)
         {
-            // Slighly increases the size of the bArrow
-            bArrow.BackgroundImageLayout = ImageLayout.Stretch;
+            // Slighly increases the size of the bArrow in non power save
+
+            if (systemWideVariables.powerSave == false)
+            {
+                bArrow.BackgroundImageLayout = ImageLayout.Stretch;
+            }
         }
 
         private void questions_Click(object sender, EventArgs e)
@@ -469,13 +511,21 @@ namespace Physics_Simulation
             {
                 interact.Text = "Random";
                 questions.Text = "Player Made";
-                animateObjects.Enabled = true;
+
+                if (systemWideVariables.powerSave == false)
+                {
+                    animateObjects.Enabled = true;
+                }
             }
             else if (questions.Text == "Player Made")
             {
                 interact.Text = "Play";
                 questions.Text = "Create";
-                animateObjects.Enabled = true;
+
+                if (systemWideVariables.powerSave == false)
+                {
+                    animateObjects.Enabled = true;
+                }
             }
             else if (questions.Text == "Create")
             {
