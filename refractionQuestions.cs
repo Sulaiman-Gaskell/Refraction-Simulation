@@ -572,11 +572,6 @@ namespace Physics_Simulation
         private double total;
 
         
- 
-      
-       
-       
-
 
         private void Test_Click(object sender, EventArgs e)
         {

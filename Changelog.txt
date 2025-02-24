@@ -2,7 +2,11 @@ Changelog:
 
 Beta testing:
 
-V.2.4.0: STABLE 31/01/25
+V2.4.1: STABLE 24/02/25
+	Added text to indicate which simulation the user is in
+	Updated colours to be bolder
+
+V2.4.0: STABLE 31/01/25
 	Introduced a new power saving option on the welcome menu. It disables the visually intensive 	animations
 
 

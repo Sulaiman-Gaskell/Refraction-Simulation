@@ -34,7 +34,7 @@ namespace Physics_Simulation
         // Used for all winforms so made public
         public class systemWideVariables
         {
-            public static string titleVersion = "V2.3.3";
+            public static string titleVersion = "V2.4.1";
             public static bool lightTheme = Settings.Default.lightTheme;
             public static string whichSim = "";
             public static bool isRandom = true;
@@ -172,7 +172,7 @@ namespace Physics_Simulation
     private void welcomeScreen_Load(object sender, EventArgs e)
         {
            
-
+   
 
             // Sets the form text as the version num defined by the class attribute
             // TitleVersion

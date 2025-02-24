@@ -44,6 +44,7 @@
             this.popOutQuestions = new System.Windows.Forms.Timer(this.components);
             this.popInQuestions = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.simulationType = new System.Windows.Forms.Label();
             this.refractionMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bArrow)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +60,7 @@
             this.refractionMenu.Controls.Add(this.interact, 1, 1);
             this.refractionMenu.Controls.Add(this.questions, 1, 2);
             this.refractionMenu.Controls.Add(this.menuText, 1, 0);
+            this.refractionMenu.Controls.Add(this.simulationType, 2, 3);
             this.refractionMenu.Cursor = System.Windows.Forms.Cursors.Default;
             this.refractionMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.refractionMenu.Location = new System.Drawing.Point(0, 0);
@@ -179,6 +181,15 @@
             this.popInQuestions.Interval = 13;
             this.popInQuestions.Tick += new System.EventHandler(this.popInQuestions_Tick);
             // 
+            // simulationType
+            // 
+            this.simulationType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.simulationType.AutoSize = true;
+            this.simulationType.Location = new System.Drawing.Point(797, 434);
+            this.simulationType.Name = "simulationType";
+            this.simulationType.Size = new System.Drawing.Size(0, 16);
+            this.simulationType.TabIndex = 7;
+            // 
             // optionsMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -219,5 +230,6 @@
         private System.Windows.Forms.Timer popInQuestions;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox bArrow;
+        private System.Windows.Forms.Label simulationType;
     }
 }

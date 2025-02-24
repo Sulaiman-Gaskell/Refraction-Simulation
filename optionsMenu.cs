@@ -57,6 +57,9 @@ namespace Physics_Simulation
                 menuText.ForeColor = Color.Black;
                 bArrow.BackgroundImage = Properties.Resources.lightBackArrow;
                 bArrow.BackColor = Color.White;
+
+                // new in beta testing
+                simulationType.ForeColor = Color.Black;
                 
             }
             // Sets the form text as the version num defined by the class
@@ -80,6 +83,18 @@ namespace Physics_Simulation
             // Sets font size for text based on clients resolution
             menuText.Font = new Font(menuText.Font.FontFamily,
                 this.Width / 30);
+
+            simulationType.Font = new Font(simulationType.Font.FontFamily,
+                this.Width / 50);
+
+            if (systemWideVariables.whichSim == "refraction")
+            {
+                simulationType.Text = "Refraction";
+            }
+            else
+            {
+                simulationType.Text = "Waves";
+            }
 
 
 
@@ -237,6 +252,9 @@ namespace Physics_Simulation
                 // Only triggers once
                 if (menuTextAnimate == true)
                 {
+                    simulationType.Font = new Font(simulationType.Font.FontFamily,
+                        ClientSize.Width / (tickCount + 36));
+
                     menuText.Text = label.Substring(0, tickCount);
 
                     // so it doesnt trigger again
@@ -341,7 +359,7 @@ namespace Physics_Simulation
 
         private void interact_MouseEnter(object sender, EventArgs e)
         {
-            interact.BackColor = Color.LightSkyBlue;
+            interact.BackColor = Color.Blue;
 
             if (systemWideVariables.powerSave == false)
             {
@@ -351,7 +369,7 @@ namespace Physics_Simulation
 
         private void questions_MouseEnter(object sender, EventArgs e)
         {
-            questions.BackColor = Color.Coral;
+            questions.BackColor = Color.OrangeRed;
 
             if (systemWideVariables.powerSave == false)
             {
