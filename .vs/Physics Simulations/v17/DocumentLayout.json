@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulations.csproj|c:\\users\\sulai\\source\\repos\\sulaiman-gaskell\\physics-simulations\\winteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulations.csproj|solutionrelative:winteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulations.csproj|c:\\users\\sulai\\source\\repos\\sulaiman-gaskell\\physics-simulations\\welcome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulations.csproj|solutionrelative:welcome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulations.csproj|C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\winteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulations.csproj|solutionrelative:winteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulations.csproj|C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\welcome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulations.csproj|solutionrelative:welcome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulations.csproj|C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\optionsmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulations.csproj|solutionrelative:optionsmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulations.csproj|C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\optionsmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulations.csproj|solutionrelative:optionsmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulations.csproj|C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\rinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulations.csproj|solutionrelative:rinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulations.csproj|C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\rinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7F27FFA7-BCC8-4462-8A4F-30BA0479436B}|Physics Simulations.csproj|solutionrelative:rinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,28 +50,73 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "wInteract.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\wInteract.cs",
-              "RelativeDocumentMoniker": "wInteract.cs",
-              "ToolTip": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\wInteract.cs [Design]",
-              "RelativeToolTip": "wInteract.cs [Design]",
+              "DocumentIndex": 0,
+              "Title": "Welcome.cs",
+              "DocumentMoniker": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\Welcome.cs",
+              "RelativeDocumentMoniker": "Welcome.cs",
+              "ToolTip": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\Welcome.cs",
+              "RelativeToolTip": "Welcome.cs",
+              "ViewState": "AgIAAIYAAAAAAAAAAAAswKAAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T18:22:38.565Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-03-03T14:23:05.692Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "wInteract.cs",
-              "DocumentMoniker": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\wInteract.cs",
-              "RelativeDocumentMoniker": "wInteract.cs",
-              "ToolTip": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\wInteract.cs",
-              "RelativeToolTip": "wInteract.cs",
-              "ViewState": "AgIAAFQBAAAAAAAAAAAswK4BAAANAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Welcome.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\Welcome.cs",
+              "RelativeDocumentMoniker": "Welcome.cs",
+              "ToolTip": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\Welcome.cs [Design]",
+              "RelativeToolTip": "Welcome.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T09:58:30.72Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-03T14:23:04.275Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "rInteract.cs",
+              "DocumentMoniker": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\rInteract.cs",
+              "RelativeDocumentMoniker": "rInteract.cs",
+              "ToolTip": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\rInteract.cs",
+              "RelativeToolTip": "rInteract.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAAAGEAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-01T15:43:48.99Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "optionsMenu.cs",
+              "DocumentMoniker": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\optionsMenu.cs",
+              "RelativeDocumentMoniker": "optionsMenu.cs",
+              "ToolTip": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\optionsMenu.cs",
+              "RelativeToolTip": "optionsMenu.cs",
+              "ViewState": "AgIAABkBAAAAAAAAAIAwwCABAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-01T15:43:45.46Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "rInteract.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\rInteract.cs",
+              "RelativeDocumentMoniker": "rInteract.cs",
+              "ToolTip": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\rInteract.cs [Design]",
+              "RelativeToolTip": "rInteract.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-01T15:43:42.31Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "optionsMenu.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\optionsMenu.cs",
+              "RelativeDocumentMoniker": "optionsMenu.cs",
+              "ToolTip": "C:\\Users\\sulai\\source\\repos\\Sulaiman-Gaskell\\Physics-Simulations\\optionsMenu.cs [Design]",
+              "RelativeToolTip": "optionsMenu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-01T15:43:39.21Z"
             }
           ]
         }

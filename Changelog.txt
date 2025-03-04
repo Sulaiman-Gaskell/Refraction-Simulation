@@ -2,6 +2,14 @@ Changelog:
 
 Beta testing:
 
+V2.4.2: STABLE ?/03/25
+	Updated the rest of the colours to bolder ones.
+	Fixed a bug where the simulation text on the optionsMenu didn't scale.
+	Fixed the alignment of the welcome menu text to be in line with the two utilities.
+	Re-enabled old credit animation and removed new one.
+	Improved visuals of the power saver button and menu text on the welcome menu.
+	Improved welcome menu first showing animation
+
 V2.4.1: STABLE 24/02/25
 	Added text to indicate which simulation the user is in
 	Updated colours to be bolder

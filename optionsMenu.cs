@@ -130,7 +130,7 @@ namespace Physics_Simulation
             {
                 if (systemWideVariables.whichSim == "refraction")
                 {
-                    
+                  
                     rInteract rInteract = new rInteract();
                     rInteract.ShowDialog();
                
@@ -286,7 +286,7 @@ namespace Physics_Simulation
         // ALL BELOW FOR ANIMATIONS
         private void interact_MouseDown(object sender, MouseEventArgs e)
         {
-            menuText.ForeColor = Color.LightSkyBlue;
+            menuText.ForeColor = Color.Blue;
 
             if (systemWideVariables.powerSave == false)
             {
@@ -322,7 +322,7 @@ namespace Physics_Simulation
                      ClientSize.Width / 35);
             }
 
-            menuText.ForeColor = Color.Coral;
+            menuText.ForeColor = Color.OrangeRed;
 
         }
 
@@ -582,6 +582,9 @@ namespace Physics_Simulation
                     this.Width / 30);
                 questions.Font = new Font(questions.Font.FontFamily,
                     this.Width / 30);
+
+                simulationType.Font = new Font(simulationType.Font.FontFamily,
+                    this.Width / 50);
 
                 // Sizes the back arrow
                 bArrow.Size = new Size(this.Height / 10, this.Height / 10);

@@ -166,7 +166,7 @@
             // 
             // credit
             // 
-            this.credit.Interval = 400;
+            this.credit.Interval = 4000;
             this.credit.Tick += new System.EventHandler(this.themePrompt_Tick);
             // 
             // themeTip
@@ -186,6 +186,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "welcomeScreen";
+            this.Opacity = 0.5D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.welcomeScreen_FormClosed);
             this.Load += new System.EventHandler(this.welcomeScreen_Load);

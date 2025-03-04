@@ -34,7 +34,7 @@ namespace Physics_Simulation
         // Used for all winforms so made public
         public class systemWideVariables
         {
-            public static string titleVersion = "V2.4.1";
+            public static string titleVersion = "V2.4.2";
             public static bool lightTheme = Settings.Default.lightTheme;
             public static string whichSim = "";
             public static bool isRandom = true;
@@ -140,8 +140,8 @@ namespace Physics_Simulation
                 theme.BackColor = Color.Transparent;
                 theme.ForeColor = Color.Transparent;
                 energySaver.Image = Properties.Resources.energy_saving_icondark;
-                energySaver.ForeColor = Color.Transparent;
-                energySaver.BackColor = Color.Transparent;
+                energySaver.ForeColor = Color.White;
+                energySaver.BackColor = Color.White;
             }
             else
             {
@@ -158,6 +158,7 @@ namespace Physics_Simulation
                 energySaver.Image = Properties.Resources.energysaverlight;
                 energySaver.ForeColor= Color.Black;
                 energySaver.BackColor = Color.Black;
+                
             }
 
 
@@ -165,6 +166,8 @@ namespace Physics_Simulation
             if (systemWideVariables.powerSave)
             {
                 energySaver.BackColor= Color.Red;
+                energySaver.FlatStyle = FlatStyle.Standard;
+                
             }
 
         }
@@ -185,8 +188,8 @@ namespace Physics_Simulation
             fadeIn.Enabled = true;
 
             // Chnages font to a nicer one for both buttons
-            wTxt.Font = new Font ("Microsoft Sans Serif", 21);
-            refraction.Font = new Font("Microsoft Sans Serif", 20);
+            wTxt.Font = new Font ("Microsoft Sans Serif", 21,FontStyle.Bold);
+            refraction.Font = new Font("Microsoft Sans Serif",20);
             waves.Font = new Font("Microsoft Sans Serif", 20);
 
             // Keeps sizing consistant
@@ -195,6 +198,9 @@ namespace Physics_Simulation
             waves.Size = refraction.Size;
 
 
+            // Adds small amount of padding to the welcome text.
+
+            wTxt.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
 
             // Enables screen animation if power save is off
             if (systemWideVariables.powerSave == false)
@@ -213,7 +219,7 @@ namespace Physics_Simulation
             // Gradually increase the form's opacity
             if (this.Opacity < 1)
             {
-                this.Opacity += 0.3;
+                this.Opacity += 0.1;
             }
 
             // When fully solid stop the timer
@@ -246,7 +252,7 @@ namespace Physics_Simulation
 
         private void refraction_MouseEnter(object sender, EventArgs e)
         {
-            refraction.BackColor = Color.LightSkyBlue;
+            refraction.BackColor = Color.Blue;
         }
 
         private void refraction_MouseLeave(object sender, EventArgs e)
@@ -266,7 +272,7 @@ namespace Physics_Simulation
 
         private void waves_MouseEnter(object sender, EventArgs e)
         {
-            waves.BackColor = Color.Coral;
+            waves.BackColor = Color.OrangeRed;
         }
 
         private void waves_MouseLeave(object sender, EventArgs e)
@@ -286,12 +292,12 @@ namespace Physics_Simulation
 
         private void refraction_MouseDown(object sender, MouseEventArgs e)
         {
-            wTxt.ForeColor = Color.LightSkyBlue;
+            wTxt.ForeColor = Color.Blue;
         }
 
         private void waves_MouseDown(object sender, MouseEventArgs e)
         {
-            wTxt.ForeColor = Color.Coral;
+            wTxt.ForeColor = Color.OrangeRed;
         }
 
         private void welcomeScreen_FormClosed(object sender, FormClosedEventArgs e)
@@ -312,7 +318,7 @@ namespace Physics_Simulation
             string defaultText = "Physics Simulations!";
             if (wTxt.Text == defaultText)
             {
-                wTxt.Text = "Physics Simulations!!";
+                wTxt.Text = "By Sulaiman Gaskell";
             }
             else
             {
@@ -383,6 +389,8 @@ namespace Physics_Simulation
             {
                 systemWideVariables.powerSave = false;
 
+                energySaver.FlatStyle = FlatStyle.Flat;
+
                 if (systemWideVariables.lightTheme)
                 { 
                     energySaver.BackColor = Color.Transparent;
@@ -390,14 +398,20 @@ namespace Physics_Simulation
                 else
                 {
                     energySaver.BackColor = Color.Black;
+
+                    
                 }
 
+                
                 // renables text animation
                 credit.Enabled = true;
                 
             }
             else {
-                systemWideVariables.powerSave = true; 
+                systemWideVariables.powerSave = true;
+
+                energySaver.FlatStyle = FlatStyle.Standard;
+
                 energySaver.BackColor = Color.Red;
 
                 // Disables text animation
