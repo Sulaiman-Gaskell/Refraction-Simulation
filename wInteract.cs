@@ -169,11 +169,6 @@ namespace Physics_Simulation
             {
                 lineAnimate.Enabled = true;
             }
-            else
-            {
-                drawWavePowerSave();
-                
-            }
         }
 
     
@@ -363,7 +358,7 @@ namespace Physics_Simulation
 
 
 
-            diagram.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            diagram.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighSpeed;
 
 
 
@@ -401,6 +396,9 @@ namespace Physics_Simulation
                     diagram.Clear(Color.White);
                 }
                 else
+                {
+
+                }
                 {
                     diagram.Clear(Color.Black);
                 }
@@ -446,28 +444,30 @@ namespace Physics_Simulation
             // Updates ofset accordingly to the inputted amplitude
             if (systemWideVariables.powerSave == false)
             {
-                if (upperOfsetY == 0)
-                {
-                    ofsetY = 0;
-                }
-                else if (ofsetY < upperOfsetY & waveFlag == true)
-                {
-                    ofsetY++;
-                }
-                else if (ofsetY < upperOfsetY & ofsetY != (-upperOfsetY) & waveFlag == false)
-                {
-                    ofsetY--;
-                }
-                else if (ofsetY == upperOfsetY & waveFlag == true)
-                {
-                    waveFlag = false;
-                    ofsetY--;
-                }
-                else if (ofsetY == (-upperOfsetY) & waveFlag == false)
-                {
-                    waveFlag = true;
-                    ofsetY++;
-                }
+
+                ofsetY = upperOfsetY;
+               // if (upperOfsetY == 0)
+                //{
+                //    ofsetY = 0;
+               // }
+               // else if (ofsetY < upperOfsetY & waveFlag == true)
+                //{
+                //    ofsetY++;
+                //}
+                //else if (ofsetY < upperOfsetY & ofsetY != (-upperOfsetY) & waveFlag == false)
+                //{
+                //    ofsetY--;
+                //}
+                //else if (ofsetY == upperOfsetY & waveFlag == true)
+                //{
+                 //   waveFlag = false;
+                 //   ofsetY--;
+               // }
+                //else if (ofsetY == (-upperOfsetY) & waveFlag == false)
+                //{
+                //    waveFlag = true;
+                //    ofsetY++;
+                //}
 
 
 

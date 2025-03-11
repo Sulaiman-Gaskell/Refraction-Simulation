@@ -2,7 +2,11 @@ Changelog:
 
 Beta testing:
 
-V2.4.2: STABLE ?/03/25
+V2.4.3: STABLE ?/03/25
+	Simplified wave animation
+
+
+V2.4.2: STABLE 4/03/25
 	Updated the rest of the colours to bolder ones.
 	Fixed a bug where the simulation text on the optionsMenu didn't scale.
 	Fixed the alignment of the welcome menu text to be in line with the two utilities.

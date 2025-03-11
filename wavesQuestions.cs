@@ -375,32 +375,32 @@ namespace Physics_Simulation
 
 
 
-
+            ofsetY = upperOfsetY;
 
             // Updates ofset accordingly to the inputted amplitude
 
-            if (upperOfsetY == 0)
-            {
-                ofsetY = 0;
-            }
-            else if (ofsetY < upperOfsetY & waveFlag == true)
-            {
-                ofsetY++;
-            }
-            else if (ofsetY < upperOfsetY & ofsetY != (-upperOfsetY) & waveFlag == false)
-            {
-                ofsetY--;
-            }
-            else if (ofsetY == upperOfsetY & waveFlag == true)
-            {
-                waveFlag = false;
-                ofsetY--;
-            }
-            else if (ofsetY == (-upperOfsetY) & waveFlag == false)
-            {
-                waveFlag = true;
-                ofsetY++;
-            }
+            //if (upperOfsetY == 0)
+            //{
+               // ofsetY = 0;
+            //}
+            //else if (ofsetY < upperOfsetY & waveFlag == true)
+            //{
+              //  ofsetY++;
+            //}
+            //else if (ofsetY < upperOfsetY & ofsetY != (-upperOfsetY) & waveFlag == false)
+            //{
+              //  ofsetY--;
+            //}
+            //else if (ofsetY == upperOfsetY & waveFlag == true)
+            //{
+              //  waveFlag = false;
+                //ofsetY--;
+            //}
+            //else if (ofsetY == (-upperOfsetY) & waveFlag == false)
+            //{
+              //  waveFlag = true;
+                //ofsetY++;
+           // }
 
 
             // Fine tune visual effect
