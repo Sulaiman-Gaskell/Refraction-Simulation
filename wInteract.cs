@@ -23,6 +23,12 @@ namespace Physics_Simulation
         public wInteract()
         {
             InitializeComponent();
+            this.DoubleBuffered = true; // Enable double buffering to reduce flickering
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            this.SetStyle(ControlStyles.UserPaint, true);
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+            this.SetStyle(ControlStyles.ResizeRedraw, true);
+
 
             //Maximises the form and stops the user
             //from resizing it
@@ -389,44 +395,15 @@ namespace Physics_Simulation
 
             // Refreshs the screen or clears it
 
-            if (refreshCount == 1 & waveDraw.Interval < 500)
+            if (systemWideVariables.lightTheme == true)
             {
-                if (systemWideVariables.lightTheme == true)
-                {
-                    diagram.Clear(Color.White);
-                }
-                else
-                {
-
-                }
-                {
-                    diagram.Clear(Color.Black);
-                }
-
-
-
-
-                refreshCount = 0;
-
-            }
-
-            else if (waveDraw.Interval >= 500)
-            {
-                if (systemWideVariables.lightTheme == true)
-                {
-                    diagram.Clear(Color.White);
-                }
-                else
-                {
-                    diagram.Clear(Color.Black);
-                }
-                refreshCount = 0;
+                diagram.Clear(Color.White);
             }
             else
             {
-                this.Invalidate();
-                refreshCount++;
+                diagram.Clear(Color.Black);
             }
+
 
             drawLine(diagram);
 
@@ -505,6 +482,9 @@ namespace Physics_Simulation
                 waveDraw.Interval = 1000000;
                 waveLength.Text = "Error!";
             }
+
+            diagram.Dispose();
+            wave.Dispose();
 
         }
 

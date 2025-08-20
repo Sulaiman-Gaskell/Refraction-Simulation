@@ -43,6 +43,11 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.clearAll = new System.Windows.Forms.Button();
             this.bArrow = new System.Windows.Forms.PictureBox();
+            this.linesAnimate = new System.Windows.Forms.Timer(this.components);
+            this.vgf = new System.Windows.Forms.Timer(this.components);
+            this.saveSwitch = new System.Windows.Forms.Timer(this.components);
+            this.clearSwitch = new System.Windows.Forms.Timer(this.components);
+            this.linesAnimateLeave = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bArrow)).BeginInit();
             this.SuspendLayout();
@@ -74,6 +79,7 @@
             this.tableLayoutPanel1.Controls.Add(this.rI2, 1, 8);
             this.tableLayoutPanel1.Controls.Add(this.saveButton, 1, 9);
             this.tableLayoutPanel1.Controls.Add(this.clearAll, 1, 10);
+            this.tableLayoutPanel1.Controls.Add(this.bArrow, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -196,29 +202,56 @@
             this.clearAll.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.clearAll.AutoSize = true;
             this.clearAll.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.clearAll.Location = new System.Drawing.Point(321, 262);
+            this.clearAll.Location = new System.Drawing.Point(291, 262);
             this.clearAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.clearAll.Name = "clearAll";
-            this.clearAll.Size = new System.Drawing.Size(67, 26);
+            this.clearAll.Size = new System.Drawing.Size(127, 26);
             this.clearAll.TabIndex = 8;
-            this.clearAll.Text = "Clear all";
+            this.clearAll.Text = "Clear all questions";
             this.clearAll.UseVisualStyleBackColor = true;
             this.clearAll.Click += new System.EventHandler(this.clearAll_Click);
             // 
             // bArrow
             // 
-            this.bArrow.BackColor = System.Drawing.SystemColors.ControlText;
+            this.bArrow.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bArrow.BackColor = System.Drawing.Color.Transparent;
             this.bArrow.BackgroundImage = global::Physics_Simulation.Properties.Resources.darkBackArrow;
             this.bArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bArrow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bArrow.Location = new System.Drawing.Point(2, 1);
+            this.bArrow.Location = new System.Drawing.Point(13, 3);
             this.bArrow.Name = "bArrow";
-            this.bArrow.Size = new System.Drawing.Size(80, 80);
+            this.bArrow.Size = new System.Drawing.Size(80, 56);
             this.bArrow.TabIndex = 7;
             this.bArrow.TabStop = false;
             this.bArrow.Click += new System.EventHandler(this.bArrow_Click);
             this.bArrow.MouseEnter += new System.EventHandler(this.bArrow_MouseEnter);
             this.bArrow.MouseLeave += new System.EventHandler(this.bArrow_MouseLeave);
+            // 
+            // linesAnimate
+            // 
+            this.linesAnimate.Enabled = true;
+            this.linesAnimate.Interval = 1;
+            this.linesAnimate.Tick += new System.EventHandler(this.linesAnimate_Tick);
+            // 
+            // vgf
+            // 
+            this.vgf.Interval = 1;
+            this.vgf.Tick += new System.EventHandler(this.vgf_Tick);
+            // 
+            // saveSwitch
+            // 
+            this.saveSwitch.Interval = 1000;
+            this.saveSwitch.Tick += new System.EventHandler(this.saveSwitch_Tick);
+            // 
+            // clearSwitch
+            // 
+            this.clearSwitch.Interval = 1000;
+            this.clearSwitch.Tick += new System.EventHandler(this.clearSwitch_Tick);
+            // 
+            // linesAnimateLeave
+            // 
+            this.linesAnimateLeave.Interval = 1;
+            this.linesAnimateLeave.Tick += new System.EventHandler(this.linesAnimateLeave_Tick);
             // 
             // refractionBuilder
             // 
@@ -226,7 +259,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(711, 360);
-            this.Controls.Add(this.bArrow);
             this.Controls.Add(this.tableLayoutPanel1);
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -257,5 +289,10 @@
         private System.Windows.Forms.Button clearAll;
         private System.Windows.Forms.Label rI2Label;
         private System.Windows.Forms.TextBox rI2;
+        private System.Windows.Forms.Timer linesAnimate;
+        private System.Windows.Forms.Timer vgf;
+        private System.Windows.Forms.Timer saveSwitch;
+        private System.Windows.Forms.Timer clearSwitch;
+        private System.Windows.Forms.Timer linesAnimateLeave;
     }
 }

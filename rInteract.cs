@@ -28,6 +28,8 @@ namespace Physics_Simulation
             //from resizing it
             this.WindowState = FormWindowState.Maximized;
 
+            this.FormBorderStyle = FormBorderStyle.None;
+
             // Disables annoying windows sounds
             this.AcceptButton = null;
             
@@ -108,7 +110,7 @@ namespace Physics_Simulation
 
 
             glossary.Location = new Point(0,
-                Convert.ToInt32(this.Height / 1.85));
+                Convert.ToInt32(this.Height / 1.75));
 
             glossary.Padding = new System.Windows.Forms.Padding(
                 this.Width / 60,0, 0,0);
@@ -406,6 +408,11 @@ namespace Physics_Simulation
                         rays.DrawLine(aORePen, (float)x1, (float)y1, (float)x2Re, (float)y2Re);
                     }
                 }
+
+                aOIPen.Dispose();
+                aORPen.Dispose();
+                aORePen.Dispose();
+                rays.Dispose();
             }
 
             else
@@ -560,13 +567,6 @@ namespace Physics_Simulation
 
         // Sets up the vertical line
         private float vertDrawPoint = 0;
-        private void getVertDrawPoint()
-        {
-            if (vertDrawPoint == 0)
-            {
-                vertDrawPoint = this.Height;
-            }
-        }
 
         // Sets up the horizontal line 
         private float horzDrawPoint = 0;
@@ -579,7 +579,7 @@ namespace Physics_Simulation
             }
         }
         private void lineAnimate_Tick(object sender, EventArgs e)
-        {            
+        {
             // Changes line col based on the theme
             Color lineCol = Color.White;
 
@@ -589,44 +589,42 @@ namespace Physics_Simulation
                 lineCol = Color.Black;
             }
 
-
             // Creates a white pen
             Pen pen = new Pen(lineCol, 6);
 
-
             // Creates a new graphic object
             Graphics g = tableLayoutPanel1.CreateGraphics();
-            getVertDrawPoint();
             getHorzDrawPoint();
 
 
             // Draws a vertical and horizontal line
-            
-            if (vertDrawPoint > 1) 
+
+            if (vertDrawPoint < this.Height || horzDrawPoint <= this.Width / 100 * 90)
             {
                 // Graduly draws a vertical line
                 g.DrawLine(pen, this.Width / 100 * 70, 0,
-                this.Width / 100 * 70, this.Height - vertDrawPoint);
-                vertDrawPoint -= 20;
+                this.Width / 100 * 70, vertDrawPoint);
+                vertDrawPoint += this.Height / 100 * 3;
+
 
                 // Draws the horizontal line 
-                if (horzDrawPoint <= this.Width / 100 * 90)
-                {
-                    pen.DashStyle = DashStyle.Dot;
+                pen.DashStyle = DashStyle.Dot;
 
-                    g.DrawLine(pen, this.Width / 100 * 50, this.Height / 100 * 50,
-                        horzDrawPoint, this.Height / 100 * 50);
-                    horzDrawPoint += 15;
+                g.DrawLine(pen, this.Width / 100 * 50, this.Height / 100 * 50,
+                    horzDrawPoint, this.Height / 100 * 50);
+                horzDrawPoint += this.Width / 100 * 1;
 
-                }
+                g.Dispose();
+                pen.Dispose();
+
             }
             else
             {
+                g.Dispose();
+                pen.Dispose();
                 // Stop the timer
                 linesAnimate.Enabled = false;
             }
-
-
 
 
         }

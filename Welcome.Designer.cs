@@ -66,6 +66,7 @@
             this.waves.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.waves.AutoSize = true;
             this.waves.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.waves.Enabled = false;
             this.waves.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.waves.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.waves.Location = new System.Drawing.Point(279, 209);
@@ -123,6 +124,7 @@
             this.wTxt.Size = new System.Drawing.Size(276, 32);
             this.wTxt.TabIndex = 2;
             this.wTxt.Text = "Physics Simulations!";
+            this.wTxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.wTxt.Click += new System.EventHandler(this.label1_Click);
             this.wTxt.MouseClick += new System.Windows.Forms.MouseEventHandler(this.wTxt_MouseClick);
             // 

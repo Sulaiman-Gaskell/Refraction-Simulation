@@ -15,3 +15,4 @@ C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physi
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.wavesBuilder.resources
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.refractionQuestions.resources
 C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics_Simulation.wavesQuestions.resources
+C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Debug\Physics Simulation.exe.config

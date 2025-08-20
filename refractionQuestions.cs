@@ -20,6 +20,7 @@ namespace Physics_Simulation
         public refractionQuestions()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
         }
 
         private class AltKeyFilter : IMessageFilter
@@ -269,9 +270,9 @@ namespace Physics_Simulation
 
 
         // allows me to access then anywhere
-        private double angleOfIncidence;
-        private double refractiveIndex1;
-        private double refractiveIndex2;
+        private double angleOfIncidence = 0;
+        private double refractiveIndex1 = 0;
+        private double refractiveIndex2 = 0;
         private double angleOfRefraction;
         private double answer;
         private void createQuestion()
@@ -282,14 +283,16 @@ namespace Physics_Simulation
             {
                 // Creates random parameters and calcs the angle of refraction
 
+                while (angleOfIncidence == angleOfRefraction)
+                {
+                    angleOfIncidence = rnd.Next(0, 91);
 
-                angleOfIncidence = rnd.Next(0, 91);
+                    refractiveIndex1 = rnd.Next(100, 265);
+                    refractiveIndex1 = refractiveIndex1 / 100;
 
-                refractiveIndex1 = rnd.Next(100, 265);
-                refractiveIndex1 = refractiveIndex1 / 100;
-
-                refractiveIndex2 = rnd.Next(100, 265);
-                refractiveIndex2 = refractiveIndex2 / 100;
+                    refractiveIndex2 = rnd.Next(100, 265);
+                    refractiveIndex2 = refractiveIndex2 / 100;
+                }
             }
 
             else
@@ -340,7 +343,7 @@ namespace Physics_Simulation
                         result.ForeColor = Color.White;
                     }
 
-                    result.Text = "Please head to the refraction builder to make a question!";
+                    result.Text = "Please head to the refraction question builder to make a question!";
                     generateQuestion.Enabled = false;
 
 
@@ -535,35 +538,40 @@ namespace Physics_Simulation
 
 
 
-                if (double.IsNaN(angleRDegrees))
-                {
-                    //aoR.Text = "Total internal reflection has occurred";
+            if (double.IsNaN(angleRDegrees))
+            {
+                //aoR.Text = "Total internal reflection has occurred";
 
-                    // Draws the end point for the reflected ray
+                // Draws the end point for the reflected ray
+                rays.DrawLine(aORePen, (float)x1, (float)y1, (float)x2Re, (float)y2Re);
+
+                // To get an arrow in the middle of the line draw another line ending in the middle
+
+                double arrowXRe = (x1 + x2Re) / 2;
+                double arrowYRe = (y1 + y2Re) / 2;
+                aORePen.CustomEndCap = bigArrow;
+                rays.DrawLine(aORePen, (float)x1, (float)y1, (float)arrowXRe, (float)arrowYRe);
+
+            }
+            else
+            {
+                //aoR.Text = angleRDegrees.ToString() + "°";
+
+                // Draws a  dotted horizontal line for the normal if angle != 0 or 90
+                if (angleOfIncidence != 0
+                    && angleOfIncidence != 90)
+                {
+                    // Sets the attriubtes of the pen and draws the ray
+                    aORePen.DashStyle = DashStyle.Dot;
+                    aORePen.Width = 4;
                     rays.DrawLine(aORePen, (float)x1, (float)y1, (float)x2Re, (float)y2Re);
-
-                    // To get an arrow in the middle of the line draw another line ending in the middle
-
-                    double arrowXRe = (x1 + x2Re) / 2;
-                    double arrowYRe = (y1 + y2Re) / 2;
-                    aORePen.CustomEndCap = bigArrow;
-                    rays.DrawLine(aORePen, (float)x1, (float)y1, (float)arrowXRe, (float)arrowYRe);
-
                 }
-                else
-                {
-                    //aoR.Text = angleRDegrees.ToString() + "°";
 
-                    // Draws a  dotted horizontal line for the normal if angle != 0 or 90
-                    if (angleOfIncidence != 0
-                        && angleOfIncidence != 90)
-                    {
-                        // Sets the attriubtes of the pen and draws the ray
-                        aORePen.DashStyle = DashStyle.Dot;
-                        aORePen.Width = 4;
-                        rays.DrawLine(aORePen, (float)x1, (float)y1, (float)x2Re, (float)y2Re);
-                    }
-                }
+            }
+
+            aOIPen.Dispose();
+            aOIPen.Dispose();
+            aORePen.Dispose();
         }
 
 
@@ -669,13 +677,6 @@ namespace Physics_Simulation
 
         // Sets up the vertical line
         private float vertDrawPoint = 0;
-        private void getVertDrawPoint()
-        {
-            if (vertDrawPoint == 0)
-            {
-                vertDrawPoint = this.Height;
-            }
-        }
 
         // Sets up the horizontal line 
         private float horzDrawPoint = 0;
@@ -698,42 +699,44 @@ namespace Physics_Simulation
                 lineCol = Color.Black;
             }
 
-
             // Creates a white pen
             Pen pen = new Pen(lineCol, 6);
 
-
             // Creates a new graphic object
             Graphics g = tableLayoutPanel1.CreateGraphics();
-            getVertDrawPoint();
             getHorzDrawPoint();
 
 
             // Draws a vertical and horizontal line
 
-            if (vertDrawPoint > 1)
+            if (vertDrawPoint < this.Height || horzDrawPoint <= this.Width / 100 * 90)
             {
                 // Graduly draws a vertical line
                 g.DrawLine(pen, this.Width / 100 * 70, 0,
-                this.Width / 100 * 70, this.Height - vertDrawPoint);
-                vertDrawPoint -= 20;
+                this.Width / 100 * 70, vertDrawPoint);
+                vertDrawPoint += this.Height / 100 * 3;
+
 
                 // Draws the horizontal line 
-                if (horzDrawPoint <= this.Width / 100 * 90)
-                {
-                    pen.DashStyle = DashStyle.Dot;
+                pen.DashStyle = DashStyle.Dot;
 
-                    g.DrawLine(pen, this.Width / 100 * 50, this.Height / 100 * 50,
-                        horzDrawPoint, this.Height / 100 * 50);
-                    horzDrawPoint += 15;
+                g.DrawLine(pen, this.Width / 100 * 50, this.Height / 100 * 50,
+                    horzDrawPoint, this.Height / 100 * 50);
+                horzDrawPoint += this.Width / 100 * 1;
 
-                }
+                g.Dispose();
+                pen.Dispose();
+
             }
             else
             {
+                g.Dispose();
+                pen.Dispose();
                 // Stop the timer
                 linesAnimate.Enabled = false;
             }
+
+
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)

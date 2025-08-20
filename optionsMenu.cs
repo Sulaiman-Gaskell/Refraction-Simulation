@@ -19,11 +19,14 @@ namespace Physics_Simulation
     {
         public optionsMenu()
         {
+
             InitializeComponent();
 
             // Maximises the window and removes the top bar
             this.WindowState = FormWindowState.Maximized;
-       
+
+            this.FormBorderStyle = FormBorderStyle.None;
+
 
             // Disables annoying windows sounds
             this.AcceptButton = null;

@@ -1,8 +1,18 @@
 Changelog:
 
-Beta testing:
+V3.0.0: BETA  20/08/25
+	NEW: animated and redesigned builder screen - subject to change
+	Disabled waves 
+	Reworked animation logic to account for more resolutions
+	Improved button logic on the builder screen for dynamic user messages
+	Removed top bar from most screens.
+	FIX: many memory leaks within graphical components
+	FIX: text alignment issues on certain screens
+	FIX: impossible questions being asked in random mode.
+	FIX: buttons on the builder screen would not dynamically scale to the text being displayed
+	KNOWN BUG: tabbing through controls anywhere is buggy only the first time
 
-V2.4.3: STABLE ?/03/25
+V2.4.3: STABLE 11/03/25
 	Simplified wave animation
 
 
@@ -19,16 +29,12 @@ V2.4.1: STABLE 24/02/25
 	Updated colours to be bolder
 
 V2.4.0: STABLE 31/01/25
-	Introduced a new power saving option on the welcome menu. It disables the visually intensive 	animations
+	Introduced a new power saving option on the welcome menu. It disables the visually intensive animations
 
 
 V2.3.3: STABLE 30/01/25
 	Fixed Some colouring issues with light mode
 	Fixed an issue with the loading in animation on the welcome menu
-
-
-Alpha testing:
-
 
 V2.3.2: STABLE 27/01/25
 	Improved performance of the welcome screen fly animation
@@ -42,9 +48,6 @@ V2.3.1: HOTFIX 20/01/25
 
 V2.3.1: STABLE 20/01/25
 	Added a new animation to the welcome menu
-
-
-Iteration 2 - Simulation logic and questions mode
 
 
 V2.3.0: STABLE, 15/01/25
@@ -129,9 +132,6 @@ V2.0.0, PREVIEW, 12/11/24
 		Known issues include buggy light mode and lag on low wavespeeds
 
 
-
-Iteration 1 - UI design and refinment:
-
 V1.5.6, STABLE-EOL, 18/10/24
 	Added question submenu complete with animations
 	Designed part of the waves menu (hidden for now as this comes in iteration 2)
@@ -196,7 +196,6 @@ V1.4.3, STABLE, 18/05/24
   Cleaned up build and misc code improvements
   
 
-  
 V1.4.2, STABLE, 27/04/24, (Visuals and animations focus)
   Updated colour scheme to be more user friendly
   Redesigned the welcome screen to fit in with the new colouring theme (Animated welcome screen coming soon)
