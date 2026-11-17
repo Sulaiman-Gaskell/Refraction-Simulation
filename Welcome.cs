@@ -34,7 +34,7 @@ namespace Physics_Simulation
         // Used for all winforms so made public
         public class systemWideVariables
         {
-            public static string titleVersion = "V3.0.0 - BETA";
+            public static string titleVersion = "V1.0.0 - BETA";
             public static bool lightTheme = Settings.Default.lightTheme;
             public static string whichSim = "";
             public static bool isRandom = true;
@@ -132,8 +132,6 @@ namespace Physics_Simulation
                 this.BackColor = Color.White;
                 refraction.BackColor = Color.Black;
                 refraction.ForeColor = Color.White;
-                waves.BackColor = Color.Black;
-                waves.ForeColor = Color.White;
                 wTxt.BackColor = Color.White;
                 wTxt.ForeColor = Color.Black;
                 theme.Image = Properties.Resources.sun;
@@ -148,8 +146,6 @@ namespace Physics_Simulation
                 this.BackColor = Color.Black;
                 refraction.BackColor = Color.White;
                 refraction.ForeColor = Color.Black;
-                waves.BackColor = Color.White;
-                waves.ForeColor = Color.Black;
                 wTxt.BackColor = Color.Black;
                 wTxt.ForeColor = Color.White;
                 theme.Image = Properties.Resources.moon;
@@ -190,12 +186,12 @@ namespace Physics_Simulation
             // Chnages font to a nicer one for both buttons
             wTxt.Font = new Font ("Microsoft Sans Serif", 21,FontStyle.Bold);
             refraction.Font = new Font("Microsoft Sans Serif",20);
-            waves.Font = new Font("Microsoft Sans Serif", 20);
+
 
             // Keeps sizing consistant
             refraction.Height = Convert.ToInt32(wTxt.Height / 1.5);
             refraction.Width = Convert.ToInt32(wTxt.Width / 1.5);
-            waves.Size = refraction.Size;
+
 
 
             // Adds small amount of padding to the welcome text.
@@ -205,7 +201,6 @@ namespace Physics_Simulation
             // Enables screen animation if power save is off
             if (systemWideVariables.powerSave == false)
             {
-                credit.Enabled = true;
             }
 
            
@@ -272,21 +267,11 @@ namespace Physics_Simulation
 
         private void waves_MouseEnter(object sender, EventArgs e)
         {
-            waves.BackColor = Color.OrangeRed;
+
         }
 
         private void waves_MouseLeave(object sender, EventArgs e)
         {
-            if (systemWideVariables.lightTheme == true)
-            {
-                waves.BackColor = Color.Black;
-                wTxt.ForeColor = Color.Black;
-            }
-            else
-            {
-                waves.BackColor = Color.White;
-                wTxt.ForeColor = Color.White;
-            }
             
         }
 
@@ -404,7 +389,6 @@ namespace Physics_Simulation
 
                 
                 // renables text animation
-                credit.Enabled = true;
                 
             }
             else {
@@ -414,8 +398,6 @@ namespace Physics_Simulation
 
                 energySaver.BackColor = Color.Red;
 
-                // Disables text animation
-                credit.Enabled = false;
                 // In case two ! are shown
                 wTxt.Text = "Physics Simulations!";
 

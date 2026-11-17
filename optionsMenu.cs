@@ -135,19 +135,17 @@ namespace Physics_Simulation
                 {
                   
                     rInteract rInteract = new rInteract();
+                    this.Hide();
                     rInteract.ShowDialog();
-               
-                
+                    this.Show();
+
+
 
 
 
 
                 }
-                else
-                {
-                    wInteract wInteract = new wInteract();
-                    wInteract.ShowDialog();
-                }
+      
             }
             else if (interact.Text == "Random")
             {
@@ -160,11 +158,7 @@ namespace Physics_Simulation
 
                     refractionQQuestions.ShowDialog();
                 }
-                else
-                {
-                    wavesQuestions wavesQQuestions = new wavesQuestions();
-                    wavesQQuestions.ShowDialog();
-                }
+   
 
             }
             else if (interact.Text == "Play")
@@ -178,12 +172,7 @@ namespace Physics_Simulation
                     refractionQuestions.ShowDialog();
                 }
 
-                else
-                {
-                    wavesQuestions wavesQuestions = new wavesQuestions();
-                     wavesQuestions.ShowDialog();
 
-                }
 
 
             }
@@ -559,12 +548,7 @@ namespace Physics_Simulation
            
                 }
 
-                else
-                {
-                    wavesBuilder wavesBuilder = new wavesBuilder();
-                    wavesBuilder.ShowDialog();
-            
-                }
+
             }
             
         }

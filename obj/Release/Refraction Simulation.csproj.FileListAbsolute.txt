@@ -1,0 +1,14 @@
+C:\Users\Sulaiman-XPS\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Refraction Simulation.csproj.AssemblyReference.cache
+C:\Users\Sulaiman-XPS\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.optionsMenu.resources
+C:\Users\Sulaiman-XPS\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.refractionBuilder.resources
+C:\Users\Sulaiman-XPS\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.refractionQuestions.resources
+C:\Users\Sulaiman-XPS\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.rInteract.resources
+C:\Users\Sulaiman-XPS\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.welcomeScreen.resources
+C:\Users\Sulaiman-XPS\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.Properties.Resources.resources
+C:\Users\Sulaiman-XPS\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Refraction Simulation.csproj.GenerateResource.cache
+C:\Users\Sulaiman-XPS\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Refraction Simulation.csproj.CoreCompileInputs.cache
+C:\Users\Sulaiman-XPS\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics Simulation.exe
+C:\Users\Sulaiman-XPS\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics Simulation.pdb
+C:\Users\Sulaiman-XPS\source\repos\Sulaiman-Gaskell\Physics-Simulations\bin\Release\Physics Simulation.exe.config
+C:\Users\Sulaiman-XPS\source\repos\Sulaiman-Gaskell\Physics-Simulations\bin\Release\Physics Simulation.exe
+C:\Users\Sulaiman-XPS\source\repos\Sulaiman-Gaskell\Physics-Simulations\bin\Release\Physics Simulation.pdb

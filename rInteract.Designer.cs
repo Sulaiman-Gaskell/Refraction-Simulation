@@ -228,7 +228,9 @@
             this.Opacity = 0D;
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.rInteract_FormClosing);
             this.Load += new System.EventHandler(this.rInteract_Load);
+            this.Shown += new System.EventHandler(this.rInteract_Shown);
             this.SizeChanged += new System.EventHandler(this.rInteract_SizeChanged);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

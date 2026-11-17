@@ -646,5 +646,15 @@ namespace Physics_Simulation
             configControls();
             DrawRays();
         }
+
+        private void rInteract_Shown(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rInteract_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
     }
 }

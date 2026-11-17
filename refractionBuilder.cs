@@ -193,8 +193,7 @@ namespace Physics_Simulation
         {
             this.Refresh();
 
-            linesAnimateLeave.Enabled = true;
-            //fadeOut.Enabled = true;
+            fadeOut.Enabled = true;
         }
 
         private void fadeIn_Tick(object sender, EventArgs e)
