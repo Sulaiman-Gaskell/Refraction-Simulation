@@ -1,5 +1,5 @@
-Welcome to my A-level project: 
+# Refraction Simulator.
 
-Waves and refracton simulator!
+Download the latest .exe from releases to use. 
 
-Simply download the latest .exe from the releases page.
+
