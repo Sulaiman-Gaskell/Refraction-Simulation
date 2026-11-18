@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Letter_P_blue_34913.ico</ApplicationIcon>
+    <ApplicationIcon>refraction_icon_154921.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -136,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Letter_P_blue_34913.ico" />
+    <Content Include="refraction_icon_154921.ico" />
     <None Include="Resources\Icons\energysaverlight.png" />
     <None Include="Resources\Icons\energy-saving-icon.png" />
   </ItemGroup>

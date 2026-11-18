@@ -33,11 +33,11 @@
             this.refraction = new System.Windows.Forms.Button();
             this.fadeIn = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.theme = new System.Windows.Forms.Button();
             this.energySaver = new System.Windows.Forms.Button();
             this.wTxt = new System.Windows.Forms.Label();
             this.themeTip = new System.Windows.Forms.ToolTip(this.components);
             this.powerTip = new System.Windows.Forms.ToolTip(this.components);
+            this.theme = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,10 +47,10 @@
             this.refraction.AutoSize = true;
             this.refraction.Cursor = System.Windows.Forms.Cursors.Hand;
             this.refraction.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.refraction.Location = new System.Drawing.Point(226, 209);
-            this.refraction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.refraction.Location = new System.Drawing.Point(453, 406);
+            this.refraction.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.refraction.Name = "refraction";
-            this.refraction.Size = new System.Drawing.Size(238, 76);
+            this.refraction.Size = new System.Drawing.Size(476, 147);
             this.refraction.TabIndex = 0;
             this.refraction.Text = "     Start     ";
             this.refraction.UseVisualStyleBackColor = true;
@@ -68,6 +68,7 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tableLayoutPanel1.BackgroundImage")));
             this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.52838F));
@@ -78,50 +79,29 @@
             this.tableLayoutPanel1.Controls.Add(this.wTxt, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.refraction, 1, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.76264F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.15136F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.086F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(692, 453);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1384, 878);
             this.tableLayoutPanel1.TabIndex = 3;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
-            // 
-            // theme
-            // 
-            this.theme.AllowDrop = true;
-            this.theme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.theme.BackColor = System.Drawing.SystemColors.ControlText;
-            this.theme.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.theme.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.theme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.theme.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.theme.Image = global::Physics_Simulation.Properties.Resources.moon;
-            this.theme.Location = new System.Drawing.Point(630, 2);
-            this.theme.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.theme.Name = "theme";
-            this.theme.Size = new System.Drawing.Size(59, 57);
-            this.theme.TabIndex = 3;
-            this.theme.UseVisualStyleBackColor = false;
-            this.theme.Click += new System.EventHandler(this.settings_Click);
-            this.theme.MouseDown += new System.Windows.Forms.MouseEventHandler(this.theme_MouseDown);
-            this.theme.MouseEnter += new System.EventHandler(this.settings_MouseEnter);
-            this.theme.MouseUp += new System.Windows.Forms.MouseEventHandler(this.theme_MouseUp);
             // 
             // energySaver
             // 
             this.energySaver.AllowDrop = true;
-            this.energySaver.BackColor = System.Drawing.SystemColors.ControlText;
+            this.energySaver.BackColor = System.Drawing.Color.Transparent;
             this.energySaver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.energySaver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.energySaver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.energySaver.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.energySaver.ForeColor = System.Drawing.Color.Transparent;
             this.energySaver.Image = global::Physics_Simulation.Properties.Resources.energysaverlight;
-            this.energySaver.Location = new System.Drawing.Point(3, 2);
-            this.energySaver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.energySaver.Location = new System.Drawing.Point(6, 4);
+            this.energySaver.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.energySaver.Name = "energySaver";
-            this.energySaver.Size = new System.Drawing.Size(59, 57);
+            this.energySaver.Size = new System.Drawing.Size(118, 110);
             this.energySaver.TabIndex = 4;
             this.energySaver.UseVisualStyleBackColor = false;
             this.energySaver.Click += new System.EventHandler(this.energySaver_Click);
@@ -130,11 +110,12 @@
             // 
             this.wTxt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.wTxt.AutoSize = true;
-            this.wTxt.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.wTxt.BackColor = System.Drawing.Color.Transparent;
             this.wTxt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.wTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wTxt.ForeColor = System.Drawing.SystemColors.Control;
-            this.wTxt.Location = new System.Drawing.Point(202, 0);
+            this.wTxt.Location = new System.Drawing.Point(548, 0);
+            this.wTxt.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.wTxt.Name = "wTxt";
             this.wTxt.Size = new System.Drawing.Size(286, 32);
             this.wTxt.TabIndex = 2;
@@ -147,17 +128,40 @@
             // 
             this.themeTip.Popup += new System.Windows.Forms.PopupEventHandler(this.themeTip_Popup);
             // 
+            // theme
+            // 
+            this.theme.AllowDrop = true;
+            this.theme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.theme.BackColor = System.Drawing.Color.Transparent;
+            this.theme.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.theme.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.theme.Enabled = false;
+            this.theme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.theme.ForeColor = System.Drawing.Color.Transparent;
+            this.theme.Image = global::Physics_Simulation.Properties.Resources.moon;
+            this.theme.Location = new System.Drawing.Point(1260, 4);
+            this.theme.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.theme.Name = "theme";
+            this.theme.Size = new System.Drawing.Size(118, 110);
+            this.theme.TabIndex = 3;
+            this.theme.UseVisualStyleBackColor = false;
+            this.theme.Visible = false;
+            this.theme.Click += new System.EventHandler(this.settings_Click);
+            this.theme.MouseDown += new System.Windows.Forms.MouseEventHandler(this.theme_MouseDown);
+            this.theme.MouseEnter += new System.EventHandler(this.settings_MouseEnter);
+            this.theme.MouseUp += new System.Windows.Forms.MouseEventHandler(this.theme_MouseUp);
+            // 
             // welcomeScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(692, 453);
+            this.ClientSize = new System.Drawing.Size(1384, 878);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.MaximizeBox = false;
             this.Name = "welcomeScreen";
             this.Opacity = 0.5D;
@@ -175,10 +179,10 @@
         private System.Windows.Forms.Timer fadeIn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label wTxt;
-        private System.Windows.Forms.Button theme;
         private System.Windows.Forms.ToolTip themeTip;
         private System.Windows.Forms.Button energySaver;
         private System.Windows.Forms.ToolTip powerTip;
+        private System.Windows.Forms.Button theme;
     }
 }
 

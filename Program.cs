@@ -16,7 +16,9 @@ namespace Physics_Simulation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
             Application.Run(new welcomeScreen());
+
         }
     }
 }

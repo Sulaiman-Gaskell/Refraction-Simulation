@@ -21,8 +21,9 @@ namespace Physics_Simulation
     {
         public welcomeScreen()
         {
-
             InitializeComponent();
+
+            this.DoubleBuffered = true;
 
             // Sets the opactiy to 0 for the fade in animation
             this.Opacity = 0;
@@ -34,7 +35,7 @@ namespace Physics_Simulation
         // Used for all winforms so made public
         public class systemWideVariables
         {
-            public static string titleVersion = "V1.0.0 - BETA";
+            public static string titleVersion = "V1.1.0 - STABLE";
             public static bool lightTheme = Settings.Default.lightTheme;
             public static string whichSim = "";
             public static bool isRandom = true;
@@ -111,8 +112,8 @@ namespace Physics_Simulation
 
             // Creates an instance of the refraction form when
             // the button is pressed
-            optionsMenu options = new optionsMenu();
-            options.ShowDialog();
+            rInteract RInteract = new rInteract();
+            RInteract.ShowDialog();
             showingAnimation();
             
             
@@ -124,41 +125,9 @@ namespace Physics_Simulation
 
         private void updateTheme()
         {
-
-         
-            // Sets colours acorrdingly
-            if (systemWideVariables.lightTheme == true)
-            {
-                this.BackColor = Color.White;
-                refraction.BackColor = Color.Black;
-                refraction.ForeColor = Color.White;
-                wTxt.BackColor = Color.White;
-                wTxt.ForeColor = Color.Black;
-                theme.Image = Properties.Resources.sun;
-                theme.BackColor = Color.Transparent;
-                theme.ForeColor = Color.Transparent;
-                energySaver.Image = Properties.Resources.energy_saving_icondark;
-                energySaver.ForeColor = Color.White;
-                energySaver.BackColor = Color.White;
-            }
-            else
-            {
-                this.BackColor = Color.Black;
-                refraction.BackColor = Color.White;
-                refraction.ForeColor = Color.Black;
-                wTxt.BackColor = Color.Black;
-                wTxt.ForeColor = Color.White;
-                theme.Image = Properties.Resources.moon;
-                theme.BackColor = Color.Black;
-                theme.ForeColor = Color.Black; 
-                energySaver.Image = Properties.Resources.energysaverlight;
-                energySaver.ForeColor= Color.Black;
-                energySaver.BackColor = Color.Black;
                 
-            }
 
-
-            // if power save is on or not
+          // if power save is on or not
             if (systemWideVariables.powerSave)
             {
                 energySaver.BackColor= Color.Red;
@@ -171,7 +140,9 @@ namespace Physics_Simulation
     private void welcomeScreen_Load(object sender, EventArgs e)
         {
            
-   
+            theme.FlatAppearance.BorderSize = 0;
+            energySaver.FlatAppearance.BorderSize = 0;
+            energySaver.FlatAppearance.MouseOverBackColor = Color.Blue;
 
             // Sets the form text as the version num defined by the class attribute
             // TitleVersion
@@ -382,7 +353,7 @@ namespace Physics_Simulation
                 }
                 else
                 {
-                    energySaver.BackColor = Color.Black;
+                    energySaver.BackColor = Color.Transparent;
 
                     
                 }
@@ -397,9 +368,6 @@ namespace Physics_Simulation
                 energySaver.FlatStyle = FlatStyle.Standard;
 
                 energySaver.BackColor = Color.Red;
-
-                // In case two ! are shown
-                wTxt.Text = "Physics Simulations!";
 
             }
 
