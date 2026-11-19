@@ -23,4 +23,7 @@
     <Content Include="Letter_P_blue_34913.ico" />
     <Content Include="refraction_icon_154921.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include=".github\upgrades\scenarios\dotnet-version-upgrade\tasks\03-net10-winforms-upgrade\progress-details.md" />
+  </ItemGroup>
 </Project>
