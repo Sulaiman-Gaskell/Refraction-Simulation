@@ -1,0 +1,18 @@
+C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\bin\Release\Physics Simulation.exe.config
+C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\bin\Release\Physics Simulation.exe
+C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\bin\Release\Physics Simulation.pdb
+C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics Simulations.csproj.AssemblyReference.cache
+C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.optionsMenu.resources
+C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.refractionBuilder.resources
+C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.refractionQuestions.resources
+C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.rInteract.resources
+C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.wavesBuilder.resources
+C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.wavesQuestions.resources
+C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.welcomeScreen.resources
+C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.Properties.Resources.resources
+C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics_Simulation.wInteract.resources
+C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics Simulations.csproj.GenerateResource.cache
+C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics Simulations.csproj.CoreCompileInputs.cache
+C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics Simulation.exe
+C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics Simulation.pdb
+C:\Users\sulai\source\repos\Sulaiman-Gaskell\Physics-Simulations\obj\Release\Physics Simulation.exe.config
