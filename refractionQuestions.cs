@@ -62,33 +62,6 @@ namespace Physics_Simulation
             // Sets the active colour of the link label to pink for dark mode
             glossary.ActiveLinkColor = Color.Pink;
 
-
-            if (systemWideVariables.lightTheme == true)
-            {
-                this.BackColor = Color.White;
-                this.ForeColor = Color.Black;   
-                bArrow.BackgroundImage = Properties.Resources.lightBackArrow;
-                bArrow.BackColor = Color.White;
-                fParameter1.BackColor = Color.White;
-                fParameter1.ForeColor = Color.Black;
-                fParameter2.BackColor = Color.White;
-                fParameter2.ForeColor = Color.Black;
-                fParameter3.BackColor = Color.White;
-                fParameter3.ForeColor = Color.Black;
-                mParameter.ForeColor = Color.White;
-                mParameter.BackColor = Color.Black;
-                glossary.BackColor  = Color.White;
-                glossary.LinkColor = Color.Black;
-                generateQuestion.BackColor = Color.Black;
-                generateQuestion.ForeColor = Color.White;
-                result.BackColor = Color.White;
-                result.ForeColor = Color.Black;
-                stats.ForeColor = Color.Black;
-                stats.BackColor = Color.White;
-
-
-            }
-
      
             // Puts the back arrow in the top left hand corner
             bArrow.Location = new Point(0, 0);
@@ -238,11 +211,6 @@ namespace Physics_Simulation
             // Changes line col based on the theme
             Color lineCol = Color.White;
 
-            if (systemWideVariables.lightTheme == true)
-            {
-                this.BackColor = Color.White;
-                lineCol = Color.Black;
-            }
 
 
             // Creates a white pen
@@ -320,28 +288,21 @@ namespace Physics_Simulation
                     refractiveIndex1 = Convert.ToDouble(qList[2]);
                     refractiveIndex2 = Convert.ToDouble(qList[3]);
 
-                    // Shows question name:
-                    if (systemWideVariables.lightTheme)
-                    {
-                        result.ForeColor = Color.Black;
-                    }
-                    else
-                    {
-                        result.ForeColor = Color.White;
-                    }
+              
+                  
+                    
+                    result.ForeColor = Color.White;
+                    
 
                     result.Text = qList[0];
                 } 
                 catch 
                 {
-                    if (systemWideVariables.lightTheme)
-                    {
-                        result.ForeColor = Color.Black;
-                    }
-                    else
-                    {
-                        result.ForeColor = Color.White;
-                    }
+          
+                   
+                    
+                       result.ForeColor = Color.White;
+                    
 
                     result.Text = "Please head to the refraction question builder to make a question!";
                     generateQuestion.Enabled = false;
@@ -441,14 +402,14 @@ namespace Physics_Simulation
         private void DrawRays(double angleOfIncidence, double refractiveIndex1, double refractiveIndex2)
         {
             // Creates a pen object to draw the incident ray
-            Pen aOIPen = new Pen(Color.Blue, 6);
+            Pen aOIPen = new Pen(Color.Blue, 7);
 
 
             // Creates another pen but for the refracted ray
-            Pen aORPen = new Pen(Color.OrangeRed, 6);
+            Pen aORPen = new Pen(Color.OrangeRed, 7);
 
             // Creates another pen but for the reflected ray
-            Pen aORePen = new Pen(Color.Blue, 6);
+            Pen aORePen = new Pen(Color.Blue, 7);
 
             // Creates a graphics to draw on the tableLayoutPanel
             Graphics rays = tableLayoutPanel1.CreateGraphics();
@@ -659,11 +620,9 @@ namespace Physics_Simulation
             // If it is [0,1] then the bg of it will change to the right colour
             if (e.Column == 1 && e.Row == 2)
             {
-                if (systemWideVariables.lightTheme == true)
-                {
-                    e.Graphics.FillRectangle(new SolidBrush(Color.Black), e.CellBounds);
-                }
-                else { e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds); }
+
+                
+                e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds); 
 
             }
 
@@ -693,11 +652,7 @@ namespace Physics_Simulation
             // Changes line col based on the theme
             Color lineCol = Color.White;
 
-            if (systemWideVariables.lightTheme == true)
-            {
-                this.BackColor = Color.White;
-                lineCol = Color.Black;
-            }
+    
 
             // Creates a white pen
             Pen pen = new Pen(lineCol, 6);
