@@ -28,154 +28,215 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(welcomeScreen));
-            this.refraction = new System.Windows.Forms.Button();
-            this.fadeIn = new System.Windows.Forms.Timer(this.components);
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.energySaver = new System.Windows.Forms.Button();
-            this.wTxt = new System.Windows.Forms.Label();
-            this.themeTip = new System.Windows.Forms.ToolTip(this.components);
-            this.powerTip = new System.Windows.Forms.ToolTip(this.components);
-            this.theme = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.SuspendLayout();
+            refractionInteract = new System.Windows.Forms.Button();
+            fadeIn = new System.Windows.Forms.Timer(components);
+            tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            bArrow = new System.Windows.Forms.PictureBox();
+            theme = new System.Windows.Forms.Button();
+            wTxt = new System.Windows.Forms.Label();
+            questions = new System.Windows.Forms.Button();
+            energySaver = new System.Windows.Forms.Button();
+            themeTip = new System.Windows.Forms.ToolTip(components);
+            powerTip = new System.Windows.Forms.ToolTip(components);
+            bArrowSizeUp = new System.Windows.Forms.Timer(components);
+            bArrowSizeDown = new System.Windows.Forms.Timer(components);
+            updateText = new System.Windows.Forms.Timer(components);
+            tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)bArrow).BeginInit();
+            SuspendLayout();
             // 
-            // refraction
+            // refractionInteract
             // 
-            this.refraction.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.refraction.AutoSize = true;
-            this.refraction.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.refraction.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.refraction.Location = new System.Drawing.Point(453, 406);
-            this.refraction.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            this.refraction.Name = "refraction";
-            this.refraction.Size = new System.Drawing.Size(476, 147);
-            this.refraction.TabIndex = 0;
-            this.refraction.Text = "     Start     ";
-            this.refraction.UseVisualStyleBackColor = true;
-            this.refraction.Click += new System.EventHandler(this.button1_Click);
-            this.refraction.MouseDown += new System.Windows.Forms.MouseEventHandler(this.refraction_MouseDown);
-            this.refraction.MouseEnter += new System.EventHandler(this.refraction_MouseEnter);
-            this.refraction.MouseLeave += new System.EventHandler(this.refraction_MouseLeave);
+            refractionInteract.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            refractionInteract.AutoSize = true;
+            refractionInteract.Cursor = System.Windows.Forms.Cursors.Hand;
+            refractionInteract.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            refractionInteract.Location = new System.Drawing.Point(246, 260);
+            refractionInteract.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            refractionInteract.Name = "refractionInteract";
+            refractionInteract.Size = new System.Drawing.Size(629, 152);
+            refractionInteract.TabIndex = 0;
+            refractionInteract.Text = "Interactive Mode";
+            refractionInteract.UseVisualStyleBackColor = true;
+            refractionInteract.Click += button1_Click;
+            refractionInteract.MouseDown += refraction_MouseDown;
+            refractionInteract.MouseEnter += refraction_MouseEnter;
+            refractionInteract.MouseLeave += refraction_MouseLeave;
             // 
             // fadeIn
             // 
-            this.fadeIn.Enabled = true;
-            this.fadeIn.Interval = 1;
-            this.fadeIn.Tick += new System.EventHandler(this.fadeIn_Tick);
+            fadeIn.Enabled = true;
+            fadeIn.Interval = 1;
+            fadeIn.Tick += fadeIn_Tick;
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tableLayoutPanel1.BackgroundImage")));
-            this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.52838F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.94324F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.52838F));
-            this.tableLayoutPanel1.Controls.Add(this.theme, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.energySaver, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.wTxt, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.refraction, 1, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.76264F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.15136F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.086F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1384, 878);
-            this.tableLayoutPanel1.TabIndex = 3;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            tableLayoutPanel1.BackgroundImage = (System.Drawing.Image)resources.GetObject("tableLayoutPanel1.BackgroundImage");
+            tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.52838F));
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.94324F));
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.52838F));
+            tableLayoutPanel1.Controls.Add(bArrow, 0, 0);
+            tableLayoutPanel1.Controls.Add(theme, 2, 0);
+            tableLayoutPanel1.Controls.Add(wTxt, 1, 0);
+            tableLayoutPanel1.Controls.Add(refractionInteract, 1, 1);
+            tableLayoutPanel1.Controls.Add(questions, 1, 2);
+            tableLayoutPanel1.Controls.Add(energySaver, 2, 2);
+            tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.76264F));
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.15136F));
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.086F));
+            tableLayoutPanel1.Size = new System.Drawing.Size(1124, 906);
+            tableLayoutPanel1.TabIndex = 3;
+            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
-            // energySaver
+            // bArrow
             // 
-            this.energySaver.AllowDrop = true;
-            this.energySaver.BackColor = System.Drawing.Color.Transparent;
-            this.energySaver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.energySaver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.energySaver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.energySaver.ForeColor = System.Drawing.Color.Transparent;
-            this.energySaver.Image = global::Physics_Simulation.Properties.Resources.energysaverlight;
-            this.energySaver.Location = new System.Drawing.Point(6, 4);
-            this.energySaver.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            this.energySaver.Name = "energySaver";
-            this.energySaver.Size = new System.Drawing.Size(118, 110);
-            this.energySaver.TabIndex = 4;
-            this.energySaver.UseVisualStyleBackColor = false;
-            this.energySaver.Click += new System.EventHandler(this.energySaver_Click);
-            // 
-            // wTxt
-            // 
-            this.wTxt.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.wTxt.AutoSize = true;
-            this.wTxt.BackColor = System.Drawing.Color.Transparent;
-            this.wTxt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.wTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wTxt.ForeColor = System.Drawing.SystemColors.Control;
-            this.wTxt.Location = new System.Drawing.Point(548, 0);
-            this.wTxt.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.wTxt.Name = "wTxt";
-            this.wTxt.Size = new System.Drawing.Size(286, 32);
-            this.wTxt.TabIndex = 2;
-            this.wTxt.Text = "Refraction Simulation";
-            this.wTxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.wTxt.Click += new System.EventHandler(this.label1_Click);
-            this.wTxt.MouseClick += new System.Windows.Forms.MouseEventHandler(this.wTxt_MouseClick);
-            // 
-            // themeTip
-            // 
-            this.themeTip.Popup += new System.Windows.Forms.PopupEventHandler(this.themeTip_Popup);
+            bArrow.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom;
+            bArrow.BackColor = System.Drawing.Color.Transparent;
+            bArrow.BackgroundImage = (System.Drawing.Image)resources.GetObject("bArrow.BackgroundImage");
+            bArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            bArrow.Cursor = System.Windows.Forms.Cursors.Hand;
+            bArrow.Location = new System.Drawing.Point(57, 6);
+            bArrow.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            bArrow.Name = "bArrow";
+            bArrow.Size = new System.Drawing.Size(71, 176);
+            bArrow.TabIndex = 6;
+            bArrow.TabStop = false;
+            bArrow.Click += bArrow_Click;
+            bArrow.MouseDown += bArrow_MouseDown;
+            bArrow.MouseEnter += bArrow_MouseEnter;
+            bArrow.MouseLeave += bArrow_MouseLeave;
+            bArrow.MouseUp += bArrow_MouseUp;
             // 
             // theme
             // 
-            this.theme.AllowDrop = true;
-            this.theme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.theme.BackColor = System.Drawing.Color.Transparent;
-            this.theme.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.theme.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.theme.Enabled = false;
-            this.theme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.theme.ForeColor = System.Drawing.Color.Transparent;
-            this.theme.Image = global::Physics_Simulation.Properties.Resources.moon;
-            this.theme.Location = new System.Drawing.Point(1260, 4);
-            this.theme.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            this.theme.Name = "theme";
-            this.theme.Size = new System.Drawing.Size(118, 110);
-            this.theme.TabIndex = 3;
-            this.theme.UseVisualStyleBackColor = false;
-            this.theme.Visible = false;
-            this.theme.Click += new System.EventHandler(this.settings_Click);
-            this.theme.MouseDown += new System.Windows.Forms.MouseEventHandler(this.theme_MouseDown);
-            this.theme.MouseEnter += new System.EventHandler(this.settings_MouseEnter);
-            this.theme.MouseUp += new System.Windows.Forms.MouseEventHandler(this.theme_MouseUp);
+            theme.AllowDrop = true;
+            theme.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            theme.BackColor = System.Drawing.Color.Transparent;
+            theme.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            theme.Cursor = System.Windows.Forms.Cursors.Hand;
+            theme.Enabled = false;
+            theme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            theme.ForeColor = System.Drawing.Color.Transparent;
+            theme.Location = new System.Drawing.Point(1023, 3);
+            theme.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            theme.Name = "theme";
+            theme.Size = new System.Drawing.Size(96, 114);
+            theme.TabIndex = 3;
+            theme.UseVisualStyleBackColor = false;
+            theme.Visible = false;
+            theme.Click += settings_Click;
+            theme.MouseDown += theme_MouseDown;
+            theme.MouseEnter += settings_MouseEnter;
+            theme.MouseUp += theme_MouseUp;
+            // 
+            // wTxt
+            // 
+            wTxt.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom;
+            wTxt.AutoSize = true;
+            wTxt.BackColor = System.Drawing.Color.Transparent;
+            wTxt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            wTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            wTxt.ForeColor = System.Drawing.SystemColors.Control;
+            wTxt.Location = new System.Drawing.Point(342, 0);
+            wTxt.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            wTxt.Name = "wTxt";
+            wTxt.Size = new System.Drawing.Size(437, 188);
+            wTxt.TabIndex = 2;
+            wTxt.Text = "Refraction Simulation\r\n";
+            wTxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            wTxt.Click += label1_Click;
+            wTxt.MouseClick += wTxt_MouseClick;
+            // 
+            // questions
+            // 
+            questions.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            questions.AutoSize = true;
+            questions.Cursor = System.Windows.Forms.Cursors.Hand;
+            questions.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            questions.Location = new System.Drawing.Point(264, 418);
+            questions.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            questions.Name = "questions";
+            questions.Size = new System.Drawing.Size(593, 117);
+            questions.TabIndex = 5;
+            questions.Text = "   Questions   ";
+            questions.UseVisualStyleBackColor = true;
+            questions.Click += questions_Click;
+            questions.MouseEnter += questions_MouseEnter;
+            questions.MouseLeave += questions_MouseLeave;
+            // 
+            // energySaver
+            // 
+            energySaver.AllowDrop = true;
+            energySaver.BackColor = System.Drawing.Color.Transparent;
+            energySaver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            energySaver.Cursor = System.Windows.Forms.Cursors.Hand;
+            energySaver.Enabled = false;
+            energySaver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            energySaver.ForeColor = System.Drawing.Color.Transparent;
+            energySaver.Location = new System.Drawing.Point(942, 418);
+            energySaver.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            energySaver.Name = "energySaver";
+            energySaver.Size = new System.Drawing.Size(96, 114);
+            energySaver.TabIndex = 4;
+            energySaver.UseVisualStyleBackColor = false;
+            energySaver.Visible = false;
+            energySaver.Click += energySaver_Click;
+            // 
+            // themeTip
+            // 
+            themeTip.Popup += themeTip_Popup;
+            // 
+            // bArrowSizeUp
+            // 
+            bArrowSizeUp.Interval = 10;
+            bArrowSizeUp.Tick += bArrowSize_Tick;
+            // 
+            // bArrowSizeDown
+            // 
+            bArrowSizeDown.Interval = 10;
+            bArrowSizeDown.Tick += bArrowSIzeDown_Tick;
+            // 
+            // updateText
+            // 
+            updateText.Enabled = true;
+            updateText.Interval = 3000;
+            updateText.Tick += timer1_Tick;
             // 
             // welcomeScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1384, 878);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            this.MaximizeBox = false;
-            this.Name = "welcomeScreen";
-            this.Opacity = 0.5D;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.welcomeScreen_FormClosed);
-            this.Load += new System.EventHandler(this.welcomeScreen_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            ClientSize = new System.Drawing.Size(1124, 906);
+            Controls.Add(tableLayoutPanel1);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            MaximizeBox = false;
+            Name = "welcomeScreen";
+            Opacity = 0.5D;
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            FormClosed += welcomeScreen_FormClosed;
+            Load += welcomeScreen_Load;
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)bArrow).EndInit();
+            ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button refraction;
+        private System.Windows.Forms.Button refractionInteract;
         private System.Windows.Forms.Timer fadeIn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label wTxt;
@@ -183,6 +244,11 @@
         private System.Windows.Forms.Button energySaver;
         private System.Windows.Forms.ToolTip powerTip;
         private System.Windows.Forms.Button theme;
+        private System.Windows.Forms.Button questions;
+        private System.Windows.Forms.PictureBox bArrow;
+        private System.Windows.Forms.Timer bArrowSizeUp;
+        private System.Windows.Forms.Timer bArrowSizeDown;
+        private System.Windows.Forms.Timer updateText;
     }
 }
 

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_LastSelectedProfileId>C:\Users\Sulaiman-XPS\source\repos\Sulaiman-Gaskell\Physics-Simulations\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="refractionBuilder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="refractionQuestions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="rInteract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Welcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

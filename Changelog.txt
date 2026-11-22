@@ -1,5 +1,22 @@
 Changelog:
 
+V1.2.0: STABLE 22/11/26 - Interactive mode redesign now available
+	NEW: Welcome menu now shows options for all modes,. Backwards navigation done via the back arrow
+	NEW: allowed window snapping for Interactive mode, reintroduced the toolbar 
+	NEW: Update summary given now in the title
+	Tweaked welcome screen UI to be more balanced, including the colours
+	Fixed animation issues (white screen) and updated some animations
+	Fixed refraction lines not lining up with the normal properly when set to 0 or 90 for all screens
+	Updated to .NET 10 runtime
+	Cleaned up codebase
+	Removed power saver (useless anyway)
+
+	**Only for Interactive mode. Coming to Question Mode at a later time**
+		Expanded new design to this screen.
+		Fixed diagram from disappearing under certain scenarios.
+		
+
+
 V1.1.0: STABLE 18/11/26
 	NEW Design, implemented on the welcome screen (coming to other screens later)
 	Removed legacy options menu

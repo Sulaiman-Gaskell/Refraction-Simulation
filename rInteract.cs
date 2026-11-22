@@ -28,13 +28,15 @@ namespace Physics_Simulation
             //from resizing it
             this.WindowState = FormWindowState.Maximized;
 
-            this.FormBorderStyle = FormBorderStyle.None;
 
             // Disables annoying windows sounds
             this.AcceptButton = null;
-            
-          
-            
+
+            this.DoubleBuffered = true;
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
+
+
 
 
 
@@ -47,26 +49,7 @@ namespace Physics_Simulation
             // Sets the active colour of the link label to pink for dark mode
             glossary.ActiveLinkColor = Color.Pink;
 
-            // Changes colours based on the them selected
-            if (systemWideVariables.lightTheme == true)
-            {
-                this.BackColor = Color.White;
-                refractiveIndex1.BackColor = Color.Black;
-                refractiveIndex1.ForeColor = Color.White;
-                refractiveIndex2.BackColor = Color.Black;
-                refractiveIndex2.ForeColor = Color.White;
-                angleOfIncidence.BackColor = Color.Black;
-                angleOfIncidence.ForeColor = Color.White;
-                aoR.ForeColor = Color.Black;
-                aOIText.ForeColor = Color.Black;
-                rI1Text.ForeColor = Color.Black;
-                rI2Text.ForeColor = Color.Black;
-                bArrow.BackgroundImage = Properties.Resources.lightBackArrow;
-                bArrow.BackColor = Color.White;
-                glossary.LinkColor = Color.Black;
-                glossary.ActiveLinkColor = Color.Blue;
-
-            }
+      
 
      
 
@@ -110,10 +93,10 @@ namespace Physics_Simulation
 
 
             glossary.Location = new Point(0,
-                Convert.ToInt32(this.Height / 1.75));
+                Convert.ToInt32(this.Height / 1.85));
 
             glossary.Padding = new System.Windows.Forms.Padding(
-                this.Width / 60,0, 0,0);
+                 0,0, 0,0);
 
             // Adds some margin gaps between controls to look better
             aOIText.Margin = new System.Windows.Forms.Padding(
@@ -172,14 +155,15 @@ namespace Physics_Simulation
 
 
             // Puts the back arrow in the top left hand corner
-            bArrow.Size = new Size(this.Height / 10, this.Height / 10);
+            bArrow.Size = new Size(this.Height / 15, this.Height / 15);
+            bArrow.Padding = new Padding(20, 50 ,0, 0);
         }
 
 
 
         private void bArrow_Click_1(object sender, EventArgs e)
         {
-         
+            tableLayoutPanel1.Hide();
             fadeOut.Enabled = true;
           
 
@@ -188,12 +172,7 @@ namespace Physics_Simulation
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-
-            // draws base lines (already disabled animation in form_Load)
-            if (systemWideVariables.powerSave)
-            {
-                initDraw();
-            }
+            DrawRays();
         }
 
         // For drawing the static lines
@@ -203,11 +182,6 @@ namespace Physics_Simulation
             // Changes line col based on the theme
             Color lineCol = Color.White;
 
-            if (systemWideVariables.lightTheme == true)
-            {
-                this.BackColor = Color.White;
-                lineCol = Color.Black;
-            }
 
 
             // Creates a white pen
@@ -261,9 +235,7 @@ namespace Physics_Simulation
 
         private void angleOfIncidence_TextChanged(object sender, EventArgs e)
         {
-            // Calls the DrawRays method whenever text is changed in the textbox
-            DrawRays();
-            DrawRays();
+            tableLayoutPanel1.Invalidate();
           
         }
 
@@ -272,14 +244,14 @@ namespace Physics_Simulation
         private void DrawRays()
         {
             // Creates a pen object to draw the incident ray
-            Pen aOIPen = new Pen(Color.Blue,6);
+            Pen aOIPen = new Pen(Color.Blue,7);
     
 
             // Creates another pen but for the refracted ray
-            Pen aORPen = new Pen(Color.OrangeRed, 6);
+            Pen aORPen = new Pen(Color.OrangeRed, 7);
 
             // Creates another pen but for the reflected ray
-            Pen aORePen = new Pen(Color.Blue, 6);
+            Pen aORePen = new Pen(Color.Blue, 7);
 
             // Creates a graphics to draw on the tableLayoutPanel
             Graphics rays = tableLayoutPanel1.CreateGraphics();
@@ -294,7 +266,8 @@ namespace Physics_Simulation
                 this.Width / 200);
 
             // Refreshes the tableLayout panel to redraw everything
-            tableLayoutPanel1.Refresh();
+            //tableLayoutPanel1.Refresh();
+      
             
 
 
@@ -430,9 +403,7 @@ namespace Physics_Simulation
         // Refractive index 2
         private void refractiveIndex1_TextChanged(object sender, EventArgs e)
         {
-            // Calls the DrawRays method whenever text is changed in the textbox
-            DrawRays();
-            DrawRays();
+            tableLayoutPanel1.Invalidate();
       
         }
 
@@ -448,10 +419,7 @@ namespace Physics_Simulation
 
         private void refractiveIndex1_TextChanged_1(object sender, EventArgs e)
         {
-            // Calls the DrawRays method whenever text is changed in the textbox
-            // Twice for odd bug to be fixed
-            DrawRays();
-            DrawRays();
+            tableLayoutPanel1.Invalidate();
           
         }
 
@@ -464,6 +432,7 @@ namespace Physics_Simulation
             }
             else
             {
+                fadeOut.Stop();      // Stop the timer so it doesn't keep firing
                 // When the opacity is 0, close the form
                 this.Close();
                
@@ -475,16 +444,7 @@ namespace Physics_Simulation
         // For changing each individual cell
         private void tableLayoutPanel1_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
         {
-            // If it is [0,1] then the bg of it will change to the right colour
-            if (e.Column == 1 && e.Row == 1) 
-            {
-                if (systemWideVariables.lightTheme == true)
-                {
-                    e.Graphics.FillRectangle(new SolidBrush(Color.Black), e.CellBounds);
-                }
-                else { e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds);}
-                
-            }
+
           
         }
 
@@ -556,11 +516,18 @@ namespace Physics_Simulation
         private void glossary_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             // Opens a link to a useful info page
-            System.Diagnostics.Process.Start("https://www.savemyexams.com/a-level/physics/aqa/17/revision-notes/3-waves/3-5-refraction/3-5-2-snells-law/");
-            // redraws the diagram accordingly.
+            var psi = new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = "https://www.savemyexams.com/a-level/physics/aqa/17/revision-notes/3-waves/3-5-refraction/3-5-2-snells-law/",
+                UseShellExecute = true
+            };
+            System.Diagnostics.Process.Start(psi);
 
-            
-           initDraw();
+            // Optional: mark the link as visited
+            linkLabel1.LinkVisited = true;           
+
+
+            initDraw();
             
 
         }
@@ -583,11 +550,7 @@ namespace Physics_Simulation
             // Changes line col based on the theme
             Color lineCol = Color.White;
 
-            if (systemWideVariables.lightTheme == true)
-            {
-                this.BackColor = Color.White;
-                lineCol = Color.Black;
-            }
+     
 
             // Creates a white pen
             Pen pen = new Pen(lineCol, 6);
@@ -638,7 +601,8 @@ namespace Physics_Simulation
 
         private void glossary_MouseDown(object sender, MouseEventArgs e)
         {
-            linesAnimate.Enabled = true;
+            //
+            //linesAnimate.Enabled = true;
         }
 
         private void rInteract_SizeChanged(object sender, EventArgs e)

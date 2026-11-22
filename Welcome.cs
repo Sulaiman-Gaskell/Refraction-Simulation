@@ -3,11 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Text;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -19,6 +21,7 @@ namespace Physics_Simulation
     public partial class welcomeScreen : Form
 
     {
+
         public welcomeScreen()
         {
             InitializeComponent();
@@ -35,8 +38,7 @@ namespace Physics_Simulation
         // Used for all winforms so made public
         public class systemWideVariables
         {
-            public static string titleVersion = "V1.1.0 - STABLE";
-            public static bool lightTheme = Settings.Default.lightTheme;
+            public static string titleVersion = "V1.2.0";
             public static string whichSim = "";
             public static bool isRandom = true;
             public static bool powerSave = Settings.Default.powerSave;
@@ -47,9 +49,11 @@ namespace Physics_Simulation
         {
             initY = this.DesktopLocation.Y;
         }
-            
+
+
         private void leavingAnimation()
         {
+            bArrow.Enabled = false;
 
             // only triggers if powersave is disabled
             if (systemWideVariables.powerSave == false)
@@ -59,90 +63,117 @@ namespace Physics_Simulation
                 int x = this.DesktopLocation.X;
                 int y = this.DesktopLocation.Y;
                 int count = 5;
-                while (y < (this.Height * 3))
+                while (y < (this.Height * 1))
                 {
-
+                    this.Opacity -= 0.05; // Gradually decrease opacity for fade effect
                     this.Location = new Point(x, y);
                     y = y + count;
                     Thread.Sleep(1);
                     count++;
 
                 }
+
             }
 
             this.Hide();
 
         }
 
-
-
-        private void showingAnimation()
+        private async Task showingAnimation()
         {
+
+            this.Opacity = 0; // Start with fully transparent
+
             this.Show();
-            if (systemWideVariables.powerSave == false)
+            this.Refresh();
+            // Forces the initial frame to paint before sliding
+
+            if (!systemWideVariables.powerSave)
             {
                 int x = this.DesktopLocation.X;
                 int y = this.DesktopLocation.Y;
-                int count = 50;
+                this.Location = new Point(x, initY);
 
-                while (y >= (initY))
-                {
-                    Thread.Sleep(1);
-                    this.Location = new Point(x, y);
-                    y = y - count;
+                int count = 60 - initY / 20; // Calculate the step size based on the initial Y position
 
-                    count--;
 
-                }
+                fadeIn.Enabled = true;
+                bArrow.Enabled = true;
+
             }
-
         }
 
-         
+
+
         private void button1_Click(object sender, EventArgs e) // Refraction
         {
-            refraction.BackColor = Color.White;
+            refractionInteract.BackColor = Color.White;
 
             // Sets the var to tell the program which forms need to be loaded
             systemWideVariables.whichSim = "refraction";
 
 
-       
+
             leavingAnimation();
 
             // Creates an instance of the refraction form when
             // the button is pressed
-            rInteract RInteract = new rInteract();
-            RInteract.ShowDialog();
+            if (refractionInteract.Text == "Interactive Mode")
+            {
+                rInteract RInteract = new rInteract();
+                RInteract.ShowDialog();
+            }
+            else if (refractionInteract.Text == "Quick Play")
+            {
+                systemWideVariables.isRandom = true;
+                refractionQuestions RQuestions = new refractionQuestions();
+                RQuestions.ShowDialog();
+            }
+            else
+            {
+                systemWideVariables.isRandom = false;
+                refractionQuestions RQuestions = new refractionQuestions();
+                RQuestions.ShowDialog();
+            }
+
+
             showingAnimation();
-            
-            
+
+
+
+
         }
-            
+
         private void label1_Click(object sender, EventArgs e)
         {
         }
 
         private void updateTheme()
         {
-                
 
-          // if power save is on or not
+
+            // if power save is on or not
             if (systemWideVariables.powerSave)
             {
-                energySaver.BackColor= Color.Red;
+                energySaver.BackColor = Color.Red;
                 energySaver.FlatStyle = FlatStyle.Standard;
-                
+
             }
 
         }
 
-    private void welcomeScreen_Load(object sender, EventArgs e)
+        private void welcomeScreen_Load(object sender, EventArgs e)
         {
-           
+
+
+            bArrow.Height -= 20;
+            bArrow.Height -= 20;
+
             theme.FlatAppearance.BorderSize = 0;
             energySaver.FlatAppearance.BorderSize = 0;
             energySaver.FlatAppearance.MouseOverBackColor = Color.Blue;
+
+
 
             // Sets the form text as the version num defined by the class attribute
             // TitleVersion
@@ -155,13 +186,16 @@ namespace Physics_Simulation
             fadeIn.Enabled = true;
 
             // Chnages font to a nicer one for both buttons
-            wTxt.Font = new Font ("Microsoft Sans Serif", 21,FontStyle.Bold);
-            refraction.Font = new Font("Microsoft Sans Serif",20);
+            wTxt.Font = new Font("Microsoft Sans Serif", 21, FontStyle.Bold);
+            refractionInteract.Font = new Font("Microsoft Sans Serif", 20);
 
 
             // Keeps sizing consistant
-            refraction.Height = Convert.ToInt32(wTxt.Height / 1.5);
-            refraction.Width = Convert.ToInt32(wTxt.Width / 1.5);
+            refractionInteract.Height = Convert.ToInt32(wTxt.Height / 1.5);
+            refractionInteract.Width = Convert.ToInt32(wTxt.Width / 1.5);
+
+            questions.Size = refractionInteract.Size;
+            refractionInteract.Height = questions.Height;
 
 
 
@@ -174,8 +208,8 @@ namespace Physics_Simulation
             {
             }
 
-           
-            
+
+
 
         }
 
@@ -197,42 +231,22 @@ namespace Physics_Simulation
 
         private void waves_Click(object sender, EventArgs e)
         {
-            // Sets the var to tell the program which forms need to be loaded
-            systemWideVariables.whichSim = "waves";
-
-            // Creates an instance of optionMenu form when
-            // the button is pressed
-            leavingAnimation();
-            optionsMenu options = new optionsMenu();
-     
-            options.ShowDialog();
-
-            // When the optionMenu instance is closed by the user
-            // the Welcome menu will open again
-            showingAnimation();
-
-            // This removed in beta testing.
-            //this.Location = new Point(this.Width, this.Height / 100 * 50);
 
         }
 
         private void refraction_MouseEnter(object sender, EventArgs e)
         {
-            refraction.BackColor = Color.Blue;
+            refractionInteract.BackColor = Color.Blue;
+            refractionInteract.ForeColor = Color.White;
         }
 
         private void refraction_MouseLeave(object sender, EventArgs e)
         {
-            if (systemWideVariables.lightTheme == true)
-            {
-                refraction.BackColor = Color.Black;
-                wTxt.ForeColor = Color.Black;
-            }
-            else
-            {
-                refraction.BackColor = Color.White;
-                wTxt.ForeColor = Color.White;
-            }
+
+            refractionInteract.BackColor = Color.White;
+            refractionInteract.ForeColor = Color.Black;
+            wTxt.ForeColor = Color.White;
+
 
         }
 
@@ -243,7 +257,7 @@ namespace Physics_Simulation
 
         private void waves_MouseLeave(object sender, EventArgs e)
         {
-            
+
         }
 
         private void refraction_MouseDown(object sender, MouseEventArgs e)
@@ -259,7 +273,6 @@ namespace Physics_Simulation
         private void welcomeScreen_FormClosed(object sender, FormClosedEventArgs e)
         {
             // Not used anymore
-            Settings.Default.lightTheme = systemWideVariables.lightTheme;
             Settings.Default.powerSave = systemWideVariables.powerSave;
             Settings.Default.Save();
             Application.Exit();
@@ -284,34 +297,16 @@ namespace Physics_Simulation
 
         private void settings_Click(object sender, EventArgs e)
         {
-            // Changes the theme
-            if (systemWideVariables.lightTheme == true)
-            {
-                systemWideVariables.lightTheme = false;
-            }
-            else
-            {
-                systemWideVariables.lightTheme = true;
-            }
 
             // Applies changes
             updateTheme();
-            
-            
+
+
         }
 
         private void settings_MouseEnter(object sender, EventArgs e)
         {
-            // Shows a tooltip when hovering over the button
-            if (systemWideVariables.lightTheme == true)
-            {
-                themeTip.SetToolTip(theme, "Click to switch to dark theme");
-            }
-            else 
-            {
-                themeTip.SetToolTip(theme, "Click to switch to light theme"); 
-            }
-            
+
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -319,22 +314,22 @@ namespace Physics_Simulation
 
         }
 
-        
+
 
         private void theme_MouseDown(object sender, MouseEventArgs e)
         {
 
-         
+
         }
 
         private void theme_MouseUp(object sender, MouseEventArgs e)
         {
-        
+
         }
 
         private void cMove_Tick(object sender, EventArgs e)
         {
-          
+
         }
 
         private void energySaver_Click(object sender, EventArgs e)
@@ -347,22 +342,11 @@ namespace Physics_Simulation
 
                 energySaver.FlatStyle = FlatStyle.Flat;
 
-                if (systemWideVariables.lightTheme)
-                { 
-                    energySaver.BackColor = Color.Transparent;
-                }
-                else
-                {
-                    energySaver.BackColor = Color.Transparent;
+                energySaver.BackColor = Color.Transparent;
 
-                    
-                }
-
-                
-                // renables text animation
-                
             }
-            else {
+            else
+            {
                 systemWideVariables.powerSave = true;
 
                 energySaver.FlatStyle = FlatStyle.Standard;
@@ -371,12 +355,161 @@ namespace Physics_Simulation
 
             }
 
-                    
+
         }
 
         private void themeTip_Popup(object sender, PopupEventArgs e)
         {
 
+        }
+
+        private void questions_Click(object sender, EventArgs e)
+        {
+            if (questions.Text == "   Questions   ")
+            {
+                refractionInteract.Text = "Quick Play";
+                questions.Text = "Custom";
+            }
+            else if (questions.Text == "Custom")
+            {
+                refractionInteract.Text = "Play Custom";
+                questions.Text = "Build questions";
+
+            }
+            else
+            {
+                refractionBuilder refractionBuilder = new refractionBuilder();
+                refractionBuilder.ShowDialog();
+            }
+
+        }
+
+        private void questions_MouseEnter(object sender, EventArgs e)
+        {
+            questions.BackColor = Color.Blue;
+            questions.ForeColor = Color.White;
+        }
+
+        private void questions_MouseLeave(object sender, EventArgs e)
+        {
+            questions.BackColor = Color.White;
+            questions.ForeColor = Color.Black;
+        }
+
+        private void bArrow_Click(object sender, EventArgs e)
+        {
+
+            if (refractionInteract.Text == "Quick Play")
+            {
+                refractionInteract.Text = "Interactive Mode";
+                questions.Text = "   Questions   ";
+            }
+            else if (refractionInteract.Text == "Play Custom")
+            {
+                refractionInteract.Text = "Quick Play";
+                questions.Text = "Custom";
+            }
+            else
+            {
+                this.Close();
+            }
+
+
+
+
+        }
+
+        private void bArrow_MouseEnter(object sender, EventArgs e)
+        {
+            bArrowSizeUp.Enabled = true;
+        }
+
+        private void bArrowSize_Popup(object sender, PopupEventArgs e)
+        {
+
+
+        }
+
+
+
+        int countBArrow = 10;
+        private void bArrowSize_Tick(object sender, EventArgs e)
+        {
+
+
+            if (countBArrow >= 0)
+            {
+                bArrow.Height++;
+                bArrow.Width++;
+                countBArrow--;
+            }
+
+            else
+            {
+                countBArrow = 10;
+                bArrowSizeUp.Enabled = false;
+            }
+
+
+        }
+
+        private void bArrow_MouseLeave(object sender, EventArgs e)
+        {
+            bArrowSizeDown.Enabled = true;
+        }
+
+        private void bArrowSIzeDown_Tick(object sender, EventArgs e)
+        {
+            bArrow.BorderStyle = BorderStyle.None;
+
+
+            if (countBArrow >= 0)
+            {
+                bArrow.Height--;
+                bArrow.Width--;
+                countBArrow--;
+            }
+
+            else
+            {
+                countBArrow = 10;
+                bArrowSizeDown.Enabled = false;
+            }
+
+        }
+
+
+        int questionsHeight = 4;
+        private void QuestionsExpand_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void QuestionsCollapse_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bArrow_MouseDown(object sender, MouseEventArgs e)
+        {
+            bArrow.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        private void bArrow_MouseUp(object sender, MouseEventArgs e)
+        {
+            bArrow.BorderStyle = BorderStyle.None;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (wTxt.Text == "Refraction Simulation")
+            {
+                wTxt.Text = "Interactive mode redesign now available";
+            }
+            else
+            {
+                wTxt.Text = "Refraction Simulation";
+            }
         }
     }
 }

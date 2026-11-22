@@ -32,10 +32,6 @@ namespace Physics_Simulation
 
             lines.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
 
-            if (systemWideVariables.lightTheme)
-            {
-                line.Color = Color.Black;
-            }
 
 
             Point point1Left = new Point((int)horzDrawPoint, this.Height);
@@ -60,10 +56,7 @@ namespace Physics_Simulation
 
             lines.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
 
-            if (systemWideVariables.lightTheme)
-            {
-                line.Color = Color.Black;
-            }
+   
 
 
             Point point1Left = new Point(this.Width - (int)horzDrawPoint, this.Height);
@@ -157,35 +150,7 @@ namespace Physics_Simulation
             fadeIn.Enabled = true;
 
 
-            // For light mode
-            if(systemWideVariables.lightTheme)
-            {
-                bArrow.BackgroundImage = Properties.Resources.lightBackArrow;
-                bArrow.BackColor = Color.White;
-                this.BackColor = Color.White;
-                qNameLabel.ForeColor = Color.Black;
-                qNameLabel.BackColor = Color.White;
-                qName.ForeColor = Color.White;
-                qName.BackColor = Color.Black;
-                aOILabel.ForeColor = Color.Black;
-                aOILabel.BackColor = Color.White;
-                aOI.ForeColor = Color.White;
-                aOI.BackColor = Color.Black;
-                rI1Label.ForeColor = Color.Black;
-                rI1Label.BackColor = Color.White;
-                rI1.ForeColor = Color.White;
-                rI1.BackColor = Color.Black;
-                rI2Label.ForeColor = Color.Black;
-                rI2Label.BackColor = Color.White;
-                rI2.ForeColor = Color.White;
-                rI2.BackColor = Color.Black;
-                saveButton.ForeColor = Color.White;
-                saveButton.BackColor = Color.Black;
-                clearAll.ForeColor = Color.White;
-                clearAll.BackColor = Color.Black;
-
-
-            }
+           
 
         }
 
@@ -260,17 +225,7 @@ namespace Physics_Simulation
         }
 
         private void tableLayoutPanel1_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
-        {
-            // If it is [1,1] then the bg of it will change to the right colour
-            if (e.Column == 2 && e.Row == 2)
-            {
-                if (systemWideVariables.lightTheme == true)
-                {
-                   // e.Graphics.FillRectangle(new SolidBrush(Color.Black), e.CellBounds);
-                }
-                else { /* e.Graphics.FillRectangle(new SolidBrush(Color.White), e.CellBounds); */ }
-
-            }
+        { 
 
 
         }
